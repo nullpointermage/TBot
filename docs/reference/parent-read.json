@@ -1,0 +1,685 @@
+[
+  {
+    "path": ".editorconfig",
+    "sha256": "25b8659b145e338480042a10f205d2286578ee422eb765d2661b6886a1317148",
+    "lines": 184,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": ".gitattributes",
+    "sha256": "45a7cbb7d9942ba7ffce0b20bc8dbe2d1196533bc6e4bd245871d77fb1eedfdc",
+    "lines": 63,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": ".github/workflows/release.yml",
+    "sha256": "4c32ba5ce857df85e986484b24301979d8bfa4d781d316fdcecd08049eea594a",
+    "lines": 145,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": ".github/workflows/snapshot.yml",
+    "sha256": "c284a8c8b629a05874b23050c58fb7ffc727c1fbbc1dd0d80c41eee05173a074",
+    "lines": 167,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "0e3c15d628de1ca6b812dfc00fcf06d88836a98dc4007523046dd0d8b837e8f5",
+    "lines": 344,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": ".gitmodules",
+    "sha256": "24ed141e6c52cef18a0f458e16b385cdc470a85b2d143baa6098d7bb41089322",
+    "lines": 4,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "Docker/README.txt",
+    "sha256": "dedbfb8e9ada825a933c789053725117740226a20017fe37f3e6ce893a94f2bf",
+    "lines": 11,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "README.md",
+    "sha256": "77f6a57b437d827c681415bd93e1a555ff4eb405aee3a4d8c85c4a17514b9057",
+    "lines": 283,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Extensions/Extensions.cs",
+    "sha256": "f5a42991b1dc65579d58c429996c48462a14b379e310c8d541ab39536cb996fb",
+    "lines": 17,
+    "read": "complete",
+    "symbols": [
+      "StringExtensions"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Enrichers/ThreadIdEnricher.cs",
+    "sha256": "44ffd34a82ad204397d47bbdf2071f9b7cbb0c9ab52ce9c80fe1c0b1335acb42",
+    "lines": 16,
+    "read": "complete",
+    "symbols": [
+      "ThreadIdEnricher"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Hooks/SerilogCSVHeaderHooks.cs",
+    "sha256": "fa2db6abc9d61a983f9eb22d2a2eca51c883c5c6805323194f097acea93d909b",
+    "lines": 23,
+    "read": "complete",
+    "symbols": [
+      "SerilogCSVHeaderHooks"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Hubs/IWebHub.cs",
+    "sha256": "30056235661f12bb2fbdade32112d024b358edd374c81800fdd03a1396de93cd",
+    "lines": 11,
+    "read": "complete",
+    "symbols": [
+      "IWebHub"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Hubs/WebHub.cs",
+    "sha256": "69fd6bacc69e1153e44ed4ca7055ecdc94a504849794e87983e3664cc840cf83",
+    "lines": 11,
+    "read": "complete",
+    "symbols": [
+      "WebHub"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/ILoggerService.cs",
+    "sha256": "88dba51b97a93572551bc95cc48fc53eefe7c08862af47b6f340136edfd9ce4e",
+    "lines": 19,
+    "read": "complete",
+    "symbols": [
+      "ILoggerService"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/LogSender.cs",
+    "sha256": "5944dedd9b9b4d03a6e8f25dab69c3c44745953ec2c556ea61ad2d4829024b5e",
+    "lines": 34,
+    "read": "complete",
+    "symbols": [
+      "LogSender"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/LoggerService.cs",
+    "sha256": "06468e35f5ebff47fcf83349a6a13c1bf211f0b8f70fe48975d17350e3bb1f8c",
+    "lines": 179,
+    "read": "complete",
+    "symbols": [
+      "LoggerService"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Sinks/SignalRSink.cs",
+    "sha256": "a8d69fb3e41fca3b13309116daf8fe6a68a70a301d9a096124f801d8792b7c63",
+    "lines": 121,
+    "read": "complete",
+    "symbols": [
+      "SignalRTbotSink"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Sinks/SignalRSinkExtension.cs",
+    "sha256": "014f344f3b84b26e1d8f45d1fae1fd617e1f5fad5e964bef911ddaf09da6eb3f",
+    "lines": 56,
+    "read": "complete",
+    "symbols": [
+      "SignalRSinkExtension"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Sinks/TBotColoredConsoleSink.cs",
+    "sha256": "52b9788b5f7e53b40c8080ec91c3a39ef9495b2dd555c720b0f9964450417693",
+    "lines": 77,
+    "read": "complete",
+    "symbols": [
+      "TBotColoredConsoleSink"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/Sinks/TBotColoredConsoleSinkExtension.cs",
+    "sha256": "bed754ae521035f68c551cfd0966f4a66204102022945d9f1fe3dbee774f5494",
+    "lines": 21,
+    "read": "complete",
+    "symbols": [
+      "TBotColoredConsoleSinkExtension"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/TextFormatters/EmojiFormatter.cs",
+    "sha256": "62baefaa9afeff9f6dd7204657704723ad82972f253b5bf225c5120d4c255509",
+    "lines": 35,
+    "read": "complete",
+    "symbols": [
+      "EmojiFormatter"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Logging/TextFormatters/SerilogCSVTextFormatter.cs",
+    "sha256": "c9db512a13d84a4f470c641c0b532412514d4dbea21cde5207c451bab3aedeaa",
+    "lines": 47,
+    "read": "complete",
+    "symbols": [
+      "SerilogCSVTextFormatter"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/Settings/SettingsService.cs",
+    "sha256": "657ae33f221d0f00a727f92cb5ebd60c8dc77f3946c6ce7230672c7301b70d1e",
+    "lines": 360,
+    "read": "complete",
+    "symbols": [
+      "SettingsService",
+      "SettingsSemaphoreManager",
+      "JsonNetAdapter",
+      "ConfigObject",
+      "NullExceptionPreventer"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.Common/TBot.Common.csproj",
+    "sha256": "a2c1f0b91582ee753a78624923b70405a344136aaa84e5473b5582937ab4fafc",
+    "lines": 19,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Controllers/HomeController.cs",
+    "sha256": "414615af4d2a77aa02492941e84dd7b6d5fd4593debaa058a0f8826460f5188d",
+    "lines": 23,
+    "read": "complete",
+    "symbols": [
+      "HomeController"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Controllers/LoggingController.cs",
+    "sha256": "754f59c3c4b2f578ec4aee2817897bfe3a369cb0d0a0bfaa813962af266e2f81",
+    "lines": 138,
+    "read": "complete",
+    "symbols": [
+      "LoggingController",
+      "LogEntry",
+      "LogEntryMap"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Controllers/OgameController.cs",
+    "sha256": "5d02b1e21c05249b70d845cf703691664ef17a795b672ad72072cd753b5b0186",
+    "lines": 44,
+    "read": "complete",
+    "symbols": [
+      "OgameController"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Controllers/SettingsController.cs",
+    "sha256": "54c0735ea4462b7c6d98e6437ea9df927a5b3944a8c5d1115b39cd8f0a8342ce",
+    "lines": 63,
+    "read": "complete",
+    "symbols": [
+      "SettingsController"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Models/ErrorViewModel.cs",
+    "sha256": "372dd490da7a341da61c03abd847b670791f63d3a167f0b9d355a4c1044c710e",
+    "lines": 7,
+    "read": "complete",
+    "symbols": [
+      "ErrorViewModel"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Models/InstanceListModel.cs",
+    "sha256": "23bdd61329024c2a14bcb7de300df50d056998595dbb0d0b4fbc7dbcba987b0b",
+    "lines": 8,
+    "read": "complete",
+    "symbols": [
+      "InstanceListModel"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Models/InstanceModel.cs",
+    "sha256": "6ca2fb2c69329a2ad18f6f7dce379db93fd635c4e4ac659a291b87d316789104",
+    "lines": 6,
+    "read": "complete",
+    "symbols": [
+      "InstanceModel"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Models/LogJson.cs",
+    "sha256": "333d5488b0cfec71cd15a0f2981d50f6450416c10a30ef840e748b5e8260ca22",
+    "lines": 5,
+    "read": "complete",
+    "symbols": [
+      "LogJson"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Models/SettingsModel.cs",
+    "sha256": "8be9e02350be64e1be1caae1212c8588032feccde6f1f6370319bea85de90028",
+    "lines": 5,
+    "read": "complete",
+    "symbols": [
+      "SettingsModel"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Program.cs",
+    "sha256": "cf7e2484de20efe403f898f172e14410a2a08a7d1cd9792a1dcabf086d7cf6f4",
+    "lines": 75,
+    "read": "complete",
+    "symbols": [
+      "WebApp"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Properties/launchSettings.json",
+    "sha256": "f3e5fd6f2041e9609878b0384527c9d8c98d75a07e4e1f518bb4871547bc4a19",
+    "lines": 28,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/TBot.WebUI.csproj",
+    "sha256": "cc1f2d7c32fe2f4a77c79fb390606343546df25dd79fc84884e574146cb4cf35",
+    "lines": 49,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Home/Index.cshtml",
+    "sha256": "a114f4665d8e58902ed5aab773802895258e5d51c6289f281fc955ed034f3174",
+    "lines": 8,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Home/Privacy.cshtml",
+    "sha256": "4a274324cebc4d4ba7018860c3c52d1a7f79d02412be6f57c4a04eb4e47b772a",
+    "lines": 6,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Logging/Index.cshtml",
+    "sha256": "1d9511af6ea7075c8f18d74445f2fff154df13c4aad39ff4158e4694b41f3a24",
+    "lines": 58,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Ogame/Index.cshtml",
+    "sha256": "08b6559b59bf6cad2b096a63ea09b5a57f111f31a48a26288c229b70a75b72df",
+    "lines": 31,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Settings/Index.cshtml",
+    "sha256": "bede7013737937a2aac662d1a0c0e18a60bad681a8c527507ce46f5dd3ef146f",
+    "lines": 31,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Shared/Error.cshtml",
+    "sha256": "3c6d2ecdb88e20eecc9a4717bfe26b047ecdbafc0d64b7114bc58b436aaf1e42",
+    "lines": 25,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Shared/_Layout.cshtml",
+    "sha256": "e044a49c9c09e3885c21b9242b58e956b2806c2674dee11512a66404a728a2b1",
+    "lines": 78,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Shared/_Layout.cshtml.css",
+    "sha256": "f529461dd4c55567c8d43f5c1bde1445c12ec8c9f4cc4b2de490287595b76fde",
+    "lines": 48,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/Shared/_ValidationScriptsPartial.cshtml",
+    "sha256": "fb1778070041325577c8463415f2d445aad6ccf35685bd71cddea0a0bb02b9c6",
+    "lines": 2,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/_ViewImports.cshtml",
+    "sha256": "6e6923d7b3002c348fe3afecf2746eefdf848048d52d8dc8fce0af6b002fb06a",
+    "lines": 3,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/Views/_ViewStart.cshtml",
+    "sha256": "f6dceb9e6258ad80525250b5faf8454ab7688b0f5d58a253529149f42d4ec50c",
+    "lines": 3,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/appsettings.Development.json",
+    "sha256": "817db0bf2ecca78364c41dbaf7949bf2504cf47a1c3d0d54f3be8178fefc030b",
+    "lines": 8,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/appsettings.json",
+    "sha256": "2d8bb40059df22089b94c025be8baad5a869b72d4d755d199c872f03bfe6f225",
+    "lines": 9,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/css/JSONedtr-dark.css",
+    "sha256": "780123b9965b519be1b9c1de79bef57835ee23da68581bea0130a791ef2875d2",
+    "lines": 101,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/css/JSONedtr.css",
+    "sha256": "e9853fb3b2d3297c41bed6d099f0a89a933e43f0745e756b7c9fab770c0ed0ba",
+    "lines": 97,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/css/logging.css",
+    "sha256": "33d9a94c785aae2ca13734f902edfcd9041b2959f268eba04d3706f9b20fe7f3",
+    "lines": 88,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/css/settings.css",
+    "sha256": "8d4823e19767b6a17239c6cb75fd780bd2d8d046b2c77590d04aa389b7bc28bf",
+    "lines": 47,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/css/site.css",
+    "sha256": "d66f23075a81070c68b3d7b057e8600dafd714437c62c8e88a11688c3b53f0ad",
+    "lines": 51,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/js/JSONedtr.js",
+    "sha256": "9494a9ff7e0e453693406ba98d7a46828441d188d11b7f937eb04d25a313f72e",
+    "lines": 213,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/js/logging.js",
+    "sha256": "5b4c3dff54b29603846f45fb1e0164a4dc90fd90ed52ba9c48cfe6be3580f3cd",
+    "lines": 278,
+    "read": "complete",
+    "symbols": [
+      "function"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/js/settings.js",
+    "sha256": "188831a4b95dddaeafa06caaef794f7e2439a321dc68dea350611319313dcc7b",
+    "lines": 64,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/js/site.js",
+    "sha256": "c35734e7a015b4a061d45a5b93b2536ea359ba9ac313e17df461576967a9def3",
+    "lines": 12,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/manifest.json",
+    "sha256": "bbea6ac2b334b2f49d5194a6bf86204bd22a0840684c8a478b4b18be2fd77e87",
+    "lines": 51,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.WebUI/wwwroot/serviceWorker.js",
+    "sha256": "529e1fc9d04c8e2276754f13a5fd4b8d92771d7f9d49a5bccbcbdaa190a3b773",
+    "lines": 3,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot.sln",
+    "sha256": "0f4f6b3ab45eaae1192322e7ed9d135c2908c206e752c14c0696a03d9dc2eb6d",
+    "lines": 79,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Helpers/ColoredConsoleWriter.cs",
+    "sha256": "d28979760293a5f6629498b555c3416142f374a6491b2443347335fc42ec302d",
+    "lines": 40,
+    "read": "complete",
+    "symbols": [
+      "ColoredConsoleWriter"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Helpers/ConsoleHelpers.cs",
+    "sha256": "2ed9fcdda8c8e6f908316c4bd79d582892966bc00dc9ae7da1e64084947d046d",
+    "lines": 27,
+    "read": "complete",
+    "symbols": [
+      "ConsoleHelpers"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Helpers/FormattingHelper.cs",
+    "sha256": "f3dedbcd3ba796bcf001b3982b8bf2247586f2a617f8dfdcfdd5612af5ed45a6",
+    "lines": 36,
+    "read": "complete",
+    "symbols": [
+      "FormattingHelper"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Helpers/GeneralHelper.cs",
+    "sha256": "7e3ae726517c38b44a9bf5d0c8c36623465b193730f0da147f402c15b4e4f6ff",
+    "lines": 49,
+    "read": "complete",
+    "symbols": [
+      "GeneralHelper"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Helpers/RandomizeHelper.cs",
+    "sha256": "2f8220c094196cbe2a1de0d2729364d0be1d5b6b17c253613f1ec65e2a7f03af",
+    "lines": 41,
+    "read": "complete",
+    "symbols": [
+      "RandomizeHelper"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Includes/AsyncTimer.cs",
+    "sha256": "372b68e6b11069c2cbe1d785bcf340fbf2c070dfd804ca136706b491d53e0441",
+    "lines": 193,
+    "read": "complete",
+    "symbols": [
+      "AsyncTimer"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Includes/Extensions.cs",
+    "sha256": "e16cc234ba9f171366cdfd81f1398e7dd0e9203704bdee928cd9be896eb907b3",
+    "lines": 47,
+    "read": "complete",
+    "symbols": [
+      "Extensions",
+      "CelestialComparer"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Includes/IFleetScheduler.cs",
+    "sha256": "7f37d8d5d9f20d3c00c588605261f1bbdd7b8e200a90edbebf290cfa5b32c370",
+    "lines": 27,
+    "read": "complete",
+    "symbols": [
+      "IFleetScheduler"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Includes/IInstanceManager.cs",
+    "sha256": "efbdcea73547563d049ed84f2a94f67980ff7a0b557e84af7ae007ab718db35d",
+    "lines": 13,
+    "read": "complete",
+    "symbols": [
+      "IInstanceManager"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Includes/ITelegramMessenger.cs",
+    "sha256": "da99b98c73f9a1b31d1ec1bb7395e8187f920fbfdbe521669d008b61aa3f5b99",
+    "lines": 26,
+    "read": "complete",
+    "symbols": [
+      "ITelegramMessenger"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Includes/Optional.cs",
+    "sha256": "ebff8675794f1901af7c193ff65733a4938813a767268dd7e965efd3446f61ba",
+    "lines": 33,
+    "read": "complete",
+    "symbols": [
+      "Optional"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/Properties/Resources.resx",
+    "sha256": "4d3ee9059f5b98ab1806f6916ebea2a8c56023f8c63ddfd80b7378d27d1aa0f6",
+    "lines": 120,
+    "read": "complete",
+    "symbols": [
+      "that"
+    ],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "TBot/TBot.csproj",
+    "sha256": "96dc10dd5a6fc238c634029e9d8d9edcadf90f301cde9405e4713016a500b69d",
+    "lines": 90,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  },
+  {
+    "path": "Docker/Dockerfile",
+    "sha256": "3cc9272ac23398d9e06042092749cfa5233bdbc5a2cbf712983b853d7fc6261d",
+    "lines": 36,
+    "read": "complete",
+    "symbols": [],
+    "scope": "parent: WebUI,settings implementation,logging,helpers,build/assets"
+  }
+]

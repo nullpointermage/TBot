@@ -1,0 +1,68 @@
+{
+  "task": "config-lifecycle-telegram documentation subagent",
+  "generated": "see mtime; all paths relative to /home/kelsier/Projects/TBot",
+  "repo": {
+    "path": "source",
+    "branch": "docs/comprehensive-handbook",
+    "commit": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+    "submodule_osource": "ogame fbd0fda6ba9019c128926614f9865ba38a67b627 (verified via git submodule status, not read)"
+  },
+  "assigned_files_read_in_full": [
+    {"path": "source/TBot/Exceptions/AccountInVacationModeException.cs", "lines": 22},
+    {"path": "source/TBot/Exceptions/MissingConfigurationException.cs", "lines": 22},
+    {"path": "source/TBot/Exceptions/UnableToLoginException.cs", "lines": 22},
+    {"path": "source/TBot/Models/IntervalType.cs", "lines": 20},
+    {"path": "source/TBot/Models/TBotInstanceData.cs", "lines": 36},
+    {"path": "source/TBot/Program.cs", "lines": 125},
+    {"path": "source/TBot/Services/CmdLineArgsService.cs", "lines": 47},
+    {"path": "source/TBot/Services/ITBotMain.cs", "lines": 39},
+    {"path": "source/TBot/Services/InstanceManager.cs", "lines": 292},
+    {"path": "source/TBot/Services/OgameCaptchaSolver.cs", "lines": 1461},
+    {"path": "source/TBot/Services/SettingsFileWatcher.cs", "lines": 51},
+    {"path": "source/TBot/Services/TBotMain.cs", "lines": 1609},
+    {"path": "source/TBot/Services/TelegramMessenger.cs", "lines": 1426},
+    {"path": "source/TBot/Services/UserData.cs", "lines": 43},
+    {"path": "source/TBot/instance_settings.json", "lines": 560},
+    {"path": "source/TBot/profiles/autofarm.json", "lines": 36},
+    {"path": "source/TBot/profiles/brainlf.json", "lines": 28},
+    {"path": "source/TBot/profiles/brainnolf.json", "lines": 28},
+    {"path": "source/TBot/profiles/buildDef.json", "lines": 15},
+    {"path": "source/TBot/profiles/sleeper.json", "lines": 59},
+    {"path": "source/TBot/settings.json", "lines": 23}
+  ],
+  "additional_sources_read_or_grepped_for_evidence": [
+    "source/TBot.Common/Settings/SettingsService.cs (360 lines, full)",
+    "source/TBot/Helpers/RandomizeHelper.cs (41 lines, full)",
+    "source/TBot/Workers/* and TBot/Workers/Brain/* (settings-consumer scan, targeted reads)",
+    "source/TBot/Includes|Helpers CalculationService/WorkerBase/CelestialWorkerBase/WorkerFactory (targeted)",
+    "source/TBot.WebUI/Program.cs, TBot.WebUI/Controllers/SettingsController.cs (targeted)",
+    "source/TBot.Ogame.Infrastructure/Models/ProxySettings.cs, OgameService.cs (arg building, targeted)"
+  ],
+  "consumer_scan_method": "regex 'InstanceSettings.<dotted chain>' over all .cs in TBot, TBot.Common, TBot.Ogame.Infrastructure, TBot.WebUI (bin/obj skipped) + manual IsSettingSet/GetSetting/write-site review; results in settings-catalog.json consumers[]",
+  "outputs": [
+    "source/docs/configuration/README.md",
+    "source/docs/configuration/global.md",
+    "source/docs/configuration/instance.md",
+    "source/docs/configuration/features.md",
+    "source/docs/lifecycle.md",
+    "source/docs/telegram.md",
+    "documentation-work/settings-catalog.json",
+    "documentation-work/config-lifecycle-findings.md",
+    "documentation-work/catalog_meta.py",
+    "documentation-work/gen_catalog.py",
+    "documentation-work/emit_docs.py"
+  ],
+  "coverage": {
+    "catalog_entries_total": 460,
+    "global": 15,
+    "instance": 445,
+    "entries_missing_description": 0,
+    "entries_without_consumers_or_write_site": 0,
+    "docs_leaf_coverage_check": "emit_docs.py asserts every catalog path string appears in its md; 0 missing (see run output)"
+  },
+  "not_done": [
+    "ogame submodule internals not audited (out of scope, parent owns)",
+    "release/, state/, running service configs untouched per task constraints",
+    "SleepMode.LogoutOnSleep is documented in findings + catalog meta notes but has no template occurrence, hence no catalog row (key is dead code anyway)"
+  ]
+}

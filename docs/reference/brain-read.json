@@ -1,0 +1,368 @@
+{
+  "generated_from_commit": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+  "submodule": "fbd0fda6ba9019c128926614f9865ba38a67b627",
+  "files": [
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Includes/CalculationService.cs",
+      "rel": "TBot/Includes/CalculationService.cs",
+      "sha256": "5128796fb0abe8cec605b57a52afe7a7ed06c347dc5ed9158e4728e5f4e7a6a8",
+      "bytes": 216952,
+      "lines": 5068,
+      "classes": [
+        "CalculationService"
+      ],
+      "methods": [
+        "AreThereIncomingResources",
+        "CalcCrystalProduction",
+        "CalcCumulativeLabLevel",
+        "CalcDaysOfInvestmentReturn",
+        "CalcDepositCapacity",
+        "CalcDeuteriumProduction",
+        "CalcDistance",
+        "CalcEnergyProduction",
+        "CalcExpeditionShips",
+        "CalcFleetCapacity",
+        "CalcFleetFuelCapacity",
+        "CalcFleetPrediction",
+        "CalcFleetSpeed",
+        "CalcFlightTime",
+        "CalcFoodConsumption",
+        "CalcFoodConsumptionBonus",
+        "CalcFoodProduction",
+        "CalcFoodProductionBonus",
+        "CalcFuelConsumption",
+        "CalcFullExpeditionShips",
+        "CalcGalaxyDistance",
+        "CalcIdealExpeditionShips",
+        "CalcLFBuildingPopulationTechCapBonus",
+        "CalcLFBuildingsPopulationCostBonus",
+        "CalcLFBuildingsResourcesCostBonus",
+        "CalcLFEnergyPrice",
+        "CalcLFPopulationPrice",
+        "CalcLFPrice",
+        "CalcLFTime",
+        "CalcLivingSpace",
+        "CalcLivingSpaceBonus",
+        "CalcMaxBuildableNumber",
+        "CalcMaxCrawlers",
+        "CalcMaxExpeditions",
+        "CalcMaxPlanets",
+        "CalcMaxTransportableResources",
+        "CalcMetalProduction",
+        "CalcMilitaryShipForExpedition",
+        "CalcMultipleOrigin",
+        "CalcNeededSolarSatellites",
+        "CalcNextAstroDOIR",
+        "CalcNextDaysOfInvestmentReturn",
+        "CalcNextPlasmaTechDOIR",
+        "CalcOptimalCrawlers",
+        "CalcOptimalFarmSpeed",
+        "CalcPlanetDistance",
+        "CalcPlanetHourlyProduction",
+        "CalcPrice",
+        "CalcProductionTime",
+        "CalcROI",
+        "CalcSatisfied",
+        "CalcShipCapacity",
+        "CalcShipConsumption",
+        "CalcShipFuelCapacity",
+        "CalcShipNumberForPayload",
+        "CalcShipSpeed",
+        "CalcSlotsPriority",
+        "CalcSlowestSpeed",
+        "CalcSystemDistance",
+        "CalcmaxDefencesBuildable",
+        "CountPlanetsInRange",
+        "GetFirstReturningEspionage",
+        "GetFirstReturningExpedition",
+        "GetFoodBuilding",
+        "GetIncomingFleets",
+        "GetIncomingFleetsWithResources",
+        "GetLFBuildingRequirements",
+        "GetLastReturningEspionage",
+        "GetLeastExpensiveLFBuilding",
+        "GetLessExpensiveLFBuilding",
+        "GetLessExpensiveLFTechToBuild",
+        "GetMaxBuildings",
+        "GetMaxFacilities",
+        "GetMaxLunarFacilities",
+        "GetMissionsInProgress",
+        "GetNextBuildingToBuild",
+        "GetNextDepositToBuild",
+        "GetNextEnergySourceToBuild",
+        "GetNextFacilityToBuild",
+        "GetNextLFBuildingToBuild",
+        "GetNextLFTechToBuild",
+        "GetNextLevel",
+        "GetNextLunarFacilityToBuild",
+        "GetNextMineToBuild",
+        "GetNextResearchToBuild",
+        "GetOtherBuildings",
+        "GetPopulationBuilding",
+        "GetProductionEnergyDelta",
+        "GetRequiredEnergyDelta",
+        "GetSolarSatelliteOutput",
+        "GetT2Building",
+        "GetT3Building",
+        "GetTechBuilding",
+        "GetValidSpeedsForClass",
+        "IsAstrophysicsPositionValid",
+        "IsThereMoonHere",
+        "IsThereTransportTowardsCelestial",
+        "MayAddShipToExpedition",
+        "ParseCelestialsList",
+        "ShouldAbandon",
+        "ShouldBuildCrystalStorage",
+        "ShouldBuildDeuteriumTank",
+        "ShouldBuildEnergySource",
+        "ShouldBuildJumpGate",
+        "ShouldBuildLFBasics",
+        "ShouldBuildLunarBase",
+        "ShouldBuildMetalStorage",
+        "ShouldBuildMissileSilo",
+        "ShouldBuildNanites",
+        "ShouldBuildResearchLab",
+        "ShouldBuildRoboticFactory",
+        "ShouldBuildSensorPhalanx",
+        "ShouldBuildShipyard",
+        "ShouldBuildSpaceDock",
+        "ShouldBuildTerraformer",
+        "ShouldResearchEnergyTech",
+        "isUnlocked"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Includes/ICalculationService.cs",
+      "rel": "TBot/Includes/ICalculationService.cs",
+      "sha256": "a119d7e07e7ffe9ea2dd0bb05da23a66781202b1947e51d8e790c142cc241f92",
+      "bytes": 25236,
+      "lines": 162,
+      "classes": [],
+      "methods": [],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoCargoWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoCargoWorker.cs",
+      "sha256": "38c8387308ad35602c7e226033e28e5dc749a0571dec86b447100d66594e4272",
+      "bytes": 8981,
+      "lines": 169,
+      "classes": [
+        "AutoCargoWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoDefenceWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoDefenceWorker.cs",
+      "sha256": "2df939b70abfdecefe407696817714751e99bc38d6f5015fc10a8d1cf17446c0",
+      "bytes": 8012,
+      "lines": 157,
+      "classes": [
+        "AutoDefenceWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoFleetJumpGateWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoFleetJumpGateWorker.cs",
+      "sha256": "5fd40278b76a87778ba0e6ba2f3f43ab3777913f364836aef8e57ead9d648cd6",
+      "bytes": 11411,
+      "lines": 307,
+      "classes": [
+        "AutoFleetJumpGateWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings",
+        "RunFromTelegramAsync",
+        "SetDefaultWorkerPeriod"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoMineCelestialWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoMineCelestialWorker.cs",
+      "sha256": "49fbf2a2e3fd8536c992a6910fd61f803f30b20909ad928a78b76e563cd1af30",
+      "bytes": 52852,
+      "lines": 803,
+      "classes": [
+        "AutoMineCelestialWorker"
+      ],
+      "methods": [
+        "AutoMineCelestial",
+        "CalcAutoMineTimer",
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoMineWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoMineWorker.cs",
+      "sha256": "988df560c70aea4eb73a9badfa6f5ab34a1e98ede9a32e99258255081a1f97d1",
+      "bytes": 8867,
+      "lines": 157,
+      "classes": [
+        "AutoMineWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoRepatriateWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoRepatriateWorker.cs",
+      "sha256": "7a5988210a63d8c5504d46e25986b1ebc69da469e02f267f79a2d00d68a45c8e",
+      "bytes": 2680,
+      "lines": 76,
+      "classes": [
+        "AutoRepatriateWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/AutoResearchWorker.cs",
+      "rel": "TBot/Workers/Brain/AutoResearchWorker.cs",
+      "sha256": "bd375670c93e9fe70c28833444b99dc9ff0486d410a84e82c10ed6a20bb42700",
+      "bytes": 37707,
+      "lines": 535,
+      "classes": [
+        "AutoResearchWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/BuyOfferOfTheDayWorker.cs",
+      "rel": "TBot/Workers/Brain/BuyOfferOfTheDayWorker.cs",
+      "sha256": "333a941630150c5d4631777e43aea167d426a47c1c7b8773575611f58ca3be14",
+      "bytes": 2558,
+      "lines": 68,
+      "classes": [
+        "BuyOfferOfTheDayWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/LifeformsAutoMineCelestialWorker.cs",
+      "rel": "TBot/Workers/Brain/LifeformsAutoMineCelestialWorker.cs",
+      "sha256": "693259ac4d0e4893d6b133f94b3ad88cefff329f15c30925128b5b2a3b94a5f2",
+      "bytes": 34253,
+      "lines": 523,
+      "classes": [
+        "LifeformsAutoMineCelestialWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings",
+        "LifeformAutoMineCelestial"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/LifeformsAutoMineWorker.cs",
+      "rel": "TBot/Workers/Brain/LifeformsAutoMineWorker.cs",
+      "sha256": "afc2efcc8ccf2e5f2e9d64b22240c4b769607e5ce3e7a33792edaf04b2bef4c2",
+      "bytes": 11179,
+      "lines": 183,
+      "classes": [
+        "LifeformsAutoMineWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/LifeformsAutoResearchCelestialWorker.cs",
+      "rel": "TBot/Workers/Brain/LifeformsAutoResearchCelestialWorker.cs",
+      "sha256": "a7916996c22bc1add90a11c8c397966e1b1ec4bd090f5fb9f1282d5db6c6931d",
+      "bytes": 33688,
+      "lines": 491,
+      "classes": [
+        "LifeformsAutoResearchCelestialWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings",
+        "LifeformAutoResearchCelestial"
+      ],
+      "read_completely": true
+    },
+    {
+      "path": "/home/kelsier/Projects/TBot/source/TBot/Workers/Brain/LifeformsAutoResearchWorker.cs",
+      "rel": "TBot/Workers/Brain/LifeformsAutoResearchWorker.cs",
+      "sha256": "e88be46a25f75b6dfc9fd13cb79a8a44aabab9d3ab6d753c312a34079dbe2185",
+      "bytes": 8773,
+      "lines": 132,
+      "classes": [
+        "LifeformsAutoResearchWorker"
+      ],
+      "methods": [
+        "Execute",
+        "GetFeature",
+        "GetLogSender",
+        "GetWorkerName",
+        "IsWorkerEnabledBySettings"
+      ],
+      "read_completely": true
+    }
+  ]
+}

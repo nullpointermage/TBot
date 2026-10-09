@@ -1,0 +1,192 @@
+{
+ "generated_utc": "2026-10-09T00:15:40Z",
+ "repo": "/home/kelsier/Projects/TBot/source",
+ "git_head": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+ "go_submodule": "fbd0fda6ba9019c128926614f9865ba38a67b627",
+ "files_read_full": [
+  {
+   "path": "TBot/Model/AutoFarmBlacklist.cs",
+   "sha256": "354fff60800d7444e0884852151f9bf4596b63a226ca27152c7e5ab77f397fd0",
+   "lines": 168,
+   "bytes": 4239,
+   "symbols": [
+    "BlacklistReason (type, L9)",
+    "BlacklistedTarget (type, L16)",
+    "AutoFarmBlacklist (type, L37)"
+   ]
+  },
+  {
+   "path": "TBot/Model/AutoFarmSuccessfulTargets.cs",
+   "sha256": "978bcc20e3fab6723559b02489ca61628e89fa887094d941ee22d91667ed7140",
+   "lines": 306,
+   "bytes": 6797,
+   "symbols": [
+    "SuccessfulTarget (type, L10)",
+    "AutoFarmSuccessfulTargets (type, L62)"
+   ]
+  },
+  {
+   "path": "TBot/Model/SharedFarmState.cs",
+   "sha256": "80837401bacbb7715d9d23c84d0f40deb4d1cca2539ac7409f044aa1037672a6",
+   "lines": 601,
+   "bytes": 15004,
+   "symbols": [
+    "FarmBotInstance (type, L13)",
+    "ScannedTarget (type, L25)",
+    "ClaimedAttack (type, L63)",
+    "SharedFarmState (type, L105)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/AutoDiscoveryWorker.cs",
+   "sha256": "fb46f955b8243992e0bab6a6f16b73e7f905f418bb4d1c254a6ef770ddb96c7f",
+   "lines": 435,
+   "bytes": 15507,
+   "symbols": [
+    "AutoDiscoveryWorker (type, L19)",
+    "OriginCursor (type, L25)",
+    "DiscoveryRunContext (type, L31)",
+    "CoordinateComparer (type, L51)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/AutoFarmWorker.cs",
+   "sha256": "9da716e77ca09eb85682414b8215129c108591e915e7d76acab518526473ff21",
+   "lines": 1300,
+   "bytes": 73716,
+   "symbols": [
+    "AutoFarmWorker (type, L19)",
+    "SpyOriginResult (type, L265)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/CelestialWorkerBase.cs",
+   "sha256": "dfab9d62b6cb9660443a4713b6c53978bb7ebe893f076a056bbff2a8f778c4d8",
+   "lines": 192,
+   "bytes": 5596,
+   "symbols": [
+    "CelestialWorkerBase (type, L18)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/ColonizeWorker.cs",
+   "sha256": "0fabd3b8132acd7a5b49fd7d5e2079ea1c8cb2859a6423a57d87616e24652b15",
+   "lines": 489,
+   "bytes": 26548,
+   "symbols": [
+    "ColonizeWorker (type, L18)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/DefenderWorker.cs",
+   "sha256": "afa241633027ab41c2f1afbd67e284c73cc7483413efde3ddd24bb871238c3c3",
+   "lines": 580,
+   "bytes": 26557,
+   "symbols": [
+    "DefenderWorker (type, L21)",
+    "ScheduledFleetSave (type, L30)",
+    "ScheduledRecall (type, L44)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/ExpeditionsWorker.cs",
+   "sha256": "27a8715058dbde0ebb3e1d028c2fb61a25ff5b592fa24f96f38213d2c350f67f",
+   "lines": 552,
+   "bytes": 23866,
+   "symbols": [
+    "ExpeditionsWorker (type, L19)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/FleetScheduler.cs",
+   "sha256": "03ac281b4017029558f7c1717e1865bed0323b1340f5c7f9b31938064974fd81",
+   "lines": 1482,
+   "bytes": 76188,
+   "symbols": [
+    "FleetScheduler (type, L22)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/HarvestWorker.cs",
+   "sha256": "c6fbdfb0bcc7ae78751690522a198c069ecbbecf170742a24f0eb31edf72d5a8",
+   "lines": 271,
+   "bytes": 14037,
+   "symbols": [
+    "HarvestWorker (type, L18)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/ITBotCelestialWorker.cs",
+   "sha256": "d853717cce7b6c070ac78f6597b09c5785edb81afc3a43044cd5f3fa5a8cfa33",
+   "lines": 18,
+   "bytes": 436,
+   "symbols": [
+    "ITBotCelestialWorker (type, L13)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/ITBotOgamedBridge.cs",
+   "sha256": "9c99cd04bca8272610ab4d3e73d8b6da6bd3a3c4cfc87260b5e5a2ba91b88a89",
+   "lines": 28,
+   "bytes": 990,
+   "symbols": [
+    "ITBotOgamedBridge (type, L9)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/ITBotWorker.cs",
+   "sha256": "618e05ebed3d037cb0e5a0d73f976c0a43aa7df95c11a6c2c15c10f9f7766f82",
+   "lines": 41,
+   "bytes": 1237,
+   "symbols": [
+    "ITBotWorker (type, L14)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/IWorkerFactory.cs",
+   "sha256": "4dbd8f4a9c1b9a33c081cde8a51a3361b5ead1cf808c646eb75092c46370e1c3",
+   "lines": 18,
+   "bytes": 720,
+   "symbols": [
+    "IWorkerFactory (type, L12)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/TBotOgamedBridge.cs",
+   "sha256": "84891a07fd33d1be97721f1a30b7de446d6134ef8213cfe4f7c14337eda22123",
+   "lines": 341,
+   "bytes": 13521,
+   "symbols": [
+    "TBotOgamedBridge (type, L18)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/WorkerBase.cs",
+   "sha256": "44edc03b7b49fc8c8bd6a6a7838083b8558c41c835ce2f7dfcc3a4352417c5bf",
+   "lines": 194,
+   "bytes": 5696,
+   "symbols": [
+    "WorkerBase (type, L20)"
+   ]
+  },
+  {
+   "path": "TBot/Workers/WorkerFactory.cs",
+   "sha256": "bb7cf643451c0815f252c2835b66a57373ec3120a5d89bd7d8cb291c36c58bb8",
+   "lines": 128,
+   "bytes": 5845,
+   "symbols": [
+    "WorkerFactory (type, L17)"
+   ]
+  }
+ ],
+ "supporting_files_consulted": [
+  "TBot.Common/Settings/SettingsService.cs",
+  "TBot/Includes/CalculationService.cs (CalcSlotsPriority L4867-4930)",
+  "TBot.Ogame.Infrastructure/Models/RankSlotsPriority.cs",
+  "TBot.Ogame.Infrastructure/Enums/FarmState.cs",
+  "TBot.Ogame.Infrastructure/Enums/SendFleetCode.cs",
+  "TBot/Models/IntervalType.cs",
+  "TBot/Helpers/GeneralHelper.cs (ShouldSleep/ClampSystem/WrapSystem)",
+  "TBot/instance_settings.json (example values only)"
+ ]
+}

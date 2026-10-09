@@ -1,0 +1,6806 @@
+{
+ "ogame/cmd/c/main.go": {
+  "sha256": "5a39ed0ac2cab73edccff3ebc4bd3c8a0b63f5dd7c67fe16e8de73b15d797c34",
+  "lines": 425,
+  "func": [
+   "OGame",
+   "ServerURL",
+   "Login",
+   "Logout",
+   "GetUniverseSpeed",
+   "ServerVersion",
+   "IsUnderAttack",
+   "GetUserInfos",
+   "SendMessage",
+   "GetFleets",
+   "CancelFleet",
+   "GetAttacks",
+   "GalaxyInfos",
+   "GetResearch",
+   "GetPlanetByCoord",
+   "GetPlanet",
+   "DeleteMessage",
+   "GetResourceSettings",
+   "SetResourceSettings",
+   "GetResourcesBuildings",
+   "GetDefense",
+   "GetShips",
+   "GetFacilities",
+   "Build",
+   "BuildCancelable",
+   "BuildProduction",
+   "BuildBuilding",
+   "BuildTechnology",
+   "BuildDefense",
+   "BuildShips",
+   "ConstructionsBeingBuilt",
+   "CancelBuilding",
+   "CancelResearch",
+   "GetResources",
+   "SendFleet",
+   "main"
+  ],
+  "type": [],
+  "const": [],
+  "var": [
+   "bot"
+  ]
+ },
+ "ogame/cmd/cli/main.go": {
+  "sha256": "cecb5b9630ffc20e8d9cd95b5746f43be2e17e2b7631bba764531926842844ec",
+  "lines": 90,
+  "func": [
+   "main"
+  ],
+  "type": [],
+  "const": [
+   "ascii"
+  ],
+  "var": []
+ },
+ "ogame/cmd/ogamed-tbot/LfBonuses.go": {
+  "sha256": "6b65bf16b17e3080abd88f0304655db85f498a312dcf6615e4582a612f6382a6",
+  "lines": 42,
+  "func": [
+   "NewLfBonuses"
+  ],
+  "type": [
+   "LfBonuses",
+   "CostTimeBonuses",
+   "CostTimeBonus",
+   "LfShipBonuses",
+   "LfShipBonus",
+   "LfResourceBonuses"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/cmd/ogamed-tbot/extracts.go": {
+  "sha256": "7ea28079643bae45e33facd6804a2b165eb2a7176b5da751c1de4a9d55146952",
+  "lines": 126,
+  "func": [
+   "extractLfBonusesFromDoc",
+   "extractCategories",
+   "ExtractLfBonuses",
+   "ExtractLfBonusesFromDoc",
+   "assignBonusValue",
+   "extractShipStatBonus",
+   "extractCostReductionBonus",
+   "extractTimeReductionBonus",
+   "extractBonusFromStringPercentage",
+   "extractBonusFromString"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/cmd/ogamed-tbot/handlers.go": {
+  "sha256": "26b351fc2542512379151f90b074e903cb454fd95b43b2e1cf103e9c6214e845",
+  "lines": 435,
+  "func": [
+   "PostToggleManualModeHandler",
+   "GetAllianceClassHandler",
+   "GetExpeditionMessagesHandler",
+   "GetFromGameHandler",
+   "PostToGameHandler",
+   "GetStaticHEADHandler",
+   "GetStaticHandler",
+   "replaceHostnameWithRegxp",
+   "removeCookiesBanner",
+   "ingameUi",
+   "GetLfBonusesTbotHandler",
+   "getLfBonuses",
+   "getOptions",
+   "ManualTimerTx",
+   "GetLfBonusesHandler",
+   "GetPositionsAvailableForDiscoveryFleet",
+   "GetAvailableDiscoveries"
+  ],
+  "type": [],
+  "const": [
+   "var",
+   "if",
+   "if"
+  ],
+  "var": []
+ },
+ "ogame/cmd/ogamed-tbot/main.go": {
+  "sha256": "e333f69080a5795578e7d9b2c62ecf5964a334150fe5ec4e347d73a655f6b114",
+  "lines": 545,
+  "func": [
+   "main",
+   "start",
+   "AddNewAccount"
+  ],
+  "type": [],
+  "const": [
+   "var",
+   "var"
+  ],
+  "var": [
+   "version",
+   "commit",
+   "date"
+  ]
+ },
+ "ogame/cmd/ogamed-tbot/tbot-solver.go": {
+  "sha256": "b5dd504c83b9ff5ddba2d0aea4eb98f9cb40ae6436cd52f242fbbb08d3be4ef2",
+  "lines": 69,
+  "func": [
+   "TbotSolver"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/cmd/ogamed/main.go": {
+  "sha256": "d79b7f6a302d9020b3930a3238474c02daaf791c8f94f8200f62261629339190",
+  "lines": 388,
+  "func": [
+   "main",
+   "start"
+  ],
+  "type": [],
+  "const": [],
+  "var": [
+   "version",
+   "commit",
+   "date"
+  ]
+ },
+ "ogame/ogame.go": {
+  "sha256": "cecc1615f5268174e7b6683117290c997fe2daa5e9efe26538be6a4a578083e6",
+  "lines": 1,
+  "func": [],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/device/device.go": {
+  "sha256": "23ea90405681ae73459188519b045a6251d3307ac1cde8298aa4cfd111d90f4c",
+  "lines": 1684,
+  "func": [
+   "Do",
+   "GetClient",
+   "SetClient",
+   "WithClient",
+   "WithClientE",
+   "WithClientFn",
+   "NewBuilder",
+   "SetPersistor",
+   "SetOsName",
+   "SetBrowserName",
+   "SetOsVersion",
+   "SetBrowserEngineName",
+   "SetHardwareConcurrency",
+   "SetCanvas2DInfo",
+   "SetMemory",
+   "SetOfflineAudioCtx",
+   "ScreenColorDepth",
+   "SetScreenWidth",
+   "SetScreenHeight",
+   "SetWebglInfo",
+   "SetUserAgent",
+   "SetNavigatorVendor",
+   "SetTimezone",
+   "SetLanguages",
+   "DefaultStoragePath",
+   "Load",
+   "Save",
+   "newFingerprint",
+   "Build",
+   "GetBlackbox",
+   "MarshalJSON",
+   "randChar",
+   "Get27RandChars",
+   "GenNewXVec",
+   "rotateXVec",
+   "getGame1Js",
+   "randFakeHash",
+   "setRandomScreenColorDepth",
+   "setRandomHardwareConcurrency",
+   "setRandomScreenSize",
+   "setRandomNavigatorVendor",
+   "setRandomWebglInfo",
+   "setRandomUserAgent",
+   "setRandomMemory",
+   "setRandomOsVersion",
+   "setRandomBrowserEngineName",
+   "EncryptBlackbox",
+   "DecryptBlackbox",
+   "ParseEncryptedBlackbox",
+   "ParseBlackbox",
+   "ParseBlackboxV8",
+   "ParseBlackboxV9",
+   "ParseBlackboxV11",
+   "ParseBlackboxV12"
+  ],
+  "type": [
+   "Os",
+   "Browser",
+   "Builder",
+   "Persistor",
+   "Device",
+   "FilePersistor",
+   "JsFingerprint"
+  ],
+  "const": [
+   "Android",
+   "Windows",
+   "MacOSX",
+   "Linux",
+   "Ios",
+   "Chrome",
+   "Opera",
+   "Safari",
+   "Edge",
+   "Firefox",
+   "defer",
+   "return",
+   "javascriptISOString",
+   "toEnc",
+   "toEnc",
+   "toEnc",
+   "toEnc",
+   "toEnc",
+   "toEnc",
+   "toEnc"
+  ],
+  "var": [
+   "NowFunc",
+   "languages",
+   "timezones"
+  ]
+ },
+ "ogame/pkg/device/device_test.go": {
+  "sha256": "28e01f8ba54c7b3435b8cf012fdccee4cc359f330250b1945f4d5845d55e83af",
+  "lines": 53,
+  "func": [
+   "Test_DecryptBlackbox"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/exponentialBackoff/exponentialBackoff.go": {
+  "sha256": "6b97f869523e6aaf6a7de70e1515b8bd26caa4e65659208b2fcc836f3c364909",
+  "lines": 76,
+  "func": [
+   "New",
+   "NewWithClock",
+   "Iterator",
+   "LoopForever",
+   "Wait",
+   "Reset"
+  ],
+  "type": [
+   "ExponentialBackoff"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/exponentialBackoff/exponentialBackoff_test.go": {
+  "sha256": "71cc716a8c77d9a2824e498dc4e9371145a3b78e073b679173ea75a41b675a91",
+  "lines": 57,
+  "func": [
+   "TestExponentialBackoff_Wait"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/extractor.go": {
+  "sha256": "545f0db356876f5c651d91be442e756be440c199617849bb2fe228bcd72f23a3",
+  "lines": 593,
+  "func": [],
+  "type": [
+   "FullPageExtractorBytes",
+   "FullPageExtractorDoc",
+   "FullPageExtractorBytesDoc",
+   "OverviewExtractorBytes",
+   "OverviewExtractorDoc",
+   "OverviewExtractorBytesDoc",
+   "FleetsExtractorBytes",
+   "FleetsExtractorDoc",
+   "MovementExtractorBytes",
+   "MovementExtractorDoc",
+   "MovementExtractorBytesDoc",
+   "FleetDispatchExtractorBytes",
+   "FleetDispatchExtractorDoc",
+   "FleetDispatchExtractorBytesDoc",
+   "ShipyardExtractorBytes",
+   "ShipyardExtractorDoc",
+   "ShipyardExtractorBytesDoc",
+   "ResearchExtractorBytes",
+   "ResearchExtractorDoc",
+   "ResearchExtractorBytesDoc",
+   "FacilitiesExtractorBytes",
+   "FacilitiesExtractorDoc",
+   "FacilitiesExtractorBytesDoc",
+   "PhalanxExtractorBytes",
+   "PreferencesExtractorBytes",
+   "PreferencesExtractorDoc",
+   "PreferencesExtractorBytesDoc",
+   "DefensesExtractorBytes",
+   "DefensesExtractorDoc",
+   "DefensesExtractorBytesDoc",
+   "EventListExtractorBytes",
+   "EventListExtractorDoc",
+   "EventListExtractorBytesDoc",
+   "TraderAuctioneerExtractorBytes",
+   "AllianceOverviewExtractorBytes",
+   "BuffActivationExtractorBytes",
+   "MessagesCombatReportExtractorBytes",
+   "MessagesCombatReportExtractorDoc",
+   "MessagesCombatReportExtractorBytesDoc",
+   "DestroyRocketsExtractorBytes",
+   "EmpireExtractorBytes",
+   "EspionageReportExtractorBytes",
+   "EspionageReportExtractorDoc",
+   "EspionageReportExtractorBytesDoc",
+   "MessagesEspionageReportExtractorBytes",
+   "MessagesEspionageReportExtractorDoc",
+   "MessagesEspionageReportExtractorBytesDoc",
+   "MessagesExpeditionExtractorBytes",
+   "MessagesExpeditionExtractorDoc",
+   "MessagesExpeditionExtractorBytesDoc",
+   "FederationExtractorBytes",
+   "GalaxyPageExtractorBytes",
+   "GalaxyExtractorBytes",
+   "FetchResourcesExtractorBytes",
+   "TraderImportExportExtractorBytes",
+   "TraderImportExportExtractorDoc",
+   "FetchTechsExtractorBytes",
+   "ResourcesSettingsExtractorBytes",
+   "ResourcesSettingsExtractorDoc",
+   "ResourcesSettingsExtractorBytesDoc",
+   "HighscoreExtractorBytes",
+   "HighscoreExtractorDoc",
+   "HighscoreExtractorBytesDoc",
+   "MissileAttackLayerExtractorBytes",
+   "MissileAttackLayerExtractorDoc",
+   "MissileAttackLayerExtractorBytesDoc",
+   "JumpGateLayerExtractorBytes",
+   "MessagesMarketplaceExtractorBytes",
+   "LfBuildingsExtractorBytes",
+   "LfBuildingsExtractorDoc",
+   "LfBuildingsExtractorBytesDoc",
+   "LfResearchExtractorBytes",
+   "LfResearchExtractorDoc",
+   "LfResearchExtractorBytesDoc",
+   "LfBonusesExtractorBytes",
+   "LfBonusesExtractorDoc",
+   "LfBonusesExtractorBytesDoc",
+   "ResourcesBuildingsExtractorBytes",
+   "ResourcesBuildingsExtractorDoc",
+   "ResourcesBuildingsExtractorBytesDoc",
+   "PremiumExtractorBytes",
+   "PlanetLayerExtractorDoc",
+   "TechnologyDetailsExtractorBytes",
+   "TechnologyDetailsExtractorDoc",
+   "TechnologyDetailsExtractorBytesDoc",
+   "Extractor"
+  ],
+  "const": [],
+  "var": [
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_",
+   "_"
+  ]
+ },
+ "ogame/pkg/extractor/v10/extractor.go": {
+  "sha256": "e9ed03a892d964a3bae4499c39246dd50cc55d8653620784ba4328b0ff15e291",
+  "lines": 21,
+  "func": [
+   "NewExtractor",
+   "ExtractGalaxyInfos"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v10/extracts.go": {
+  "sha256": "6b9ea2fe65623475f54a05798ab498afc41d4c938da9e1ff4870cd199a58522a",
+  "lines": 312,
+  "func": [
+   "UnmarshalJSON",
+   "Int64",
+   "UnmarshalJSON",
+   "UnmarshalJSON",
+   "UnmarshalJSON",
+   "extractGalaxyInfos"
+  ],
+  "type": [],
+  "const": [
+   "var"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v104/extractor.go": {
+  "sha256": "972c444b5472360cc0452813199541537cd76dcf3a542409e3e17c4ecdd80705",
+  "lines": 30,
+  "func": [
+   "NewExtractor",
+   "ExtractUpgradeToken",
+   "ExtractTearDownToken",
+   "ExtractToken"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v104/extracts.go": {
+  "sha256": "fa3d3c069bab1d625e856ba5c28402da7a736a222a52be7a175ba4218d08e074",
+  "lines": 23,
+  "func": [
+   "extractUpgradeToken",
+   "extractTearDownToken",
+   "ExtractToken"
+  ],
+  "type": [],
+  "const": [
+   "rgx"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11/extractor.go": {
+  "sha256": "4b0d4558d451fa86eb0085e660fd4fa8ce03072d99f8b88c49932bf206ed720c",
+  "lines": 53,
+  "func": [
+   "NewExtractor",
+   "ExtractResourceSettings",
+   "ExtractCancelBuildingInfos",
+   "ExtractCancelResearchInfos",
+   "ExtractCancelLfBuildingInfos",
+   "ExtractLifeformTypeFromDoc",
+   "ExtractJumpGate",
+   "ExtractPreferencesFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11/extractor_test.go": {
+  "sha256": "ab1e22707232df6ace56148f8cf0eff0d5638d7b62385483c457f12680d2148d",
+  "lines": 31,
+  "func": [
+   "TestExtractGalaxyInfos",
+   "TestExtractGalaxyInfos_debrisFloat",
+   "TestCancel"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11/extracts.go": {
+  "sha256": "f78ffe15b0fd556187742485983ff0495d8de74bf1796de69935fcac96040ed6",
+  "lines": 146,
+  "func": [
+   "extractResourceSettingsFromPage",
+   "extractCancelBuildingInfos",
+   "extractCancelResearchInfos",
+   "extractCancelLfBuildingInfos",
+   "ExtractCancelInfos",
+   "extractCharacterClassFromDoc",
+   "extractLifeformTypeFromDoc",
+   "extractJumpGate",
+   "extractPreferencesFromDoc",
+   "extractLanguageFromDoc"
+  ],
+  "type": [],
+  "const": [
+   "r1"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_13_0/extractor.go": {
+  "sha256": "a659efd103441c5aa536d02e33f8faaf42b155ae4896d4d9f1289f556b554562",
+  "lines": 63,
+  "func": [
+   "NewExtractor",
+   "ExtractConstructions",
+   "ExtractProduction",
+   "ExtractOverviewShipSumCountdownFromBytes",
+   "ExtractFleets",
+   "extractFleets",
+   "ExtractFleetsFromDoc",
+   "extractFleetsFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_13_0/extractor_test.go": {
+  "sha256": "7dfe18d598ffa86de3ca3b350648ab4ba43693890f125f38b3f5159b5e5a23cb",
+  "lines": 75,
+  "func": [
+   "TestGetConstructions",
+   "TestExtractProduction",
+   "TestExtractFleet",
+   "TestExtractFleet2"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_13_0/extracts.go": {
+  "sha256": "e84ec2046328a1042a099b2b2a9b2902f234e690a06dfa528484100f2fffe6e1",
+  "lines": 166,
+  "func": [
+   "ExtractConstructions",
+   "extractOverviewShipSumCountdownFromBytes",
+   "extractFleetsFromDoc"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_15_0/extractor.go": {
+  "sha256": "1e931ec2d3e53d5ae1871fdccf8a819df89a04543653ae260dce5e3c50f06ca0",
+  "lines": 107,
+  "func": [
+   "NewExtractor",
+   "ExtractEspionageReport",
+   "ExtractEspionageReportFromDoc",
+   "ExtractEspionageReportMessageIDs",
+   "ExtractEspionageReportMessageIDsFromDoc",
+   "ExtractCombatReportMessagesSummary",
+   "ExtractCombatReportMessagesFromDoc",
+   "ExtractExpeditionMessages",
+   "ExtractExpeditionMessagesFromDoc",
+   "ExtractLfBonuses",
+   "ExtractLfBonusesFromDoc",
+   "ExtractAllianceClass",
+   "ExtractAllianceClassFromDoc",
+   "ExtractPhalanxNewToken"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_15_0/extractor_test.go": {
+  "sha256": "989062950a3c95e620d6f77002d5862a5aba91c0227357b998d30a2af53825e9",
+  "lines": 83,
+  "func": [
+   "TestExtractEspionageReport",
+   "TestExtractLfBonuses",
+   "TestExtractAllianceClass",
+   "TestExtractPhalanx",
+   "TestExtractCombatReports"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_15_0/extracts.go": {
+  "sha256": "2ee36cb68e512a53c4fcdc4f480720923c55d3db69e3d78f8ef2d3a2252d9f2b",
+  "lines": 602,
+  "func": [
+   "extractCombatReportMessagesFromDoc",
+   "extractEspionageReportMessageIDsFromDoc",
+   "extractEspionageReportFromDoc",
+   "extractExpeditionMessagesFromDoc",
+   "extractLfBonusesFromDoc",
+   "extractCategories",
+   "assignBonusValue",
+   "extractResourcesExpeditionBonus",
+   "extractCostReductionBonus",
+   "extractTimeReductionBonus",
+   "extractShipStatBonus",
+   "extractBonusFromStringPercentage",
+   "extractBonusFromString",
+   "extractAllianceClassFromDoc",
+   "extractPhalanxNewToken"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_9_0/extractor.go": {
+  "sha256": "2d3020941cf45d98bb833d97b524991d2fa763509c9b039ae35528d413905535",
+  "lines": 58,
+  "func": [
+   "NewExtractor",
+   "ExtractProduction",
+   "ExtractProductionFromDoc",
+   "ExtractCombatReportMessagesSummary",
+   "ExtractCombatReportMessagesFromDoc",
+   "ExtractAuction"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_9_0/extractor_test.go": {
+  "sha256": "dc29253123c25fbacda0a25685a9930cfc2fde26aac06060e7d2a658d113205c",
+  "lines": 37,
+  "func": [
+   "TestExtractProduction1",
+   "TestExtractCombatReportMessages",
+   "TestTraderAuctioneer"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v11_9_0/extracts.go": {
+  "sha256": "19923c8926925a8348b79fbfc31561eecad6edbe46ac9ad563465df1c53d9639",
+  "lines": 182,
+  "func": [
+   "extractProductionFromDoc",
+   "extractCombatReportMessagesFromDoc",
+   "extractAuctionFromDoc"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v12_0_0/extractor.go": {
+  "sha256": "28d246756669e3cbb2abc46a09958340c5d6d85a7057dba9ab311e43d2b36570",
+  "lines": 68,
+  "func": [
+   "NewExtractor",
+   "ExtractServerTime",
+   "extractServerTime",
+   "ExtractServerTimeFromDoc",
+   "ExtractHighscore",
+   "ExtractHighscoreFromDoc",
+   "ExtractChapter",
+   "ExtractChapterFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v12_0_0/extractor_test.go": {
+  "sha256": "48d7290f4dfbf8e9f192b7413db59f91f19ae9b66953624d14693a9d86d9750b",
+  "lines": 55,
+  "func": [
+   "TestExtractServerTime",
+   "TestExtractHighscore",
+   "TestExtractHighscoreIgnored",
+   "TestExtractGalaxyInfos_alliance",
+   "TestExtractChapter"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v12_0_0/extracts.go": {
+  "sha256": "6917835c7b6128aa56297c433631c8753f4fba54633ad08a9b72e66c2dd0a46b",
+  "lines": 123,
+  "func": [
+   "extractServerTimeFromDoc",
+   "extractHighscoreFromDoc",
+   "extractChapterFromDoc"
+  ],
+  "type": [],
+  "const": [
+   "m",
+   "m",
+   "m"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v6/extractor.go": {
+  "sha256": "1655157e68fa7637bea2bbf73355e723284ef08b65f70164c0f2cdc7518f7633",
+  "lines": 1116,
+  "func": [
+   "NewExtractor",
+   "SetLocation",
+   "SetLanguage",
+   "SetLifeformEnabled",
+   "GetLifeformEnabled",
+   "GetLocation",
+   "GetLanguage",
+   "ExtractToken",
+   "ExtractLfBonuses",
+   "ExtractLfBonusesFromDoc",
+   "ExtractTechnologyDetails",
+   "ExtractTechnologyDetailsFromDoc",
+   "ExtractCancelLfBuildingInfos",
+   "ExtractActiveItems",
+   "ExtractPremiumToken",
+   "ExtractTechs",
+   "ExtractDestroyRockets",
+   "ExtractCancelFleetToken",
+   "ExtractMarketplaceMessages",
+   "ExtractExpeditionMessages",
+   "ExtractExpeditionMessagesFromDoc",
+   "ExtractTearDownButtonEnabled",
+   "ExtractUpgradeToken",
+   "ExtractLifeformEnabled",
+   "ExtractIsInVacation",
+   "ExtractAttackBlock",
+   "ExtractAttackBlockFromDoc",
+   "ExtractPlanets",
+   "ExtractPlanet",
+   "ExtractMoons",
+   "ExtractMoon",
+   "ExtractCelestials",
+   "ExtractCelestial",
+   "ExtractServerTime",
+   "ExtractFleetsFromEventList",
+   "ExtractIPM",
+   "ExtractFleets",
+   "extractFleets",
+   "ExtractSlots",
+   "ExtractOgameTimestamp",
+   "ExtractResources",
+   "ExtractResourcesDetailsFromFullPage",
+   "ExtractResourceSettings",
+   "ExtractAttacks",
+   "extractAttacks",
+   "ExtractOfferOfTheDay",
+   "ExtractResourcesBuildings",
+   "ExtractDefense",
+   "ExtractShips",
+   "ExtractFacilities",
+   "ExtractTearDownToken",
+   "ExtractResearch",
+   "ExtractProduction",
+   "ExtractOverviewProduction",
+   "ExtractFleet1Ships",
+   "ExtractEspionageReportMessageIDs",
+   "ExtractCombatReportMessagesSummary",
+   "ExtractEspionageReport",
+   "ExtractResourcesProductions",
+   "ExtractPreferences",
+   "ExtractSpioAnz",
+   "ExtractPreferencesShowActivityMinutes",
+   "ExtractHiddenFields",
+   "ExtractCommander",
+   "ExtractAdmiral",
+   "ExtractEngineer",
+   "ExtractGeologist",
+   "ExtractTechnocrat",
+   "ExtractOGameSession",
+   "ExtractPlanetTypeFromDoc",
+   "ExtractPlanetIDFromDoc",
+   "ExtractHiddenFieldsFromDoc",
+   "ExtractBodyIDFromDoc",
+   "ExtractIsInVacationFromDoc",
+   "ExtractTearDownButtonEnabledFromDoc",
+   "ExtractPlanetsFromDoc",
+   "ExtractOgameTimestampFromDoc",
+   "ExtractResourcesFromDoc",
+   "ExtractResourcesDetailsFromFullPageFromDoc",
+   "ExtractPlanetFromDoc",
+   "ExtractMoonsFromDoc",
+   "ExtractMoonFromDoc",
+   "ExtractCelestialsFromDoc",
+   "ExtractCelestialFromDoc",
+   "ExtractResourcesBuildingsFromDoc",
+   "ExtractDefenseFromDoc",
+   "ExtractShipsFromDoc",
+   "ExtractFacilitiesFromDoc",
+   "ExtractResearchFromDoc",
+   "ExtractOGameSessionFromDoc",
+   "ExtractAttacksFromDoc",
+   "extractAttacksFromDoc",
+   "ExtractOfferOfTheDayFromDoc",
+   "ExtractProductionFromDoc",
+   "ExtractOverviewProductionFromDoc",
+   "ExtractFleet1ShipsFromDoc",
+   "ExtractFleetDispatchACSFromDoc",
+   "ExtractEspionageReportMessageIDsFromDoc",
+   "ExtractCombatReportMessagesFromDoc",
+   "ExtractEspionageReportFromDoc",
+   "ExtractResourcesProductionsFromDoc",
+   "ExtractPreferencesFromDoc",
+   "ExtractResourceSettingsFromDoc",
+   "ExtractFleetsFromEventListFromDoc",
+   "ExtractIPMFromDoc",
+   "ExtractFleetsFromDoc",
+   "extractFleetsFromDoc",
+   "ExtractSlotsFromDoc",
+   "ExtractServerTimeFromDoc",
+   "ExtractSpioAnzFromDoc",
+   "ExtractDisableChatBarFromDoc",
+   "ExtractDisableOutlawWarningFromDoc",
+   "ExtractMobileVersionFromDoc",
+   "ExtractShowOldDropDownsFromDoc",
+   "ExtractActivateAutofocusFromDoc",
+   "ExtractEventsShowFromDoc",
+   "ExtractSortSettingFromDoc",
+   "ExtractSortOrderFromDoc",
+   "ExtractShowDetailOverlayFromDoc",
+   "ExtractAnimatedSlidersFromDoc",
+   "ExtractAnimatedOverviewFromDoc",
+   "ExtractPopupsNoticesFromDoc",
+   "ExtractPopopsCombatreportFromDoc",
+   "ExtractSpioReportPicturesFromDoc",
+   "ExtractMsgResultsPerPageFromDoc",
+   "ExtractAuctioneerNotificationsFromDoc",
+   "ExtractEconomyNotificationsFromDoc",
+   "ExtractShowActivityMinutesFromDoc",
+   "ExtractPreserveSystemOnPlanetChangeFromDoc",
+   "ExtractNotifBuildListFromDoc",
+   "ExtractNotifFriendlyFleetActivitiesFromDoc",
+   "ExtractNotifHostileFleetActivitiesFromDoc",
+   "ExtractNotifForeignEspionageFromDoc",
+   "ExtractNotifAllianceBroadcastsFromDoc",
+   "ExtractNotifAllianceMessagesFromDoc",
+   "ExtractNotifAuctionsFromDoc",
+   "ExtractNotifAccountFromDoc",
+   "ExtractCharacterClassFromDoc",
+   "ExtractAllianceClass",
+   "ExtractAllianceClassFromDoc",
+   "ExtractCommanderFromDoc",
+   "ExtractAdmiralFromDoc",
+   "ExtractLifeformTypeFromDoc",
+   "ExtractEngineerFromDoc",
+   "ExtractGeologistFromDoc",
+   "ExtractTechnocratFromDoc",
+   "ExtractColoniesFromDoc",
+   "ExtractAbandonInformation",
+   "ExtractPlanetCoordinate",
+   "ExtractPlanetID",
+   "ExtractOverviewShipSumCountdownFromBytes",
+   "ExtractOGameTimestampFromBytes",
+   "ExtractPlanetType",
+   "ExtractAjaxChatToken",
+   "ExtractUserInfos",
+   "ExtractResourcesDetails",
+   "ExtractCoord",
+   "ExtractGalaxyInfos",
+   "ExtractPhalanx",
+   "ExtractPhalanxNewToken",
+   "ExtractJumpGate",
+   "ExtractFederation",
+   "ExtractConstructions",
+   "ExtractFleetDeutSaveFactor",
+   "ExtractCancelBuildingInfos",
+   "ExtractCancelResearchInfos",
+   "ExtractEmpire",
+   "ExtractEmpireJSON",
+   "ExtractCharacterClass",
+   "ExtractAuction",
+   "ExtractHighscore",
+   "ExtractHighscoreFromDoc",
+   "ExtractAllResources",
+   "ExtractDMCosts",
+   "ExtractBuffActivation",
+   "ExtractIsMobile",
+   "ExtractIsMobileFromDoc",
+   "ExtractLfBuildings",
+   "ExtractLfBuildingsFromDoc",
+   "ExtractLfResearch",
+   "ExtractLfResearchFromDoc",
+   "ExtractAvailableDiscoveries",
+   "ExtractLfSlotsFromDoc",
+   "ExtractArtefactsFromDoc",
+   "ExtractChapter",
+   "ExtractChapterFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v6/extractor_test.go": {
+  "sha256": "cd7a88b210a2390a41d66f4cf5b9d6418e3a59204ffe986ac22d5bdfb30dc31c",
+  "lines": 2548,
+  "func": [
+   "TestExtractAttacks",
+   "TestExtractAttacksFromFullPage",
+   "TestExtractAttacksPhoneDisplay",
+   "TestExtractAttacksMeAttacking",
+   "TestExtractAttacksWithoutShips",
+   "TestExtractAttacksWithShips",
+   "TestExtractAttacksMoon",
+   "TestExtractAttacksMoonDestruction",
+   "TestExtractAttacksWithThousandsShips",
+   "TestExtractAttacksUnknownShips",
+   "TestExtractAttacksACS",
+   "TestExtractAttacksACSMany",
+   "TestExtractFleetDispatchACS",
+   "TestExtractAttacksACS2",
+   "TestExtractAttacks_spy",
+   "TestExtractAttacks1",
+   "TestExtractLifeformEnabled",
+   "TestExtractFleetDeutSaveFactor_V6_2_2_1",
+   "TestExtractFleetDeutSaveFactor_V6_7_4",
+   "TestExtractPlanetCoordinate",
+   "TestExtractPlanetCoordinate_moon",
+   "TestExtractPlanetID_planet",
+   "TestExtractPlanetID_moon",
+   "TestExtractPlanetType_planet",
+   "TestExtractPlanetType_moon",
+   "TestExtractJumpGate_cooldown",
+   "TestExtractJumpGate",
+   "TestExtractOgameTimestamp",
+   "TestExtractOgameTimestampFromBytes",
+   "TestExtractResources",
+   "TestExtractResourcesMobile",
+   "TestExtractResourcesDetailsFromFullPage",
+   "TestExtractResourcesDetailsFromFullPageV7",
+   "TestExtractPhalanx_75",
+   "TestExtractPhalanx",
+   "TestExtractPhalanx_fromMoon",
+   "TestExtractPhalanx_manyFleets",
+   "TestExtractPhalanx_noFleet",
+   "TestExtractPhalanx_noDeut",
+   "TestExtractResearch",
+   "TestExtractResourcesBuildings",
+   "TestExtractFacilities",
+   "TestExtractMoonFacilities",
+   "TestExtractDefense",
+   "TestExtractFleet1Ships",
+   "TestExtractFleet1Ships_NoShips",
+   "TestExtractPlanet_en",
+   "TestExtractPlanet_fr",
+   "TestExtractPlanet_de",
+   "TestExtractPlanet_dk",
+   "TestExtractPlanet_es",
+   "TestExtractPlanet_br",
+   "TestExtractPlanet_it",
+   "TestExtractPlanet_jp",
+   "TestExtractPlanet_tw",
+   "TestExtractPlanet_hr",
+   "TestExtractPlanet_no",
+   "TestExtractPlanet_sk",
+   "TestExtractPlanet_si",
+   "TestExtractPlanet_hu",
+   "TestExtractPlanet_fi",
+   "TestExtractPlanet_ba",
+   "TestExtractPlanet_gr",
+   "TestExtractPlanet_mx",
+   "TestExtractPlanet_cz",
+   "TestExtractPlanet_jp1",
+   "TestExtractPlanet_pl",
+   "TestExtractPlanet_tr",
+   "TestExtractPlanet_pt",
+   "TestExtractPlanet_nl",
+   "TestExtractPlanet_ar",
+   "TestExtractPlanet_ru",
+   "TestExtractPlanet_notExists",
+   "TestExtractPlanetByCoord",
+   "TestExtractPlanetByCoord_notExists",
+   "TestExtractShips",
+   "TestExtractShipsMillions",
+   "TestExtractShipsWhileBeingBuilt",
+   "TestExtractEspionageReportMessageIDs",
+   "TestExtractEspionageReportMessageIDsLootPercentage",
+   "TestExtractCombatReportMessages",
+   "TestExtractCombatReportAttackingMessages",
+   "TestExtractCombatReportMessagesSummary",
+   "TestExtractResourcesProductions",
+   "TestExtractResourceSettings",
+   "TestExtractNbProbes",
+   "TestExtractPreferencesShowActivityMinutes",
+   "TestExtractPreferences",
+   "TestExtractOfferOfTheDayPrice",
+   "TestExtractOfferOfTheDayPrice1",
+   "TestExtractGalaxyInfos_vacationMode",
+   "TestExtractGalaxyInfos_bandit",
+   "TestExtractGalaxyInfos_starlord",
+   "TestExtractGalaxyInfos_destroyedPlanet",
+   "TestExtractGalaxyInfos_destroyedPlanetAndMoon",
+   "TestExtractGalaxyInfos_banned",
+   "TestExtractGalaxyInfos",
+   "TestExtractGalaxyInfosOwnPlanet",
+   "TestExtractGalaxyInfosPlanetNoActivity",
+   "TestExtractGalaxyInfosPlanetActivity15",
+   "TestExtractGalaxyInfosPlanetActivity23",
+   "TestExtractGalaxyInfosMoonActivity",
+   "TestExtractGalaxyInfosMoonNoActivity",
+   "TestExtractGalaxyInfosMoonActivity15",
+   "TestExtractUserInfosV7",
+   "TestExtractUserInfos",
+   "TestExtractUserInfos_hr",
+   "TestExtractUserInfos_tw",
+   "TestExtractUserInfos_no",
+   "TestExtractUserInfos_sk",
+   "TestExtractUserInfos_fi",
+   "TestExtractUserInfos_si",
+   "TestExtractUserInfos_hu",
+   "TestExtractUserInfos_gr",
+   "TestExtractUserInfos_ro",
+   "TestExtractUserInfos_mx",
+   "TestExtractUserInfos_de",
+   "TestExtractUserInfos_dk",
+   "TestExtractUserInfos_jp",
+   "TestExtractUserInfos_jp1",
+   "TestExtractUserInfos_cz",
+   "TestExtractUserInfos_fr",
+   "TestExtractUserInfos_nl",
+   "TestExtractUserInfos_pl",
+   "TestExtractUserInfos_br",
+   "TestExtractUserInfos_tr",
+   "TestExtractUserInfos_ar",
+   "TestExtractUserInfos_it",
+   "TestExtractUserInfos_pt",
+   "TestExtractUserInfos_ru",
+   "TestExtractUserInfos_ba",
+   "TestExtractMoons",
+   "TestExtractMoons2",
+   "TestExtractMoon_exists",
+   "TestExtractMoon_notExists",
+   "TestExtractMoonByCoord_exists",
+   "TestExtractMoonByCoord_notExists",
+   "TestExtractIsInVacationFromDoc",
+   "TestExtractPlanetsMoon",
+   "TestExtractPlanets_fieldsFilled",
+   "TestExtractPlanetsEsV902",
+   "TestExtractPlanetsTwV902",
+   "TestExtractPlanets",
+   "TestExtractPlanets_es",
+   "TestExtractPlanets_fr",
+   "TestExtractPlanets_fr1",
+   "TestExtractPlanets_br",
+   "TestExtractGalaxyInfos_honorableTarget",
+   "TestExtractGalaxyInfos_inactive",
+   "TestExtractGalaxyInfos_strongPlayer",
+   "TestExtractGalaxyInfos_newbie",
+   "TestExtractGalaxyInfos_moon",
+   "TestExtractGalaxyInfos_debris",
+   "TestExtractGalaxyInfos_debris_es",
+   "TestExtractGalaxyInfos_debris_fr",
+   "TestExtractGalaxyInfos_debris_de",
+   "TestExtractGalaxyInfos_vacation",
+   "TestExtractGalaxyInfos_alliance",
+   "TestExtractGalaxyInfos_alliance_fr",
+   "TestExtractGalaxyInfos_alliance_es",
+   "TestUniverseSpeed",
+   "TestCancel",
+   "TestCancelResearch",
+   "TestGetConstructions",
+   "TestExtractIPM",
+   "TestExtractFleetV71",
+   "TestExtractFleetV72",
+   "TestExtractFleetV71_2",
+   "TestExtractFleetV767",
+   "TestExtractFleetV7",
+   "TestExtractFleet",
+   "TestExtractFleet_expedition",
+   "TestExtractFleet_harvest",
+   "TestExtractFleet_returningTransport",
+   "TestExtractFleet_deployment",
+   "TestExtractFleetThousands",
+   "TestExtractFleet_returning",
+   "TestExtractFleet_deepspace",
+   "TestExtractFleet_targetPlanetID",
+   "TestExtractFleet_unionID",
+   "TestExtractOverviewProduction",
+   "TestExtractProduction",
+   "TestExtractProduction2",
+   "TestExtractProductionWithABM",
+   "TestExtractDKProductionWithABM",
+   "TestExtractEspionageReport_tz",
+   "TestExtractEspionageReport_action",
+   "TestExtractEspionageReport",
+   "TestExtractEspionageReport_noPictures",
+   "TestExtractEspionageReportMoon",
+   "TestExtractEspionageReport1",
+   "TestExtractEspionageReportThousands",
+   "TestExtractEspionageReport_defence",
+   "TestExtractEspionageReport_bandit",
+   "TestExtractEspionageReport_starlord",
+   "TestExtractEspionageReport_norank",
+   "TestExtractEspionageReport_username1",
+   "TestExtractEspionageReport_username2",
+   "TestExtractEspionageReport_username_outlaw",
+   "TestExtractEspionageReport_apiKey",
+   "TestExtractEspionageReport_inactivetimer_within15",
+   "TestExtractEspionageReport_inactivetimer_29",
+   "TestExtractEspionageReport_inactivetimer_over1h",
+   "TestExtractFleetSlotV7_movement",
+   "TestExtractFleetSlot_fleet1",
+   "TestExtractFleetSlot_movement",
+   "TestExtractFleetSlot_commanders",
+   "TestGetResourcesDetails",
+   "TestExtractEmpirePlanets",
+   "TestExtractEmpireMoons",
+   "TestExtractAuction_playerBid",
+   "TestExtractAuction_noPlayerBid",
+   "TestExtractAuction_ongoing2",
+   "TestExtractAuction_ongoing",
+   "TestExtractAuction_waiting",
+   "TestExtractOGameSession"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v6/extracts.go": {
+  "sha256": "dd994b29f151d740a9733f56dc720587934c879648734dfd5dd40430cdd07534",
+  "lines": 2523,
+  "func": [
+   "extractUpgradeToken",
+   "extractTearDownButtonEnabledFromDoc",
+   "extractIsInVacationFromDoc",
+   "extractResourcesFromDoc",
+   "extractResourcesDetailsFromFullPageFromDoc",
+   "extractHiddenFieldsFromDoc",
+   "ExtractBodyIDFromDoc",
+   "extractCelestialByIDFromDoc",
+   "extractCelestialByCoordFromDoc",
+   "extractCelestialByPredicateFnFromDoc",
+   "extractCelestialsFromDoc",
+   "extractPlanetsFromDoc",
+   "extractMoonsFromDoc",
+   "extractOgameTimestampFromDoc",
+   "extractPlanetFromDoc",
+   "extractMoonFromDoc",
+   "extractCelestialFromDoc",
+   "extractResourcesBuildingsFromDoc",
+   "extractDefenseFromDoc",
+   "extractShipsFromDoc",
+   "extractFacilitiesFromDoc",
+   "extractResearchFromDoc",
+   "ExtractOGameSessionFromDoc",
+   "extractAttacksFromDoc",
+   "extractOfferOfTheDayFromDoc",
+   "extractProductionFromDoc",
+   "extractOverviewProductionFromDoc",
+   "extractFleet1ShipsFromDoc",
+   "extractFleetDispatchACSFromDoc",
+   "extractEspionageReportMessageIDsFromDoc",
+   "extractCombatReportMessagesFromDoc",
+   "extractEspionageReportFromDoc",
+   "extractResourcesProductionsFromDoc",
+   "ExtractPreferencesFromDoc",
+   "extractResourceSettingsFromDoc",
+   "extractFleetsFromEventListFromDoc",
+   "extractIPMFromDoc",
+   "extractFleetsFromDoc",
+   "extractSlotsFromDoc",
+   "extractServerTimeFromDoc",
+   "extractSpioAnzFromDoc",
+   "extractSpySystemAutomaticQuantityFromDoc",
+   "extractSpySystemIgnoreSpiedInLastXMinutesFromDoc",
+   "extractDisableChatBarFromDoc",
+   "extractDisableOutlawWarningFromDoc",
+   "extractMobileVersionFromDoc",
+   "extractUrlaubsModus",
+   "extractShowOldDropDownsFromDoc",
+   "extractActivateAutofocusFromDoc",
+   "extractEventsShowFromDoc",
+   "extractSpySystemTargetPlanetTypesFromDoc",
+   "extractSpySystemTargetPlayerTypesFromDoc",
+   "extractSortSettingFromDoc",
+   "extractSortOrderFromDoc",
+   "extractShowDetailOverlayFromDoc",
+   "extractAnimatedSlidersFromDoc",
+   "extractAnimatedOverviewFromDoc",
+   "extractPopupsNoticesFromDoc",
+   "extractPopopsCombatreportFromDoc",
+   "extractSpioReportPicturesFromDoc",
+   "extractMsgResultsPerPageFromDoc",
+   "extractAuctioneerNotificationsFromDoc",
+   "extractEconomyNotificationsFromDoc",
+   "extractShowActivityMinutesFromDoc",
+   "extractPreserveSystemOnPlanetChangeFromDoc",
+   "extractDiscoveryWarningEnabledFromDoc",
+   "extractNotifBuildListFromDoc",
+   "extractNotifFriendlyFleetActivitiesFromDoc",
+   "extractNotifHostileFleetActivitiesFromDoc",
+   "extractNotifForeignEspionageFromDoc",
+   "extractNotifAllianceBroadcastsFromDoc",
+   "extractNotifAllianceMessagesFromDoc",
+   "extractNotifAuctionsFromDoc",
+   "extractNotifAccountFromDoc",
+   "extractCommanderFromDoc",
+   "extractAdmiralFromDoc",
+   "extractEngineerFromDoc",
+   "extractGeologistFromDoc",
+   "extractColoniesFromDoc",
+   "extractTechnocratFromDoc",
+   "extractAbandonInformation",
+   "extractPlanetCoordinate",
+   "extractTearDownToken",
+   "extractPlanetID",
+   "extractPlanetIDFromDoc",
+   "extractOverviewShipSumCountdownFromBytes",
+   "extractOGameTimestampFromBytes",
+   "extractPlanetType",
+   "extractPlanetTypeFromDoc",
+   "extractAjaxChatToken",
+   "extractUserInfos",
+   "IsLogged",
+   "extractResourcesDetails",
+   "ExtractCoord",
+   "extractGalaxyInfos",
+   "extractPhalanx",
+   "extractJumpGate",
+   "extractFederation",
+   "extractConstructions",
+   "extractFleetDeutSaveFactor",
+   "extractCancelBuildingInfos",
+   "extractCancelResearchInfos",
+   "ExtractUniverseSpeed",
+   "extractPlanetFromSelection",
+   "extractMoonFromSelection",
+   "extractMoonFromPlanetSelection",
+   "extractEmpire",
+   "ExtractEmpireJSON",
+   "extractAuctionFromDoc"
+  ],
+  "type": [
+   "CelestialTypes"
+  ],
+  "const": [
+   "rgx",
+   "if",
+   "if",
+   "if",
+   "if",
+   "m"
+  ],
+  "var": [
+   "ErrUnsupportedType",
+   "temperatureRgxStr",
+   "TemperatureRgx",
+   "diameterRgxStr",
+   "DiameterRgx",
+   "lifeformRgxStr",
+   "planetInfosRgx",
+   "moonInfosRgx",
+   "cpRgx"
+  ]
+ },
+ "ogame/pkg/extractor/v7/extractor.go": {
+  "sha256": "c9e41e3d0d79d5f737f4aef357f1f8334f6d5ffd99da83ee7b2ee16a61e67b25",
+  "lines": 263,
+  "func": [
+   "NewExtractor",
+   "ExtractPremiumToken",
+   "ExtractResourcesDetailsFromFullPage",
+   "ExtractResourcesDetailsFromFullPageFromDoc",
+   "ExtractExpeditionMessages",
+   "ExtractMarketplaceMessages",
+   "ExtractDefense",
+   "ExtractFacilities",
+   "ExtractResearch",
+   "ExtractShips",
+   "ExtractResourceSettings",
+   "ExtractCharacterClass",
+   "ExtractResourcesBuildings",
+   "ExtractResourcesDetails",
+   "ExtractConstructions",
+   "ExtractFleet1Ships",
+   "ExtractCombatReportMessagesSummary",
+   "ExtractIPM",
+   "ExtractIPMFromDoc",
+   "ExtractEspionageReport",
+   "ExtractOverviewProduction",
+   "ExtractOverviewShipSumCountdownFromBytes",
+   "ExtractOverviewProductionFromDoc",
+   "ExtractFleet1ShipsFromDoc",
+   "ExtractResourceSettingsFromDoc",
+   "ExtractDefenseFromDoc",
+   "ExtractExpeditionMessagesFromDoc",
+   "ExtractMarketplaceMessagesFromDoc",
+   "ExtractFacilitiesFromDoc",
+   "ExtractResearchFromDoc",
+   "ExtractShipsFromDoc",
+   "ExtractResourcesBuildingsFromDoc",
+   "ExtractCombatReportMessagesFromDoc",
+   "ExtractEspionageReportFromDoc",
+   "ExtractCancelBuildingInfos",
+   "ExtractCancelResearchInfos",
+   "ExtractCharacterClassFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v7/extractor_test.go": {
+  "sha256": "5722676a9738c64c1a0a6d7e2f5e7cd9b356796b7ef89adc56f034cc45b3f956",
+  "lines": 321,
+  "func": [
+   "TestCancelResearch",
+   "TestCancel",
+   "TestExtractOverviewProduction",
+   "TestExtractEspionageReport",
+   "TestExtractCombatReportMessages",
+   "TestExtractCombatReportMessages_Debris",
+   "TestExtractShips_fleetdispatch",
+   "TestGetResourcesDetails",
+   "TestExtractResourcesBuildings",
+   "TestExtractResourceSettings",
+   "TestExtractShips",
+   "TestExtractShips_build",
+   "TestExtractResearch",
+   "TestExtractResearch_2",
+   "TestExtractFacilities",
+   "TestExtractDefense",
+   "TestExtractMarketplaceMessages",
+   "TestExtractExpeditionMessages",
+   "TestExtractGalaxyExpeditionDebrisDM",
+   "TestExtractGalaxyAsteroid",
+   "TestExtractGalaxyExpeditionDebris",
+   "TestExtractGalaxyTWExpeditionDebris",
+   "TestExtractGalaxyExpeditionDebris2",
+   "TestExtractGalaxyExpeditionDebrisMobile",
+   "TestExtractGalaxyIgnoredPlayer",
+   "TestExtractGalaxyV7NoExpeditionDebris",
+   "TestExtractUserInfos_es",
+   "TestExtractFleetSlot_FleetDispatch",
+   "TestGetConstructionsV7"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v7/extracts.go": {
+  "sha256": "8a6f5f513649b8b8699ded79c4150fec90b600bb0dfffc9bf5eb340458ab81b4",
+  "lines": 756,
+  "func": [
+   "GetNbr",
+   "getNbrShips",
+   "extractPremiumToken",
+   "extractResourcesDetailsFromFullPageFromDoc",
+   "ExtractFacilitiesFromDoc",
+   "extractDefenseFromDoc",
+   "extractResearchFromDoc",
+   "extractShipsFromDoc",
+   "extractResourcesBuildingsFromDoc",
+   "extractResourcesDetails",
+   "ExtractConstructions",
+   "extractIPMFromDoc",
+   "extractFleet1ShipsFromDoc",
+   "extractCombatReportMessagesFromDoc",
+   "extractEspionageReportFromDoc",
+   "ExtractCancelInfos",
+   "extractCancelBuildingInfos",
+   "extractCancelResearchInfos",
+   "extractResourceSettingsFromDoc",
+   "extractOverviewProductionFromDoc",
+   "extractOverviewShipSumCountdownFromBytes",
+   "extractCharacterClassFromDoc",
+   "extractExpeditionMessagesFromDoc",
+   "extractMarketplaceMessagesFromDoc"
+  ],
+  "type": [
+   "resourcesResp"
+  ],
+  "const": [
+   "if",
+   "buildingCountdownMatch",
+   "researchCountdownMatch",
+   "matches",
+   "if",
+   "shipSumCountdownMatch"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v71/extractor.go": {
+  "sha256": "6e5b17a0d43a6695d7e5aca137d5d562a9982a78004379126acf14a042c6709a",
+  "lines": 213,
+  "func": [
+   "NewExtractor",
+   "ExtractCancelFleetToken",
+   "ExtractCancelFleetTokenFromDoc",
+   "ExtractFacilitiesFromDoc",
+   "ExtractFacilities",
+   "ExtractResourcesDetails",
+   "ExtractTechs",
+   "ExtractEspionageReport",
+   "ExtractEspionageReportFromDoc",
+   "ExtractDestroyRockets",
+   "ExtractDestroyRocketsFromDoc",
+   "ExtractIPM",
+   "ExtractIPMFromDoc",
+   "ExtractProduction",
+   "ExtractProductionFromDoc",
+   "ExtractHighscore",
+   "ExtractHighscoreFromDoc",
+   "ExtractAllResources",
+   "ExtractAttacksFromDoc",
+   "ExtractAttacks",
+   "extractAttacks",
+   "extractAttacksFromDoc",
+   "ExtractDMCosts",
+   "ExtractDMCostsFromDoc",
+   "ExtractBuffActivation",
+   "ExtractBuffActivationFromDoc",
+   "ExtractActiveItems",
+   "ExtractActiveItemsFromDoc",
+   "ExtractIsMobile",
+   "ExtractIsMobileFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v71/extractor_test.go": {
+  "sha256": "b316d96803ab83d615ce916a97bad56503135a84c657ce0bc91a68b2f7a81d3c",
+  "lines": 351,
+  "func": [
+   "TestExtractAttacksACSAttackUnknownShips",
+   "TestExtractAttacksACSAttackSelf",
+   "TestExtractAttacksACS_v71",
+   "TestExtractAttacksACS_v72",
+   "TestExtractIsMobile",
+   "TestExtractActiveItems",
+   "TestExtractBuffActivation",
+   "TestExtractDMCosts",
+   "TestExtractAllResources",
+   "TestExtractAllResourcesTwV902",
+   "TestExtractHighscore",
+   "TestExtractProduction",
+   "TestExtractIPM",
+   "TestExtractDestroyRockets",
+   "TestExtractEspionageReport",
+   "TestExtractEspionageReportAllianceClass",
+   "TestExtractEspionageReportHonorable",
+   "TestExtractEspionageReportHonorableStrong",
+   "TestGetResourcesDetails",
+   "TestExtractMoonFacilities",
+   "TestExtractCancelFleetTokenFromDoc",
+   "TestExtractCombatReportMessages",
+   "TestExtractCombatReportMessages_lossContact",
+   "TestExtractPlanet_ro",
+   "TestV71ExtractEspionageReportMessages"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v71/extracts.go": {
+  "sha256": "d0ed26cabc94728a18f03fa557eda17d2dba051785bcd14e4e393a5dd7d5e041",
+  "lines": 1362,
+  "func": [
+   "extractResourcesDetails",
+   "extractTechs",
+   "GetCharacterClass",
+   "extractEspionageReportFromDoc",
+   "extractDestroyRocketsFromDoc",
+   "extractIPMFromDoc",
+   "extractFacilitiesFromDoc",
+   "extractCancelFleetTokenFromDoc",
+   "extractProductionFromDoc",
+   "extractHighscoreFromDoc",
+   "extractAllResources",
+   "extractAttacksFromDoc",
+   "extractDMCostsFromDoc",
+   "extractBuffActivationFromDoc",
+   "extractActiveItemsFromDoc",
+   "extractIsMobileFromDoc"
+  ],
+  "type": [
+   "resourcesResp",
+   "planetTechsResp"
+  ],
+  "const": [
+   "if",
+   "if",
+   "r",
+   "m",
+   "m",
+   "m",
+   "r",
+   "r",
+   "if",
+   "r"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v8/extractor.go": {
+  "sha256": "52c5902bb33c70d1247eae2f80d8ef3e1d201f4c82d01ca2cac6b9a58cc84326",
+  "lines": 62,
+  "func": [
+   "NewExtractor",
+   "ExtractIsInVacation",
+   "ExtractIsInVacationFromDoc",
+   "ExtractAttackBlock",
+   "ExtractAttackBlockFromDoc",
+   "ExtractEspionageReport",
+   "ExtractEspionageReportFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v8/extractor_test.go": {
+  "sha256": "e7c6927d48125a932080d31573b795f09138f5e7d418d139ebae085b8ecd7597",
+  "lines": 32,
+  "func": [
+   "TestExtractEspionageReport",
+   "TestExtractPlanets"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v8/extracts.go": {
+  "sha256": "65a4b4fb897124d129e00ccfb043bbeadad70ec698b13694bc58189c3087cc68",
+  "lines": 351,
+  "func": [
+   "extractAttackBlockFromDoc",
+   "extractIsInVacationFromDoc",
+   "extractEspionageReportFromDoc"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v874/extractor.go": {
+  "sha256": "a9771287d8003d50c6947bb18a3cfb3e541388bf16ea7cf33c05d87125d20511",
+  "lines": 55,
+  "func": [
+   "NewExtractor",
+   "ExtractOfferOfTheDay",
+   "ExtractOfferOfTheDayFromDoc",
+   "ExtractAuction",
+   "ExtractBuffActivation",
+   "ExtractBuffActivationFromDoc"
+  ],
+  "type": [
+   "Extractor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v874/extractor_test.go": {
+  "sha256": "25453e659cf1af7889a915af856b409b78bbdf74905adba4f932790b2f5be450",
+  "lines": 20,
+  "func": [
+   "TestExtractOfferOfTheDayPrice",
+   "TestExtractAuction"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v874/extracts.go": {
+  "sha256": "6c1fd39bee7c3e7daea8f5d8392de768b05759c843b863618d7ac42b7cdcbb19",
+  "lines": 152,
+  "func": [
+   "extractBuffActivationFromDoc",
+   "extractOfferOfTheDayFromDoc",
+   "extractAuctionFromDoc"
+  ],
+  "type": [],
+  "const": [
+   "r",
+   "r",
+   "if",
+   "if",
+   "if"
+  ],
+  "var": []
+ },
+ "ogame/pkg/extractor/v9/extractor.go": {
+  "sha256": "faab25fbf5b055cae16dc14292a3eca65c4f36940636ffd06f2d8327cbbd4563",
+  "lines": 210,
+  "func": [
+   "NewExtractor",
+   "ExtractTechnologyDetailsFromDoc",
+   "ExtractTechnologyDetails",
+   "ExtractCancelLfBuildingInfos",
+   "ExtractCancelResearchInfos",
+   "ExtractEmpire",
+   "ExtractOverviewProduction",
+   "ExtractOverviewProductionFromDoc",
+   "ExtractEspionageReport",
+   "ExtractEspionageReportFromDoc",
+   "ExtractResources",
+   "ExtractResourcesFromDoc",
+   "ExtractResourcesDetailsFromFullPage",
+   "ExtractResourcesDetailsFromFullPageFromDoc",
+   "ExtractConstructions",
+   "ExtractResourceSettings",
+   "ExtractLfBuildings",
+   "ExtractLfBuildingsFromDoc",
+   "ExtractLfResearch",
+   "ExtractLfResearchFromDoc",
+   "ExtractLfSlotsFromDoc",
+   "ExtractArtefactsFromDoc",
+   "ExtractTearDownButtonEnabled",
+   "ExtractTearDownButtonEnabledFromDoc",
+   "ExtractAvailableDiscoveries",
+   "extractAvailableDiscoveriesFromDoc"
+  ],
+  "type": [
+   "Extractor",
+   "technologyDetailsStruct"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v9/extractor_test.go": {
+  "sha256": "da637332290e51c681b004e6ed3a36ba4a3ec94d36bc5bdbf97a015b38376a35",
+  "lines": 282,
+  "func": [
+   "TestExtractResourcesDetailsFromFullPage",
+   "TestExtractResourcesDetailsFromFullPagePopulation",
+   "TestExtractResources",
+   "TestExtractEspionageReport",
+   "TestExtractOverviewProduction",
+   "TestCancelResearch",
+   "TestCancelResearchLF",
+   "TestCancelLfBuildingLF",
+   "TestCancelBuilding",
+   "TestGetConstructions",
+   "TestExtractUserInfos",
+   "TestExtractFleetResources",
+   "TestExtractLfBuildings",
+   "TestExtractLfBuildingsRocktal",
+   "TestExtractTechnologyDetails",
+   "TestExtractOverviewProduction_ships",
+   "TestExtractArtefactsFromDoc",
+   "TestExtractLfSlotsFromDoc"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/extractor/v9/extracts.go": {
+  "sha256": "1730d5e9e9596d4764369bf5dec667b23627d1d1f1e23240746829e1b6d67fa9",
+  "lines": 938,
+  "func": [
+   "ExtractConstructions",
+   "extractCancelLfBuildingInfos",
+   "extractCancelResearchInfos",
+   "extractEmpire",
+   "extractOverviewProductionFromDoc",
+   "extractResourcesFromDoc",
+   "extractResourcesDetailsFromFullPageFromDoc",
+   "extractEspionageReportFromDoc",
+   "GetNbr",
+   "GetNbrExists",
+   "extractLfBuildingsFromDoc",
+   "extractLfResearchFromDoc",
+   "extractLfSlotsFromDoc",
+   "extractArtefactsFromDoc",
+   "extractTechnologyDetailsFromDoc",
+   "extractTearDownButtonEnabledFromDoc",
+   "extractAvailableDiscoveriesFromDoc"
+  ],
+  "type": [],
+  "const": [
+   "buildingCountdownMatch",
+   "researchCountdownMatch",
+   "lfBuildingCountdownMatch",
+   "lfResearchCountdownMatch"
+  ],
+  "var": []
+ },
+ "ogame/pkg/gameforge/gameforge.go": {
+  "sha256": "757c1110595edfdc9422c423fe7b1fd3547289557460488e5fe3c373222744a0",
+  "lines": 1264,
+  "func": [
+   "NewCaptchaRequiredError",
+   "Error",
+   "Error",
+   "NewAccountBlockedError",
+   "Error",
+   "getChallengeURL",
+   "isValid",
+   "New",
+   "Login",
+   "Register",
+   "Logout",
+   "GetUserAccounts",
+   "GetServers",
+   "StartChallenge",
+   "SolveChallenge",
+   "RedeemCode",
+   "AddAccount",
+   "ValidateAccount",
+   "GetServerAccount",
+   "GetLoginLink",
+   "ExecLoginLink",
+   "GenerateGiftingCode",
+   "RevokeGiftingCode",
+   "GenerateSittingCode",
+   "handleCaptcha",
+   "solveCaptcha",
+   "getGameforgeLobbyBaseURL",
+   "Register",
+   "ValidateAccount",
+   "buildBearerHeaderValue",
+   "setDefaultParams",
+   "RedeemCode",
+   "AddAccountByServerNameLang",
+   "GetBearerToken",
+   "AddAccount",
+   "GetBearerToken",
+   "extractChallengeID",
+   "login",
+   "Logout",
+   "getConfiguration",
+   "postSessionsReq",
+   "StartChallenge",
+   "SolveChallenge",
+   "OGameSettings",
+   "IkariamSettings",
+   "ProbeRaidsEnabled",
+   "GetServers",
+   "GetServerAccount",
+   "GetUserAccounts",
+   "GetLoginLink",
+   "ExecLoginLink",
+   "GenerateGiftingCode",
+   "RevokeGiftingCode",
+   "GenerateSittingCode",
+   "FindServer",
+   "FindAccount"
+  ],
+  "type": [
+   "Client",
+   "HttpClient",
+   "Device",
+   "CaptchaRequiredError",
+   "RegisterError",
+   "AccountBlockedError",
+   "LoginParams",
+   "loginParams",
+   "CaptchaSolver",
+   "Platform",
+   "Gameforge",
+   "Config",
+   "AddAccountResponse",
+   "LoginResponse",
+   "Server",
+   "OGameServerSettings",
+   "IkariamServerSettings",
+   "Account"
+  ],
+  "const": [
+   "TokenCookieName",
+   "ChallengeIDCookieName",
+   "contentTypeHeaderKey",
+   "authorizationHeaderKey",
+   "twoFactorHeaderKey",
+   "applicationJson",
+   "gzipEncoding",
+   "challengeBaseURL",
+   "endpointLoc",
+   "ErrEmailInvalid",
+   "ErrEmailUsed",
+   "blackboxPrefix",
+   "OGAME",
+   "IKARIAM",
+   "Lobby",
+   "var",
+   "if",
+   "if",
+   "if",
+   "if",
+   "var"
+  ],
+  "var": [
+   "_",
+   "ErrBadCredentials",
+   "ErrOTPRequired",
+   "ErrOTPInvalid",
+   "ErrLoginLink",
+   "ErrAccountNotFound",
+   "ErrForbidden"
+  ]
+ },
+ "ogame/pkg/gameforge/solvers/discord.go": {
+  "sha256": "8e6f31cecc4a8c1094ff2fcba910f8e5d7e3908294265a62edeee7f5466a3091",
+  "lines": 163,
+  "func": [
+   "DiscordSolver",
+   "buildEmbedImg",
+   "handleInteraction",
+   "sendImageWithSelectMenu"
+  ],
+  "type": [],
+  "const": [
+   "const",
+   "if"
+  ],
+  "var": []
+ },
+ "ogame/pkg/gameforge/solvers/solvers.go": {
+  "sha256": "ff31fb8583d599415aeb7e8a023d1a11f13969e2f74af5f957f0d8caa158ce72",
+  "lines": 167,
+  "func": [
+   "TelegramSolver",
+   "NinjaSolver",
+   "ManualSolver"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/httpclient/client.go": {
+  "sha256": "72750268fcc0694480669abae108d3b941f8bf931b568df908ab06b136470ca3",
+  "lines": 183,
+  "func": [
+   "BytesDownloaded",
+   "BytesUploaded",
+   "NewClient",
+   "SetMaxRPS",
+   "incrRPS",
+   "Post",
+   "PostForm",
+   "Get",
+   "get",
+   "Do",
+   "do",
+   "WithTransport",
+   "SetTransport",
+   "UserAgent",
+   "FakeDo",
+   "GetRPS"
+  ],
+  "type": [
+   "IHttpClient",
+   "Client"
+  ],
+  "const": [
+   "const"
+  ],
+  "var": []
+ },
+ "ogame/pkg/httpclient/client_test.go": {
+  "sha256": "7d29645775406b3cc90f65c337af4e4bb6721d69bdd4b1ccd3de760dfeb38e61",
+  "lines": 52,
+  "func": [
+   "RoundTrip",
+   "TestOgameClient_Do",
+   "TestOgameClient_SetUserAgent"
+  ],
+  "type": [
+   "RoundTripFunc"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/allianceDepot.go": {
+  "sha256": "9c66873991dc1cb7e2c470404475cf1f92bee6b096cf2e821e1ffca60f0cec4b",
+  "lines": 15,
+  "func": [
+   "newAllianceDepot"
+  ],
+  "type": [
+   "allianceDepot"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/antiBallisticMissiles.go": {
+  "sha256": "5aeb26f6900fd4810c88f8bc7b449504457cdb33cbcf73614eede65e15d2d3b6",
+  "lines": 17,
+  "func": [
+   "newAntiBallisticMissiles"
+  ],
+  "type": [
+   "antiBallisticMissiles"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/armourTechnology.go": {
+  "sha256": "a64462e1b7986321aa93a7aa01fbf738b3eddb75c57e298fa99cc7f1104b55da",
+  "lines": 15,
+  "func": [
+   "newArmourTechnology"
+  ],
+  "type": [
+   "armourTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/armourTechnology_test.go": {
+  "sha256": "2f54b480ab49ea3c11c7eff4c3a5145302047a684d05b51a2c2dee8bdf7debc2",
+  "lines": 19,
+  "func": [
+   "TestArmourTechnologyIsAvailable",
+   "TestArmourTechnologyIsAvailable_NoBuilding"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/astrophysics.go": {
+  "sha256": "c38fbf6b5fde30c9d5fc5282b2f4a6458c710ab32824972f48e93c9dda3a8e32",
+  "lines": 34,
+  "func": [
+   "newAstrophysics",
+   "GetPrice"
+  ],
+  "type": [
+   "astrophysics"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/astrophysics_test.go": {
+  "sha256": "ca2fff3ee99ae3c06b9575bee309991c5d48c26ae9a10018e5050ea738bc4398",
+  "lines": 13,
+  "func": [
+   "TestAstrophysicsCost"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/attackEvent.go": {
+  "sha256": "1d1fa842196e23088eacff1d7ca5e0197e8a1f7458f98c4640d349918aae43e5",
+  "lines": 35,
+  "func": [
+   "String"
+  ],
+  "type": [
+   "AttackEvent"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/attackEvent_test.go": {
+  "sha256": "ab4dfc3226030dfbc344d80f11358de1f45d760022b3a84dc74c54f4c3af0ea3",
+  "lines": 32,
+  "func": [
+   "TestAttackEvent_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/auction.go": {
+  "sha256": "cd9ea7e1a29d17b01b0797c70a4b57f0becce12623c44ade9176eba0ce72cd8e",
+  "lines": 45,
+  "func": [
+   "String"
+  ],
+  "type": [
+   "Auction"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/auctioneer.go": {
+  "sha256": "c161fb238874f5c4801b4710466534f47570d7e9356a3225d380086a656d9b01",
+  "lines": 47,
+  "func": [],
+  "type": [
+   "AuctioneerNewBid",
+   "AuctioneerNewAuction",
+   "AuctioneerAuctionFinished",
+   "AuctioneerTimeRemaining",
+   "AuctioneerNextAuction"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/base.go": {
+  "sha256": "a6d9f04a90c72e6fdaba653b3e7963104c9e566de62a89172b257530ee757f5d",
+  "lines": 107,
+  "func": [
+   "GetID",
+   "GetName",
+   "GetRequirements",
+   "IsAvailable"
+  ],
+  "type": [
+   "Base"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseBuilding.go": {
+  "sha256": "b4298897075272a2732a24ce1799ab4e95ed333ef74bdcdcb29ce936eab3d4bb",
+  "lines": 57,
+  "func": [
+   "DeconstructionPrice",
+   "BuildingConstructionTime",
+   "ConstructionTime",
+   "GetLevel"
+  ],
+  "type": [
+   "BaseBuilding"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseBuilding_test.go": {
+  "sha256": "761d33cc5c3df879a246df560a19db6d8309cdb0a6ea412fe70ee38be66fccbb",
+  "lines": 15,
+  "func": [
+   "TestBaseBuilding_GetLevel"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseDefender.go": {
+  "sha256": "3e129064b36dd88cc24bb3d69db101c2572a3461742778b4e34c6908f11da455",
+  "lines": 66,
+  "func": [
+   "GetStructuralIntegrity",
+   "GetShieldPower",
+   "GetWeaponPower",
+   "GetRapidfireFrom",
+   "GetRapidfireAgainst",
+   "DefenderConstructionTime",
+   "ConstructionTime",
+   "GetPrice"
+  ],
+  "type": [
+   "BaseDefender"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseDefense.go": {
+  "sha256": "c0c51f1e526c9ed9b53134d41687df419df28f1e4d8ccf6ecefb356d9aa214c6",
+  "lines": 6,
+  "func": [],
+  "type": [
+   "BaseDefense"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseLevelable.go": {
+  "sha256": "a0238698c55598f331668d4c1e333c56e2dfb759d081959e27ff47cbfad7bec5",
+  "lines": 27,
+  "func": [
+   "GetPrice"
+  ],
+  "type": [
+   "BaseLevelable"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseShip.go": {
+  "sha256": "63f19072a2f98774d9baf48712168539542c6124dbfea1b4f0af1243d019a9a9",
+  "lines": 97,
+  "func": [
+   "GetCargoCapacity",
+   "GetFuelConsumption",
+   "GetSpeed"
+  ],
+  "type": [
+   "BaseShip"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/baseTechnology.go": {
+  "sha256": "1ad8cce8fa597f613c8bfd0fad693c2ebe27d68e79bcb999b739f1e37bbc673a",
+  "lines": 41,
+  "func": [
+   "TechnologyConstructionTime",
+   "ConstructionTime",
+   "GetLevel"
+  ],
+  "type": [
+   "BaseTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/battlecruiser.go": {
+  "sha256": "805818f597aedbee2f64c46ddcc4befa46543f213720b6803e9cfb6292f0d6a5",
+  "lines": 26,
+  "func": [
+   "newBattlecruiser"
+  ],
+  "type": [
+   "battlecruiser"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/battleship.go": {
+  "sha256": "77c212a9970853bc3d610ec3dc25290e67b4460751310fd550ce16cf5123b9c8",
+  "lines": 22,
+  "func": [
+   "newBattleship"
+  ],
+  "type": [
+   "battleship"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/bomber.go": {
+  "sha256": "7bfcf184cc9ad762c4909b9a86a7db14ab5840025a807d06833d802e82c80a19",
+  "lines": 23,
+  "func": [
+   "newBomber"
+  ],
+  "type": [
+   "bomber"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/bomber_test.go": {
+  "sha256": "54926dce8d06ae5611075a0811b257993665c5be404a40846409fa77bd54867b",
+  "lines": 20,
+  "func": [
+   "TestBomberSpeed"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/chapter.go": {
+  "sha256": "88ec288270a4026f044b73e36c75ecdcb5ee7322076bf0d0c1d83f5a3d146ee3",
+  "lines": 15,
+  "func": [],
+  "type": [
+   "Chapter",
+   "ChapterTask"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/chatMsg.go": {
+  "sha256": "bce62cc8db2ba04347fd80ebbf1d25dc602c8a3f334d8e34be525247a7b3e160",
+  "lines": 29,
+  "func": [
+   "String"
+  ],
+  "type": [
+   "ChatPayload",
+   "ChatMsg"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/colonyShip.go": {
+  "sha256": "90bd32c60e969307d5bb0d11770c97f31b1176c7706213897c837c8635d2d52c",
+  "lines": 22,
+  "func": [
+   "newColonyShip"
+  ],
+  "type": [
+   "colonyShip"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/colonyShip_test.go": {
+  "sha256": "979e319e7f7e2621d80bee2c90690359752b47f81d24ae7cc6fbe85e01a2b58a",
+  "lines": 19,
+  "func": [
+   "TestColonyShip_GetSpeed",
+   "TestColony_GetCargoCapacity"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/combustionDrive.go": {
+  "sha256": "e757f3bc99732be77975d27a9c6276195bc85f503fd79a7a1625fb833a259009",
+  "lines": 15,
+  "func": [
+   "newCombustionDrive"
+  ],
+  "type": [
+   "combustionDrive"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/combustionDrive_test.go": {
+  "sha256": "8eb77088fc0d046a6618f1e846ba2b8af5e5ea019c56e2f269f2b01829f58007",
+  "lines": 19,
+  "func": [
+   "TestCombustionDriveCost",
+   "TestCombustionDrive_IsAvailable"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/computerTechnology.go": {
+  "sha256": "610dcb93370dd1463bb3cf7a149303fdc410b013f3f4c24037fcda410b69f43f",
+  "lines": 15,
+  "func": [
+   "newComputerTechnology"
+  ],
+  "type": [
+   "computerTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/constants.go": {
+  "sha256": "1c0d572cdad94290bffeaf54bc5b9e5230b43212affe8c78b94f6953c60b98ec",
+  "lines": 370,
+  "func": [
+   "String",
+   "String",
+   "Int64",
+   "Int",
+   "IsWarrior",
+   "IsTrader",
+   "IsResearcher",
+   "String",
+   "IsValid",
+   "IsCollector",
+   "IsGeneral",
+   "IsDiscoverer"
+  ],
+  "type": [
+   "MissionID",
+   "CelestialType",
+   "AllianceClass",
+   "DMType",
+   "CharacterClass"
+  ],
+  "const": [
+   "BuildingsDmType",
+   "ResearchDmType",
+   "ShipyardDmType",
+   "NoClass",
+   "Collector",
+   "General",
+   "Discoverer",
+   "NoAllianceClass",
+   "Warrior",
+   "Trader",
+   "Researcher",
+   "PlanetType",
+   "DebrisType",
+   "MoonType",
+   "MetalMineID",
+   "CrystalMineID",
+   "DeuteriumSynthesizerID",
+   "SolarPlantID",
+   "FusionReactorID",
+   "MetalStorageID",
+   "CrystalStorageID",
+   "DeuteriumTankID",
+   "ShieldedMetalDenID",
+   "UndergroundCrystalDenID",
+   "SeabedDeuteriumDenID",
+   "AllianceDepotID",
+   "RoboticsFactoryID",
+   "ShipyardID",
+   "ResearchLabID",
+   "MissileSiloID",
+   "NaniteFactoryID",
+   "TerraformerID",
+   "SpaceDockID",
+   "LunarBaseID",
+   "SensorPhalanxID",
+   "JumpGateID",
+   "RocketLauncherID",
+   "LightLaserID",
+   "HeavyLaserID",
+   "GaussCannonID",
+   "IonCannonID",
+   "PlasmaTurretID",
+   "SmallShieldDomeID",
+   "LargeShieldDomeID",
+   "AntiBallisticMissilesID",
+   "InterplanetaryMissilesID",
+   "SmallCargoID",
+   "LargeCargoID",
+   "LightFighterID",
+   "HeavyFighterID",
+   "CruiserID",
+   "BattleshipID",
+   "ColonyShipID",
+   "RecyclerID",
+   "EspionageProbeID",
+   "BomberID",
+   "SolarSatelliteID",
+   "DestroyerID",
+   "DeathstarID",
+   "BattlecruiserID",
+   "CrawlerID",
+   "ReaperID",
+   "PathfinderID",
+   "EspionageTechnologyID",
+   "ComputerTechnologyID",
+   "WeaponsTechnologyID",
+   "ShieldingTechnologyID",
+   "ArmourTechnologyID",
+   "EnergyTechnologyID",
+   "HyperspaceTechnologyID",
+   "CombustionDriveID",
+   "ImpulseDriveID",
+   "HyperspaceDriveID",
+   "LaserTechnologyID",
+   "IonTechnologyID",
+   "PlasmaTechnologyID",
+   "IntergalacticResearchNetworkID",
+   "AstrophysicsID",
+   "GravitonTechnologyID",
+   "ResidentialSectorID",
+   "BiosphereFarmID",
+   "ResearchCentreID",
+   "AcademyOfSciencesID",
+   "NeuroCalibrationCentreID",
+   "HighEnergySmeltingID",
+   "FoodSiloID",
+   "FusionPoweredProductionID",
+   "SkyscraperID",
+   "BiotechLabID",
+   "MetropolisID",
+   "PlanetaryShieldID",
+   "MeditationEnclaveID",
+   "CrystalFarmID",
+   "RuneTechnologiumID",
+   "RuneForgeID",
+   "OriktoriumID",
+   "MagmaForgeID",
+   "DisruptionChamberID",
+   "MegalithID",
+   "CrystalRefineryID",
+   "DeuteriumSynthesiserID",
+   "MineralResearchCentreID",
+   "AdvancedRecyclingPlantID",
+   "AssemblyLineID",
+   "FusionCellFactoryID",
+   "RoboticsResearchCentreID",
+   "UpdateNetworkID",
+   "QuantumComputerCentreID",
+   "AutomatisedAssemblyCentreID",
+   "HighPerformanceTransformerID",
+   "MicrochipAssemblyLineID",
+   "ProductionAssemblyHallID",
+   "HighPerformanceSynthesiserID",
+   "ChipMassProductionID",
+   "NanoRepairBotsID",
+   "SanctuaryID",
+   "AntimatterCondenserID",
+   "VortexChamberID",
+   "HallsOfRealisationID",
+   "ForumOfTranscendenceID",
+   "AntimatterConvectorID",
+   "CloningLaboratoryID",
+   "ChrysalisAcceleratorID",
+   "BioModifierID",
+   "PsionicModulatorID",
+   "ShipManufacturingHallID",
+   "SupraRefractorID",
+   "IntergalacticEnvoysID",
+   "HighPerformanceExtractorsID",
+   "FusionDrivesID",
+   "StealthFieldGeneratorID",
+   "OrbitalDenID",
+   "ResearchAIID",
+   "HighPerformanceTerraformerID",
+   "EnhancedProductionTechnologiesID",
+   "LightFighterMkIIID",
+   "CruiserMkIIID",
+   "ImprovedLabTechnologyID",
+   "PlasmaTerraformerID",
+   "LowTemperatureDrivesID",
+   "BomberMkIIID",
+   "DestroyerMkIIID",
+   "BattlecruiserMkIIID",
+   "RobotAssistantsID",
+   "SupercomputerID",
+   "VolcanicBatteriesID",
+   "AcousticScanningID",
+   "HighEnergyPumpSystemsID",
+   "CargoHoldExpansionCivilianShipsID",
+   "MagmaPoweredProductionID",
+   "GeothermalPowerPlantsID",
+   "DepthSoundingID",
+   "IonCrystalEnhancementHeavyFighterID",
+   "ImprovedStellaratorID",
+   "HardenedDiamondDrillHeadsID",
+   "SeismicMiningTechnologyID",
+   "MagmaPoweredPumpSystemsID",
+   "IonCrystalModulesID",
+   "OptimisedSiloConstructionMethodID",
+   "DiamondEnergyTransmitterID",
+   "ObsidianShieldReinforcementID",
+   "RuneShieldsID",
+   "RocktalCollectorEnhancementID",
+   "CatalyserTechnologyID",
+   "PlasmaDriveID",
+   "EfficiencyModuleID",
+   "DepotAIID",
+   "GeneralOverhaulLightFighterID",
+   "AutomatedTransportLinesID",
+   "ImprovedDroneAIID",
+   "ExperimentalRecyclingTechnologyID",
+   "GeneralOverhaulCruiserID",
+   "SlingshotAutopilotID",
+   "HighTemperatureSuperconductorsID",
+   "GeneralOverhaulBattleshipID",
+   "ArtificialSwarmIntelligenceID",
+   "GeneralOverhaulBattlecruiserID",
+   "GeneralOverhaulBomberID",
+   "GeneralOverhaulDestroyerID",
+   "ExperimentalWeaponsTechnologyID",
+   "MechanGeneralEnhancementID",
+   "HeatRecoveryID",
+   "SulphideProcessID",
+   "PsionicNetworkID",
+   "TelekineticTractorBeamID",
+   "EnhancedSensorTechnologyID",
+   "NeuromodalCompressorID",
+   "NeuroInterfaceID",
+   "InterplanetaryAnalysisNetworkID",
+   "OverclockingHeavyFighterID",
+   "TelekineticDriveID",
+   "SixthSenseID",
+   "PsychoharmoniserID",
+   "EfficientSwarmIntelligenceID",
+   "OverclockingLargeCargoID",
+   "GravitationSensorsID",
+   "OverclockingBattleshipID",
+   "PsionicShieldMatrixID",
+   "KaeleshDiscovererEnhancementID",
+   "Relocate",
+   "Attack",
+   "GroupedAttack",
+   "Transport",
+   "Park",
+   "ParkInThatAlly",
+   "Spy",
+   "Colonize",
+   "RecycleDebrisField",
+   "Destroy",
+   "MissileAttack",
+   "Expedition",
+   "SearchForLifeforms",
+   "TenPercent",
+   "TwentyPercent",
+   "ThirtyPercent",
+   "FourtyPercent",
+   "FiftyPercent",
+   "SixtyPercent",
+   "SeventyPercent",
+   "EightyPercent",
+   "NinetyPercent",
+   "HundredPercent",
+   "FivePercent",
+   "FifteenPercent",
+   "TwentyFivePercent",
+   "ThirtyFivePercent",
+   "FourtyFivePercent",
+   "FiftyFivePercent",
+   "SixtyFivePercent",
+   "SeventyFivePercent",
+   "EightyFivePercent",
+   "NinetyFivePercent"
+  ],
+  "var": []
+ },
+ "ogame/pkg/ogame/constants_test.go": {
+  "sha256": "db58355a89c43f0a77bc1fcafc0714227a629975ef733e02d8d806444c8f3a9f",
+  "lines": 80,
+  "func": [
+   "TestConstants_DestinationType_String",
+   "TestConstants_Speed_String",
+   "TestConstants_MissionID_String",
+   "TestConstants_Speed_Int64",
+   "TestConstants_Speed_Int",
+   "TestConstants_CelestialType_Int64",
+   "TestConstants_CelestialType_Int",
+   "TestCharacterClass_isCollector",
+   "TestCharacterClass_isGeneral",
+   "TestCharacterClass_isDiscoverer"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/constructions.go": {
+  "sha256": "5e2965bdb214285408ac3954d27b47757ffb5594b3dd6337efc3a299dd9301a6",
+  "lines": 16,
+  "func": [],
+  "type": [
+   "Constructions",
+   "Construction"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/coordinate.go": {
+  "sha256": "fb8283bef76225e34e02ee0b1a847df258a3f96e69e371fae4b0b911cae7c98a",
+  "lines": 104,
+  "func": [
+   "NewCoordinate",
+   "NewPlanetCoordinate",
+   "NewDebrisCoordinate",
+   "NewMoonCoordinate",
+   "String",
+   "IsZero",
+   "Equal",
+   "Cmp",
+   "IsPlanet",
+   "IsMoon",
+   "IsDebris",
+   "Planet",
+   "Moon",
+   "Debris"
+  ],
+  "type": [
+   "Coordinate"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/coordinate_test.go": {
+  "sha256": "56b34b5ebdfa8726cca1bbc3f5191eac0b445f6f2ecf609a84a77a0d71673b47",
+  "lines": 75,
+  "func": [
+   "TestCoordinate_String",
+   "TestCoordinate_Equal",
+   "TestCoordinate_IsPlanet",
+   "TestCoordinate_IsMoon",
+   "TestCoordinate_IsDebris",
+   "TestCoordinate_Planet",
+   "TestCoordinate_Moon",
+   "TestCoordinate_Debris",
+   "TestCoordinate_Cmp"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/crawler.go": {
+  "sha256": "4624d3ed657021ffda7971319108e7b4a4d2afb67c79c4fcb80523252563932b",
+  "lines": 24,
+  "func": [
+   "newCrawler"
+  ],
+  "type": [
+   "crawler"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/cruiser.go": {
+  "sha256": "b22cec7a51a4a4baf6c93090e1cfb02a5c0d7e200c656ef78ae881c90620aea2",
+  "lines": 23,
+  "func": [
+   "newCruiser"
+  ],
+  "type": [
+   "cruiser"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/cruiser_test.go": {
+  "sha256": "1c83b3d017e0c93736a7c8897efdc134ee3300d347fd8f867cfde80d01b162b5",
+  "lines": 29,
+  "func": [
+   "TestCruiser_RapidfireAgainst",
+   "TestCruiser_GetCargoCapacity",
+   "TestCruiser_GetFuelConsumption",
+   "TestCruiser_GetPrice"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/crystalMine.go": {
+  "sha256": "70517311ab0362c8c87fdb8a73b2e173425d77d4848cfca10db196041c639451",
+  "lines": 31,
+  "func": [
+   "newCrystalMine",
+   "EnergyConsumption",
+   "Production"
+  ],
+  "type": [
+   "crystalMine"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/crystalMine_test.go": {
+  "sha256": "6e56c1051a4e33a3a674ed285134bce996be301c9fb09cb2e33f7a6fc7b8f97e",
+  "lines": 23,
+  "func": [
+   "TestCrystalMineConstructionTime",
+   "TestCrystalMine_EnergyConsumption",
+   "TestCrystalMine_Production"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/crystalStorage.go": {
+  "sha256": "3519053a7da1261c082c46e3db174542d66a64058657850f8bd6b7c83d51586b",
+  "lines": 14,
+  "func": [
+   "newCrystalStorage"
+  ],
+  "type": [
+   "crystalStorage"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/crystalStorage_test.go": {
+  "sha256": "d32fb3c34827671e9b3fc72fffb0b1aec0047029bc32d646059b31ef8bc69f62",
+  "lines": 27,
+  "func": [
+   "TestCrystalStorageCost",
+   "TestCrystalStorageCapacity"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/deathstar.go": {
+  "sha256": "0d1228fe6239e152272a85d9cf847c3a99e788633e434073f540bf1f76c906f0",
+  "lines": 27,
+  "func": [
+   "newDeathstar"
+  ],
+  "type": [
+   "deathstar"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/defence.go": {
+  "sha256": "28e8f045587a84aa6b7f4a8b7c3691aa2c7ae61ebf10e750beb152f88168a01b",
+  "lines": 151,
+  "func": [
+   "HasShipDefense",
+   "HasMissilesDefense",
+   "CountShipDefenses",
+   "AttackableValue",
+   "GetWeaponPower",
+   "GetShieldPower",
+   "GetStructuralIntegrity",
+   "String",
+   "ByID",
+   "Set"
+  ],
+  "type": [
+   "DefensesInfos"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/defence_test.go": {
+  "sha256": "ff028abf4aff77e9a025b7086d27c4e8d23766db0b572bed5ea6eff11dda9b87",
+  "lines": 98,
+  "func": [
+   "TestDefence_String",
+   "TestDefence_AttackableValue",
+   "TestDefenceByID",
+   "TestDefenceSet",
+   "TestDefence_HasMissilesDefenses",
+   "TestDefence_HasShipDefenses",
+   "TestDefence_CountShipDefenses"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/destroyer.go": {
+  "sha256": "ca15d52eb8b0460f6ea4b62c80dbeb35d8ebe80bc75a242ac03c894f456fb1a2",
+  "lines": 23,
+  "func": [
+   "newDestroyer"
+  ],
+  "type": [
+   "destroyer"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/deuteriumSynthesizer.go": {
+  "sha256": "469737be7810767fbeac7c42ce6eca04996eac9057a6bc70ffc97387c06deb7c",
+  "lines": 28,
+  "func": [
+   "newDeuteriumSynthesizer",
+   "EnergyConsumption",
+   "Production"
+  ],
+  "type": [
+   "deuteriumSynthesizer"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/deuteriumSynthesizer_test.go": {
+  "sha256": "34a0d68b9877cad0d716d80f1f6be5fbc76ac58cf59b9780f682343aa297ac8a",
+  "lines": 45,
+  "func": [
+   "TestDeuteriumSynthesizerPrice",
+   "TestDeuteriumSynthesizerConstructionTime",
+   "TestDeuteriumSynthesizer_Production",
+   "TestDeuteriumSynthesizer_EnergyConsumption"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/deuteriumTank.go": {
+  "sha256": "6f7b8830fedbea67135bcdb05c4988d8a80eaed1f6cacfe572d2b007daa163a7",
+  "lines": 14,
+  "func": [
+   "newDeuteriumTank"
+  ],
+  "type": [
+   "deuteriumTank"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/deuteriumTank_test.go": {
+  "sha256": "2c388b909eb68f8882dd4794d6d6a540a2bfe9f02a5eb08480c856e0bd529339",
+  "lines": 27,
+  "func": [
+   "TestDeuteriumTankCost",
+   "TestDeuteriumTankCapacity"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/dmCost.go": {
+  "sha256": "c0fd940cade2c55a18f8b9eb6e05b49986b038cec7222a7175efb29989aefeff",
+  "lines": 44,
+  "func": [
+   "String",
+   "String"
+  ],
+  "type": [
+   "DMCost",
+   "DMCosts"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/empireCelestial.go": {
+  "sha256": "44406ef1edcd7bfd992b361db482df482a27b0d8cb4d53c96049f136216cda53",
+  "lines": 24,
+  "func": [
+   "GetCoordinate"
+  ],
+  "type": [
+   "EmpireCelestial"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/energyTechnology.go": {
+  "sha256": "8f81f1a8086fd8cebf5379a2a4577a018f702b13f9e083417145bda27d85cfc9",
+  "lines": 15,
+  "func": [
+   "newEnergyTechnology"
+  ],
+  "type": [
+   "energyTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/energyTechnology_test.go": {
+  "sha256": "aaa9140137010bac6500d3a3796f432612c5f562658335b57473d37c5bfa80f4",
+  "lines": 44,
+  "func": [
+   "TestEnergyTechnologyConstructionTime",
+   "TestEnergyTechnology_GetLevel"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/errors.go": {
+  "sha256": "d2972bf302f9666e5ceb1ec4c4756a049efc39d3375b850d7214747b41d4d26f",
+  "lines": 72,
+  "func": [
+   "Error",
+   "NewAttackBlockActivatedErr"
+  ],
+  "type": [
+   "AttackBlockActivatedErr"
+  ],
+  "const": [
+   "ErrUnionNotFound",
+   "ErrAccountInVacationMode",
+   "ErrNoShipSelected",
+   "ErrUninhabitedPlanet",
+   "ErrNoDebrisField",
+   "ErrPlayerInVacationMode",
+   "ErrAdminOrGM",
+   "ErrNoAstrophysics",
+   "ErrNoobProtection",
+   "ErrPlayerTooStrong",
+   "ErrNoMoonAvailable",
+   "ErrNoRecyclerAvailable",
+   "ErrNoEventsRunning",
+   "ErrNotEnoughFuel",
+   "ErrAttackBannedUntil",
+   "ErrNotEnoughCargoSpace",
+   "ErrNotEnoughShips",
+   "ErrEngagedInCombat"
+  ],
+  "var": [
+   "ErrNotLogged",
+   "ErrMobileView",
+   "ErrInvalidPlanetID",
+   "ErrAllSlotsInUse",
+   "ErrBotInactive",
+   "ErrBotLoggedOut",
+   "ErrDeactivateHidePictures",
+   "ErrEventsBoxNotDisplayed",
+   "ErrNotEnoughDeuterium"
+  ]
+ },
+ "ogame/pkg/ogame/espionageProbe.go": {
+  "sha256": "786a8ea42ab840017dc5d0575c02950cbfb16c7e6603f142e8fe5b47fb81c9e5",
+  "lines": 24,
+  "func": [
+   "newEspionageProbe"
+  ],
+  "type": [
+   "espionageProbe"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/espionageProbe_test.go": {
+  "sha256": "071cd6ec208e20330d53e5006a07066a68093fa0c04f7422ea77ade2e3ac3f9d",
+  "lines": 19,
+  "func": [
+   "TestEspionageProbeFuelConsumption",
+   "TestEspionageProbe_GetCargoCapacity"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/espionageReport.go": {
+  "sha256": "8d45a44dd1984f3fc5dc4032c2398d06c60429891bfd5e02117f9f126fabdc24",
+  "lines": 235,
+  "func": [
+   "ResourcesBuildings",
+   "Facilities",
+   "Researches",
+   "ShipsInfos",
+   "DefensesInfos",
+   "PlunderRatio",
+   "Loot",
+   "IsDefenceless"
+  ],
+  "type": [
+   "EspionageReport"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/espionageReport_test.go": {
+  "sha256": "fccc957cc93684cf7cc869059e64505fc08e578d6006b2b56d2ea9bd30e29ba3",
+  "lines": 51,
+  "func": [
+   "TestEspionageReport_PlunderRatio",
+   "TestEspionageReport_Loot",
+   "TestEspionageReport_IsDefenceless",
+   "TestShipsInfos"
+  ],
+  "type": [],
+  "const": [
+   "var"
+  ],
+  "var": []
+ },
+ "ogame/pkg/ogame/espionageTechnology.go": {
+  "sha256": "2de91e6f6ff14aacd1888b04696a0c4487db9abd17f2c5100371fd19537cdafc",
+  "lines": 15,
+  "func": [
+   "newEspionageTechnology"
+  ],
+  "type": [
+   "espionageTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/facilities.go": {
+  "sha256": "b718540812f12cd644c722d9e3dea46efbf1da26faa5413a0c7635ce0d21d87c",
+  "lines": 97,
+  "func": [
+   "GetRoboticsFactory",
+   "GetShipyard",
+   "GetResearchLab",
+   "GetAllianceDepot",
+   "GetMissileSilo",
+   "GetNaniteFactory",
+   "GetTerraformer",
+   "GetSpaceDock",
+   "GetLunarBase",
+   "GetSensorPhalanx",
+   "GetJumpGate",
+   "ByID",
+   "GetRoboticsFactory",
+   "GetShipyard",
+   "GetResearchLab",
+   "GetAllianceDepot",
+   "GetMissileSilo",
+   "GetNaniteFactory",
+   "GetTerraformer",
+   "GetSpaceDock",
+   "GetLunarBase",
+   "GetSensorPhalanx",
+   "GetJumpGate",
+   "Lazy",
+   "ByID",
+   "String"
+  ],
+  "type": [
+   "LazyFacilities",
+   "Facilities"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/facilities_test.go": {
+  "sha256": "ee6edb3c3362b3fa596a309e92e3901f5c52f576879424824ba894bb26a8acc0",
+  "lines": 64,
+  "func": [
+   "TestFacilities_ByID",
+   "TestFacilities_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fields.go": {
+  "sha256": "4de3b95ae6fc1c9a39d389c09d5fab6d134fa52dfac514b33e19a15f252ec97b",
+  "lines": 12,
+  "func": [
+   "HasFieldAvailable"
+  ],
+  "type": [
+   "Fields"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fleet.go": {
+  "sha256": "6d8c1565b27d0b1ba1f860922e7cbb631c5231abf55211e2c86b42ef3e51e9d5",
+  "lines": 39,
+  "func": [
+   "IsCancellable",
+   "MakeFleet"
+  ],
+  "type": [
+   "Fleet",
+   "PhalanxFleet"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fleetDispatchInfos.go": {
+  "sha256": "c11165f624ecfef94a53ffe4aceb56c01e73d87e118f28dcae1d7fce7ff76a4f",
+  "lines": 9,
+  "func": [],
+  "type": [
+   "FleetDispatchInfos"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fleetid.go": {
+  "sha256": "70208d01ed52147bd8fdbcddb084ba24b29da5cc5f35b2d371fee94e2e40b7b6",
+  "lines": 18,
+  "func": [
+   "String",
+   "IsSet"
+  ],
+  "type": [
+   "FleetID"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fleetid_test.go": {
+  "sha256": "dd25c6dc778130d40bf39e5c42393eea3d6bff110286d7efc8d631f3b71bf4b9",
+  "lines": 11,
+  "func": [
+   "TestFleetID_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fusionReactor.go": {
+  "sha256": "44769dc9d5250afb2406eefbc754b0f9b3ce093c53410f12cc6291009668db85",
+  "lines": 32,
+  "func": [
+   "newFusionReactor",
+   "Production",
+   "GetFuelConsumption"
+  ],
+  "type": [
+   "fusionReactor"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/fusionReactor_test.go": {
+  "sha256": "4c865a40b500378e5e29f6efbc6dc251e00343cfa0148d6c4fc2f735e28821d7",
+  "lines": 33,
+  "func": [
+   "TestFusionReactorCapacity",
+   "TestFusionReactor_IsAvailable",
+   "TestFusionReactor_Production",
+   "TestFusionReactor_GetFuelConsumption"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/gaussCannon.go": {
+  "sha256": "1e94032c5c16551c05e8e42a0af49bd3ddc37cc745f4c20813eff6e8e2c4d647",
+  "lines": 18,
+  "func": [
+   "newGaussCannon"
+  ],
+  "type": [
+   "gaussCannon"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/gravitonTechnology.go": {
+  "sha256": "a76a8e2c93c9059659e5d0fa4c19f52a9ed46cc28bd0e674d5508638fef7dffc",
+  "lines": 15,
+  "func": [
+   "newGravitonTechnology"
+  ],
+  "type": [
+   "gravitonTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/gravitonTechnology_test.go": {
+  "sha256": "92c87297df10223f2c39a670de9490fbcfcf1c7bc47c19e4d270fd296929cef9",
+  "lines": 14,
+  "func": [
+   "TestGravitonTechnology_IsAvailable"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/heavyFighter.go": {
+  "sha256": "398368255be15e4b9b5ad2d6ae8a54918823ddf6d56904ff8f073593786029f5",
+  "lines": 22,
+  "func": [
+   "newHeavyFighter"
+  ],
+  "type": [
+   "heavyFighter"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/heavyLaser.go": {
+  "sha256": "1f6009eb89b1ed2b11ccaeafcb6c95a1bbf3755f80a0d312e05dbfe55c88fdbd",
+  "lines": 18,
+  "func": [
+   "newHeavyLaser"
+  ],
+  "type": [
+   "heavyLaser"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/highscore.go": {
+  "sha256": "b09fc2120d87d41971a240c4c85561f24d6106d3cf7ef0b0f7e7acabdabb70d7",
+  "lines": 50,
+  "func": [
+   "String",
+   "String"
+  ],
+  "type": [
+   "Highscore",
+   "HighscorePlayer"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/hyperspaceDrive.go": {
+  "sha256": "024639d82cfd1add76ac97fbb7b6a1bad43af19f352d1579a83afa1dc8761b1a",
+  "lines": 15,
+  "func": [
+   "newHyperspaceDrive"
+  ],
+  "type": [
+   "hyperspaceDrive"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/hyperspaceTechnology.go": {
+  "sha256": "a90aee4950187e35c38fe1c82c689fac75be38c1b87ded6793cf85800a018223",
+  "lines": 15,
+  "func": [
+   "newHyperspaceTechnology"
+  ],
+  "type": [
+   "hyperspaceTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/id.go": {
+  "sha256": "ec2c08c7010ffd318fd53c664c75e342becad48f915450b7ee32d67e0ab8ac6c",
+  "lines": 670,
+  "func": [
+   "IsSet",
+   "Int64",
+   "Int",
+   "String",
+   "IsValid",
+   "IsFacility",
+   "IsResourceBuilding",
+   "IsLfBuilding",
+   "IsBuilding",
+   "IsTech",
+   "IsLfTech",
+   "IsDefense",
+   "IsShip",
+   "IsFlyableShip",
+   "IsCivilShip",
+   "IsCombatShip",
+   "IsValidIPMTarget"
+  ],
+  "type": [
+   "ID"
+  ],
+  "const": [],
+  "var": [
+   "HumansTechnologiesIDs",
+   "RocktalTechnologiesIDs",
+   "MechasTechnologiesIDs",
+   "KaeleshTechnologiesIDs"
+  ]
+ },
+ "ogame/pkg/ogame/id_test.go": {
+  "sha256": "66a7ba3a94ae93827073fff391e5f2f1e479aa1c0967e6462a4c2ccceded100e",
+  "lines": 93,
+  "func": [
+   "TestIsValidIPMTarget",
+   "TestID_IsSet",
+   "TestID_Int",
+   "TestID_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/impulseDrive.go": {
+  "sha256": "95fea7d468820a02c702f2b5ef11025556f27971ea0deb0d5b6a230a3bc1dc9e",
+  "lines": 15,
+  "func": [
+   "newImpulseDrive"
+  ],
+  "type": [
+   "impulseDrive"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/impulseDrive_test.go": {
+  "sha256": "39e3147d819ed692ea1cdb5d9801fe7734588732f87a94fc98517375c51fe9ff",
+  "lines": 12,
+  "func": [
+   "TestImpulseDriveCost"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/interfaces.go": {
+  "sha256": "752e2e696c002bf1f2b03ded640933828b5bce5842f37ef4cb570163e0bee6dd",
+  "lines": 268,
+  "func": [],
+  "type": [
+   "Celestial",
+   "BaseOgameObj",
+   "DefenderObj",
+   "Ship",
+   "Defense",
+   "Levelable",
+   "Technology",
+   "Building",
+   "BuildAccelerators",
+   "TechAccelerators",
+   "DefenseAccelerators",
+   "BuildingAccelerators",
+   "IFacilities",
+   "IResearches",
+   "IResourcesBuildings",
+   "ILfBuildings",
+   "ILfResearches"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/intergalacticResearchNetwork.go": {
+  "sha256": "47654667f9a0e3718e22d614e7c9d9aa2ca11f597c14f65b23f0cde7f33e9d5a",
+  "lines": 15,
+  "func": [
+   "newIntergalacticResearchNetwork"
+  ],
+  "type": [
+   "intergalacticResearchNetwork"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/interplanetaryMissiles.go": {
+  "sha256": "43075e26aaaf12d2b556ea2ca91e07e0e24e21a6f3eab89d35590b72253491b1",
+  "lines": 17,
+  "func": [
+   "newInterplanetaryMissiles"
+  ],
+  "type": [
+   "interplanetaryMissiles"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/ionCannon.go": {
+  "sha256": "05b68cd72f1219bca602d1dbba41cb4d3fec2bc59d865f2a8f3ec4fadb265212",
+  "lines": 19,
+  "func": [
+   "newIonCannon"
+  ],
+  "type": [
+   "ionCannon"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/ionTechnology.go": {
+  "sha256": "b4adc3748eb24618d1964146ef99bdd083d11caf0730504e89cc32499c461ffb",
+  "lines": 15,
+  "func": [
+   "newIonTechnology"
+  ],
+  "type": [
+   "ionTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/item.go": {
+  "sha256": "ec425edae04b5fd11315b9475f077133ea1d63f368d5d2f81e8c255910509f5d",
+  "lines": 46,
+  "func": [],
+  "type": [
+   "Item",
+   "ActiveItem"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/jumpGate.go": {
+  "sha256": "38f0aa53c875cad6d3b62010767bd7fb1e940938449dbe410f4bd716dfaa80f5",
+  "lines": 15,
+  "func": [
+   "newJumpGate"
+  ],
+  "type": [
+   "jumpGate"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/largeCargo.go": {
+  "sha256": "54ef740e45b7a10440eb758d1bb5e2012fed3974f535b64eb885dd150c551475",
+  "lines": 22,
+  "func": [
+   "newLargeCargo"
+  ],
+  "type": [
+   "largeCargo"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/largeCargo_test.go": {
+  "sha256": "9acb42793c680ac73ab8a25fe682117d85ea934a867afc05e907e9568648eb23",
+  "lines": 29,
+  "func": [
+   "TestLargeCargo_GetSpeed",
+   "TestLargeCargo_GetCargoCapacity",
+   "TestLargeCargo_GetFuelConsumption"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/largeShieldDome.go": {
+  "sha256": "b4819d732fc4ab0cde9148ee951c8a38f2e07bdb729a20c61bf73528602c544b",
+  "lines": 17,
+  "func": [
+   "newLargeShieldDome"
+  ],
+  "type": [
+   "largeShieldDome"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/laserTechnology.go": {
+  "sha256": "ad7abb02e698ef267f6a59e90d4cc1e6c60abb7b17eb98e8dbfa99540b677c4d",
+  "lines": 15,
+  "func": [
+   "newLaserTechnology"
+  ],
+  "type": [
+   "laserTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lfBonuses.go": {
+  "sha256": "01a9fcc67f16a91ec03a299979a5b21ebf12f01f753f51df641cd3f8ee7a155b",
+  "lines": 51,
+  "func": [
+   "NewLfBonuses"
+  ],
+  "type": [
+   "LfBonuses",
+   "CostTimeBonuses",
+   "CostTimeBonus",
+   "LfShipBonuses",
+   "LfShipBonus",
+   "LfResourceBonuses",
+   "CharacterClassesBonuses",
+   "MiscBonuses"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lfBuildings.go": {
+  "sha256": "a2d9c185a77a0401f713740deb866033b868d2044de2a06efce5dd72c1bab1ca",
+  "lines": 1131,
+  "func": [
+   "ByID",
+   "GetResidentialSector",
+   "GetBiosphereFarm",
+   "GetResearchCentre",
+   "GetAcademyOfSciences",
+   "GetNeuroCalibrationCentre",
+   "GetHighEnergySmelting",
+   "GetFoodSilo",
+   "GetFusionPoweredProduction",
+   "GetSkyscraper",
+   "GetBiotechLab",
+   "GetMetropolis",
+   "GetPlanetaryShield",
+   "GetMeditationEnclave",
+   "GetCrystalFarm",
+   "GetRuneTechnologium",
+   "GetRuneForge",
+   "GetOriktorium",
+   "GetMagmaForge",
+   "GetDisruptionChamber",
+   "GetMegalith",
+   "GetCrystalRefinery",
+   "GetDeuteriumSynthesiser",
+   "GetMineralResearchCentre",
+   "GetAdvancedRecyclingPlant",
+   "GetAssemblyLine",
+   "GetFusionCellFactory",
+   "GetRoboticsResearchCentre",
+   "GetUpdateNetwork",
+   "GetQuantumComputerCentre",
+   "GetAutomatisedAssemblyCentre",
+   "GetHighPerformanceTransformer",
+   "GetMicrochipAssemblyLine",
+   "GetProductionAssemblyHall",
+   "GetHighPerformanceSynthesiser",
+   "GetChipMassProduction",
+   "GetNanoRepairBots",
+   "GetSanctuary",
+   "GetAntimatterCondenser",
+   "GetVortexChamber",
+   "GetHallsOfRealisation",
+   "GetForumOfTranscendence",
+   "GetAntimatterConvector",
+   "GetCloningLaboratory",
+   "GetChrysalisAccelerator",
+   "GetBioModifier",
+   "GetPsionicModulator",
+   "GetShipManufacturingHall",
+   "GetSupraRefractor",
+   "String",
+   "GetResidentialSector",
+   "GetBiosphereFarm",
+   "GetResearchCentre",
+   "GetAcademyOfSciences",
+   "GetNeuroCalibrationCentre",
+   "GetHighEnergySmelting",
+   "GetFoodSilo",
+   "GetFusionPoweredProduction",
+   "GetSkyscraper",
+   "GetBiotechLab",
+   "GetMetropolis",
+   "GetPlanetaryShield",
+   "GetMeditationEnclave",
+   "GetCrystalFarm",
+   "GetRuneTechnologium",
+   "GetRuneForge",
+   "GetOriktorium",
+   "GetMagmaForge",
+   "GetDisruptionChamber",
+   "GetMegalith",
+   "GetCrystalRefinery",
+   "GetDeuteriumSynthesiser",
+   "GetMineralResearchCentre",
+   "GetAdvancedRecyclingPlant",
+   "GetAssemblyLine",
+   "GetFusionCellFactory",
+   "GetRoboticsResearchCentre",
+   "GetUpdateNetwork",
+   "GetQuantumComputerCentre",
+   "GetAutomatisedAssemblyCentre",
+   "GetHighPerformanceTransformer",
+   "GetMicrochipAssemblyLine",
+   "GetProductionAssemblyHall",
+   "GetHighPerformanceSynthesiser",
+   "GetChipMassProduction",
+   "GetNanoRepairBots",
+   "GetSanctuary",
+   "GetAntimatterCondenser",
+   "GetVortexChamber",
+   "GetHallsOfRealisation",
+   "GetForumOfTranscendence",
+   "GetAntimatterConvector",
+   "GetCloningLaboratory",
+   "GetChrysalisAccelerator",
+   "GetBioModifier",
+   "GetPsionicModulator",
+   "GetShipManufacturingHall",
+   "GetSupraRefractor",
+   "Lazy",
+   "ByID",
+   "BuildingConstructionTime",
+   "ConstructionTime",
+   "GetPrice",
+   "newResidentialSector",
+   "newBiosphereFarm",
+   "newResearchCentre",
+   "newAcademyOfSciences",
+   "newNeuroCalibrationCentre",
+   "newHighEnergySmelting",
+   "newFoodSilo",
+   "newFusionPoweredProduction",
+   "newSkyscraper",
+   "newBiotechLab",
+   "newMetropolis",
+   "newPlanetaryShield",
+   "newMeditationEnclave",
+   "newCrystalFarm",
+   "newRuneTechnologium",
+   "newRuneForge",
+   "newOriktorium",
+   "newMagmaForge",
+   "newDisruptionChamber",
+   "newMegalith",
+   "newCrystalRefinery",
+   "newDeuteriumSynthesiser",
+   "newMineralResearchCentre",
+   "newAdvancedRecyclingPlant",
+   "newAssemblyLine",
+   "newFusionCellFactory",
+   "newRoboticsResearchCentre",
+   "newUpdateNetwork",
+   "newQuantumComputerCentre",
+   "newAutomatisedAssemblyCentre",
+   "newHighPerformanceTransformer",
+   "newMicrochipAssemblyLine",
+   "newProductionAssemblyHall",
+   "newHighPerformanceSynthesiser",
+   "newChipMassProduction",
+   "newNanoRepairBots",
+   "newSanctuary",
+   "newAntimatterCondenser",
+   "newVortexChamber",
+   "newHallsOfRealisation",
+   "newForumOfTranscendence",
+   "newAntimatterConvector",
+   "newCloningLaboratory",
+   "newChrysalisAccelerator",
+   "newBioModifier",
+   "newPsionicModulator",
+   "newShipManufacturingHall",
+   "newSupraRefractor"
+  ],
+  "type": [
+   "LazyLfBuildings",
+   "LifeformType",
+   "LfBuildings",
+   "BaseLfBuilding",
+   "residentialSector",
+   "biosphereFarm",
+   "researchCentre",
+   "academyOfSciences",
+   "neuroCalibrationCentre",
+   "highEnergySmelting",
+   "foodSilo",
+   "fusionPoweredProduction",
+   "skyscraper",
+   "biotechLab",
+   "metropolis",
+   "planetaryShield",
+   "meditationEnclave",
+   "crystalFarm",
+   "runeTechnologium",
+   "runeForge",
+   "oriktorium",
+   "magmaForge",
+   "disruptionChamber",
+   "megalith",
+   "crystalRefinery",
+   "deuteriumSynthesiser",
+   "mineralResearchCentre",
+   "advancedRecyclingPlant",
+   "assemblyLine",
+   "fusionCellFactory",
+   "roboticsResearchCentre",
+   "updateNetwork",
+   "quantumComputerCentre",
+   "automatisedAssemblyCentre",
+   "highPerformanceTransformer",
+   "microchipAssemblyLine",
+   "productionAssemblyHall",
+   "highPerformanceSynthesiser",
+   "chipMassProduction",
+   "nanoRepairBots",
+   "sanctuary",
+   "antimatterCondenser",
+   "vortexChamber",
+   "hallsOfRealisation",
+   "forumOfTranscendence",
+   "antimatterConvector",
+   "cloningLaboratory",
+   "chrysalisAccelerator",
+   "bioModifier",
+   "psionicModulator",
+   "shipManufacturingHall",
+   "supraRefractor"
+  ],
+  "const": [
+   "NoneLfType"
+  ],
+  "var": []
+ },
+ "ogame/pkg/ogame/lfBuildings_test.go": {
+  "sha256": "9f06a2db5ea54983a10c3e1e9751557ca608aac79cda9614a896e6a16f94e3f6",
+  "lines": 69,
+  "func": [
+   "TestResidentialSectorCost",
+   "TestBiosphereFarmCost",
+   "TestResearchCenterCost",
+   "TestResidentialSectorConstructionTime",
+   "TestResearchCentreConstructionTime",
+   "TestAssemblyLineConstructionTime",
+   "TestAntimatterCondenserCost"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lfResearches.go": {
+  "sha256": "ba6f9f871e2e711889a1a3b33bc0eb7c57879a6d4ccf7a8ff17315b72ba3218b",
+  "lines": 1657,
+  "func": [
+   "ByID",
+   "GetIntergalacticEnvoys",
+   "GetHighPerformanceExtractors",
+   "GetFusionDrives",
+   "GetStealthFieldGenerator",
+   "GetOrbitalDen",
+   "GetResearchAI",
+   "GetHighPerformanceTerraformer",
+   "GetEnhancedProductionTechnologies",
+   "GetLightFighterMkII",
+   "GetCruiserMkII",
+   "GetImprovedLabTechnology",
+   "GetPlasmaTerraformer",
+   "GetLowTemperatureDrives",
+   "GetBomberMkII",
+   "GetDestroyerMkII",
+   "GetBattlecruiserMkII",
+   "GetRobotAssistants",
+   "GetSupercomputer",
+   "GetVolcanicBatteries",
+   "GetAcousticScanning",
+   "GetHighEnergyPumpSystems",
+   "GetCargoHoldExpansionCivilianShips",
+   "GetMagmaPoweredProduction",
+   "GetGeothermalPowerPlants",
+   "GetDepthSounding",
+   "GetIonCrystalEnhancementHeavyFighter",
+   "GetImprovedStellarator",
+   "GetHardenedDiamondDrillHeads",
+   "GetSeismicMiningTechnology",
+   "GetMagmaPoweredPumpSystems",
+   "GetIonCrystalModules",
+   "GetOptimisedSiloConstructionMethod",
+   "GetDiamondEnergyTransmitter",
+   "GetObsidianShieldReinforcement",
+   "GetRuneShields",
+   "GetRocktalCollectorEnhancement",
+   "GetCatalyserTechnology",
+   "GetPlasmaDrive",
+   "GetEfficiencyModule",
+   "GetDepotAI",
+   "GetGeneralOverhaulLightFighter",
+   "GetAutomatedTransportLines",
+   "GetImprovedDroneAI",
+   "GetExperimentalRecyclingTechnology",
+   "GetGeneralOverhaulCruiser",
+   "GetSlingshotAutopilot",
+   "GetHighTemperatureSuperconductors",
+   "GetGeneralOverhaulBattleship",
+   "GetArtificialSwarmIntelligence",
+   "GetGeneralOverhaulBattlecruiser",
+   "GetGeneralOverhaulBomber",
+   "GetGeneralOverhaulDestroyer",
+   "GetExperimentalWeaponsTechnology",
+   "GetMechanGeneralEnhancement",
+   "GetHeatRecovery",
+   "GetSulphideProcess",
+   "GetPsionicNetwork",
+   "GetTelekineticTractorBeam",
+   "GetEnhancedSensorTechnology",
+   "GetNeuromodalCompressor",
+   "GetNeuroInterface",
+   "GetInterplanetaryAnalysisNetwork",
+   "GetOverclockingHeavyFighter",
+   "GetTelekineticDrive",
+   "GetSixthSense",
+   "GetPsychoharmoniser",
+   "GetEfficientSwarmIntelligence",
+   "GetOverclockingLargeCargo",
+   "GetGravitationSensors",
+   "GetOverclockingBattleship",
+   "GetPsionicShieldMatrix",
+   "GetKaeleshDiscovererEnhancement",
+   "GetIntergalacticEnvoys",
+   "GetHighPerformanceExtractors",
+   "GetFusionDrives",
+   "GetStealthFieldGenerator",
+   "GetOrbitalDen",
+   "GetResearchAI",
+   "GetHighPerformanceTerraformer",
+   "GetEnhancedProductionTechnologies",
+   "GetLightFighterMkII",
+   "GetCruiserMkII",
+   "GetImprovedLabTechnology",
+   "GetPlasmaTerraformer",
+   "GetLowTemperatureDrives",
+   "GetBomberMkII",
+   "GetDestroyerMkII",
+   "GetBattlecruiserMkII",
+   "GetRobotAssistants",
+   "GetSupercomputer",
+   "GetVolcanicBatteries",
+   "GetAcousticScanning",
+   "GetHighEnergyPumpSystems",
+   "GetCargoHoldExpansionCivilianShips",
+   "GetMagmaPoweredProduction",
+   "GetGeothermalPowerPlants",
+   "GetDepthSounding",
+   "GetIonCrystalEnhancementHeavyFighter",
+   "GetImprovedStellarator",
+   "GetHardenedDiamondDrillHeads",
+   "GetSeismicMiningTechnology",
+   "GetMagmaPoweredPumpSystems",
+   "GetIonCrystalModules",
+   "GetOptimisedSiloConstructionMethod",
+   "GetDiamondEnergyTransmitter",
+   "GetObsidianShieldReinforcement",
+   "GetRuneShields",
+   "GetRocktalCollectorEnhancement",
+   "GetCatalyserTechnology",
+   "GetPlasmaDrive",
+   "GetEfficiencyModule",
+   "GetDepotAI",
+   "GetGeneralOverhaulLightFighter",
+   "GetAutomatedTransportLines",
+   "GetImprovedDroneAI",
+   "GetExperimentalRecyclingTechnology",
+   "GetGeneralOverhaulCruiser",
+   "GetSlingshotAutopilot",
+   "GetHighTemperatureSuperconductors",
+   "GetGeneralOverhaulBattleship",
+   "GetArtificialSwarmIntelligence",
+   "GetGeneralOverhaulBattlecruiser",
+   "GetGeneralOverhaulBomber",
+   "GetGeneralOverhaulDestroyer",
+   "GetExperimentalWeaponsTechnology",
+   "GetMechanGeneralEnhancement",
+   "GetHeatRecovery",
+   "GetSulphideProcess",
+   "GetPsionicNetwork",
+   "GetTelekineticTractorBeam",
+   "GetEnhancedSensorTechnology",
+   "GetNeuromodalCompressor",
+   "GetNeuroInterface",
+   "GetInterplanetaryAnalysisNetwork",
+   "GetOverclockingHeavyFighter",
+   "GetTelekineticDrive",
+   "GetSixthSense",
+   "GetPsychoharmoniser",
+   "GetEfficientSwarmIntelligence",
+   "GetOverclockingLargeCargo",
+   "GetGravitationSensors",
+   "GetOverclockingBattleship",
+   "GetPsionicShieldMatrix",
+   "GetKaeleshDiscovererEnhancement",
+   "Lazy",
+   "ByID",
+   "AvailableSlot",
+   "TechnologyConstructionTime",
+   "ConstructionTime",
+   "GetPrice",
+   "newIntergalacticEnvoys",
+   "newHighPerformanceExtractors",
+   "newFusionDrives",
+   "newStealthFieldGenerator",
+   "newOrbitalDen",
+   "newResearchAI",
+   "newHighPerformanceTerraformer",
+   "newEnhancedProductionTechnologies",
+   "newLightFighterMkII",
+   "newCruiserMkII",
+   "newImprovedLabTechnology",
+   "newPlasmaTerraformer",
+   "newLowTemperatureDrives",
+   "newBomberMkII",
+   "newDestroyerMkII",
+   "newBattlecruiserMkII",
+   "newRobotAssistants",
+   "newSupercomputer",
+   "newVolcanicBatteries",
+   "newAcousticScanning",
+   "newHighEnergyPumpSystems",
+   "newCargoHoldExpansionCivilianShips",
+   "newMagmaPoweredProduction",
+   "newGeothermalPowerPlants",
+   "newDepthSounding",
+   "newIonCrystalEnhancementHeavyFighter",
+   "newImprovedStellarator",
+   "newHardenedDiamondDrillHeads",
+   "newSeismicMiningTechnology",
+   "newMagmaPoweredPumpSystems",
+   "newIonCrystalModules",
+   "newOptimisedSiloConstructionMethod",
+   "newDiamondEnergyTransmitter",
+   "newObsidianShieldReinforcement",
+   "newRuneShields",
+   "newRocktalCollectorEnhancement",
+   "newCatalyserTechnology",
+   "newPlasmaDrive",
+   "newEfficiencyModule",
+   "newDepotAI",
+   "newGeneralOverhaulLightFighter",
+   "newAutomatedTransportLines",
+   "newImprovedDroneAI",
+   "newExperimentalRecyclingTechnology",
+   "newGeneralOverhaulCruiser",
+   "newSlingshotAutopilot",
+   "newHighTemperatureSuperconductors",
+   "newGeneralOverhaulBattleship",
+   "newArtificialSwarmIntelligence",
+   "newGeneralOverhaulBattlecruiser",
+   "newGeneralOverhaulBomber",
+   "newGeneralOverhaulDestroyer",
+   "newExperimentalWeaponsTechnology",
+   "newMechanGeneralEnhancement",
+   "newHeatRecovery",
+   "newSulphideProcess",
+   "newPsionicNetwork",
+   "newTelekineticTractorBeam",
+   "newEnhancedSensorTechnology",
+   "newNeuromodalCompressor",
+   "newNeuroInterface",
+   "newInterplanetaryAnalysisNetwork",
+   "newOverclockingHeavyFighter",
+   "newTelekineticDrive",
+   "newSixthSense",
+   "newPsychoharmoniser",
+   "newEfficientSwarmIntelligence",
+   "newOverclockingLargeCargo",
+   "newGravitationSensors",
+   "newOverclockingBattleship",
+   "newPsionicShieldMatrix",
+   "newKaeleshDiscovererEnhancement"
+  ],
+  "type": [
+   "LazyLfResearches",
+   "LfResearches",
+   "LfSlot",
+   "LfResearchDetails",
+   "BaseLfResearch",
+   "intergalacticEnvoys",
+   "highPerformanceExtractors",
+   "fusionDrives",
+   "stealthFieldGenerator",
+   "orbitalDen",
+   "researchAI",
+   "highPerformanceTerraformer",
+   "enhancedProductionTechnologies",
+   "lightFighterMkII",
+   "cruiserMkII",
+   "improvedLabTechnology",
+   "plasmaTerraformer",
+   "lowTemperatureDrives",
+   "bomberMkII",
+   "destroyerMkII",
+   "battlecruiserMkII",
+   "robotAssistants",
+   "supercomputer",
+   "volcanicBatteries",
+   "acousticScanning",
+   "highEnergyPumpSystems",
+   "cargoHoldExpansionCivilianShips",
+   "magmaPoweredProduction",
+   "geothermalPowerPlants",
+   "depthSounding",
+   "ionCrystalEnhancementHeavyFighter",
+   "improvedStellarator",
+   "hardenedDiamondDrillHeads",
+   "seismicMiningTechnology",
+   "magmaPoweredPumpSystems",
+   "ionCrystalModules",
+   "optimisedSiloConstructionMethod",
+   "diamondEnergyTransmitter",
+   "obsidianShieldReinforcement",
+   "runeShields",
+   "rocktalCollectorEnhancement",
+   "catalyserTechnology",
+   "plasmaDrive",
+   "efficiencyModule",
+   "depotAI",
+   "generalOverhaulLightFighter",
+   "automatedTransportLines",
+   "improvedDroneAI",
+   "experimentalRecyclingTechnology",
+   "generalOverhaulCruiser",
+   "slingshotAutopilot",
+   "highTemperatureSuperconductors",
+   "generalOverhaulBattleship",
+   "artificialSwarmIntelligence",
+   "generalOverhaulBattlecruiser",
+   "generalOverhaulBomber",
+   "generalOverhaulDestroyer",
+   "experimentalWeaponsTechnology",
+   "mechanGeneralEnhancement",
+   "heatRecovery",
+   "sulphideProcess",
+   "psionicNetwork",
+   "telekineticTractorBeam",
+   "enhancedSensorTechnology",
+   "neuromodalCompressor",
+   "neuroInterface",
+   "interplanetaryAnalysisNetwork",
+   "overclockingHeavyFighter",
+   "telekineticDrive",
+   "sixthSense",
+   "psychoharmoniser",
+   "efficientSwarmIntelligence",
+   "overclockingLargeCargo",
+   "gravitationSensors",
+   "overclockingBattleship",
+   "psionicShieldMatrix",
+   "kaeleshDiscovererEnhancement"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lfResearches_test.go": {
+  "sha256": "9e18b5417360b269efec2c6d6e3e22f589f8cf0c5c7965f926e7785c1ff324b5",
+  "lines": 18,
+  "func": [
+   "TestIntergalacticEnvoysConstructionTime",
+   "TestCatalyserTechnologyPrice"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lightFighter.go": {
+  "sha256": "9569fb4bed3849ff1c3131e4161a2ee3339ac40b910300e7f87dacb01b145e5f",
+  "lines": 22,
+  "func": [
+   "newLightFighter"
+  ],
+  "type": [
+   "lightFighter"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lightLaser.go": {
+  "sha256": "9c4a52bda02cbe1c668ea74fd2e85d3911ee4a09dcb17d66179e92574d755184",
+  "lines": 18,
+  "func": [
+   "newLightLaser"
+  ],
+  "type": [
+   "lightLaser"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lightLaser_test.go": {
+  "sha256": "d9caf28fbc938fee6cafbd8ef3f740264be6e6c7c044608d1b20d0a10a62b005",
+  "lines": 12,
+  "func": [
+   "TestLightLaser_IsAvailable"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lunarBase.go": {
+  "sha256": "8a7d71c96009ee4b8161a4e4e5e88bb8569a84862bcbb8ab2621f79451e8663a",
+  "lines": 20,
+  "func": [
+   "newLunarBase",
+   "DeconstructionPrice"
+  ],
+  "type": [
+   "lunarBase"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/lunarBase_test.go": {
+  "sha256": "6ca6ce275bfa2cab9f3cb667a348e6cbefd599c076fc29cb7f8b68852be879ba",
+  "lines": 21,
+  "func": [
+   "TestLunarBasePrice",
+   "TestLunarBase_IsAvailable"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/metalMine.go": {
+  "sha256": "e612a21f1eb9349eab464364504eb3925bd2442cc6e99ad303d57f5c250809b0",
+  "lines": 31,
+  "func": [
+   "newMetalMine",
+   "EnergyConsumption",
+   "Production"
+  ],
+  "type": [
+   "metalMine"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/metalMine_test.go": {
+  "sha256": "79d4dc309dcf8dc1d91f9e3c4be7d3dc8f86849f63248a46408bf4af99b4253e",
+  "lines": 46,
+  "func": [
+   "TestMetalMineProduction",
+   "TestMetalMineConstructionTime",
+   "TestMetalMine_GetLevel",
+   "TestMetalMine_EnergyConsumption",
+   "TestMetalMine_IsAvailable",
+   "TestDeconstructionPrice"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/metalStorage.go": {
+  "sha256": "e8d5e93468d5b6bb1191dac86f2a270486fe4f8b047fed1a6bf631cb031f68ca",
+  "lines": 14,
+  "func": [
+   "newMetalStorage"
+  ],
+  "type": [
+   "metalStorage"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/metalStorage_test.go": {
+  "sha256": "8d19a8ca6ca09df73b821391d08ca57772bd5e25ddf567f34184a39d7bc3753a",
+  "lines": 27,
+  "func": [
+   "TestMetalStorageCost",
+   "TestMetalStorageCapacity"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/missileSilo.go": {
+  "sha256": "303ece294baf3d0311644ed0a541f3b79c040f7fd202765f04aa370590eaeed7",
+  "lines": 15,
+  "func": [
+   "newMissileSilo"
+  ],
+  "type": [
+   "missileSilo"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/naniteFactory.go": {
+  "sha256": "6de4183f37904eda9c156353b0cbb2d0ea6f7dd0dd893b5c3789076f5f94d2ce",
+  "lines": 15,
+  "func": [
+   "newNaniteFactory"
+  ],
+  "type": [
+   "naniteFactory"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/naniteFactory_test.go": {
+  "sha256": "949d256b1ed7e7548a1e294a2e1578efa2e1df4d54a664524a673a7df0646da4",
+  "lines": 19,
+  "func": [
+   "TestNaniteFactoryConstructionTime"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/objs.go": {
+  "sha256": "16ab0292217541ffdf230de891dba4027b6a58c8dd5731907ebbfac3802a91ec",
+  "lines": 476,
+  "func": [
+   "ByID",
+   "GetShip"
+  ],
+  "type": [
+   "ObjsStruct"
+  ],
+  "const": [
+   "AllianceDepot",
+   "CrystalMine",
+   "CrystalStorage",
+   "DeuteriumSynthesizer",
+   "DeuteriumTank",
+   "FusionReactor",
+   "MetalMine",
+   "MetalStorage",
+   "MissileSilo",
+   "NaniteFactory",
+   "ResearchLab",
+   "RoboticsFactory",
+   "SeabedDeuteriumDen",
+   "ShieldedMetalDen",
+   "Shipyard",
+   "SolarPlant",
+   "SpaceDock",
+   "LunarBase",
+   "SensorPhalanx",
+   "JumpGate",
+   "Terraformer",
+   "UndergroundCrystalDen",
+   "SolarSatellite",
+   "AntiBallisticMissiles",
+   "GaussCannon",
+   "HeavyLaser",
+   "InterplanetaryMissiles",
+   "IonCannon",
+   "LargeShieldDome",
+   "LightLaser",
+   "PlasmaTurret",
+   "RocketLauncher",
+   "SmallShieldDome",
+   "Battlecruiser",
+   "Battleship",
+   "Bomber",
+   "ColonyShip",
+   "Cruiser",
+   "Deathstar",
+   "Destroyer",
+   "EspionageProbe",
+   "HeavyFighter",
+   "LargeCargo",
+   "LightFighter",
+   "Recycler",
+   "SmallCargo",
+   "Crawler",
+   "Reaper",
+   "Pathfinder",
+   "ArmourTechnology",
+   "Astrophysics",
+   "CombustionDrive",
+   "ComputerTechnology",
+   "EnergyTechnology",
+   "EspionageTechnology",
+   "GravitonTechnology",
+   "HyperspaceDrive",
+   "HyperspaceTechnology",
+   "ImpulseDrive",
+   "IntergalacticResearchNetwork",
+   "IonTechnology",
+   "LaserTechnology",
+   "PlasmaTechnology",
+   "ShieldingTechnology",
+   "WeaponsTechnology",
+   "ResidentialSector",
+   "BiosphereFarm",
+   "ResearchCentre",
+   "AcademyOfSciences",
+   "NeuroCalibrationCentre",
+   "HighEnergySmelting",
+   "FoodSilo",
+   "FusionPoweredProduction",
+   "Skyscraper",
+   "BiotechLab",
+   "Metropolis",
+   "PlanetaryShield",
+   "MeditationEnclave",
+   "CrystalFarm",
+   "RuneTechnologium",
+   "RuneForge",
+   "Oriktorium",
+   "MagmaForge",
+   "DisruptionChamber",
+   "Megalith",
+   "CrystalRefinery",
+   "DeuteriumSynthesiser",
+   "MineralResearchCentre",
+   "AdvancedRecyclingPlant",
+   "AssemblyLine",
+   "FusionCellFactory",
+   "RoboticsResearchCentre",
+   "UpdateNetwork",
+   "QuantumComputerCentre",
+   "AutomatisedAssemblyCentre",
+   "HighPerformanceTransformer",
+   "MicrochipAssemblyLine",
+   "ProductionAssemblyHall",
+   "HighPerformanceSynthesiser",
+   "ChipMassProduction",
+   "NanoRepairBots",
+   "Sanctuary",
+   "AntimatterCondenser",
+   "VortexChamber",
+   "HallsOfRealisation",
+   "ForumOfTranscendence",
+   "AntimatterConvector",
+   "CloningLaboratory",
+   "ChrysalisAccelerator",
+   "BioModifier",
+   "PsionicModulator",
+   "ShipManufacturingHall",
+   "SupraRefractor",
+   "IntergalacticEnvoys",
+   "HighPerformanceExtractors",
+   "FusionDrives",
+   "StealthFieldGenerator",
+   "OrbitalDen",
+   "ResearchAI",
+   "HighPerformanceTerraformer",
+   "EnhancedProductionTechnologies",
+   "LightFighterMkII",
+   "CruiserMkII",
+   "ImprovedLabTechnology",
+   "PlasmaTerraformer",
+   "LowTemperatureDrives",
+   "BomberMkII",
+   "DestroyerMkII",
+   "BattlecruiserMkII",
+   "RobotAssistants",
+   "Supercomputer",
+   "VolcanicBatteries",
+   "AcousticScanning",
+   "HighEnergyPumpSystems",
+   "CargoHoldExpansionCivilianShips",
+   "MagmaPoweredProduction",
+   "GeothermalPowerPlants",
+   "DepthSounding",
+   "ImprovedStellarator",
+   "HardenedDiamondDrillHeads",
+   "SeismicMiningTechnology",
+   "MagmaPoweredPumpSystems",
+   "IonCrystalModules",
+   "OptimisedSiloConstructionMethod",
+   "DiamondEnergyTransmitter",
+   "ObsidianShieldReinforcement",
+   "RuneShields",
+   "RocktalCollectorEnhancement",
+   "CatalyserTechnology",
+   "PlasmaDrive",
+   "EfficiencyModule",
+   "DepotAI",
+   "GeneralOverhaulLightFighter",
+   "AutomatedTransportLines",
+   "ImprovedDroneAI",
+   "ExperimentalRecyclingTechnology",
+   "GeneralOverhaulCruiser",
+   "SlingshotAutopilot",
+   "HighTemperatureSuperconductors",
+   "GeneralOverhaulBattleship",
+   "ArtificialSwarmIntelligence",
+   "GeneralOverhaulBattlecruiser",
+   "GeneralOverhaulBomber",
+   "GeneralOverhaulDestroyer",
+   "ExperimentalWeaponsTechnology",
+   "MechanGeneralEnhancement",
+   "HeatRecovery",
+   "SulphideProcess",
+   "PsionicNetwork",
+   "TelekineticTractorBeam",
+   "EnhancedSensorTechnology",
+   "NeuromodalCompressor",
+   "NeuroInterface",
+   "InterplanetaryAnalysisNetwork",
+   "OverclockingHeavyFighter",
+   "TelekineticDrive",
+   "SixthSense",
+   "Psychoharmoniser",
+   "EfficientSwarmIntelligence",
+   "OverclockingLargeCargo",
+   "GravitationSensors",
+   "OverclockingBattleship",
+   "PsionicShieldMatrix",
+   "KaeleshDiscovererEnhancement"
+  ],
+  "var": [
+   "Objs",
+   "Defenses",
+   "Ships",
+   "Buildings",
+   "PlanetBuildings",
+   "MoonBuildings",
+   "Technologies",
+   "HumansBuildings",
+   "RocktalBuildings",
+   "MechasBuildings",
+   "KaeleshBuildings",
+   "HumansTechnologies",
+   "RocktalTechnologies",
+   "MechasTechnologies",
+   "KaeleshTechnologies"
+  ]
+ },
+ "ogame/pkg/ogame/ogame.go": {
+  "sha256": "d72ccf8978527fde176f6eebd99dd94f12de5f93b01484497d53f25262016dfa",
+  "lines": 299,
+  "func": [
+   "Celestial",
+   "Float64",
+   "Int64",
+   "Int",
+   "String"
+  ],
+  "type": [
+   "MessagesTabID",
+   "CelestialID",
+   "MoonID",
+   "Speed",
+   "ResourcesResp",
+   "planetResource",
+   "PlanetResources",
+   "Multiplier",
+   "EspionageReportType",
+   "CombatReportSummary",
+   "EspionageReportSummary",
+   "ExpeditionMessage",
+   "MarketplaceMessage",
+   "Preferences",
+   "ACSValues",
+   "Relocation",
+   "MinifleetResponse"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/pathfinder.go": {
+  "sha256": "77ea30eed8ff179396cf4e51f63f5c7780a4bfa74993c3259cbd0b49cac1f199",
+  "lines": 22,
+  "func": [
+   "newPathfinder"
+  ],
+  "type": [
+   "pathfinder"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/pathfinder_test.go": {
+  "sha256": "8fb7f63cc6b95d089574a900358439dcdfb997c74bbac976c3281815e22da6d6",
+  "lines": 13,
+  "func": [
+   "TestPathfinderSpeed"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/planet.go": {
+  "sha256": "fe5a3fbc985d96fadad57c585249c2dde1fcf22b8960c30894044b6577b920fe",
+  "lines": 40,
+  "func": [
+   "GetID",
+   "GetImg",
+   "GetName",
+   "GetDiameter",
+   "GetCoordinate",
+   "GetFields",
+   "GetTemperature",
+   "GetMoon",
+   "GetType",
+   "GetID",
+   "GetImg",
+   "GetName",
+   "GetDiameter",
+   "GetCoordinate",
+   "GetFields",
+   "GetType"
+  ],
+  "type": [
+   "Planet",
+   "Moon"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/planetInfos.go": {
+  "sha256": "1b0b2eb715e3d2616d68232f0ead3b68ff7fcdf19889c74b3a7c5ec7b9ebee16",
+  "lines": 137,
+  "func": [
+   "Galaxy",
+   "SetGalaxy",
+   "System",
+   "SetSystem",
+   "SetPlanet",
+   "Position",
+   "Each",
+   "MarshalJSON"
+  ],
+  "type": [
+   "SystemInfos",
+   "MoonInfos",
+   "AllianceInfos",
+   "PlanetInfos"
+  ],
+  "const": [
+   "for"
+  ],
+  "var": []
+ },
+ "ogame/pkg/ogame/planetInfos_test.go": {
+  "sha256": "c37f0a4a5f1d7c3d2e13e6420ca52722c54f10865eda878c6efa9ecf4d54ce34",
+  "lines": 52,
+  "func": [
+   "TestSystemInfos_Position",
+   "TestSystemInfos_Each",
+   "TestSystemInfos_MarshalJSON"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/planetid.go": {
+  "sha256": "8e01a187011ee7d444e853f853481f290b572f2e4c0aa73072ab13a5b142166e",
+  "lines": 17,
+  "func": [
+   "String",
+   "Celestial"
+  ],
+  "type": [
+   "PlanetID"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/planetid_test.go": {
+  "sha256": "bdf4c16d031cce891fe9df7cb2e444aa39b8110a2afdfd56f63f1957a684a8be",
+  "lines": 15,
+  "func": [
+   "TestCelestial",
+   "TestPlantID_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/plasmaTechnology.go": {
+  "sha256": "78d486d814383ef487a3f944218f481f2343a20899f693ddf83af3dba3f90213",
+  "lines": 15,
+  "func": [
+   "newPlasmaTechnology"
+  ],
+  "type": [
+   "plasmaTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/plasmaTurret.go": {
+  "sha256": "052f1ef178efd753bf63a99a2a36c2560f683bf096daf8dd327a82d6e75cde7d",
+  "lines": 17,
+  "func": [
+   "newPlasmaTurret"
+  ],
+  "type": [
+   "plasmaTurret"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/quantifiable.go": {
+  "sha256": "0b6722be9fdc20b0c521c7a2a75e119d79748b9fc869ce853fe3407665fda9a4",
+  "lines": 7,
+  "func": [],
+  "type": [
+   "Quantifiable"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/reaper.go": {
+  "sha256": "37da5860bbed60805bb0c9d96689910a2d696e0a4e5d13a523dc78632c12b9b5",
+  "lines": 22,
+  "func": [
+   "newReaper"
+  ],
+  "type": [
+   "reaper"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/reaper_test.go": {
+  "sha256": "9b977b81a79d05a239902f42c58ba53745d36aac534a0d7a83aab6d921ebaa3a",
+  "lines": 13,
+  "func": [
+   "TestReaperSpeed"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/recycler.go": {
+  "sha256": "a1515b9619ea131d6dc5822c6e0803fb0a4656f5792993c4228f7d8449d7e882",
+  "lines": 22,
+  "func": [
+   "newRecycler"
+  ],
+  "type": [
+   "recycler"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/recycler_test.go": {
+  "sha256": "8c103fbf96997f17e706207ca64823f04643a0d0573aba03e1b87c9aba07cfcf",
+  "lines": 16,
+  "func": [
+   "TestRecyclerSpeed"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/researchLab.go": {
+  "sha256": "29d259aff6b1715f5cd959d6738742cc9dddd57479d3f7bb91f9376eee4c0272",
+  "lines": 14,
+  "func": [
+   "newResearchLab"
+  ],
+  "type": [
+   "researchLab"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/researchLab_test.go": {
+  "sha256": "686bd6af1fc56a6541e6079027261d0d07d3a7d7394b483cbd1347468f6a557d",
+  "lines": 13,
+  "func": [
+   "TestResearchLabCost"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/researches.go": {
+  "sha256": "f2e3524f6f3c0fa0772de6d0e738f5e3640cd952d6b02cde113c8495f71dbf61",
+  "lines": 134,
+  "func": [
+   "GetEnergyTechnology",
+   "GetLaserTechnology",
+   "GetIonTechnology",
+   "GetHyperspaceTechnology",
+   "GetPlasmaTechnology",
+   "GetCombustionDrive",
+   "GetImpulseDrive",
+   "GetHyperspaceDrive",
+   "GetEspionageTechnology",
+   "GetComputerTechnology",
+   "GetAstrophysics",
+   "GetIntergalacticResearchNetwork",
+   "GetGravitonTechnology",
+   "GetWeaponsTechnology",
+   "GetShieldingTechnology",
+   "GetArmourTechnology",
+   "ByID",
+   "GetEnergyTechnology",
+   "GetLaserTechnology",
+   "GetIonTechnology",
+   "GetHyperspaceTechnology",
+   "GetPlasmaTechnology",
+   "GetCombustionDrive",
+   "GetImpulseDrive",
+   "GetHyperspaceDrive",
+   "GetEspionageTechnology",
+   "GetComputerTechnology",
+   "GetAstrophysics",
+   "GetIntergalacticResearchNetwork",
+   "GetGravitonTechnology",
+   "GetWeaponsTechnology",
+   "GetShieldingTechnology",
+   "GetArmourTechnology",
+   "ToPtr",
+   "Lazy",
+   "ByID",
+   "String"
+  ],
+  "type": [
+   "LazyResearches",
+   "Researches"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/researches_test.go": {
+  "sha256": "0707c1c04ceb07d8edae1fd3fed1f4fbffa7466c2039784538505f3a214cdace",
+  "lines": 84,
+  "func": [
+   "TestResearchesByID",
+   "TestResearchesString"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/resourceSettings.go": {
+  "sha256": "b4e4604f3dffa60f1fc2bd4980e7a00f6e371c9b3202d3818001c77953d1aab5",
+  "lines": 25,
+  "func": [
+   "String"
+  ],
+  "type": [
+   "ResourceSettings"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/resourceSettings_test.go": {
+  "sha256": "827b1e31f27440f424c8d49c6732098d6a04b1c0fe645d52bae6f0cb816a3484",
+  "lines": 28,
+  "func": [
+   "TestResourceSettings_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/resources.go": {
+  "sha256": "499ebfc75fe6cb5d0810ecf4e66bcbe305c2b037275264c366eed8a9130f4836",
+  "lines": 189,
+  "func": [
+   "Available",
+   "String",
+   "Total",
+   "Value",
+   "Sub",
+   "Add",
+   "Mul",
+   "Div",
+   "CanAfford",
+   "CanAfford2",
+   "Gte",
+   "Gte2",
+   "Lte",
+   "FitsIn",
+   "SubPercent"
+  ],
+  "type": [
+   "ResourcesDetails",
+   "Resources"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/resourcesBuildings.go": {
+  "sha256": "bfdcd72bc301e2d914f6495ba95d90894fae88cb7e48378fed792536755dd0da",
+  "lines": 85,
+  "func": [
+   "GetMetalMine",
+   "GetCrystalMine",
+   "GetDeuteriumSynthesizer",
+   "GetSolarPlant",
+   "GetFusionReactor",
+   "GetSolarSatellite",
+   "GetMetalStorage",
+   "GetCrystalStorage",
+   "GetDeuteriumTank",
+   "ByID",
+   "GetMetalMine",
+   "GetCrystalMine",
+   "GetDeuteriumSynthesizer",
+   "GetSolarPlant",
+   "GetFusionReactor",
+   "GetSolarSatellite",
+   "GetMetalStorage",
+   "GetCrystalStorage",
+   "GetDeuteriumTank",
+   "Lazy",
+   "ByID",
+   "String"
+  ],
+  "type": [
+   "LazyResourcesBuildings",
+   "ResourcesBuildings"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/resourcesBuildings_test.go": {
+  "sha256": "f081074ba252118830cd5a8c926a2ede7fe339d646ea984bff79d4e20b307145",
+  "lines": 56,
+  "func": [
+   "TestResourcesBuildings_ByID",
+   "TestResourcesBuildings_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/resources_test.go": {
+  "sha256": "72d34ed4a7f70e2d74d401e122e1b4c6564ad0a551d224f73cab60c843fbc7ff",
+  "lines": 107,
+  "func": [
+   "TestValue",
+   "TestTotal",
+   "TestSub",
+   "TestAdd",
+   "TestMul",
+   "TestDiv",
+   "TestGte",
+   "TestLte",
+   "TestCanAford",
+   "TestCanAford2",
+   "TestString",
+   "TestResourcesDetails_Available",
+   "TestResources_FitsIn"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/roboticsFactory.go": {
+  "sha256": "d0e62c865369ac2d2b0e4eda09ecbedc85f0556e12b15a9916a8bdaea5dc4dfc",
+  "lines": 14,
+  "func": [
+   "newRoboticsFactory"
+  ],
+  "type": [
+   "roboticsFactory"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/rocketLauncher.go": {
+  "sha256": "f0fbac9e68f3f87af0d5d9c0c0a6d99db53e314d59ff01f85fcbc6f448448086",
+  "lines": 18,
+  "func": [
+   "newRocketLauncher"
+  ],
+  "type": [
+   "rocketLauncher"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/rocketLauncher_test.go": {
+  "sha256": "39a4fa0b0425771efa3ef9aeeab9241463483c2ad13996a03f4663a59a9cfb20",
+  "lines": 50,
+  "func": [
+   "TestRocketLauncherConstructionTime",
+   "TestRocketLauncher_GetName",
+   "TestRocketLauncher_GetRequirements",
+   "TestRocketLauncher_GetPrice",
+   "TestRocketLauncher_GetRapidfireFrom",
+   "TestRocketLauncher_GetStructuralIntegrity",
+   "TestRocketLauncher_GetShieldPower",
+   "TestRocketLauncher_GetWeaponPower"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/seabedDeuteriumDen.go": {
+  "sha256": "e7da9d89e14d1c3ccf23078240ebf8d795c57bc39cf9c7e5092dcc1f1c7c3c04",
+  "lines": 14,
+  "func": [
+   "newSeabedDeuteriumDen"
+  ],
+  "type": [
+   "seabedDeuteriumDen"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/sensorPhalanx.go": {
+  "sha256": "ad4419bfc031b6e745c043c792f5aca54d5affa411d2befdc8cfdbb4cc3ff2f3",
+  "lines": 43,
+  "func": [
+   "newSensorPhalanx",
+   "ScanConsumption",
+   "GetRange"
+  ],
+  "type": [
+   "sensorPhalanx"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/sensorPhalanx_test.go": {
+  "sha256": "9259ce0f179025b153c4a1badd0c0bf0b34bf04503931be36b540fa83a95e422",
+  "lines": 41,
+  "func": [
+   "TestSensorPhalanxPrice",
+   "TestSensorPhalanx_IsAvailable",
+   "TestSensorPhalanx_GetRange",
+   "TestSensorPhalanx_ScanConsumption"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/shieldedMetalDen.go": {
+  "sha256": "3c7e853f6532b7b9ddc6e7402b3fdfa2e137afa2140a1ded760db75788f3037a",
+  "lines": 14,
+  "func": [
+   "newShieldedMetalDen"
+  ],
+  "type": [
+   "shieldedMetalDen"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/shieldingTechnology.go": {
+  "sha256": "33ba88a858fd1052d5a5c99ead6527177d4c982ffb6a5535fed4fd93a27a23af",
+  "lines": 15,
+  "func": [
+   "newShieldingTechnology"
+  ],
+  "type": [
+   "shieldingTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/ships.go": {
+  "sha256": "f5526caaf2930a007ffba0549464fbf879b50a6a60788dcacd52127f28603fd2",
+  "lines": 379,
+  "func": [
+   "ToPtr",
+   "Equal",
+   "HasShips",
+   "IsEmpty",
+   "HasFlyableShips",
+   "HasCombatShips",
+   "HasCivilShips",
+   "Speed",
+   "SlowestShip",
+   "ToQuantifiables",
+   "FromQuantifiables",
+   "Cargo",
+   "Has",
+   "FleetValue",
+   "FleetCost",
+   "CountShips",
+   "Add",
+   "Sub",
+   "AddShips",
+   "SubShips",
+   "each",
+   "eachFlyable",
+   "Each",
+   "EachFlyable",
+   "Iter",
+   "IterFlyable",
+   "GetWeaponPower",
+   "GetShieldPower",
+   "GetStructuralIntegrity",
+   "ByID",
+   "ByShip",
+   "Get",
+   "Set",
+   "SetShip",
+   "String"
+  ],
+  "type": [
+   "ShipsInfos"
+  ],
+  "const": [
+   "var"
+  ],
+  "var": []
+ },
+ "ogame/pkg/ogame/ships_test.go": {
+  "sha256": "e473dec194eee90c965e126893d2de17637ba19aa16e27a582e4158d418b8683",
+  "lines": 196,
+  "func": [
+   "TestByID",
+   "TestByShip",
+   "TestShipsInfos_Cargo",
+   "TestShipsInfos_FleetValue",
+   "TestShipsInfos_Add",
+   "TestSet",
+   "TestShipsInfos_String",
+   "TestShipsInfos_Equal",
+   "TestShipsInfos_FleetCost",
+   "TestShipsInfos_CountShips",
+   "TestShipsInfos_Has",
+   "TestShipsInfos_HasShips",
+   "TestShipsInfos_ToQuantifiables",
+   "TestShipsInfos_FromQuantifiables",
+   "TestShipsInfos_Speed",
+   "TestShipsInfos_ToPtr",
+   "TestIterFlyable",
+   "TestHasFlyableShips",
+   "TestHasCombatShips",
+   "TestHasCivilShips"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/shipyard.go": {
+  "sha256": "d1b0c03bc94602100f99525287c662066e54fb8d8e05dbe7a1d97b6ebb7e1d19",
+  "lines": 15,
+  "func": [
+   "newShipyard"
+  ],
+  "type": [
+   "shipyard"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/shipyard_test.go": {
+  "sha256": "c598723a716aab86b272026bb5b7faefa8b88716470b2cd623be58f4e22ff756",
+  "lines": 18,
+  "func": [
+   "TestShipyardCost",
+   "TestShipyard_GetLevel"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/slots.go": {
+  "sha256": "b9e2a3ca740bcf9833c42b69a58595e923429d06f8f212ea14a0498e5cdf92e3",
+  "lines": 14,
+  "func": [
+   "IsAllSlotsInUse"
+  ],
+  "type": [
+   "Slots"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/smallCargo.go": {
+  "sha256": "d2ab7e3e5fc745470050bf6ec4c9b6f7bd11ba9ffe8d6f267086806c68e881a6",
+  "lines": 22,
+  "func": [
+   "newSmallCargo"
+  ],
+  "type": [
+   "smallCargo"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/smallCargo_test.go": {
+  "sha256": "e6fdefe14a0de5d0c2fc2efff7c295489910713c760654b2a407f826e07c23a6",
+  "lines": 32,
+  "func": [
+   "TestSmallCargoConstructionTime",
+   "TestSmallCargoSpeed",
+   "TestSmallCargoFuelConsumption"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/smallShieldDome.go": {
+  "sha256": "d947b6009a9af51798b5cb121e8fe4127d86a2886e6ba6414407b951ed8270aa",
+  "lines": 17,
+  "func": [
+   "newSmallShieldDome"
+  ],
+  "type": [
+   "smallShieldDome"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/solarPlant.go": {
+  "sha256": "395366aeb9e6c182e1d386e4e61e602d18a57a6aa7f93ea41f8098294d06fb23",
+  "lines": 23,
+  "func": [
+   "newSolarPlant",
+   "Production"
+  ],
+  "type": [
+   "solarPlant"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/solarPlant_test.go": {
+  "sha256": "1e959bcf795da06740ebf5a759283020f22df57bfe1cec846c9f16a5997d1476",
+  "lines": 19,
+  "func": [
+   "TestSolarPlant_Production",
+   "TestSolarPlant_ConstructionTime"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/solarSatellite.go": {
+  "sha256": "037c0a0c2e9615b03480f75aaadd147f31b92a368c9f51652179ea395af37351",
+  "lines": 51,
+  "func": [
+   "newSolarSatellite",
+   "Production",
+   "GetLevel",
+   "DeconstructionPrice",
+   "BuildingConstructionTime"
+  ],
+  "type": [
+   "solarSatellite"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/solarSatellite_test.go": {
+  "sha256": "57b81bbd5345c80d2be4346070959846e56da501a4264a009b4d86bcb4d96f5d",
+  "lines": 32,
+  "func": [
+   "TestSolarSatelliteSpeed",
+   "TestSolarSatellite_GetLevel",
+   "TestSolarSatellite_Production",
+   "TestSolarSatellite_ConstructionTime"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/spaceDock.go": {
+  "sha256": "3b15522a1bbc46b54f2802b95d604321a33762b0286b42210d77f7255126699c",
+  "lines": 34,
+  "func": [
+   "newSpaceDock",
+   "GetPrice"
+  ],
+  "type": [
+   "spaceDock"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/spaceDock_test.go": {
+  "sha256": "0def318ed636c836bddf6310655a04dd227eb079c31bd5a107057c5f223a13e2",
+  "lines": 17,
+  "func": [
+   "TestSpaceDockGetPrice"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/storageBuilding.go": {
+  "sha256": "2bea1284546702392451cf718cd295fb8924f51cd691c0108059a3e05e8dba52",
+  "lines": 14,
+  "func": [
+   "Capacity"
+  ],
+  "type": [
+   "storageBuilding"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/technologyDetails.go": {
+  "sha256": "69191119827978311461124c380bd19b7009d51a79361af93acb3569e7ad24b7",
+  "lines": 11,
+  "func": [],
+  "type": [
+   "TechnologyDetails"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/techs.go": {
+  "sha256": "1c2e7f03faa73b6893cc3c66a093144b508f3ec69633537237ba96b765da2c9a",
+  "lines": 12,
+  "func": [],
+  "type": [
+   "Techs"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/temperature.go": {
+  "sha256": "9cbd09410bf03d308b7cef85141e13b981a3dc0425eafef3059ce646de370d20",
+  "lines": 14,
+  "func": [
+   "Mean"
+  ],
+  "type": [
+   "Temperature"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/terraformer.go": {
+  "sha256": "a1ecf637d4df4ba8dae4c1667b6103f87acbdcab1bf9dbe6a92ce80268e04977",
+  "lines": 20,
+  "func": [
+   "newTerraformer",
+   "DeconstructionPrice"
+  ],
+  "type": [
+   "terraformer"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/terraformer_test.go": {
+  "sha256": "95e40ac06a9f174fdee1c55432b011667e1f77322eb2bfd0aa2991dbd1af404e",
+  "lines": 32,
+  "func": [
+   "TestTerraformerIsAvailable",
+   "TestTerraformerIsAvailable_NoTech",
+   "TestTerraformerGetPrice"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/undergroundCrystalDen.go": {
+  "sha256": "5ac5836382e923ff57aae8a074a5bc09dde8377e452b2c56c79ca908c8f48ea4",
+  "lines": 14,
+  "func": [
+   "newUndergroundCrystalDen"
+  ],
+  "type": [
+   "undergroundCrystalDen"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/userInfos.go": {
+  "sha256": "cc312da9e18a185724b4b580c7dfb1ebe7a58838f9be994128455e890f8cb349",
+  "lines": 11,
+  "func": [],
+  "type": [
+   "UserInfos"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/utils.go": {
+  "sha256": "f5d546f60360e296616cb430b789646f4489c9c701377ad4ed3108b27afa67cf",
+  "lines": 747,
+  "func": [
+   "ParseCoord",
+   "DoParseCoord",
+   "MustParseCoord",
+   "unique",
+   "IsStrMetal",
+   "IsStrCrystal",
+   "IsStrDeuterium",
+   "DefenceName2ID",
+   "ShipName2ID"
+  ],
+  "type": [],
+  "const": [],
+  "var": [
+   "namesChars",
+   "namesRgx",
+   "MetalStrings",
+   "CrystalStrings",
+   "DeuteriumStrings"
+  ]
+ },
+ "ogame/pkg/ogame/utils_test.go": {
+  "sha256": "e819c0b069170d857db63b3d9ae341b02c7101d233e3af38a37645506096ab1d",
+  "lines": 730,
+  "func": [
+   "TestParseCoord",
+   "TestName2id"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/ogame/weaponsTechnology.go": {
+  "sha256": "9dafbe21ded7a45c2e320803bdb62dcc7d3cffc99f35ceb3aec5a686ff2052c5",
+  "lines": 15,
+  "func": [
+   "newWeaponsTechnology"
+  ],
+  "type": [
+   "weaponsTechnology"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/allianceOverviewTabAjaxPage.go": {
+  "sha256": "68154aca357b526181628bcf99ff6029aaf7611bc2ed2c1c3bf2fbc777019e68",
+  "lines": 25,
+  "func": [
+   "ExtractAllianceClass"
+  ],
+  "type": [
+   "AllianceOverviewTabRes"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/defensesPage.go": {
+  "sha256": "84ddcb35af2375804b42c790d80e3cdc84516622ac6da7ca3de89079fcb2b8ae",
+  "lines": 7,
+  "func": [
+   "ExtractDefense"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/eventListAjaxPage.go": {
+  "sha256": "7de96fcbdad79cd003dbc9ac93682a63413a3a1a4778b5a7d0caa6f54be00c6f",
+  "lines": 7,
+  "func": [
+   "ExtractAttacks"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/facilitiesPage.go": {
+  "sha256": "7b4328d4c66c7c28a8a92c5a05f5d7c112420ccece5cafc8965379002ac1d714",
+  "lines": 7,
+  "func": [
+   "ExtractFacilities"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/fetchTechsAjaxPage.go": {
+  "sha256": "5536ec1ef9abfc35790a431f7e163c9c2ca92653235c0b573ae392ac3e35229d",
+  "lines": 7,
+  "func": [
+   "ExtractTechs"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/fleetDispatchPage.go": {
+  "sha256": "4a95b51d506c7a1ad3c16f8c36d6f1da47b18de95ce05ff04a8397e6f8a1af7f",
+  "lines": 15,
+  "func": [
+   "ExtractShips",
+   "ExtractSlots",
+   "ExtractAcsValues"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/fullPage.go": {
+  "sha256": "5dba112a5a13e689a6dcf7924b1432257fed659bcdcfda88fafca7f21f117552",
+  "lines": 99,
+  "func": [
+   "ExtractOGameSession",
+   "ExtractIsInVacation",
+   "ExtractAjaxChatToken",
+   "ExtractToken",
+   "ExtractCharacterClass",
+   "ExtractCommander",
+   "ExtractAdmiral",
+   "ExtractLifeformTypeFromDoc",
+   "ExtractEngineer",
+   "ExtractGeologist",
+   "ExtractTechnocrat",
+   "ExtractColonies",
+   "ExtractLifeformEnabled",
+   "ExtractServerTime",
+   "ExtractPlanets",
+   "ExtractPlanet",
+   "ExtractPlanetCoordinate",
+   "ExtractPlanetID",
+   "ExtractMoons",
+   "ExtractMoon",
+   "ExtractCelestials",
+   "ExtractCelestial",
+   "ExtractResources"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/fullPage_test.go": {
+  "sha256": "213d4a0f2d66aabe9948bc4dc6e88e51f9e6ebe20d69d3056f0904060a316e7c",
+  "lines": 34,
+  "func": [
+   "TestExtractCelestial"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/jumpGateAjaxPage.go": {
+  "sha256": "748a31b33e438ccd9125dc4e8ff36c9cab927e7b58ebda0b25b0d38bc8ffa7c2",
+  "lines": 7,
+  "func": [
+   "ExtractJumpGate"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/lfBonusesPage.go": {
+  "sha256": "f308e8c4e8e46810473aa0cc5fedd72a54c95475738bc9bc2d872dc8724f4f39",
+  "lines": 7,
+  "func": [
+   "ExtractLfBonuses"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/lfbuildingsPage.go": {
+  "sha256": "d7fc29f90a632cb5b30bf1d6db1940de595cce5e967c601d6a9490454bf0735a",
+  "lines": 7,
+  "func": [
+   "ExtractLfBuildings"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/lftechsPage.go": {
+  "sha256": "443e1bd8d3c1634de429258106c1aa27fcc0e5cc693f830b04544a81c42be3b9",
+  "lines": 15,
+  "func": [
+   "ExtractLfResearch",
+   "ExtractLfSlots",
+   "ExtractArtefacts"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/missileAttackLayerAjaxPage.go": {
+  "sha256": "29f2222308c7cbb4ebdb0acabde1d90e100c068d1ee6ee7bafbd096d0f24e5de",
+  "lines": 5,
+  "func": [
+   "ExtractIPM"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/movementPage.go": {
+  "sha256": "d40d0a0d2ff1a19a209389224718bfb457758e0a88f9146f922d8d8ca2d2df55",
+  "lines": 15,
+  "func": [
+   "ExtractFleets",
+   "ExtractSlots",
+   "ExtractCancelFleetToken"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/overviewPage.go": {
+  "sha256": "3eaed8e2de4752a64cea32222c3392494642b4f764ed5114b1897328cbd4665a",
+  "lines": 33,
+  "func": [
+   "ExtractActiveItems",
+   "ExtractDMCosts",
+   "ExtractConstructions",
+   "ExtractUserInfos",
+   "ExtractCancelResearchInfos",
+   "ExtractCancelBuildingInfos",
+   "ExtractCancelLfBuildingInfos"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/parser.go": {
+  "sha256": "4698115f551ef5770dce06f65292f57e1c884d9adbd086be1058be34cc378d53",
+  "lines": 217,
+  "func": [
+   "SetExtractor",
+   "GetContent",
+   "GetDoc",
+   "AutoParseFullPage",
+   "isDefensesPage"
+  ],
+  "type": [
+   "Page",
+   "EventListAjaxPage",
+   "MissileAttackLayerAjaxPage",
+   "FetchTechsAjaxPage",
+   "RocketlayerAjaxPage",
+   "PhalanxAjaxPage",
+   "JumpGateAjaxPage",
+   "AllianceOverviewTabAjaxPage",
+   "FullPage",
+   "OverviewPage",
+   "PreferencesPage",
+   "SuppliesPage",
+   "ResourcesSettingsPage",
+   "ResearchPage",
+   "FacilitiesPage",
+   "ShipyardPage",
+   "FleetDispatchPage",
+   "DefensesPage",
+   "MovementPage",
+   "LfBuildingsPage",
+   "LfResearchPage",
+   "LfBonusesPage",
+   "FullPagePages",
+   "AjaxPagePages",
+   "IFullPage"
+  ],
+  "const": [
+   "if"
+  ],
+  "var": [
+   "ErrParsePageType"
+  ]
+ },
+ "ogame/pkg/parser/parser_test.go": {
+  "sha256": "a93c7b8e59568c736433a9aee1570f0964a4aa9d670b821b7be08aadfb09a4f4",
+  "lines": 34,
+  "func": [
+   "MustReadFile",
+   "parserErr",
+   "TestParsePageContent",
+   "TestParsePageGetDoc"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/phalanxAjaxPage.go": {
+  "sha256": "78035da7a85ec24e8369eff8cc0fddcb3274f23c9a4a4e9fdccfdf9ac98c21eb",
+  "lines": 11,
+  "func": [
+   "ExtractPhalanx",
+   "ExtractPhalanxNewToken"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/preferencesPage.go": {
+  "sha256": "1333c49923d341456c27961e856dd23368e1ef339255b0fb09c9df5514a57a02",
+  "lines": 7,
+  "func": [
+   "ExtractPreferences"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/researchPage.go": {
+  "sha256": "8b31f1a561fe0b7f153d68cd41d2a8383b935c7ee34bdc16416fe613b723c32e",
+  "lines": 7,
+  "func": [
+   "ExtractResearch"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/resourcesSettingsPage.go": {
+  "sha256": "93d1d8e60150ecf44095cbfe569bbc8ae4e247989d175041ce2c44ce6d4439f3",
+  "lines": 7,
+  "func": [
+   "ExtractResourceSettings"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/rocketlayerAjaxPage.go": {
+  "sha256": "2c19aec9fb8b81464abf2a93f9e03f15e4458b6c55280922d0fb2d0795d67fb6",
+  "lines": 5,
+  "func": [
+   "ExtractDestroyRockets"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/shipyardPage.go": {
+  "sha256": "c5c8211e5d4dbf2d184496faff4af26557b3324cb1f814bc355e24e831a50ea0",
+  "lines": 11,
+  "func": [
+   "ExtractProduction",
+   "ExtractShips"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/parser/suppliesPage.go": {
+  "sha256": "876a12158454f9d7f3c4bfed83d27791e33f9eb53f04a781de46353a8d698b10",
+  "lines": 7,
+  "func": [
+   "ExtractResourcesBuildings"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/simulator/simulator.go": {
+  "sha256": "059fd23d76ece4c336141d9398314de7cbd32dabe7a3abd82c4a27fa86fd30f4",
+  "lines": 1253,
+  "func": [
+   "isAlive",
+   "getUnitID",
+   "getUnitShield",
+   "getUnitHull",
+   "setUnitID",
+   "setUnitShield",
+   "setUnitHull",
+   "String",
+   "Total",
+   "add",
+   "getUnitPrice",
+   "getUnitBaseShield",
+   "getUnitBaseWeapon",
+   "getRapidFireAgainst",
+   "getUnitName",
+   "getUnitWeaponPower",
+   "getUnitInitialShield",
+   "getUnitInitialHullPlating",
+   "newUnit",
+   "init",
+   "newEntity",
+   "hasExploded",
+   "getAnotherShot",
+   "attack",
+   "unitsFires",
+   "attackerFires",
+   "defenderFires",
+   "isShip",
+   "removeDestroyedUnits",
+   "restoreShields",
+   "isCombatDone",
+   "getMoonchance",
+   "printWinner",
+   "Simulate",
+   "newCombatSimulator",
+   "printResult",
+   "reset",
+   "Simulate",
+   "String"
+  ],
+  "type": [
+   "CombatUnit",
+   "price",
+   "entity",
+   "combatSimulator",
+   "Config",
+   "attackerInfo",
+   "defenderInfo",
+   "Attacker",
+   "Defender",
+   "SimulatorParams",
+   "SimulatorResult"
+  ],
+  "const": [
+   "maxArmourLevel",
+   "maxShieldLevel",
+   "idMask",
+   "shieldMask",
+   "hullMask"
+  ],
+  "var": []
+ },
+ "ogame/pkg/taskRunner/priorityQueue.go": {
+  "sha256": "d74dcd86d4ccf0183aa00e521c15a6b6ed84d06e65a8da8b5b11f262cee15668",
+  "lines": 59,
+  "func": [
+   "Push",
+   "Pop",
+   "Len",
+   "Items",
+   "Len",
+   "Less",
+   "Swap",
+   "Push",
+   "Pop"
+  ],
+  "type": [
+   "IPQItem"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/taskRunner/taskRunner.go": {
+  "sha256": "4a0fe5c502caefeb841f59d2fc0a15effcccb0b987478ad1e8586df57f3e2b7c",
+  "lines": 152,
+  "func": [
+   "GetPriority",
+   "GetIndex",
+   "SetIndex",
+   "start",
+   "WithPriority",
+   "GetTasks"
+  ],
+  "type": [
+   "Priority",
+   "item",
+   "ITask",
+   "TasksOverview"
+  ],
+  "const": [
+   "Low"
+  ],
+  "var": []
+ },
+ "ogame/pkg/taskRunner/taskRunner_test.go": {
+  "sha256": "83e4a1b4a257837162707ccd1d21e54e0fb9012db453234ab08625225ede1ba2",
+  "lines": 41,
+  "func": [
+   "SetTaskDoneCh",
+   "DoSomething",
+   "DoSomethingElse"
+  ],
+  "type": [
+   "testItem"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/utils/utils.go": {
+  "sha256": "6090da884f524597c97372e8d3d4d964ab9277df32ff6a83eae756176cba41f7",
+  "lines": 251,
+  "func": [
+   "ParseInt",
+   "ToInt",
+   "I64Ptr",
+   "Noop",
+   "ParseI64",
+   "DoParseI64",
+   "DoCastF64",
+   "DoCastStr",
+   "GetNbr",
+   "GetNbrShips",
+   "Random",
+   "RandDuration",
+   "randDur",
+   "RandMs",
+   "RandFloat",
+   "RoundThousandth"
+  ],
+  "type": [
+   "Ints"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/utils/utils_test.go": {
+  "sha256": "59eb7415e0fbc20384cb76adb478a8abb15d2b78f03f9c23476c887e679e00b1",
+  "lines": 49,
+  "func": [
+   "TestParseInt",
+   "TestParseInt2",
+   "TestToInt",
+   "TestI64Ptr",
+   "TestDefault"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/fetcher.go": {
+  "sha256": "5a264e27f015dd7c3eae03a93e5010d91115838fb2535647003de2cd84704b25",
+  "lines": 137,
+  "func": [
+   "getPage"
+  ],
+  "type": [],
+  "const": [
+   "OverviewPageName",
+   "PreferencesPageName",
+   "DefensesPageName",
+   "LfBuildingsPageName",
+   "LfResearchPageName",
+   "SuppliesPageName",
+   "FacilitiesPageName",
+   "FleetdispatchPageName",
+   "ShipyardPageName",
+   "MovementPageName",
+   "ResearchPageName",
+   "LfBonusesPageName",
+   "PlanetlayerPageName",
+   "LogoutPageName",
+   "TraderOverviewPageName",
+   "GalaxyPageName",
+   "AlliancePageName",
+   "PremiumPageName",
+   "ShopPageName",
+   "RewardsPageName",
+   "HighscorePageName",
+   "BuddiesPageName",
+   "MessagesPageName",
+   "ChatPageName",
+   "FetchTechsName",
+   "RocketlayerPageName",
+   "FetchEventboxAjaxPageName",
+   "FetchResourcesAjaxPageName",
+   "FetchResourcesbarAjaxPageName",
+   "GalaxyContentAjaxPageName",
+   "GalaxyAjaxPageName",
+   "EventListAjaxPageName",
+   "AjaxChatAjaxPageName",
+   "NoticesAjaxPageName",
+   "RepairlayerAjaxPageName",
+   "TechtreeAjaxPageName",
+   "PhalanxAjaxPageName",
+   "JumpgatelayerAjaxPageName",
+   "FederationlayerAjaxPageName",
+   "UnionchangeAjaxPageName",
+   "ChangenickAjaxPageName",
+   "PlanetlayerAjaxPageName",
+   "TraderlayerAjaxPageName",
+   "PlanetRenameAjaxPageName",
+   "RightmenuAjaxPageName",
+   "AllianceOverviewAjaxPageName",
+   "SupportAjaxPageName",
+   "BuffActivationAjaxPageName",
+   "AuctioneerAjaxPageName",
+   "HighscoreContentAjaxPageName",
+   "LfResearchLayerPageName",
+   "LfResearchResetLayerPageName"
+  ],
+  "var": []
+ },
+ "ogame/pkg/wrapper/fleetBuilder.go": {
+  "sha256": "f6282c4b90ff9048a4743e80a42fcc2cfea34d0d85ea3b87776ef4648938a033",
+  "lines": 322,
+  "func": [
+   "NewFleetBuilderFactory",
+   "NewFleet",
+   "NewFleetBuilder",
+   "SetTx",
+   "SetOrigin",
+   "SetDestination",
+   "SetSpeed",
+   "SetResources",
+   "SetMetal",
+   "SetCrystal",
+   "SetDeuterium",
+   "SetAllResources",
+   "SetAllMetal",
+   "SetAllCrystal",
+   "SetAllDeuterium",
+   "SetMinimumDeuterium",
+   "SetMission",
+   "SetDuration",
+   "SetUnionID",
+   "AddShips",
+   "SetShips",
+   "SetAllShips",
+   "SetRecallIn",
+   "FlightTime",
+   "FastFlightTime",
+   "Cargo",
+   "CargoUsing",
+   "cargo",
+   "cargoUsing",
+   "flightTime",
+   "sendNow",
+   "SendNow",
+   "OnError",
+   "OnSuccess"
+  ],
+  "type": [
+   "FleetBuilderFactory",
+   "FleetBuilder"
+  ],
+  "const": [
+   "var",
+   "var"
+  ],
+  "var": [
+   "ErrInvalidOrigin"
+  ]
+ },
+ "ogame/pkg/wrapper/handlers.go": {
+  "sha256": "d1ecfcf5eaf7cd96fca350f97797ed452251dffa05ade380e075fb3b39bb6519",
+  "lines": 1704,
+  "func": [
+   "SuccessResp",
+   "ErrorResp",
+   "HomeHandler",
+   "TasksHandler",
+   "GetServerHandler",
+   "GetServerDataHandler",
+   "SetUserAgentHandler",
+   "ServerURLHandler",
+   "GetLanguageHandler",
+   "PageContentHandler",
+   "LoginHandler",
+   "LogoutHandler",
+   "GetUsernameHandler",
+   "GetUniverseNameHandler",
+   "GetUniverseSpeedHandler",
+   "GetUniverseSpeedFleetHandler",
+   "ServerVersionHandler",
+   "ServerTimeHandler",
+   "IsUnderAttackHandler",
+   "IsUnderAttackByIDHandler",
+   "IsVacationModeHandler",
+   "GetUserInfosHandler",
+   "GetCharacterClassHandler",
+   "HasCommanderHandler",
+   "HasAdmiralHandler",
+   "HasEngineerHandler",
+   "HasGeologistHandler",
+   "HasTechnocratHandler",
+   "GetEspionageReportMessagesHandler",
+   "GetEspionageReportHandler",
+   "GetEspionageReportForHandler",
+   "SendMessageHandler",
+   "GetFleetsHandler",
+   "GetSlotsHandler",
+   "CancelFleetHandler",
+   "GetAttacksHandler",
+   "GalaxyInfosHandler",
+   "GetResearchHandler",
+   "BuyOfferOfTheDayHandler",
+   "GetMoonsHandler",
+   "GetMoonHandler",
+   "GetMoonByCoordHandler",
+   "GetPlanetsHandler",
+   "CelestialAbandonHandler",
+   "GetCelestialItemsHandler",
+   "ActivateCelestialItemHandler",
+   "GetPlanetHandler",
+   "GetPlanetByCoordHandler",
+   "GetResourcesDetailsHandler",
+   "GetResourceSettingsHandler",
+   "SetResourceSettingsHandler",
+   "GetLfBuildingsHandler",
+   "GetLfResearchHandler",
+   "GetResourcesBuildingsHandler",
+   "GetDefenseHandler",
+   "GetShipsHandler",
+   "GetFacilitiesHandler",
+   "BuildHandler",
+   "BuildCancelableHandler",
+   "BuildProductionHandler",
+   "BuildBuildingHandler",
+   "BuildTechnologyHandler",
+   "BuildDefenseHandler",
+   "BuildShipsHandler",
+   "GetProductionHandler",
+   "ConstructionsBeingBuiltHandler",
+   "CancelBuildingHandler",
+   "CancelResearchHandler",
+   "GetResourcesHandler",
+   "GetRequirementsHandler",
+   "GetPriceHandler",
+   "SendFleetHandler",
+   "CheckFleetHandler",
+   "SendDiscoveryHandler",
+   "GetAlliancePageContentHandler",
+   "replaceHostname",
+   "GetStaticHandler",
+   "GetFromGameHandler",
+   "PostToGameHandler",
+   "GetStaticHEADHandler",
+   "GetEmpireHandler",
+   "DeleteMessageHandler",
+   "DeleteEspionageMessagesHandler",
+   "DeleteMessagesFromTabHandler",
+   "SendIPMHandler",
+   "TeardownHandler",
+   "GetAuctionHandler",
+   "DoAuctionHandler",
+   "PhalanxHandler",
+   "JumpGateHandler",
+   "TechsHandler",
+   "GetCaptchaHandler",
+   "GetCaptchaSolverHandler",
+   "GetCaptchaChallengeHandler",
+   "GetPublicIPHandler",
+   "removeCookiesBanner"
+  ],
+  "type": [
+   "APIResp",
+   "CaptchaChallenge"
+  ],
+  "const": [
+   "if",
+   "if"
+  ],
+  "var": []
+ },
+ "ogame/pkg/wrapper/interfaces.go": {
+  "sha256": "dd13120a3947a036f9e66bfec2f38291fb459f2d602d7b7d774bdc93c1992dd4",
+  "lines": 256,
+  "func": [],
+  "type": [
+   "Celestial",
+   "Prioritizable",
+   "Wrapper"
+  ],
+  "const": [],
+  "var": [
+   "_",
+   "_",
+   "_"
+  ]
+ },
+ "ogame/pkg/wrapper/log.go": {
+  "sha256": "6912b78892796a598ebc1cb9b7c9cf3d82022f197f3b5c1f934e83792a373a35",
+  "lines": 66,
+  "func": [
+   "Quiet",
+   "SetLogger",
+   "log",
+   "trace",
+   "info",
+   "warn",
+   "error",
+   "critical",
+   "debug",
+   "println"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/moon.go": {
+  "sha256": "6eb650744ea1273a0a4bd0931743c74d5b188773744aca8aff3aa33f2a2ea6b6",
+  "lines": 154,
+  "func": [
+   "GetProduction",
+   "ConstructionsBeingBuilt",
+   "GetResourcesBuildings",
+   "GetDefense",
+   "GetShips",
+   "Build",
+   "TearDown",
+   "BuildTechnology",
+   "BuildDefense",
+   "BuildBuilding",
+   "CancelBuilding",
+   "CancelLfBuilding",
+   "CancelResearch",
+   "SendFleet",
+   "EnsureFleet",
+   "GetResources",
+   "GetResourcesDetails",
+   "GetFacilities",
+   "GetItems",
+   "ActivateItem",
+   "Phalanx",
+   "GetLfBuildings",
+   "GetLfResearch",
+   "GetTechs"
+  ],
+  "type": [
+   "Moon"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/moon_test.go": {
+  "sha256": "5b3a63136ba55383b5f1d64a89c8b126c381bbd1c3a4f587ee18829277342ff2",
+  "lines": 12,
+  "func": [
+   "TestMoonID_Celestial"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/ogame.go": {
+  "sha256": "17dd8c05ab46d6382c6eae8c545accb0f014f95cf834fcb18087a1d6d2ed5c0c",
+  "lines": 4763,
+  "func": [
+   "New",
+   "NewNoLogin",
+   "NewWithParams",
+   "newWithParams",
+   "getServerData",
+   "GetClientWithProxy",
+   "validateAccount",
+   "execInterceptorCallbacks",
+   "introBypass",
+   "postSessions",
+   "appendCookie",
+   "convertPlanets",
+   "convertMoons",
+   "convertCelestials",
+   "convertPlanet",
+   "convertMoon",
+   "convertCelestial",
+   "cacheFullPageInfo",
+   "setOGameLobby",
+   "doReqWithLoginProxyTransport",
+   "getTransport",
+   "getProxyTransport",
+   "getSocks5Transport",
+   "setProxy",
+   "connectChat",
+   "yeast",
+   "getWebsocket",
+   "connectChatV8",
+   "processAuctioneerMessage",
+   "logout",
+   "softLogout",
+   "IsKnowFullPage",
+   "IsEmpirePage",
+   "IsAjaxPage",
+   "canParseEventBox",
+   "canParseSystemInfos",
+   "canParseNewSystemInfos",
+   "preRequestChecks",
+   "execRequest",
+   "getPageName",
+   "getOptions",
+   "setCPParam",
+   "detectLoggedOut",
+   "constructFinalURL",
+   "retryPolicyFromConfig",
+   "getPageContent",
+   "postPageContent",
+   "pageContent",
+   "saveNotLoggedHTML",
+   "applyDelay",
+   "alterPayload",
+   "processResponseHTML",
+   "extractNewChatToken",
+   "withoutRetry",
+   "withRetry",
+   "getPageJSON",
+   "constructionTime",
+   "setOGameCredentials",
+   "enable",
+   "disable",
+   "isEnabled",
+   "isLoggedIn",
+   "isConnected",
+   "isCollector",
+   "isGeneral",
+   "isDiscoverer",
+   "getUniverseSpeed",
+   "getUniverseSpeedFleet",
+   "isDonutGalaxy",
+   "isDonutSystem",
+   "fetchEventbox",
+   "isUnderAttack",
+   "setVacationMode",
+   "setPreferencesLang",
+   "setPreferences",
+   "getPlanets",
+   "getPlanet",
+   "getMoons",
+   "getMoon",
+   "getCelestials",
+   "getCelestial",
+   "recruitOfficer",
+   "abandon",
+   "serverTime",
+   "getUserInfos",
+   "sendMessage",
+   "getFleetsFromEventList",
+   "getFleets",
+   "cancelFleet",
+   "getLastFleetFor",
+   "getLastFleetFor",
+   "getFleetDispatch",
+   "getSlots",
+   "galaxyDistance",
+   "systemDistance",
+   "flightSystemDistance",
+   "planetDistance",
+   "Distance",
+   "calcFuel",
+   "CalcFlightTime",
+   "CalcFlightTimeWithBaseSpeed",
+   "CalcFlightTimeWithBaseSpeedDistance",
+   "CalcFlightTime",
+   "getPhalanx",
+   "getUnsafePhalanx",
+   "headersForPage",
+   "getJumpGatePage",
+   "jumpGateDestinations",
+   "executeJumpGate",
+   "getEmpireHtml",
+   "getEmpire",
+   "getEmpireJSON",
+   "createUnion",
+   "highscore",
+   "getAllResources",
+   "getDMCosts",
+   "useDM",
+   "offerMarketplace",
+   "buyMarketplace",
+   "getItems",
+   "getActiveItems",
+   "activateItem",
+   "getAuction",
+   "doAuction",
+   "calcResources",
+   "traderImportExportTrade",
+   "traderImportExportTakeItem",
+   "buyOfferOfTheDay",
+   "fixAttackEvents",
+   "getAttacks",
+   "getOwnCoordinates",
+   "galaxyInfos",
+   "getGalaxyPage",
+   "getResourceSettings",
+   "setResourceSettings",
+   "getCachedResearch",
+   "getResearch",
+   "getCachedLfBonuses",
+   "getLfBonuses",
+   "getCachedAllianceClass",
+   "getAllianceClass",
+   "getResourcesBuildings",
+   "getLfBuildings",
+   "getLfResearch",
+   "getLfResearchDetails",
+   "getDefense",
+   "getShips",
+   "getFacilities",
+   "getTechs",
+   "getProduction",
+   "technologyDetails",
+   "getToken",
+   "tearDown",
+   "build",
+   "buildCancelable",
+   "buildProduction",
+   "buildBuilding",
+   "buildTechnology",
+   "buildDefense",
+   "buildShips",
+   "constructionsBeingBuilt",
+   "cancel",
+   "cancelBuilding",
+   "cancelLfBuilding",
+   "cancelResearch",
+   "fetchResources",
+   "getResources",
+   "getResourcesDetails",
+   "destroyRockets",
+   "sendIPM",
+   "checkTarget",
+   "sendFleet",
+   "fastMiniFleetSpy",
+   "miniFleetSpy",
+   "getPageMessages",
+   "getEspionageReportMessages",
+   "getCombatReportMessages",
+   "getExpeditionMessages",
+   "collectAllMarketplaceMessages",
+   "collectMarketplaceMessage",
+   "getMarketplacePurchasesMessages",
+   "getMarketplaceSalesMessages",
+   "getMarketplaceMessages",
+   "getExpeditionMessageAt",
+   "getCombatReportSummaries",
+   "getCombatReportForFleet",
+   "getCombatReportFor",
+   "getEspionageReport",
+   "getEspionageReportFor",
+   "getDeleteMessagesToken",
+   "deleteMessage",
+   "deleteAllMessagesFromTab",
+   "energyProduced",
+   "energyNeeded",
+   "productionRatio",
+   "getProductions",
+   "getResourcesProductions",
+   "getResourcesProductionsLight",
+   "getPublicIP",
+   "stateChanged",
+   "botLock",
+   "botUnlock",
+   "addAccount",
+   "getCachedCelestial",
+   "getCachedCelestialByID",
+   "getCachedCelestialByCoord",
+   "getCelestialByPredicateFn",
+   "getCachedPlanets",
+   "getCachedMoons",
+   "getCachedCelestials",
+   "getCachedPlanet",
+   "getCachedMoon",
+   "getTasks",
+   "sendDiscoveryFleet",
+   "sendDiscoveryFleet2",
+   "sendSystemDiscoveryFleet",
+   "getAvailableDiscoveries",
+   "getPositionsAvailableForDiscoveryFleet",
+   "getChapter",
+   "chapterClaimAll",
+   "chapterCollectReward",
+   "selectLfResearchSelect",
+   "selectLfResearchRandom",
+   "selectLfResearchArtifacts",
+   "selectLfResearch",
+   "freeResetTree",
+   "buyResetTree",
+   "resetTree",
+   "reconnectChat",
+   "setLoginWrapper",
+   "distance",
+   "systemDistance",
+   "getSession",
+   "withPriority",
+   "getDevice",
+   "getClient",
+   "setClient",
+   "onStateChange",
+   "getState",
+   "isLocked",
+   "getServer",
+   "planetID",
+   "serverURL",
+   "getLanguage",
+   "bytesDownloaded",
+   "bytesUploaded",
+   "getUniverseName",
+   "getUsername",
+   "isPioneers",
+   "getCachedPreferences",
+   "isVacationModeEnabled",
+   "location",
+   "getCachedToken",
+   "getServerData",
+   "getResearchSpeed",
+   "getNbSystems",
+   "fleetDeutSaveFactor",
+   "serverVersion",
+   "characterClass",
+   "countColonies",
+   "getExtractor",
+   "setAllianceClass",
+   "setResearches",
+   "setLfBonuses",
+   "registerWSCallback",
+   "removeWSCallback",
+   "registerChatCallback",
+   "registerAuctioneerCallback",
+   "registerHTMLInterceptor",
+   "setInitiator",
+   "done"
+  ],
+  "type": [
+   "OGame",
+   "Params",
+   "ServerData",
+   "LoginFn",
+   "eventboxResp",
+   "ChatPostResp",
+   "MessageSuccess",
+   "CheckTargetResponse",
+   "collectMarketplaceResponse",
+   "GalaxyPageContent",
+   "OGameError"
+  ],
+  "const": [
+   "PLATFORM",
+   "if",
+   "var",
+   "if",
+   "if",
+   "if",
+   "if",
+   "var",
+   "EspionageMessagesTabID",
+   "CombatReportsMessagesTabID",
+   "ExpeditionsMessagesTabID",
+   "UnionsTransportMessagesTabID",
+   "OtherMessagesTabID",
+   "MarketplacePurchasesMessagesTabID",
+   "MarketplaceSalesMessagesTabID"
+  ],
+  "var": [
+   "DefaultLoginWrapper",
+   "ErrBuild",
+   "ErrIntoCelestial"
+  ]
+ },
+ "ogame/pkg/wrapper/ogame_login.go": {
+  "sha256": "836b142914573990a2e3899eb73952db35546c10d4c601a86bb8d236996c30f9",
+  "lines": 327,
+  "func": [
+   "wrapLogin",
+   "wrapLoginWithBearerToken",
+   "wrapLoginWithExistingCookies",
+   "loginWithBearerToken",
+   "getCookieValue",
+   "getBearerTokenFromCookie",
+   "getPhpSessIDFromCookie",
+   "getAndExecLoginLink",
+   "loginPart3Tmp",
+   "loginPart1",
+   "loginPart2",
+   "loginPart3",
+   "isVGreaterThanOrEqual",
+   "getExtractorFor",
+   "sanitizeServerLang",
+   "sanitizeServerVersion",
+   "extractChatHostPort"
+  ],
+  "type": [],
+  "const": [
+   "var"
+  ],
+  "var": []
+ },
+ "ogame/pkg/wrapper/ogame_public_interface.go": {
+  "sha256": "2d117695d5ce9982fb020d1ac36ad190732fa99cf9eea84f98406be565a5f9a9",
+  "lines": 976,
+  "func": [
+   "Enable",
+   "Disable",
+   "IsEnabled",
+   "IsLoggedIn",
+   "IsConnected",
+   "GetDevice",
+   "GetClient",
+   "SetClient",
+   "GetPublicIP",
+   "ValidateAccount",
+   "OnStateChange",
+   "GetState",
+   "IsLocked",
+   "GetSession",
+   "AddAccount",
+   "WithPriority",
+   "Begin",
+   "BeginNamed",
+   "SetInitiator",
+   "Done",
+   "Tx",
+   "TxNamed",
+   "GetServer",
+   "PlanetID",
+   "ServerURL",
+   "GetLanguage",
+   "LoginWithBearerToken",
+   "LoginWithExistingCookies",
+   "Login",
+   "Logout",
+   "BytesDownloaded",
+   "BytesUploaded",
+   "GetUniverseName",
+   "GetUsername",
+   "GetUniverseSpeed",
+   "GetUniverseSpeedFleet",
+   "IsPioneers",
+   "IsDonutGalaxy",
+   "IsDonutSystem",
+   "ConstructionTime",
+   "GetPageContent",
+   "PostPageContent",
+   "IsUnderAttack",
+   "GetCachedPlayer",
+   "GetCachedPreferences",
+   "SetVacationMode",
+   "SetPreferences",
+   "SetPreferencesLang",
+   "IsVacationModeEnabled",
+   "GetPlanets",
+   "GetCachedPlanet",
+   "GetCachedMoon",
+   "GetCachedPlanets",
+   "GetCachedMoons",
+   "GetCachedCelestials",
+   "GetCachedCelestial",
+   "GetPlanet",
+   "GetMoons",
+   "GetMoon",
+   "GetCelestials",
+   "RecruitOfficer",
+   "Abandon",
+   "GetCelestial",
+   "ServerTime",
+   "Location",
+   "GetCachedToken",
+   "GetUserInfos",
+   "SelectLfResearchSelect",
+   "SelectLfResearchRandom",
+   "SelectLfResearchArtifacts",
+   "FreeResetTree",
+   "BuyResetTree",
+   "SendMessage",
+   "SendMessageAlliance",
+   "GetFleets",
+   "GetFleetsFromEventList",
+   "CancelFleet",
+   "GetAttacks",
+   "GalaxyInfos",
+   "GetResourceSettings",
+   "SetResourceSettings",
+   "GetResourcesBuildings",
+   "GetDefense",
+   "GetShips",
+   "GetFacilities",
+   "GetProduction",
+   "GetCachedResearch",
+   "GetLfBonuses",
+   "GetCachedLfBonuses",
+   "GetResearch",
+   "GetSlots",
+   "GetFleetDispatch",
+   "Build",
+   "TechnologyDetails",
+   "TearDown",
+   "BuildCancelable",
+   "BuildProduction",
+   "BuildBuilding",
+   "BuildDefense",
+   "BuildShips",
+   "ConstructionsBeingBuilt",
+   "CancelBuilding",
+   "CancelLfBuilding",
+   "CancelResearch",
+   "BuildTechnology",
+   "GetResources",
+   "GetResourcesDetails",
+   "GetTechs",
+   "SendFleet",
+   "EnsureFleet",
+   "FastMiniFleetSpy",
+   "MiniFleetSpy",
+   "DestroyRockets",
+   "SendIPM",
+   "GetCombatReportSummaryForFleet",
+   "GetCombatReportSummaryFor",
+   "GetEspionageReportFor",
+   "GetExpeditionMessages",
+   "GetExpeditionMessageAt",
+   "CollectAllMarketplaceMessages",
+   "CollectMarketplaceMessage",
+   "GetEspionageReportMessages",
+   "GetEspionageReport",
+   "DeleteMessage",
+   "DeleteAllMessagesFromTab",
+   "GetResourcesProductions",
+   "GetResourcesProductionsLight",
+   "FlightTime",
+   "FastFlightTime",
+   "GetServerData",
+   "GetResearchSpeed",
+   "GetNbSystems",
+   "FleetDeutSaveFactor",
+   "ServerVersion",
+   "Distance",
+   "SystemDistance",
+   "RegisterWSCallback",
+   "RemoveWSCallback",
+   "RegisterChatCallback",
+   "RegisterAuctioneerCallback",
+   "RegisterHTMLInterceptor",
+   "Phalanx",
+   "UnsafePhalanx",
+   "JumpGateDestinations",
+   "JumpGate",
+   "BuyOfferOfTheDay",
+   "CreateUnion",
+   "HeadersForPage",
+   "GetEmpire",
+   "GetEmpireJSON",
+   "CharacterClass",
+   "GetCachedAllianceClass",
+   "CheckTarget",
+   "CountColonies",
+   "GetAuction",
+   "DoAuction",
+   "Highscore",
+   "GetAllResources",
+   "GetTasks",
+   "GetDMCosts",
+   "UseDM",
+   "GetItems",
+   "GetActiveItems",
+   "ActivateItem",
+   "BuyMarketplace",
+   "OfferSellMarketplace",
+   "OfferBuyMarketplace",
+   "GetLfBuildings",
+   "GetLfResearch",
+   "GetLfResearchDetails",
+   "SendDiscoveryFleet",
+   "SendDiscoveryFleet2",
+   "SendSystemDiscoveryFleet",
+   "GetAvailableDiscoveries",
+   "GetPositionsAvailableForDiscoveryFleet",
+   "GetChapter",
+   "ChapterClaimAll",
+   "ChapterCollectReward",
+   "SetProxy",
+   "GetExtractor",
+   "SetOGameCredentials",
+   "SetLoginWrapper",
+   "ReconnectChat",
+   "SetAllianceClass",
+   "SetResearches",
+   "SetLfBonuses",
+   "SoftLogout"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/ogame_test.go": {
+  "sha256": "5e6a7c6c074f79cae10b3694234c336f596af87040e8dd55ac19271b2d703dbf",
+  "lines": 350,
+  "func": [
+   "BenchmarkUserInfoRegex",
+   "BenchmarkUserInfoGoquery",
+   "TestWrapper",
+   "TestProductionRatio",
+   "TestEnergyNeeded",
+   "TestEnergyProduced",
+   "TestExtractCargoCapacity",
+   "TestExtractFleetsFromEventList",
+   "TestGalaxyDistance",
+   "TestFlightSystemDistance",
+   "TestSystemDistance",
+   "TestPlanetDistance",
+   "TestDistance",
+   "TestCalcFlightTime",
+   "TestFixAttackEvents",
+   "TestVersion",
+   "TestOGame_GetCachedCelestial",
+   "TestOGame_GetCachedCelestials",
+   "TestSanitizeServerVersion"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/planet.go": {
+  "sha256": "4cb840aa46848e1012877c504d83c882bd643ac100243b9c4faa667e47fb7ec3",
+  "lines": 169,
+  "func": [
+   "String",
+   "GetMoon",
+   "GetProduction",
+   "GetResourceSettings",
+   "GetResourcesBuildings",
+   "GetDefense",
+   "GetShips",
+   "GetFacilities",
+   "Build",
+   "TearDown",
+   "BuildCancelable",
+   "BuildBuilding",
+   "BuildDefense",
+   "BuildShips",
+   "BuildTechnology",
+   "GetResources",
+   "GetResourcesDetails",
+   "SendFleet",
+   "EnsureFleet",
+   "ConstructionsBeingBuilt",
+   "CancelBuilding",
+   "CancelLfBuilding",
+   "CancelResearch",
+   "GetItems",
+   "ActivateItem",
+   "GetResourcesProductions",
+   "FlightTime",
+   "SendIPM",
+   "GetLfBuildings",
+   "GetLfResearch",
+   "GetTechs"
+  ],
+  "type": [
+   "Planet"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/planet_test.go": {
+  "sha256": "844a31a0c93b07309c180b0eddcff3859d78bf2a3c2764be03360c6cd62f081e",
+  "lines": 22,
+  "func": [
+   "TestFields_HasFieldAvailable",
+   "TestTemperature_Mean",
+   "TestPlanet_String"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/prioritize.go": {
+  "sha256": "f7a7a48926c9b15aa1edeea1bdd17ddd67fc26a6c95e3fd54d9327cf637e776c",
+  "lines": 928,
+  "func": [
+   "SetTaskDoneCh",
+   "SetInitiator",
+   "Begin",
+   "BeginNamed",
+   "Done",
+   "begin",
+   "done",
+   "Tx",
+   "TxNamed",
+   "LoginWithBearerToken",
+   "LoginWithExistingCookies",
+   "Login",
+   "Logout",
+   "GetPageContent",
+   "PostPageContent",
+   "IsUnderAttack",
+   "SetVacationMode",
+   "SetPreferences",
+   "SetPreferencesLang",
+   "GetPlanets",
+   "GetPlanet",
+   "GetMoons",
+   "GetMoon",
+   "GetCelestials",
+   "RecruitOfficer",
+   "Abandon",
+   "GetCelestial",
+   "ServerTime",
+   "GetUserInfos",
+   "SendMessage",
+   "SendMessageAlliance",
+   "GetFleets",
+   "GetFleetsFromEventList",
+   "CancelFleet",
+   "GetAttacks",
+   "GalaxyInfos",
+   "GetResourceSettings",
+   "SetResourceSettings",
+   "GetResourcesBuildings",
+   "GetDefense",
+   "GetShips",
+   "GetFacilities",
+   "GetProduction",
+   "GetCachedResearch",
+   "GetLfBonuses",
+   "GetCachedLfBonuses",
+   "GetCachedAllianceClass",
+   "CheckTarget",
+   "GetResearch",
+   "GetSlots",
+   "GetFleetDispatch",
+   "Build",
+   "TechnologyDetails",
+   "TearDown",
+   "BuildCancelable",
+   "BuildProduction",
+   "BuildBuilding",
+   "BuildDefense",
+   "BuildShips",
+   "ConstructionsBeingBuilt",
+   "CancelBuilding",
+   "CancelLfBuilding",
+   "CancelResearch",
+   "BuildTechnology",
+   "GetResources",
+   "GetResourcesDetails",
+   "GetTechs",
+   "SendFleet",
+   "FastMiniFleetSpy",
+   "MiniFleetSpy",
+   "SendDiscoveryFleet",
+   "SendDiscoveryFleet2",
+   "SendSystemDiscoveryFleet",
+   "EnsureFleet",
+   "DestroyRockets",
+   "SendIPM",
+   "GetCombatReportSummaryForFleet",
+   "GetCombatReportSummaryFor",
+   "GetEspionageReportFor",
+   "GetEspionageReportMessages",
+   "CollectAllMarketplaceMessages",
+   "CollectMarketplaceMessage",
+   "GetExpeditionMessages",
+   "GetExpeditionMessageAt",
+   "GetEspionageReport",
+   "DeleteMessage",
+   "DeleteAllMessagesFromTab",
+   "GetResourcesProductions",
+   "GetResourcesProductionsLight",
+   "FlightTime",
+   "FastFlightTime",
+   "flightTime",
+   "Phalanx",
+   "UnsafePhalanx",
+   "JumpGate",
+   "JumpGateDestinations",
+   "BuyOfferOfTheDay",
+   "CreateUnion",
+   "HeadersForPage",
+   "GetEmpire",
+   "GetEmpireJSON",
+   "GetAuction",
+   "DoAuction",
+   "Highscore",
+   "GetAllResources",
+   "GetDMCosts",
+   "UseDM",
+   "GetItems",
+   "GetActiveItems",
+   "ActivateItem",
+   "BuyMarketplace",
+   "OfferSellMarketplace",
+   "OfferBuyMarketplace",
+   "GetLfBuildings",
+   "GetLfResearch",
+   "GetLfResearchDetails",
+   "GetAvailableDiscoveries",
+   "GetPositionsAvailableForDiscoveryFleet",
+   "GetChapter",
+   "ChapterClaimAll",
+   "ChapterCollectReward",
+   "SelectLfResearchSelect",
+   "SelectLfResearchRandom",
+   "SelectLfResearchArtifacts",
+   "FreeResetTree",
+   "BuyResetTree"
+  ],
+  "type": [
+   "Prioritize"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/shipsInfos.go": {
+  "sha256": "1a9918d5b876dbd734828d4e5e7aa7e3d852b76af5eab35880f20ff4c37eda61",
+  "lines": 56,
+  "func": [
+   "Cargo",
+   "ByID",
+   "Set",
+   "ToQuantifiables",
+   "NewShipsInfos",
+   "GetCargo",
+   "Speed"
+  ],
+  "type": [
+   "IShipsInfos",
+   "ShipsInfos"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/utils.go": {
+  "sha256": "421f2a2d1bbb925f8675d9378ff5692d282b4b371910b8a74470fea3824fc9ba",
+  "lines": 71,
+  "func": [
+   "GetFleetSpeedForMission",
+   "ConvertIntoCoordinate",
+   "ConvertIntoCelestial",
+   "ConvertIntoPlanet",
+   "ConvertIntoMoon"
+  ],
+  "type": [
+   "HasCoordinate"
+  ],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/utils_test.go": {
+  "sha256": "9ed3b60332f3410cf4cd54ad1bede1f82cdd8908ad5d23c26a865e50c004b979",
+  "lines": 17,
+  "func": [
+   "TestConvertIntoCoordinate"
+  ],
+  "type": [],
+  "const": [],
+  "var": []
+ },
+ "ogame/pkg/wrapper/wrapper.go": {
+  "sha256": "5562099a10bebf2a562ae10fb5fed61fa67a5bee7e928ca5b8e42aa8f4e6b54d",
+  "lines": 65,
+  "func": [
+   "DebugGalaxy",
+   "SkipInterceptor",
+   "SkipRetry",
+   "SkipCacheFullPage",
+   "ChangePlanet",
+   "Delay"
+  ],
+  "type": [
+   "IntoCoordinate",
+   "IntoCelestial",
+   "IntoPlanet",
+   "IntoMoon",
+   "Options",
+   "Option"
+  ],
+  "const": [],
+  "var": []
+ }
+}

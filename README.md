@@ -1,283 +1,124 @@
-![TBot - OGame bot](https://ogame-tbot.net/logo-claim.jpg "TBot - OGame bot")
+# TBot — source-based operator and contributor handbook
 
-# TBot
-OGame Bot
+TBot automates OGame account operations through a C# worker runtime, an integrated WebUI and a separate `ogamed-tbot` HTTP daemon. This fork extends the original TBot implementation. The behavior described here comes from the audited **`develop` source**, not assumptions carried over from the original README.
 
-[![GitHub all releases](https://img.shields.io/github/downloads/ogame-tbot/TBot/total)](https://github.com/ogame-tbot/TBot/releases/latest)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/ogame-tbot/TBot)](https://github.com/ogame-tbot/TBot/releases/latest)
-[![Discord](https://img.shields.io/discord/801453618770214923)](https://discord.gg/NZSaY4aQ7J)
+> **Account and security warning:** OGame's rules prohibit botting. This software cannot guarantee account safety or protection from bans, lost fleets or unwanted account actions. The current WebUI can read/write configuration without its own authentication. Keep it local or behind a deliberately authenticated access boundary.
 
-TBot is a .NET 6 [OGame](https://lobby.ogame.gameforge.com/) bot based on [ogamed deamon](https://github.com/alaingilbert/ogame) by alaingilbert
+## Which version does this documentation describe?
 
-Feel free to publish issues or pull requests
+- TBot source baseline: [`35b4ce08b57bf2900d5b3d3b449a3f26f168270b`](https://github.com/0xE232FE/TBot/tree/35b4ce08b57bf2900d5b3d3b449a3f26f168270b), from upstream `develop`.
+- Pinned daemon submodule: [`fbd0fda6ba9019c128926614f9865ba38a67b627`](https://github.com/0xE232FE/ogame.mod/tree/fbd0fda6ba9019c128926614f9865ba38a67b627).
+- **Source requires .NET 10**, despite historical documentation mentioning .NET 6 and tracked workflows requesting .NET 9.
+- Upstream's default `master` branch is older than this `develop` baseline. Release tags, assembly versions and source commits are different identifiers.
+- Source-level behavior is **not** proof of validation against a live account or every OGame version.
 
-TBot supports Ogame **v11.15**!
+See the [source-audit record](docs/source-audit.md) for coverage, reproducible checks and known limitations. Released packages may represent a different snapshot.
 
-## How to Update from 0.3.1
+## Handbook
 
-Be sure to remove .ogame folder from */home/username/* (linux) or *C:/Users/username* (win) before logging in
+| Goal | Guide |
+|---|---|
+| Install/run without accidentally starting accounts | [Operations and safe first boot](docs/operations.md) |
+| Understand every setting, units, examples, defaults and profiles | [Configuration reference](docs/configuration/README.md) |
+| Understand account startup, reloads, sleep and shutdown | [Lifecycle](docs/lifecycle.md) |
+| Configure fleets, farming, harvesting, discovery and colonization | [Fleet operations](docs/features/fleet-operations.md) |
+| Understand incoming-attack handling and defensive actions | [Defender](docs/features/defender.md) |
+| Configure mines, research, lifeforms, transports and other Brain workers | [Brain](docs/features/brain.md) |
+| Understand fleet/cost/production/investment calculations | [Calculation reference](docs/calculations.md) |
+| Use Settings/Logging/Ogame and understand exposure limits | [WebUI and interfaces](docs/interfaces.md) |
+| Use Telegram commands and identify account-changing actions | [Telegram](docs/telegram.md) |
+| Understand daemon flags/environment and HTTP operations | [Daemon](docs/daemon.md), [API](docs/daemon-api.md) |
+| Extend or contribute to the project | [Architecture](docs/architecture.md), [Development](docs/development.md), [Contributing](CONTRIBUTING.md) |
+| Understand game-data objects and enums | [Infrastructure models](docs/infrastructure-models.md) |
 
+## Safe first boot with a published package
 
-[![Stories in Ready](https://discordapp.com/api/guilds/801453618770214923/widget.png?style=banner2)](https://discord.gg/NZSaY4aQ7J)
+Use a native package and its **matching daemon** from [the maintained upstream fork's releases](https://github.com/0xE232FE/TBot/releases), not an old original-project release URL. Pick the correct platform, verify the asset digest when available, extract it and locate the actual application directory; archives can contain `publish/<platform>/`.
 
-## Disclaimer
+Before launching, edit the global `settings.json` beside the executable to an account-free configuration:
 
-Scripting and botting are forbidden by the OGame rules.
-I adopt a series of measures to prevent detection and thus ban, but I cannot, and never will, guarantee anything.
-Use this bot at your own risk!!
-
-Testing and PR are very much appreciated!
-
-## Support TBot
-
-Do you like the project? Buy me a beer!
-
-[![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=2QXP4KAKZRGL4)
-
-## Configuration
-
-TBot configuration consists in two files:
-- *settings.json* handles the configuration of Telegram Bot, WebUI and of the bot instances.
-  *settings.json* can be passed as a command line argument as follows:
-  > TBot --settings=<settings.json path>
-- *instance_settings.json* handles the configuration of a bot instance
-
-The *settings.json* should be compiled as follows:
 ```json
 {
-        "TelegramMessenger": {
-                "Active": true,
-                "API": "<API TOKEN ID>",
-                "ChatId": "<your chat id>",
-                "TelegramAutoPing": {
-                        "Active": true,
-                        "EveryHours": 0
-                }
-        },
-        "Instances": [
-                {
-                        "Alias": "Account alias",
-                        "Settings": "<instance_settings>.json"
-                },
-                {
-                        "Alias": "Another account",
-                        "Settings": "<another_instance_settings>.json"
-                }
-        ],
-	"WebUI": {
-		"Enable": true,
-		"Urls": "http://localhost:9090",
-		"MaxLogsToShow": 2000
-	}
+  "TelegramMessenger": {
+    "Active": false,
+    "API": "",
+    "ChatId": ""
+  },
+  "WebUI": {
+    "Enable": true,
+    "Urls": "http://127.0.0.1:9090",
+    "MaxLogsToShow": 2000
+  },
+  "Instances": []
 }
 ```
-NB: The settings should be pointing to a path relative to *settings.json* directory.
-  
-### Important Notices 
-You must use **different ports** for **each instance** and for **webUI**. They all must be open and free.
 
-Instances from the **same lobby account** can share the **same cookies file**;
+From that directory, on Linux/macOS:
 
-If you run instances from **different lobby accounts** you must use **different cookies files**.
-  
-Be **warned** that Ogame's servers have a limit on the number of requests per second. If you run too many instances, you may get IP banned, or end up with banned accounts. Use proxies to avoid this.
-
-### Features
-TBot has a wide variety of useful features. They all can be configured and customized editing the instance's settings file.
-Here follows a short explanation of each of them, read the [Wiki](https://github.com/ogame-tbot/TBot/wiki/Configuration-guide) for a more indepth explanation.
-
-* Defender: TBot checks periodically for incoming attacks
-  * Autofleet: TBot dispatches your endangered fleet and resources on the safest mission possible. A favourite type of mission can be set in the settings
-  * MessageAttacker: TBot sends a message to the attacker(s). The message is picked randomly from the array given in the settings
-  * SpyAttacker: TBot automatically spies attacker with set number of probes
-  * Alarm: TBot plays a nasty sound if under attack
-  * TelegramMessenger: TBot sends you a notice if under attack (requires additional configuration, see [below](#telegram))
-* Expeditions: TBot will handle them for you
-  * TBot can automatically optimize expeditions for your account, sending them from one or multiple origins. Military expos are supported too, by adding a ship type to the automatically calculated optimal fleet or by manually setting the desired fleet.
-* Brain: TBot has a series of extra functionalities
-  * AutoCargo: TBot checks wether your celestials have enough capacity to displace the resources. If not, TBot builds ships for you (preferred type taken from settings)
-  * AutoRepatriate: TBot periodically repatriates all your resources to a single drop celestial. You can also specify to leave a set amount of deuterium (only on moons or both moons and planets)
-  * AutoMine: Tbot will develop your planets and moons up to the levels given in settings. A cool ROI based algorithm is present: TBot will develop your planets calculating to the most profitable building for each planet! A maximum amount of days of investment return can be set. An origin can be set in settings.json to send the necessary resources from.
-  * AutoResearch: Tbot will develop your researches from the planet set in settings up to the given levels. An origin can be set in settings to send the necessary resources from.
-  * AutoMineLF: TBot will develop you LifeForms buildings up to the given levels. TBot will detect the active lifeform based on lifeform buildings present, so you must build at least a lv 1 building in order to TBot to account for that planet.
-  * AutoResearchLF: TBot will research the LifeForms techs you selected up to the given level. Only researches with lv 1 or more will be researched. You must manually select the desired researches and upgrade them to lv 1 or more in order to TBot to account for them.
-  * BuyOfferOfTheDay: TBot can buy the daily item from the Trader (check intervals are implemented so you can configure shorter check times when there is the specific event)
-* AutoFarm: TBot will scan one or more ranges of systems spying inactive players and attacking them with the specified type of ship if they are profitable above a given amount.
-* AutoHarvest: TBot will harvest expedition debris in your celestials' systems as well as your own DFs
-* AutoColonize: TBot will make new colonies. Input the list of coordinates of your desired colonies and TBot will do the rest.
-* SleepMode: TBot will not interact with your account between the hours specified in settings
-  * AutoFleetSave: TBot will keep your fleets safe by dispatching them on the safest mission possible until wake up time (deploy with recall is supported!)
-* Local Proxy: Tbot allows you to play in your browser
-  * Insert the hostname of the machine you'll run TBot onto in the settings (i.e.: localhost, or the local ip of a computer on your local network such as 192.168.X.X)
-  * Navigate with your browser to http://*hostname:port*/game/index.php (remember to change hostname and port with the ones you specified in settings)
-  * Pay attention: TBot is not aware of what you do in the browser, it will do his job regardless of you playing manually, so keep an eye on the console
-* Proxy: TBot supports routing your traffic through a HTTP o SOCKS5 proxy
-  * Fill the settings in settings. The settings are quite self-explainatory. **WARNING: Ogame is positively blocking IPs from datacenters. You will probably need a residential proxy in ordet to be able to login.**
-* WebUI: TBot has a webUI for changing settings, reading logs and interacting manually with the game. You can configure the host and port in the general settings file.
-
-### WebUI
-Since 0.3.0 TBot includes a webUI where you can check and change the settings, read the logs in a filterable table and play manually with your account(s), all in the same place, even remotely.
-
-
-### Telegram
-You can control and get info for TBot through a Telegram Bot. In order to enable it, you need to follow theese steps:
-* Create a new Telegram bot
-  * Write "/new_bot" to [@botfather](https://t.me/botfather)
-  * Follow the instructions given by BotFather, assigning a name and an username for the bot (theese are not important, set them to whatever you like)
-  * BotFather will send you a message containing the API Key you need and a link to your new bot
-  * Insert the newly obtained API Key in settings.json under TelegramMessenger.API
-  * Click on the bot link and start the conversation
-* Get your ChatID
-  * Write "/start" to [@getmyid_bot](https://t.me/getmyid_bot)
-  * It will answer you a message containing your user ID and chat ID
-  * Insert the newly obtained ID in settings.json under TelegramMessenger.ChatId
-* Send "/help" to the bot to get a list of the available commands. Here is a list:
-  * Core Commands
-    * /setmain - Set the TBot main instance to pilot. Format <code>/setmain 0</code>
-    * /getmain - Get the current TBot instance that Telegram is managing
-    * /getmainstats - Get current TBot instance statistics
-    * /listinstances - List TBot main instances
-    * /loglevel - Get current log level on telegram logging
-	* /setloglevel - Set log level on telegram logging and enables it. Format <code>/setloglevel Debug|Information|Warning|Error </code>
-    * /ping - Ping bot
-    * /stopautoping - stop telegram autoping
-    * /startautoping - start telegram autoping [Receive message every X hours]
-    * /help - Display this help
-  * TBot Main instance commands
-    * /getfleets - Get OnGoing fleets ids (which are not already coming back)
-    * /getcurrentauction - Get current Auction
-    * /bidauction - Bid to current auction if there is one in progress. Format <code>/bidauction 213131 M:1000 C:1000 D:1000</code>
-    * /subscribeauction - Get a notification when next auction will start
-    * /ghostsleep - Wait fleets return, ghost harvest for current celestial only, and sleep for 5hours <code>/ghostsleep 4h3m or 3m50s Harvest</code>
-    * /ghostsleepall - Wait fleets return, ghost harvest for all celestial and sleep for 5hours <code>/ghostsleepall 4h3m or 3m50s Harvest</code>
-    * /ghost - Ghost for the specified amount of hours on the specified mission. Format: <code>/ghost 4h3m or 3m50s Harvest</code>
-    * /ghostmoons - Ghost moons fleet for the specified amount of hours on the specified mission. Format: <code>/ghostto 4h30m Harvest</code>
-    * /switch - Switch current celestial resources and fleets to its planet or moon at the specified speed. Format: <code>/switch 5</code>
-    * /deploy - Deploy to celestial with full ships and resources. Format: <code>/deploy 3:41:9 moon/planet 10</code>
-    * /jumpgate - jumpgate to moon with full ships [full], or keeps needed cargo amount for resources [auto]. Format: <code>/jumpgate 2:41:9 auto/full</code>
-    * /phalanx - use phalanx from moon to destination. Format <code>/phalanx 2:241:9 4:100:1</code>
-    * /cancelghostsleep - Cancel planned /ghostsleep(expe) if not already sent
-    * /spycrash - Create a debris field by crashing a probe on target or automatically selected planet. Format: <code>/spycrash 2:41:9/auto</code>
-    * /recall - Enable/disable fleet auto recall. Format: <code>/recall true/false</code>
-    * /collect - Collect planets resources to JSON setting celestial
-    * /build - Try to build buildable on each planet. Build max possible if no number value sent <code>/build LightFighter [100]</code>
-    * /collectdeut - Collect planets only deut resources -> to JSON repatriate setting celestial
-    * /msg - Send a message to current attacker. Format: <code>/msg hello dude</code>
-    * /sleep - Stop bot for the specified amount of hours. Format: <code>/sleep 4h3m or 3m50s</code>
-    * /wakeup - Wakeup bot\n" +
-    * /cancel - Cancel fleet with specified ID. Format: <code>/cancel 65656</code>
-    * /getcelestials - Return the list of your celestials
-    * /attacked - check if you're (still) under attack
-    * /celestial - Update program current celestial target. Format: <code>/celestial 2:45:8 Moon/Planet</code>
-    * /getinfo - Get current celestial resources and ships. Additional arg format has to be <code>/getinfo 2:45:8 Moon/Planet</code>
-    * /editsettings - Edit JSON file to change Expeditions, Colonize, Autominer's and Autoresearch Transport Origin, Repatriate and AutoReseach Target celestial. Format: <code>/editsettings 2:425:9 Moon</code>
-    * /minexpecargo - Modify MinPrimaryToSend value inside JSON settings
-    * /stopexpe - Stop sending expedition
-    * /startexpe - Start sending expedition
-    * /startdefender - start defender
-    * /stopdefender - stop defender
-    * /stopautoresearch - stop brain autoresearch
-    * /startautoresearch - start brain autoresearch
-    * /stopautomine - stop brain automine
-    * /startautomine - start brain automine
-    * /stoplifeformautomine - stop brain Lifeform automine
-    * /startlifeformautomine - start brain Lifeform automine
-    * /stoplifeformautoresearch - stop brain Lifeform autoresearch
-    * /startlifeformautoresearch - start brain Lifeform autoresearch
-    * /stopautofarm - stop autofarm
-    * /startautofarm - start autofarm
- 
-### Settings Hot Reload
-TBot supports the editing of instance settings even while it is running. It will take care of turning on and off features as well as the specific feature config settings.
-You can change settings from WebUI or editing the files directly.
-
-**Hot reloading of instances is only partially supported at the moment. You can add and remove instances while the bot is running, but the feature is still in beta so there may be bugs.**
-  
-## Running on Windows
-* Download and unzip latest release.
-* Insert you credentials in instance settings file
-  * Under "Universe" type your universe name with leading capital letter, i.e.: Andromeda, Bellatrix etc...
-  * Under "Language" type your universe community code. You can find it by logging to your account and analyzing the url, such as s161-us.ogame.gameforge.com => us
-* Configure the bot by editing all settings fields
-  * All config options are sorted by feature, [check which features you](#features) want and configure them before activating
-* Make sure you have installed the [.NET 6 runtime](https://dotnet.microsoft.com/download/dotnet/6.0) for your platform
-* Run TBot.exe
-
-## Running on Linux/MacOS
-* Open a terminal (if you are in a desktop environment)
-* Download latest release for your platform.
-  * `wget https://github.com/ogame-tbot/TBot/releases/download/VERSION/TBot-VERSION-PLATFORM.zip` (*change the filename to your real one!*)
-* Unzip the downloaded file
-  * `unzip TBot-VERSION-PLATFORM.zip -d TBot` (*change the filename to your real one!*)
-* Make ogamed executable (*this is only required on first run or update*)
-  * `chmod +x ogamed`
-* Make TBot executable (*this is only required on first run or update*)
-  * `chmod +x TBot`
-* Configure the general settings, listing all instance settings files
-* Insert you credentials in instance settings file
-  * Under "Universe" type your universe name **with leading capital letter**, i.e.: Andromeda, Bellatrix etc...
-  * Under "Language" type your universe community code. You can find it by logging to your account and analyzing the url, such as s161-us.ogame.gameforge.com => **us**
-* Configure the bot by editing all instance settings.json fields
-  * All config options are sorted by feature, [check which features](#features) you want and configure them before activating
-* Make sure you have installed the [.NET 6 runtime](https://dotnet.microsoft.com/download/dotnet/6.0) for your platform
-* Run TBot
-  * `./TBot`
-
-## Running on Amazon Web Services
-**WARNING: Ogame is positively blocking IPs from datacenters. You probably need a residential proxy to run on AWS, or any other VPS.**
-
-Some successful tests have been done to run TBot on the smallest instance of LightSail (1 vCPU, 20 GB SSD, 500 MB RAM and 1 TB outbound traffic) on Amazon Linux 2, which is free for a three month trial. In order to run it, steps should be as follow:
-* Create your account on Amazon Web Services (Credit Card required), and create a LightSail Instance running Amazon Linux 2. The smallest one fits into the "Free Tier" Program, which allows a 3 month free trial.
-* Select the ports where you want to connect, and open them in the Networking Settings on the instance's AWS Console (ex. ports 8000 - 8020 open for TCP and from any ip address if you don't know where you will be connecting from). This should make it accessible to the public internet.
-* Connecto to AWS instance using SSH and the .pem key you get during the instance setup:
-```
-$ ssh -i ~/pem/<my>.pem ec2-user@<instance's public ip-address>
+```sh
+chmod +x TBot ogamed
+./TBot --settings=./settings.json --log=./log
 ```
 
-* Update the system with  
+On Windows use `TBot.exe`, the same supported switches and matching `ogamed.exe`. Open **http://127.0.0.1:9090/**; it redirects to Settings. `Instances: []` means no accounts initialize. The daemon executable must still exist as a startup prerequisite.
+
+`MaxLogsToShow` is a template field, not a verified active control of the viewer's row cap; see [interfaces](docs/interfaces.md). Change the port if it is occupied.
+
+**Do not add an instance before reviewing its entire configuration.** Bundled examples enable account-changing features and contain placeholder coordinates. Listed instances initialize automatically, including after a reload. This fork does not provide TBot++'s verified `--api-only` mode.
+
+For credentials, multiple accounts, device identity, profiles and storage, follow [operations](docs/operations.md) and [configuration](docs/configuration/README.md). Keep real credentials out of tracked files, issues and chat.
+
+## Implemented capability map
+
+The guides explain exact gates and limitations. This table is not a promise that all capabilities run together or work without account-specific configuration.
+
+| Area | Implementation | Guide |
+|---|---|---|
+| Multiple accounts | Global instance list, per-account configuration, initialization/removal and reload watchers | [Lifecycle](docs/lifecycle.md) |
+| Profiles | Base configuration and ordered JSON overlays | [Configuration](docs/configuration/README.md) |
+| Defender | Attack polling, configured probe/missile/weak-attack rules, fleet saving, alarms, notifications and attacker interactions | [Defender](docs/features/defender.md) |
+| Expeditions | Origin/ship selection, capacity limits, slots/returns and configured sleep behavior | [Fleet operations](docs/features/fleet-operations.md) |
+| Farming | Range scans, reports, profitability, shared targets and blacklist/success state | [Fleet operations](docs/features/fleet-operations.md) |
+| Harvesting | Own/expedition debris targets, ship and minimum-resource constraints | [Fleet operations](docs/features/fleet-operations.md) |
+| Discovery | Discovery missions, available positions, failure and slot scheduling | [Fleet operations](docs/features/fleet-operations.md) |
+| Colonization | Position/range search and colony-ship dispatch; optional abandonment/intensive search can be destructive | [Fleet operations](docs/features/fleet-operations.md) |
+| Mining/facilities | Planetary/lunar construction, energy/field/resource gates and investment limits | [Brain](docs/features/brain.md) |
+| Research | Normal research priorities, targets and progression | [Brain](docs/features/brain.md) |
+| Lifeforms | Lifeform buildings and selected technologies with separate limits/transports | [Brain](docs/features/brain.md) |
+| Cargo/defenses | Configured cargo and defense construction | [Brain](docs/features/brain.md) |
+| Resource logistics | Construction/research transports and resource/deuterium repatriation | [Brain](docs/features/brain.md), [Fleet operations](docs/features/fleet-operations.md) |
+| Jump gates/offers | Configured gate transfers and daily-offer purchasing | [Brain](docs/features/brain.md) |
+| Sleep/fleet saving | Scheduled/manual sleep, wakeup, saves/recalls and worker-specific exceptions | [Lifecycle](docs/lifecycle.md), [Fleet operations](docs/features/fleet-operations.md) |
+| Telegram | Status, account selection, worker controls and account-changing commands | [Telegram](docs/telegram.md) |
+| WebUI/logging | JSON editor, persisted/live filtered logs and embedded manual game proxy | [Interfaces](docs/interfaces.md) |
+| Daemon | Login/device/storage, HTTP/SOCKS5 proxy, game reverse proxy and REST operations | [Daemon](docs/daemon.md) |
+
+Names such as `AutoFleepJumpGate` and `LifeformAutoMine` are compatibility identifiers. Use exact keys from the reference instead of “correcting” their spelling.
+
+## Build from current source
+
+```sh
+git clone --branch develop --recurse-submodules https://github.com/0xE232FE/TBot.git
+cd TBot
+dotnet build TBot.sln --configuration Release
 ```
-sudo yum update
-```
 
-* Install the .NET 6 tuntime, which can be done using [these instructions for CentOs](https://docs.servicestack.net/deploy-netcore-to-amazon-linux-2-ami), and which is something like
-```
-$ sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-$ sudo yum install aspnetcore-runtime-6.0
-$ sudo yum install dotnet-sdk-6.0
-```
+**Known blocker:** the pinned daemon's `cmd/ogamed-tbot` target imports a missing `buildqueue` package. The complete current source bundle is not reproducibly buildable without addressing that defect. The C# build and Linux publish succeeded independently. [Development](docs/development.md) documents exact commands, warnings, platform mappings and stale CI/Docker recipes without hiding this distinction.
 
-* Upload your TBot files, which were previously downloaded and setup correctly. You can do this by using something like FileZilla using sftp and the same credentials as the ssh connection and then copy your TBot folder into the user's home directory in the server. Make sure your settings file has the public ip of the aws instance and the port where you want to connect.
-* Follow the instructions as written above for Linux by changing permissions.
+## Configuration principles
 
-***Very important***: if you run TBot by using the command ```./TBot``` and then disconnect from the ssh connection, it'll kill TBot. In order to prevent this, you have to use a service called screen, and run the TBot instance like this:
-```
-$ screen ./TBot
-```
-then press <Ctrl + a + d>  in order to detach the console.
+- Template values are examples, not universal defaults. The reference distinguishes explicit fallbacks, requiredness and missing-value casts.
+- Profiles replace arrays rather than appending coordinates/targets. Later overlays can override earlier values.
+- Missing dynamic values can cast to zero/false/null; these are not necessarily sensible operational defaults.
+- The WebUI edits raw JSON, not a complete evaluated/merged view or validated account configuration.
+- Slot reservations and priorities coordinate competing workers; understand them before enabling multiple features.
+- Saving a global instance entry can initiate login; saving a feature flag can start actions. Review changes first.
+- Manual gameplay can race automated workers; the iframe is not exclusive control.
 
-Once it is detached you may close the ssh instance and TBot will run fine. You can repeat the process in order to run another instance of TBot on the server, as long as you detach it every time after you run the command.
+## Contributions and attribution
 
-The testing was done on the smallest LightSail instance has been running up to 4 instances of TBot (different accounts each), with no problems so far, however if you run a 5th instance, it can cause the server to run out of RAM and it'll crash.
+This code descends from [ogame-tbot/TBot](https://github.com/ogame-tbot/TBot), with development in [0xE232FE/TBot](https://github.com/0xE232FE/TBot), and uses Alain Gilbert's tooling through [ogame.mod](https://github.com/0xE232FE/ogame.mod). Existing contributor attribution and dependency notices remain applicable. Project metadata references MIT, while dependencies carry separate notices; this documentation does not introduce a new license or resolve missing root-license paperwork.
 
-## Captcha solving
-TBot implements an automatic captcha solving mechanism.
+The original project's [Discord community](https://discord.gg/NZSaY4aQ7J) and [support link](https://www.paypal.com/donate/?hosted_button_id=2QXP4KAKZRGL4) are retained for attribution, not as verification of current fork behavior.
 
-However, being based on ogamed, it supports manual captcha solving as well as Ninja Captcha Autoresolve service.
-
-To manually solve captcha navigate to host:port/bot/captcha
-
-To configure Ninja Capthca Service follow [this guide](https://github.com/alaingilbert/ogame/wiki/auto-captcha-using-ninja-solver) and insert the obtained APIKey in settings.json
-
-  
-## Development
-Feel free to fork and make pull requests or give suggestions posting an Issue or joining the Discord chat.
-
-Also, a proper documentation about how to deal with settings would no doubt be helpful, especially for new users.
-
-## Building
-We write and build TBot with Visual Studio 2022 Community Edition, thus .NET 6 SDK is enough for command line compilation.
-
-Releases are automated by GitHub Actions, take a look at the [workflows](https://github.com/ogame-tbot/TBot/tree/master/.github/workflows) if you are interested in the build process.
-  
-## Portability
-TBot is currently developed and mantained for Windows 64bit, Windows 32bit, Linux x86_64, MacOS 64bit, MacOS ARM, Linux ARMv7 and Linux ARM64.
+Corrections should cite source and state how they were verified. Behavior fixes should add focused tests and update the reference. Never submit private account data as a reproduction case. See [CONTRIBUTING](CONTRIBUTING.md).

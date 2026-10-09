@@ -1,0 +1,979 @@
+{
+ "TBot.Ogame.Infrastructure/Enums/AllianceClass.cs": {
+  "sha256": "59d2228e3d74bf871760c92340d6486dc1847df39310e25ae92191212291b145",
+  "lines": 14,
+  "types": [
+   "AllianceClass"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/Buildables.cs": {
+  "sha256": "5ddae57e4d78235731031b1b18e3bc904e70d1914d4f3782917b8e8de315197f",
+  "lines": 77,
+  "types": [
+   "Buildables"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/Celestials.cs": {
+  "sha256": "96e67f87a3aa4f22c55fb08cc2e122e910a485796caed0b4e724b1aa6630d924",
+  "lines": 14,
+  "types": [
+   "Celestials"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/CharacterClass.cs": {
+  "sha256": "370730bc10a1917e4be7cee1146631e590ae4e8f3914c4bcf3755651785e520e",
+  "lines": 14,
+  "types": [
+   "CharacterClass"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/EspionageReportType.cs": {
+  "sha256": "87e05949d4673c5ff202eabef8275866545554d8b7f5547d617dcc2bb0e80d88",
+  "lines": 12,
+  "types": [
+   "EspionageReportType"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/FarmState.cs": {
+  "sha256": "287307d52d9c5129aad792982e60e2cb76ad948bf5a081579e26c16867d65f2f",
+  "lines": 26,
+  "types": [
+   "FarmState"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/Feature.cs": {
+  "sha256": "25a1f793ef3673986ac952f4d3be200d9041416144a26f668cd9a74a980509a5",
+  "lines": 31,
+  "types": [
+   "Feature"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/Features.cs": {
+  "sha256": "31ec767bde83f79b7f604276217745bd08cee161c991a28d66b143fa2ab0b330",
+  "lines": 28,
+  "types": [
+   "Features"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/HumansBuildables.cs": {
+  "sha256": "f50f9bdd690766acf7d45f1098b4c79bf0e4e1d8c8415f409d1db645ce30f322",
+  "lines": 19,
+  "types": [
+   "HumansBuildables"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/KaeleshBuildables.cs": {
+  "sha256": "1491c58711aa0b4fbd1dfb65204c4e2bf89ce638eaec0ef3124e434af55fac2a",
+  "lines": 18,
+  "types": [
+   "KaeleshBuildables"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/LFBuildables.cs": {
+  "sha256": "0ebb0844f451a97f85c0c24e4110bbc5eabf4c23cb8c93f36c554756d9e8eecc",
+  "lines": 68,
+  "types": [
+   "LFBuildables"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/LFTechno.cs": {
+  "sha256": "7d202a6004766fef5f54fc9f92c176225e356fc09c6ba9aa63466d8095095339",
+  "lines": 91,
+  "types": [
+   "LFTechno"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/LFTypes.cs": {
+  "sha256": "3fe65bdcfca2dd1fa146703736422cf25552aa70e147f1ccbce67b56c9ee6423",
+  "lines": 15,
+  "types": [
+   "LFTypes"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/MechasBuildables.cs": {
+  "sha256": "30d55e8962be25d3a51e417de307b7c2bcf53bc33837328759be3c251596bd6c",
+  "lines": 18,
+  "types": [
+   "MechasBuildables"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/Missions.cs": {
+  "sha256": "861c129b0d3df87901b03a1e372bfdf10b8aa98e3930545d989aa16c6328a17f",
+  "lines": 24,
+  "types": [
+   "Missions"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/OfferOfTheDayStatus.cs": {
+  "sha256": "608e8d2d401dd829f511460683daa7cf4ab91c768ce95dab9bd76e7deecea6cf",
+  "lines": 13,
+  "types": [
+   "OfferOfTheDayStatus"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/RepatriateCode.cs": {
+  "sha256": "029fd6b62e1ddc4c750f7ee8e926bba998b9537ffe44a04ce6bbaff238642239",
+  "lines": 14,
+  "types": [
+   "RepatriateCode"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/RocktalBuildables.cs": {
+  "sha256": "3c58fba2f9f1ab9e9c0fb085d985ae4924b8d38e3c2183d3f2255d73e8e09f18",
+  "lines": 18,
+  "types": [
+   "RocktalBuildables"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/SendFleetCode.cs": {
+  "sha256": "8e95eeee05b932dd4d95f269e906da0fb9e33208cb1c05eddfd6168ccb433667",
+  "lines": 15,
+  "types": [
+   "SendFleetCode"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/SettingsVersion.cs": {
+  "sha256": "cee6511232376c634ed6a841099564b4f7aa91d3b5985af358b8aef584092fea",
+  "lines": 13,
+  "types": [
+   "SettingsVersion"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Enums/Speeds.cs": {
+  "sha256": "9d2012284b796332ac92fd15ea15f8bf7ab0370a359c59a8dc9a7c6086d3ab5a",
+  "lines": 88,
+  "types": [
+   "Speeds"
+  ],
+  "public_members": [
+   "List<decimal>",
+   "List<decimal>"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Enums/UpdateTypes.cs": {
+  "sha256": "0ce61399ae96fc2412ca0139e88b4695875db04325b28a6f5084d0935e8624b6",
+  "lines": 26,
+  "types": [
+   "UpdateTypes"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Exceptions/OgamedException.cs": {
+  "sha256": "1e636ea0d9e38a9f064ca2a9cd0cdc0b4f7cc55f58e7b2e09524a0766dd8a4ca",
+  "lines": 23,
+  "types": [
+   "OgamedException"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/IOgameService.cs": {
+  "sha256": "371b1c2c0b36909188285e7efb4be062f908962063bc969c8cb9e8c36cb6e484",
+  "lines": 104,
+  "types": [
+   "IOgameService"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Abandon.cs": {
+  "sha256": "7dcb78315b8fe897405f85e174e1d2ce231ae35054d97709ff4b571a4c2b8726",
+  "lines": 12,
+  "types": [
+   "Abandon"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Alliance.cs": {
+  "sha256": "eb93999ae0373a5c833702984f29dd35716e74708cdb7e71db5daf073603ccb7",
+  "lines": 14,
+  "types": [
+   "Alliance"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/AttackerFleet.cs": {
+  "sha256": "9a007a3fb3a416443844714a5c48b450cbd1cb8759afaae6cd39e493aaf4094b",
+  "lines": 45,
+  "types": [
+   "AttackerFleet"
+  ],
+  "public_members": [
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Auction.cs": {
+  "sha256": "ce2ae8f9f85f3cbdbb669d3879c461c0394c7978cf863241e0f48992f7a99612",
+  "lines": 61,
+  "types": [
+   "Auction"
+  ],
+  "public_members": [
+   "string",
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/AuctionInputOutput.cs": {
+  "sha256": "9e364b586227c81f6418d7f1deb97e0b950e6da070c498e7c9932512cf677459",
+  "lines": 30,
+  "types": [
+   "AuctionInputOutput"
+  ],
+  "public_members": [
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/AuctionResourceMultiplier.cs": {
+  "sha256": "830c521f1880a7650e0967b700bc11b73c268aa10f4d799e23864e124d0bef40",
+  "lines": 14,
+  "types": [
+   "AuctionResourceMultiplier"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/AuctionResourcesValue.cs": {
+  "sha256": "c2bc615503af2cec3bdf1d409fd60b675c012521f9965fb06e3adb1c892209ba",
+  "lines": 34,
+  "types": [
+   "AuctionResourcesValue"
+  ],
+  "public_members": [
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/AutoMinerSettings.cs": {
+  "sha256": "59bc7ce7dafcc5c5e149ddc76c3180d7d686fcc9270736f13667a866f9feb7dd",
+  "lines": 27,
+  "types": [
+   "AutoMinerSettings"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/BuildTask.cs": {
+  "sha256": "cf3f9ada5d993abdc8ac0a524e6bbcfc4caa8b7909c79386990943fffe79eceb",
+  "lines": 15,
+  "types": [
+   "BuildTask"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Buildings.cs": {
+  "sha256": "3ad0d04bbd0c930caf839f2605b90eb1e19b4241c2262ba4f8d148fe52dd6bed",
+  "lines": 45,
+  "types": [
+   "Buildings"
+  ],
+  "public_members": [
+   "string",
+   "int",
+   "Buildings"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/CaptchaChallenge.cs": {
+  "sha256": "a4f24e4baf84d234a61048e823507b9ba8a8cd9d10128a1da9855e4bd055a470",
+  "lines": 13,
+  "types": [
+   "CaptchaChallenge"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Celestial.cs": {
+  "sha256": "5e7d402903a690d2dffa67f5d1db504abeeab46f6de0084f91f0d5d141ef41d4",
+  "lines": 127,
+  "types": [
+   "Celestial"
+  ],
+  "public_members": [
+   "string",
+   "bool",
+   "bool",
+   "bool",
+   "int",
+   "Celestial",
+   "int",
+   "Celestial",
+   "int",
+   "LFTypes"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Constructions.cs": {
+  "sha256": "e14a924a8afbaceb4e75f9c553059c8c87a351d7e8fc5af302ef016ec5efd28f",
+  "lines": 18,
+  "types": [
+   "Constructions"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Coordinate.cs": {
+  "sha256": "8903622aa99ec9279d3619e7222b8df49de2ffd60d94e33032d389958323d82c",
+  "lines": 65,
+  "types": [
+   "Coordinate"
+  ],
+  "public_members": [
+   "string",
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Credentials.cs": {
+  "sha256": "594fa2436dfedc0f13e1cf226787950eba67e426ff878e0f9932cbd9e20eee1d",
+  "lines": 17,
+  "types": [
+   "Credentials"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Darkmatter.cs": {
+  "sha256": "96650cd3585169f0adccb05f6a83ff5b2d76eab7f0aefced71381b5e53e98578",
+  "lines": 13,
+  "types": [
+   "Darkmatter"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Debris.cs": {
+  "sha256": "440575ef45e1ea2632ea202f9abe20e94b96de89b30cb9921c99b562b4376a7d",
+  "lines": 26,
+  "types": [
+   "Debris"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Defences.cs": {
+  "sha256": "b8bbcba97795270ed74dcf73f4084b1c2a4619186c20c4b5a46d1828421575b5",
+  "lines": 197,
+  "types": [
+   "Defences"
+  ],
+  "public_members": [
+   "bool",
+   "long",
+   "Resources",
+   "Defences",
+   "Defences",
+   "long",
+   "void",
+   "bool",
+   "string",
+   "Defences",
+   "Defences",
+   "Dictionary<Buildables, long>"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Defenses.cs": {
+  "sha256": "3fea655ddd44095e8cf42d3a944b4ce2e76a26ccee2e7d6f659d60565922b0a8",
+  "lines": 10,
+  "types": [
+   "Defenses"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Device.cs": {
+  "sha256": "7240b3cb103158e27e4ea6b5af67a2d31933d58ff45fca4f2561dcecb1ce050c",
+  "lines": 21,
+  "types": [
+   "Device"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Energy.cs": {
+  "sha256": "deef1bee0994664599966b0b6ef288c58965bb31ecd3e79d59c3ffab5c31d22e",
+  "lines": 13,
+  "types": [
+   "Energy"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/EspionageReport.cs": {
+  "sha256": "06be8de5050046b43c187e77ea5ea15186ce21c1e2fefbee22eb8bdc62c190d5",
+  "lines": 197,
+  "types": [
+   "EspionageReport"
+  ],
+  "public_members": [
+   "string",
+   "bool",
+   "float",
+   "Resources",
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/EspionageReportSummary.cs": {
+  "sha256": "24292be61a2a9605495067719b68cc9694a823118f795d354de86c19249ff3e6",
+  "lines": 16,
+  "types": [
+   "EspionageReportSummary"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/ExpeditionDebris.cs": {
+  "sha256": "e031f4706487e036ae2d17d4eb396e23afe26bcada16165300e3cd5349c843d1",
+  "lines": 25,
+  "types": [
+   "ExpeditionDebris"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Facilities.cs": {
+  "sha256": "12f60e8063c5c7b78738da1dbb1487c9e7bcb9ab4dce2e33b00d9deb4c95211b",
+  "lines": 26,
+  "types": [
+   "Facilities"
+  ],
+  "public_members": [
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/FarmTarget.cs": {
+  "sha256": "13548c91b83f4fbd3fac7fbff71dfee9c6d0442d4d55706c8e0da960cbd84d1c",
+  "lines": 41,
+  "types": [
+   "FarmTarget"
+  ],
+  "public_members": [
+   "bool",
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Fields.cs": {
+  "sha256": "be226bae92658ce5fbc1cc7d55aa9cacfae1982d9f04b6c07bb6504f0427a9fb",
+  "lines": 17,
+  "types": [
+   "Fields"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Fleet.cs": {
+  "sha256": "f1fca3acf99cb1e8a3a5cf537118051a62459e4ab41be656634d1e1c6abc12f0",
+  "lines": 27,
+  "types": [
+   "Fleet"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/FleetHypotesis.cs": {
+  "sha256": "b59a70b5de89d410e387458c0f8df58a6173ffc73411e26241e8fd234558b335",
+  "lines": 18,
+  "types": [
+   "FleetHypotesis"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/FleetPrediction.cs": {
+  "sha256": "fba84c08626388e0fd1d3cd7e12f78d7f550f649ac4903c93f8e0075d36bf322",
+  "lines": 12,
+  "types": [
+   "FleetPrediction"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/FleetSchedule.cs": {
+  "sha256": "e8166cc47a1edf23e3d5b094fad4977ff62da697749426ecca6ef8c682312f11",
+  "lines": 17,
+  "types": [
+   "FleetSchedule"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Food.cs": {
+  "sha256": "d21cbf56f8074a3714c8fb1b086373f1ce6b7f3d1140d1890d7de9a2fcac17a4",
+  "lines": 15,
+  "types": [
+   "Food"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/GalaxyInfo.cs": {
+  "sha256": "15e14369791e49544e3a217592c69fe47f7212780f51db6d7e6f953daba66bb7",
+  "lines": 16,
+  "types": [
+   "GalaxyInfo"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/JumpGateResult.cs": {
+  "sha256": "79f208db6fa3f268d85e39b780fd3553f8c80ee6a61a0d9c536fbbf67e53241e",
+  "lines": 16,
+  "types": [
+   "JumpGateResult"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonuses.cs": {
+  "sha256": "09364bb59b8dab313d7cacff91ef6c1302644b28e9f577c99c3838cc9e942279",
+  "lines": 101,
+  "types": [
+   "LFBonuses"
+  ],
+  "public_members": [
+   "float",
+   "float",
+   "float"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesBase.cs": {
+  "sha256": "70d360c1c4c4ca71c7429dedb47d3c873a1b0887bc773245382fcb3691739428",
+  "lines": 17,
+  "types": [
+   "LFBonusesBase"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesCharacterClasses.cs": {
+  "sha256": "a7b8e8ae6e4f13c50a2ffb9d859067e948b4142e92ab67779d5ce2f26bf97edf",
+  "lines": 14,
+  "types": [
+   "LFBonusesCharacterClasses"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesCrawlers.cs": {
+  "sha256": "6e9c0fc9c4ab67e686f41f15e9eced34b8dee1c354b35c40afaf423fbb674dd3",
+  "lines": 19,
+  "types": [
+   "LFBonusesCrawlers"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesDens.cs": {
+  "sha256": "adfa436fb50bc32119bb5ca5edc567c53e101255f50383f9dc6f27e9acb3ba21",
+  "lines": 19,
+  "types": [
+   "LFBonusesDens"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesExpeditions.cs": {
+  "sha256": "5bdaa8febfbc366be0b90bdf61359666398b111970b048dbefd38743797f3d5e",
+  "lines": 27,
+  "types": [
+   "LFBonusesExpeditions"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesMisc.cs": {
+  "sha256": "2d00257d71eb5a7358c40255426189a50de01edc782c2c5dfb875b7f0cddb73d",
+  "lines": 15,
+  "types": [
+   "LFBonusesMisc"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesMoons.cs": {
+  "sha256": "38dabc35f692ce33686ac6865255a898e3e1eea2b33942abcbb9cbb9a0b8e7f8",
+  "lines": 19,
+  "types": [
+   "LFBonusesMoons"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesProduction.cs": {
+  "sha256": "4dc151e7e4f0fd59a568a1475b845099d701baa85b82c4d0ad9d6ccf3c3de5e2",
+  "lines": 25,
+  "types": [
+   "LFBonusesProduction"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesResources.cs": {
+  "sha256": "c588cf8c4c29c1f0c22d06875e738e812865b691246e95b31f5d3b2eb57ef8c7",
+  "lines": 14,
+  "types": [
+   "LFBonusesResources"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBonusesShip.cs": {
+  "sha256": "947021b1503bc29b5d9fa3e368ee34ecac1cffb5448503e610ff6e7b42b7ccfe",
+  "lines": 27,
+  "types": [
+   "LFBonusesShip"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/LFBuildings.cs": {
+  "sha256": "a098a56ab44ac3cf90dce99e420df7e40113447e0e0c902c4a5bb7d6e1b02b1c",
+  "lines": 142,
+  "types": [
+   "LFBuildings"
+  ],
+  "public_members": [
+   "int",
+   "LFBuildings"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/LFTechs.cs": {
+  "sha256": "ae49ee08d8229985a036359ff4da2960c717152d96b58410feb95e117cad6532",
+  "lines": 191,
+  "types": [
+   "LFTechs"
+  ],
+  "public_members": [
+   "int",
+   "LFTechs"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/LoginResult.cs": {
+  "sha256": "7d04be6a35fae344974d68e6e709b78f4b8d95a2d924b4a6bc5a1e15ac7a28b6",
+  "lines": 13,
+  "types": [
+   "LoginResult"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Moon.cs": {
+  "sha256": "3a0d992e8faec55eff18d1cd5a29237df27ac9935cf86b1d77a95d41c35a3369",
+  "lines": 17,
+  "types": [
+   "Moon"
+  ],
+  "public_members": [
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/OgamedResponse.cs": {
+  "sha256": "e8e927637c9deffae28a85bf599c35d9c8e3727fd83cc23d07d8d344f73cd156",
+  "lines": 14,
+  "types": [
+   "OgamedResponse"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Planet.cs": {
+  "sha256": "d201286114b28cfb155d61e37de81546f18a3a52f460178d13601d508b0b68bc",
+  "lines": 37,
+  "types": [
+   "Planet"
+  ],
+  "public_members": [
+   "bool",
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Player.cs": {
+  "sha256": "dc1d139fec2d25bd81829bc30203721228854be0fde1616adfcd9bfcf8c0c3a3",
+  "lines": 15,
+  "types": [
+   "Player"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Population.cs": {
+  "sha256": "2013e70b55fa5862ad3e36b7e99ab9072434bc2fc780a7c4d5e06ba8d31e9d46",
+  "lines": 40,
+  "types": [
+   "Population"
+  ],
+  "public_members": [
+   "bool",
+   "bool",
+   "bool",
+   "bool",
+   "bool",
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Production.cs": {
+  "sha256": "235a23601a77ab07c80206ecb0985a344b160fc250d4c18be63c15eeb96e9cd0",
+  "lines": 12,
+  "types": [
+   "Production"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/ProxySettings.cs": {
+  "sha256": "7d04e8d491e6f9b9c76c8eaacb5698f91c91f4c7894a5d20f6a24d0b0d1737f4",
+  "lines": 19,
+  "types": [
+   "ProxySettings"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/RankSlotsPriority.cs": {
+  "sha256": "50e85bcd89b459f70e59a9d88ddbf6a76de981208f896f5cd762056fa9ea305f",
+  "lines": 31,
+  "types": [
+   "RankSlotsPriority"
+  ],
+  "public_members": [
+   "bool",
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Researches.cs": {
+  "sha256": "a7ee1c1a5be598cedc8223f88df6cbd2f1d61db19c4a178e17309d3ef5a44292",
+  "lines": 39,
+  "types": [
+   "Researches"
+  ],
+  "public_members": [
+   "int"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Resource.cs": {
+  "sha256": "cbb1c6864efc3f5488850b0d7328ac9916bd02c348c1234502372d3338aea9c6",
+  "lines": 13,
+  "types": [
+   "Resource"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/ResourceSettings.cs": {
+  "sha256": "fdbfd8c6b3a6a399e33976614ec84c5692fb6c9cda65d1741a1aa9a6676f5875",
+  "lines": 29,
+  "types": [
+   "ResourceSettings"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Resources.cs": {
+  "sha256": "477c52b952d1d204adf81ec3178405769ae69d00b46436664d25e600bef4cd37",
+  "lines": 139,
+  "types": [
+   "Resources"
+  ],
+  "public_members": [
+   "long",
+   "string",
+   "bool",
+   "bool",
+   "Resources",
+   "Resources",
+   "Resources",
+   "bool"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/ResourcesProduction.cs": {
+  "sha256": "a3ac323871c2be8ebc322344925f91bab56d79bb2e746b24e5c7bfddb9cc9fc3",
+  "lines": 17,
+  "types": [
+   "ResourcesProduction"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Server.cs": {
+  "sha256": "6c60a445d218c80751a53982a21191c0e8755bf2a17d912c6609841ebf43ef78",
+  "lines": 23,
+  "types": [
+   "Server"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/ServerData.cs": {
+  "sha256": "fa5dabcbc855c951e9ef6b94487cb348ea51ba4c32fa82c0435935ef1e732e8b",
+  "lines": 52,
+  "types": [
+   "ServerData"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Settings.cs": {
+  "sha256": "88f46bc476ce381d91deb87aa0fcd0f18fcd08749e076566ba33f4289a661d1f",
+  "lines": 23,
+  "types": [
+   "Settings"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Ships.cs": {
+  "sha256": "391cca86072ecb740eb08921327a2f324483c80f0b794edf1524e498ee415b71",
+  "lines": 198,
+  "types": [
+   "Ships"
+  ],
+  "public_members": [
+   "bool",
+   "bool",
+   "long",
+   "bool",
+   "Ships",
+   "Ships",
+   "Ships",
+   "long",
+   "void",
+   "bool",
+   "string"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/Models/Slots.cs": {
+  "sha256": "ee3eecdc154977fe99050697f40de4c6796990d26509b4908fc4a90f97fd1e00",
+  "lines": 25,
+  "types": [
+   "Slots"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Staff.cs": {
+  "sha256": "841006ecfa59932279d9f010d284e5f277eb3c96e71cb15bbdbc18cfb567fa7f",
+  "lines": 28,
+  "types": [
+   "Staff"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Supplies.cs": {
+  "sha256": "742d857bcc31dd443cc48eac594ab2621cbf91cf945fbb870f9e2fa441efb68c",
+  "lines": 10,
+  "types": [
+   "Supplies"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Techs.cs": {
+  "sha256": "a14a0d8cc9ef669e359a5b49d69d76da909d2a89b23b5ea97e030ff0f6da8d22",
+  "lines": 15,
+  "types": [
+   "Techs"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Temperature.cs": {
+  "sha256": "ec873f3a46fbb82e898e557a0e4b20f6388f7dfe61df302675b29bd294c92112",
+  "lines": 17,
+  "types": [
+   "Temperature"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/Transport.cs": {
+  "sha256": "e74ef800da9a6c3460709a6093d232a86d3a375e63c4b3808d38239f511282d6",
+  "lines": 52,
+  "types": [
+   "TransportSettings",
+   "MultipleOrigins"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/Models/UserInfo.cs": {
+  "sha256": "41385faf16589ac684d68b07192e3e5f6745430ff9c98b8d831d419a7225b58e",
+  "lines": 18,
+  "types": [
+   "UserInfo"
+  ],
+  "public_members": []
+ },
+ "TBot.Ogame.Infrastructure/OgameService.cs": {
+  "sha256": "f0328570bed6644b5ed74f88598a0168d2f0faf66d11af53868314e9caad804a",
+  "lines": 1083,
+  "types": [
+   "OgameService"
+  ],
+  "public_members": [
+   "void",
+   "bool",
+   "bool",
+   "string",
+   "void",
+   "void",
+   "Task",
+   "Task",
+   "Task",
+   "Task<CaptchaChallenge>",
+   "Task",
+   "Task<string>",
+   "Task<string>",
+   "Task<Server>",
+   "Task<ServerData>",
+   "Task<string>",
+   "Task<string>",
+   "Task<string>",
+   "Task<int>",
+   "Task<int>",
+   "Task<string>",
+   "Task<DateTime>",
+   "Task<string>",
+   "Task<UserInfo>",
+   "Task<CharacterClass>",
+   "Task<List<Celestial>>",
+   "Task<List<Celestial>>",
+   "Task<List<Planet>>",
+   "Task<Planet>",
+   "Task<List<Moon>>",
+   "Task<Moon>",
+   "Task<List<Celestial>>",
+   "Task<Celestial>",
+   "Task<Techs>",
+   "Task<Resources>",
+   "Task<Buildings>",
+   "Task<LFBuildings>",
+   "Task<LFBonuses>",
+   "Task<LFTechs>",
+   "Task<Facilities>",
+   "Task<Defences>",
+   "Task<Ships>",
+   "Task<bool>",
+   "Task<bool>",
+   "Task<bool>",
+   "Task<bool>",
+   "Task<bool>",
+   "Task<bool>",
+   "Task<bool>",
+   "Task<AllianceClass>",
+   "Task<Staff>",
+   "Task<OfferOfTheDayStatus>",
+   "Task<List<AttackerFleet>>",
+   "Task<List<Fleet>>",
+   "Task<Slots>",
+   "Task<Researches>",
+   "Task<List<Production>>",
+   "Task<ResourceSettings>",
+   "Task<ResourcesProduction>",
+   "Task<Constructions>",
+   "Task",
+   "Task",
+   "Task<Fleet>",
+   "Task",
+   "Task<GalaxyInfo>",
+   "Task<GalaxyInfo>",
+   "Task",
+   "Task",
+   "Task",
+   "Task",
+   "Task",
+   "Task",
+   "Task",
+   "Task",
+   "Task<Resources>",
+   "Task<Resources>",
+   "Task<Resources>",
+   "Task<Auction>",
+   "Task",
+   "Task",
+   "Task",
+   "Task",
+   "Task<List<EspionageReportSummary>>",
+   "Task<EspionageReport>",
+   "Task<EspionageReport>",
+   "Task<JumpGateResult>",
+   "Task<List<Fleet>>",
+   "Task<bool>",
+   "Task<List<Coordinate>>",
+   "Task<int>",
+   "Task<bool>"
+  ]
+ },
+ "TBot.Ogame.Infrastructure/TBot.Ogame.Infrastructure.csproj": {
+  "sha256": "db6a5535f38738222a39481a7a3e5e3a87ee7d1a64615318012cf295cf5d02c6",
+  "lines": 22,
+  "types": [],
+  "public_members": []
+ }
+}
