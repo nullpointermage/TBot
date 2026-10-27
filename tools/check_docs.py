@@ -11,6 +11,8 @@ import subprocess
 import sys
 import urllib.parse
 
+from audit_evidence import validate_read_evidence
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / 'docs/reference'
 
@@ -133,7 +135,9 @@ def main():
                     failures.append('Missing inventoried source: ' + entry['path'])
                 elif entry.get('check_hash', True) and hashlib.sha256(file.read_bytes()).hexdigest() != entry['sha256']:
                     failures.append('Source changed since audit: ' + entry['path'])
-                if entry.get('status') == 'read':
+                evidence_errors = validate_read_evidence(ROOT, entry) if entry.get('status') == 'read' else []
+                failures.extend(evidence_errors)
+                if entry.get('status') == 'read' and not evidence_errors:
                     audited += 1
                 elif entry.get('category') == 'first-party':
                     incomplete.append(entry['path'])
