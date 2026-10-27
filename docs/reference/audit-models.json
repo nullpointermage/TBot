@@ -1,0 +1,3119 @@
+{
+  "baseline": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+  "submodule": "fbd0fda6ba9019c128926614f9865ba38a67b627",
+  "entries": [
+    {
+      "path": "ogame/pkg/ogame/allianceDepot.go",
+      "sha256": "9c66873991dc1cb7e2c470404475cf1f92bee6b096cf2e821e1ffca60f0cec4b",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Alliance depot building definition",
+      "behavior_notes": [
+        "Lines7-12 set base 20000 metal/40000 crystal and doubling cost; requirements remain nil (not an implicit unlock level)."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/antiBallisticMissiles.go",
+      "sha256": "5aeb26f6900fd4810c88f8bc7b449504457cdb33cbcf73614eede65e15d2d3b6",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Interceptor missile definition",
+      "behavior_notes": [
+        "Lines11-15 price 8000 metal/2000 deut, integrity8000/shield1/attack1, silo2 required; inherited linear quantity pricing."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/armourTechnology.go",
+      "sha256": "a64462e1b7986321aa93a7aa01fbf738b3eddb75c57e298fa99cc7f1104b55da",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Armour research definition",
+      "behavior_notes": [
+        "Lines11-13 double 1000 metal per level exponent and require lab2; no crystal or deut component."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/armourTechnology_test.go",
+      "sha256": "2f54b480ab49ea3c11c7eff4c3a5145302047a684d05b51a2c2dee8bdf7debc2",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Armour unlock boundary tests",
+      "behavior_notes": [
+        "Two account-free assertions contrast lab2 available against lab1 unavailable on a planet."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/astrophysics.go",
+      "sha256": "c38fbf6b5fde30c9d5fc5282b2f4a6458c710ab32824972f48e93c9dda3a8e32",
+      "lines": 34,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ],
+      "status": "read",
+      "role": "Astrophysics exceptional price curve",
+      "behavior_notes": [
+        "Lines22-33 round each base*1.75^(level-1) to nearest100 before SubPercent lifeform cost reduction; unlike generic truncation. Direct prerequisites espionage4/impulse3, inherited availability recursively checks their prerequisites."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/astrophysics_test.go",
+      "sha256": "ca2fff3ee99ae3c06b9575bee309991c5d48c26ae9a10018e5050ea738bc4398",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "Astrophysics price tests",
+      "behavior_notes": [
+        "Checks level2 7000/14000/7000 and level9 351900/703700/351900 with nil bonus maps; no unlock assertions."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/attackEvent.go",
+      "sha256": "1d1fa842196e23088eacff1d7ca5e0197e8a1f7458f98c4640d349918aae43e5",
+      "lines": 35,
+      "read_ranges": [
+        [
+          1,
+          35
+        ]
+      ],
+      "status": "read",
+      "role": "Incoming attack DTO and display",
+      "behavior_notes": [
+        "Ships is nullable *ShipsInfos (nil unknown vs nonnil counts); untagged fields serialize PascalCase including ArrivalTime/ArriveIn. String lines24-35 omits Ships, AttackerName and ArriveIn; not a complete wire dump."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/attackEvent_test.go",
+      "sha256": "ab4dfc3226030dfbc344d80f11358de1f45d760022b3a84dc74c54f4c3af0ea3",
+      "lines": 32,
+      "read_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "status": "read",
+      "role": "Attack display snapshot",
+      "behavior_notes": [
+        "Verifies exact whitespace/newlines, planet coordinate prefixes and nanosecond time formatting; UnionID zero printed even unset, ships not printed."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/auction.go",
+      "sha256": "cd9ea7e1a29d17b01b0797c70a4b57f0becce12623c44ade9176eba0ce72cd8e",
+      "lines": 45,
+      "read_ranges": [
+        [
+          1,
+          45
+        ]
+      ],
+      "status": "read",
+      "role": "Auction snapshot DTO",
+      "behavior_notes": [
+        "ResourceMultiplier contains float metal/crystal/deut and integer Honor; Resources is map[string]any. No tags/validation, zero/default values included; String deliberately omits token and several bid/resource fields."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/auctioneer.go",
+      "sha256": "c161fb238874f5c4801b4710466534f47570d7e9356a3225d380086a656d9b01",
+      "lines": 47,
+      "read_ranges": [
+        [
+          1,
+          47
+        ]
+      ],
+      "status": "read",
+      "role": "Auction socket event DTOs",
+      "behavior_notes": [
+        "Defines new-bid nested Player, new-auction AuctionID/Approx, finished Sum/Bids/NextAuction/Time/Player, remaining Approx and next Secs. Untagged fields are not literal socket.io HTML payloads shown in comments."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/base.go",
+      "sha256": "a6d9f04a90c72e6fdaba653b3e7963104c9e566de62a89172b257530ee757f5d",
+      "lines": 107,
+      "read_ranges": [
+        [
+          1,
+          107
+        ]
+      ],
+      "status": "read",
+      "role": "Shared object identity and availability",
+      "behavior_notes": [
+        "GetRequirements returns the same mutable map. Availability lines29-63 rejects nonplanet/nonmoon, moon technologies and selected facilities, requires graviton energy300000 and class-specific reaper/pathfinder/crawler. Lines75-79 recursively expands prerequisites only for tech object on planet, without cycle guard; nil interface dependencies are not protected when accessed. Nil requirement map permits allowed objects."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseBuilding.go",
+      "sha256": "b4298897075272a2732a24ce1799ab4e95ed333ef74bdcdcb29ce936eab3d4bb",
+      "lines": 57,
+      "read_ranges": [
+        [
+          1,
+          57
+        ]
+      ],
+      "status": "read",
+      "role": "Building and teardown time/cost",
+      "behavior_notes": [
+        "Deconstruction floors base*factor^(L-1), then multiplies by (1-.04*Ion) and truncates; no zero clamp beyond Ion25. Construction uses discounted metal+crystal/(2500*(1+robots)*speed*2^nanites)*3600, early-level factor2/(8-L) for L<=5 except nanites, max1 then floor seconds, then LF duration fraction. Reduction after clamp can yield subsecond/negative durations. Embedded GetPrice is statically BaseLevelable, not concrete overrides."
+      ],
+      "findings": [
+        "M02: Go early-level time multiplier2/(8-L), except nanites, floor/max1-before-LF and unbounded Ion teardown reduction (lines14-41) differ from C# calculator description."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseBuilding_test.go",
+      "sha256": "761d33cc5c3df879a246df560a19db6d8309cdb0a6ea412fe70ee38be66fccbb",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Unknown building level fallback test",
+      "behavior_notes": [
+        "Unregistered ID123456 gives GetLevel0 with zero DTOs; does not test pricing or construction formulas."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseDefender.go",
+      "sha256": "3e129064b36dd88cc24bb3d69db101c2572a3461742778b4e34c6908f11da455",
+      "lines": 66,
+      "read_ranges": [
+        [
+          1,
+          66
+        ]
+      ],
+      "status": "read",
+      "role": "Common ship/defence stats, quantity price and time",
+      "behavior_notes": [
+        "Stats truncate base*(1+.1*research). Rapidfire getters alias maps. Construction uses undiscounted StructuralIntegrity per unit, max1/floor seconds then multiplies nbr, then duration reduction; cost discount does not change this time basis. GetPrice multiplies quantity before cost SubPercent. No count/reduction validation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseDefense.go",
+      "sha256": "c0c51f1e526c9ed9b53134d41687df419df28f1e4d8ccf6ecefb356d9aa214c6",
+      "lines": 6,
+      "read_ranges": [
+        [
+          1,
+          6
+        ]
+      ],
+      "status": "read",
+      "role": "Defence inheritance marker",
+      "behavior_notes": [
+        "Only embeds BaseDefender; adds no methods, validation or fields; all costs/times/stats inherited."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseLevelable.go",
+      "sha256": "a0238698c55598f331668d4c1e333c56e2dfb759d081959e27ff47cbfad7bec5",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "Generic exponential level price",
+      "behavior_notes": [
+        "Lines15-26 truncate base*factor^(level-1) separately for M/C/D/E then subtract truncated percentage; Population is omitted from constructed Resources, no L>=1 check, nil bonus maps read as zero."
+      ],
+      "findings": [
+        "M01: Do not substitute C# ceiling pricing: Go truncates base*factor^(L-1), then subtracts truncated reduction (lines15-26); L0 is not rejected."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseShip.go",
+      "sha256": "63f19072a2f98774d9baf48712168539542c6124dbfea1b4f0af1243d019a9a9",
+      "lines": 97,
+      "read_ranges": [
+        [
+          1,
+          97
+        ]
+      ],
+      "status": "read",
+      "role": "Ship cargo, fuel and speed rules",
+      "behavior_notes": [
+        "Cargo adds separately truncated base*LF and base*hyperspaceLevel*multiplier, Collector cargo25% or General recycler20%; probes disabled return0. No General pathfinder cargo bonus here (contrast C# calculator).",
+        "Fuel lines36-50 applies drive multiplier to small cargo/recycler, LF is ADDED from pre-General fuel, General halves only base portion; truncates and min1. Positive LF fuel increases consumption; negative reduces. No bomber fuel switch.",
+        "Speed lines54-96 uses combustion .1, impulse .2, hyper .3; small cargo/bomber/recycler threshold changes; recycler2/3 multiplier applies whole speed including LF/class/alliance. Trader cargo adds .1*base, Collector cargo or General combat/recycler adds base; Deathstar excluded from General speed. Round final value."
+      ],
+      "findings": [
+        "M05: Fuel LF signed additive term is based on pre-General amount; only base halves for General (lines36-50). General pathfinder has no cargo bonus, and Deathstar no General speed bonus (lines16-32,91-96)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/baseTechnology.go",
+      "sha256": "1ad8cce8fa597f613c8bfd0fad693c2ebe27d68e79bcb999b739f1e37bbc673a",
+      "lines": 41,
+      "read_ranges": [
+        [
+          1,
+          41
+        ]
+      ],
+      "status": "read",
+      "role": "Research duration and level lookup",
+      "behavior_notes": [
+        "Time uses embedded generic price (not Astrophysics override), SI/(1000*(1+lab)*speed); Technocrat and Discoverer each*.75; floor max1 seconds then LF duration subtraction. Explicit universeSpeed, no IRN aggregation here; GetLevel delegates researches.ByID."
+      ],
+      "findings": [
+        "M03: Embedded BaseTechnology duration calls generic GetPrice, not astrophysics nearest100 override; explicit lab/speed inputs, no internal IRN aggregation (lines15-30)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/battlecruiser.go",
+      "sha256": "805818f597aedbee2f64c46ddcc4befa46543f213720b6803e9cfb6292f0d6a5",
+      "lines": 26,
+      "read_ranges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "status": "read",
+      "role": "Battlecruiser base-stat/rapidfire definition",
+      "behavior_notes": [
+        "SI70000 shield400 attack700 cargo750 speed10000 fuel250; price30000/40000/15000; laser12/hypTech5/hypDrive5/yard8; RF battleship7/cruiser4/HF4/cargo3 and probe/satellite/crawler5."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/battleship.go",
+      "sha256": "77c212a9970853bc3d610ec3dc25290e67b4460751310fd550ce16cf5123b9c8",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Battleship base-stat definition",
+      "behavior_notes": [
+        "SI60000 shield200 attack1000 cargo1500 speed10000 fuel500, cost45000/15000; yard7/hyper4. RF against pathfinder5 as well as probe/satellite/crawler; reaper7 can RF against it."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/bomber.go",
+      "sha256": "7bfcf184cc9ad762c4909b9a86a7db14ab5840025a807d06833d802e82c80a19",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "Bomber base-stat definition",
+      "behavior_notes": [
+        "SI75000 shield500 attack1000 cargo500 speed4000 fuel700, 50000/25000/15000; impulse6/yard8/plasma5; RF rocket/light20, heavy/ion10; baseShip supplies hyper8 speed switch but no fuel increase."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/bomber_test.go",
+      "sha256": "54926dce8d06ae5611075a0811b257993665c5be404a40846409fa77bd54867b",
+      "lines": 20,
+      "read_ranges": [
+        [
+          1,
+          20
+        ]
+      ],
+      "status": "read",
+      "role": "Bomber speed boundary and LF tests",
+      "behavior_notes": [
+        "Checks impulse6 speed8800; hyper8 speed17000; General22000; LF speed .2478 at impulse/hyper15 Discoverer28739. Duplicate hyper8 assertion is not independent coverage."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/chapter.go",
+      "sha256": "88ec288270a4026f044b73e36c75ecdcb5ee7322076bf0d0c1d83f5a3d146ee3",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Directive chapter/task DTOs",
+      "behavior_notes": [
+        "Chapter ID/nullable *int64 ClaimAll/slice Tasks; task Completed and Collected independent booleans; no tags or omit-empty so nil remains null."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/chatMsg.go",
+      "sha256": "bce62cc8db2ba04347fd80ebbf1d25dc602c8a3f334d8e34be525247a7b3e160",
+      "lines": 29,
+      "read_ranges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "status": "read",
+      "role": "Chat wire payload and message DTO",
+      "behavior_notes": [
+        "Explicit lowercase name/args and camelCase senderId/senderName/associationId/text/id/date tags; Date raw int64, not time.Time. String prints all fields, no sanitization."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/colonyShip.go",
+      "sha256": "90bd32c60e969307d5bb0d11770c97f31b1176c7706213897c837c8635d2d52c",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Colony ship definition",
+      "behavior_notes": [
+        "SI30000 shield100 attack50 cargo7500 speed2500 fuel1000; cost10000/20000/10000, yard4/impulse3; inherited cargo and speed bonuses."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/colonyShip_test.go",
+      "sha256": "979e319e7f7e2621d80bee2c90690359752b47f81d24ae7cc6fbe85e01a2b58a",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Colony ship speed/cargo tests",
+      "behavior_notes": [
+        "Impulse6=>5500; hyperspace tech8 at .05=>10500 cargo, no class/no LF; pure unit tests."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/combustionDrive.go",
+      "sha256": "e757f3bc99732be77975d27a9c6276195bc85f503fd79a7a1625fb833a259009",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Combustion research curve",
+      "behavior_notes": [
+        "Base400 metal/600 deut doubles, energy1 requirement; inherited recursive unlock requires energy research lab1 too."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/combustionDrive_test.go",
+      "sha256": "8eb77088fc0d046a6618f1e846ba2b8af5e5ea019c56e2f269f2b01829f58007",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Combustion price/unlock tests",
+      "behavior_notes": [
+        "Level6 cost12800/19200; energy1 alone without lab unavailable, lab1 available, moon always unavailable."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/computerTechnology.go",
+      "sha256": "610dcb93370dd1463bb3cf7a149303fdc410b013f3f4c24037fcda410b69f43f",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Computer research definition",
+      "behavior_notes": [
+        "Base400 crystal/600 deut, doubling per level and lab1 prerequisite; no metal."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/constants_test.go",
+      "sha256": "db58355a89c43f0a77bc1fcafc0714227a629975ef733e02d8d806444c8f3a9f",
+      "lines": 80,
+      "read_ranges": [
+        [
+          1,
+          80
+        ]
+      ],
+      "status": "read",
+      "role": "Literal enum/display tests",
+      "behavior_notes": [
+        "Pure tests cover planet/moon/debris labels, unknown numeric fallback, speed1..10 percentages and unknown11.0, mission1..10/15 names (16 numeric), class predicates and integer conversions; not coverage of constants.go itself in this lane."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/constructions.go",
+      "sha256": "5e2965bdb214285408ac3954d27b47757ffb5594b3dd6337efc3a299dd9301a6",
+      "lines": 16,
+      "read_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "status": "read",
+      "role": "Concurrent construction DTOs",
+      "behavior_notes": [
+        "Four independent Building/Research/LfBuilding/LfResearch slots, each ID/Countdown time.Duration/Level. No custom JSON marshaler: Duration is nanoseconds on JSON wire, not seconds; zero slot is zero-value struct."
+      ],
+      "findings": [
+        "M10: Raw Go Countdown is time.Duration and JSON nanoseconds; the flattened C# countdown/daemon seconds contract must be described separately (lines5-16)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/coordinate.go",
+      "sha256": "fb8283bef76225e34e02ee0b1a847df258a3f96e69e371fae4b0b911cae7c98a",
+      "lines": 104,
+      "read_ranges": [
+        [
+          1,
+          104
+        ]
+      ],
+      "status": "read",
+      "role": "Typed coordinate value object",
+      "behavior_notes": [
+        "Constructors accept arbitrary numbers without validation; zero Type is distinct from planet. Lexicographic Cmp orders Galaxy,System,Position,Type, so Equal includes type. Planet/Moon/Debris methods return copies (value receivers); IsZero requires all four zero. String uses first uppercase char of type.String."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/coordinate_test.go",
+      "sha256": "56b34b5ebdfa8726cca1bbc3f5191eac0b445f6f2ecf609a84a77a0d71673b47",
+      "lines": 75,
+      "read_ranges": [
+        [
+          1,
+          75
+        ]
+      ],
+      "status": "read",
+      "role": "Coordinate formatting/type/order tests",
+      "behavior_notes": [
+        "Checks exact P/M/D string, equality including type, all type predicates and copy-conversion methods; Cmp tests each axis and planet<moon. No range-validation assertion."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/crawler.go",
+      "sha256": "4624d3ed657021ffda7971319108e7b4a4d2afb67c79c4fcb80523252563932b",
+      "lines": 24,
+      "read_ranges": [
+        [
+          1,
+          24
+        ]
+      ],
+      "status": "read",
+      "role": "Stationary crawler ship definition",
+      "behavior_notes": [
+        "Zero cargo/speed/fuel fields with SI4000/shield1/attack1 and cost2000/2000/1000; yard5/combustion4/armour4/laser4 and Base class Collector gate. Empty RF-against map, many RF-from5 (Deathstar1250). Base fuel getter nevertheless min1."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/cruiser.go",
+      "sha256": "b22cec7a51a4a4baf6c93090e1cfb02a5c0d7e200c656ef78ae881c90620aea2",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "Cruiser definition",
+      "behavior_notes": [
+        "SI27000 shield50 attack400 cargo800 speed15000 fuel300; cost20000/7000/2000; yard5/impulse4/ion2; RF LF6/rocket10 and probe/satellite/crawler5, pathfinder RF against cruiser3."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/cruiser_test.go",
+      "sha256": "1c83b3d017e0c93736a7c8897efdc134ee3300d347fd8f867cfde80d01b162b5",
+      "lines": 29,
+      "read_ranges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "status": "read",
+      "role": "Cruiser combat/cargo/fuel/price tests",
+      "behavior_notes": [
+        "Asserts entire RF map, cargo800 or1120 with hyperTech8, fuel300, linear quantity3 cost60000/21000/6000. No LF/general coverage."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/crystalMine.go",
+      "sha256": "70517311ab0362c8c87fdb8a73b2e173425d77d4848cfca10db196041c639451",
+      "lines": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "status": "read",
+      "role": "Crystal production/energy model",
+      "behavior_notes": [
+        "Cost48/24*1.6^(L-1), energy ceil(10*L*1.1^L). Production truncates 20*speed*(1+.0066*plasma)*L*1.1^L*productionRatio*globalRatio +15*speed; basic income is not ratio-scaled; no position/class/crawler terms in this helper."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/crystalMine_test.go",
+      "sha256": "6e56c1051a4e33a3a674ed285134bce996be301c9fb09cb2e33f7a6fc7b8f97e",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "Crystal time/energy/production fixtures",
+      "behavior_notes": [
+        "Tests L5 at speed6 time75s, L16 consumption736 and speed7/L25/plasma7 output39778; pure math assertions."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/crystalStorage.go",
+      "sha256": "3519053a7da1261c082c46e3db174542d66a64058657850f8bd6b7c83d51586b",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Crystal storage definition",
+      "behavior_notes": [
+        "Base1000 metal/500 crystal doubling with storageBuilding capacity inheritance; no requirements map."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/crystalStorage_test.go",
+      "sha256": "d32fb3c34827671e9b3fc72fffb0b1aec0047029bc32d646059b31ef8bc69f62",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "Crystal storage level and capacity fixtures",
+      "behavior_notes": [
+        "Cost levels1..6 double starting1000/500; capacities levels0..5 10000,20000,40000,75000,140000,255000; confirms noncontinuous floor-factor capacity."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/deathstar.go",
+      "sha256": "0d1228fe6239e152272a85d9cf847c3a99e788633e434073f540bf1f76c906f0",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "Deathstar definition",
+      "behavior_notes": [
+        "SI9000000 shield50000 attack200000 cargo1000000 speed100 fuel1, cost5M/4M/1M; yard12/graviton1/hyperDrive7/hyperTech6. RF map includes reaper10/pathfinder30/crawler1250 but no plasma/domes/Deathstar; no incoming RF map entries."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/defence.go",
+      "sha256": "28e8f045587a84aa6b7f4a8b7c3691aa2c7ae61ebf10e750beb152f88168a01b",
+      "lines": 151,
+      "read_ranges": [
+        [
+          1,
+          151
+        ]
+      ],
+      "status": "read",
+      "role": "Defence count/stats DTO and mutation",
+      "behavior_notes": [
+        "Untagged ten int64 counts; ByID unknown0 and pointer Set unknown no-op, negative counts not clamped. CountShipDefenses excludes BOTH missiles and BOTH domes (despite comment only ABM); AttackableValue includes domes, excludes missiles. Stat sums iterate full Defenses list, so missile metadata contributes; reads are value receivers."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/defence_test.go",
+      "sha256": "ff028abf4aff77e9a025b7086d27c4e8d23766db0b572bed5ea6eff11dda9b87",
+      "lines": 98,
+      "read_ranges": [
+        [
+          1,
+          98
+        ]
+      ],
+      "status": "read",
+      "role": "Defence DTO behavior tests",
+      "behavior_notes": [
+        "Display snapshot/all ten Set/ByID and unknown0 tested; attackable rocket/laser values; ABM presence independent of IPM; CountShipDefenses explicitly ignores domes and missiles. No network."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/destroyer.go",
+      "sha256": "ca15d52eb8b0460f6ea4b62c80dbeb35d8ebe80bc75a242ac03c894f456fb1a2",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "Destroyer definition",
+      "behavior_notes": [
+        "SI110000 shield500 attack2000 cargo2000 speed5000 fuel1000; 60000/50000/15000, yard9/hyper6/hyperTech5; RF lightLaser10/battlecruiser2; Deathstar5/reaper3 incoming."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/deuteriumSynthesizer.go",
+      "sha256": "469737be7810767fbeac7c42ce6eca04996eac9057a6bc70ffc97387c06deb7c",
+      "lines": 28,
+      "read_ranges": [
+        [
+          1,
+          28
+        ]
+      ],
+      "status": "read",
+      "role": "Deuterium production/energy model",
+      "behavior_notes": [
+        "Base225/75*1.5^(L-1), consumption ceil20*L*1.1^L. Production rounds10*(1+.0033*plasma)*L*1.1^L*(1.36-.004*avgTemp)*speed*ratios; level0 gives0, no base income or LF/class inputs; unlike C# overloads uses supplied synth level."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/deuteriumSynthesizer_test.go",
+      "sha256": "34a0d68b9877cad0d716d80f1f6be5fbc76ac58cf59b9780f682343aa297ac8a",
+      "lines": 45,
+      "read_ranges": [
+        [
+          1,
+          45
+        ]
+      ],
+      "status": "read",
+      "role": "Synthesizer rounding/time/production tests",
+      "behavior_notes": [
+        "Levels1/2/3/4/5/11 assert truncating prices (337/112 at2); L9 speed6 time1845s; L28 temp-3 speed7/plasma15 output40699; L26 energy6198."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/deuteriumTank.go",
+      "sha256": "6f7b8830fedbea67135bcdb05c4988d8a80eaed1f6cacfe572d2b007daa163a7",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Deuterium storage definition",
+      "behavior_notes": [
+        "Base1000 metal/1000 crystal doubles; inherits same storage capacity as metal/crystal, no deuterium cost or requirements."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/deuteriumTank_test.go",
+      "sha256": "2c388b909eb68f8882dd4794d6d6a540a2bfe9f02a5eb08480c856e0bd529339",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "Tank price/capacity tests",
+      "behavior_notes": [
+        "Cost1..6 doubles1000/1000; capacity0..5 shared10000,20000,40000,75000,140000,255000; no remote code."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/dmCost.go",
+      "sha256": "c0fd940cade2c55a18f8b9eb6e05b49986b038cec7222a7175efb29989aefeff",
+      "lines": 44,
+      "read_ranges": [
+        [
+          1,
+          44
+        ]
+      ],
+      "status": "read",
+      "role": "Dark-matter completion quotation DTO",
+      "behavior_notes": [
+        "Complete false means halve time, true finish; Nbr overloaded quantity/level, CanBuy simple flag. String lines20-28 exposes BOTH tokens verbatim; quotations/display are not purchase execution or safe secret-free logs. DMCosts holds Buildings/Research/Shipyard only."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/empireCelestial.go",
+      "sha256": "44406ef1edcd7bfd992b361db482df482a27b0d8cb4d53c96049f136216cda53",
+      "lines": 24,
+      "read_ranges": [
+        [
+          1,
+          24
+        ]
+      ],
+      "status": "read",
+      "role": "Empire page aggregate snapshot",
+      "behavior_notes": [
+        "Embeds value fields for supplies, LF buildings/researches, facilities, defences, researches and ships alongside ID/type/coordinates/resources; no pointer-presence flags except within LF researches. GetCoordinate returns value; no fetching/account action in this type."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/energyTechnology.go",
+      "sha256": "8f81f1a8086fd8cebf5379a2a4577a018f702b13f9e083417145bda27d85cfc9",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Energy research definition",
+      "behavior_notes": [
+        "Base800 crystal/400 deuterium doubles with lab1 prerequisite, no metal; SI build time consequently uses crystal alone."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/energyTechnology_test.go",
+      "sha256": "aaa9140137010bac6500d3a3796f432612c5f562658335b57473d37c5bfa80f4",
+      "lines": 44,
+      "read_ranges": [
+        [
+          1,
+          44
+        ]
+      ],
+      "status": "read",
+      "role": "Research duration factors and lookup fixtures",
+      "behavior_notes": [
+        "Tests caller passes universeSpeed*researchSpeed; floor1645s vs822s, lab0 L1 speed6 8min then4min. Lab10 speed1 261s, technocrat196s, discoverer+technocrat147s; GetLevel4. No hidden research speed multiplier in model."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/errors.go",
+      "sha256": "d2972bf302f9666e5ceb1ec4c4756a049efc39d3375b850d7214747b41d4d26f",
+      "lines": 72,
+      "read_ranges": [
+        [
+          1,
+          72
+        ]
+      ],
+      "status": "read",
+      "role": "Model sentinel/domain error definitions",
+      "behavior_notes": [
+        "Distinct exported errors for bot/login/view and fleet rejection states; no retries/actions here. AttackBlockActivatedErr stores time.Time, pointer Error formats time.DateTime without zone; constructor returns pointer. Literal error spellings retained (e.g. player is to strong)."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/espionageProbe.go",
+      "sha256": "786a8ea42ab840017dc5d0575c02950cbfb16c7e6603f142e8fe5b47fb81c9e5",
+      "lines": 24,
+      "read_ranges": [
+        [
+          1,
+          24
+        ]
+      ],
+      "status": "read",
+      "role": "Probe base-stat definition",
+      "behavior_notes": [
+        "Shield/weapon are integer0, comments .01 not actual stats; cargo5 subject to probeRaids gate, speed100M/fuel1, cost1000 crystal; yard3/combustion3/espionage2. RF-from most ships5/Deathstar1250."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/espionageProbe_test.go",
+      "sha256": "071cd6ec208e20330d53e5006a07066a68093fa0c04f7422ea77ade2e3ac3f9d",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Probe minimum fuel/cargo tests",
+      "behavior_notes": [
+        "Fuel remains1 for General or .5 saving factor due min1; raids enabled/hyper14 gives8 cargo by separate truncation, not rounded9."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/espionageReport.go",
+      "sha256": "8d45a44dd1984f3fc5dc4032c2398d06c60429891bfd5e02117f9f126fabdc24",
+      "lines": 235,
+      "read_ranges": [
+        [
+          1,
+          235
+        ]
+      ],
+      "status": "read",
+      "role": "Nullable intelligence DTO, conversion and loot rules",
+      "behavior_notes": [
+        "Resources is anonymously embedded so JSON resources are flattened; field counts/levels *int64 distinguish null from0 in raw DTO. Helpers first require corresponding Has*Information then allocate new count DTOs, collapsing remaining nil field values to0 via Deref. No LF data in report.",
+        "Plunder lines204-224 base.5; inactive Discoverer.75; bandit1 wins; active starlord.75; HonorableTarget and IsLongInactive alone ignored. Loot truncates M/C/D only. IsDefenceless requires fleet+defence flags then no HasShips/no CountShipDefenses; it ignores unknown individual pointers once flags true, domes and missiles excluded by defence helper; ShipsInfos.HasShips DOES include stationary satellites/crawlers and probes, unlike a flyable-only threat check. This differs from C# IsDefenceless(isUsingProbes)."
+      ],
+      "findings": [
+        "M13: Raw nullable count presence is lost in helpers when section flags true; IsDefenceless ignores domes/missiles but stationary ship/probe counts do block; no isUsingProbes argument (lines95-200,230-235)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/espionageReport_test.go",
+      "sha256": "fccc957cc93684cf7cc869059e64505fc08e578d6006b2b56d2ea9bd30e29ba3",
+      "lines": 51,
+      "read_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "status": "read",
+      "role": "Loot and intelligence completeness fixtures",
+      "behavior_notes": [
+        "Covers base/inactive Discoverer/bandit/active and inactive starlord ratios, metal100 loot50, missing section flags refuse defenceless, explicit LF/rocket counts block it. All nil individual fields with both flags true deemed defenceless; ShipsInfos conversion8 and absent section nil tested."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/espionageTechnology.go",
+      "sha256": "2de91e6f6ff14aacd1888b04696a0c4487db9abd17f2c5100371fd19537cdafc",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Espionage research definition",
+      "behavior_notes": [
+        "200 metal/1000 crystal/200 deut doubling; lab3 requirement; no auto-probe/send behavior."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/facilities.go",
+      "sha256": "b718540812f12cd644c722d9e3dea46efbf1da26faa5413a0c7635ce0d21d87c",
+      "lines": 97,
+      "read_ranges": [
+        [
+          1,
+          97
+        ]
+      ],
+      "status": "read",
+      "role": "Facility DTO and lazy adapters",
+      "behavior_notes": [
+        "Eleven int64 fields with getters/ByID unknown0; untagged JSON includes zeroes. LazyFacilities calls callback on EVERY getter; Facilities.Lazy captures a VALUE snapshot, not future mutation. Nil callback panics; no synchronization or aggregation of lab levels."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/facilities_test.go",
+      "sha256": "ee6edb3c3362b3fa596a309e92e3901f5c52f576879424824ba894bb26a8acc0",
+      "lines": 64,
+      "read_ranges": [
+        [
+          1,
+          64
+        ]
+      ],
+      "status": "read",
+      "role": "Facility mapping/display fixtures",
+      "behavior_notes": [
+        "Maps all11 facility IDs to distinct1..11 and unknown12345=>0; exact String spacing tested. Lazy capture/dynamic callback not tested."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fields.go",
+      "sha256": "4de3b95ae6fc1c9a39d389c09d5fab6d134fa52dfac514b33e19a15f252ec97b",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "Planet building-field capacity check",
+      "behavior_notes": [
+        "HasFieldAvailable is exactly Built<Total, no clamping or validation; zero value0/0 means false; negative values compare literally."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fleet.go",
+      "sha256": "6d8c1565b27d0b1ba1f860922e7cbb631c5231abf55211e2c86b42ef3e51e9d5",
+      "lines": 39,
+      "read_ranges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet snapshot and recall eligibility",
+      "behavior_notes": [
+        "Untagged Fleet has value Resources/Ships and time.Time start/arrival/back plus integer ArriveIn/BackIn. IsCancellable only !ReturnFlight&&!InDeepSpace&&Mission!=MissileAttack; zero fleet returns true, not proof of live recall validity. MakeFleet returns zero; PhalanxFleet embeds Fleet and BaseSpeed."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fleetDispatchInfos.go",
+      "sha256": "c11165f624ecfef94a53ffe4aceb56c01e73d87e118f28dcae1d7fce7ff76a4f",
+      "lines": 9,
+      "read_ranges": [
+        [
+          1,
+          9
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet send-page snapshot",
+      "behavior_notes": [
+        "Resources/Ships/Slots value fields and ACSValues slice; nil slice serializes null; no sending logic or validation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fleetid.go",
+      "sha256": "70208d01ed52147bd8fdbcddb084ba24b29da5cc5f35b2d371fee94e2e40b7b6",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet ID scalar",
+      "behavior_notes": [
+        "int64 alias formats signed decimal; IsSet requires >0 so zero and negatives unset. JSON remains numeric, String is not custom JSON marshaling."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fleetid_test.go",
+      "sha256": "dd25c6dc778130d40bf39e5c42393eea3d6bff110286d7efc8d631f3b71bf4b9",
+      "lines": 11,
+      "read_ranges": [
+        [
+          1,
+          11
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet ID display fixture",
+      "behavior_notes": [
+        "Only12345 string verified; IsSet zero/negative boundaries not covered."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fusionReactor.go",
+      "sha256": "44769dc9d5250afb2406eefbc754b0f9b3ce093c53410f12cc6291009668db85",
+      "lines": 32,
+      "read_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "status": "read",
+      "role": "Fusion energy and fuel model",
+      "behavior_notes": [
+        "Base900/360/180 factor1.8; synth5/energy3. Production round(30*L*(1.05+.01*energyTech)^L), no speed or ratio parameter. Fuel is abs(floor(-10*speed*L*1.1^L*ratio)), effectively ceiling positive usage, per hour model; no clamping of negative inputs."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/fusionReactor_test.go",
+      "sha256": "4c865a40b500378e5e29f6efbc6dc251e00343cfa0148d6c4fc2f735e28821d7",
+      "lines": 33,
+      "read_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "status": "read",
+      "role": "Fusion availability/rounding fixtures",
+      "behavior_notes": [
+        "L2 speed7/robots3=>38s; synth5/energy3 boundary; energyTech12 L13=>3002 energy, L9 speed7 consumption1486 at1.0 or1040 at.7."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/gaussCannon.go",
+      "sha256": "1e94032c5c16551c05e8e42a0af49bd3ddc37cc745f4c20813eff6e8e2c4d647",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Gauss defence definition",
+      "behavior_notes": [
+        "Price20000/15000/2000, SI35000 shield200 weapon1100; incoming DeathstarRF50. Requires yard6/weapons3/energy6/shielding1; rapidfire-against nil."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/gravitonTechnology.go",
+      "sha256": "a76a8e2c93c9059659e5d0fa4c19f52a9ed46cc28bd0e674d5508638fef7dffc",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Graviton research cost exception",
+      "behavior_notes": [
+        "Energy300000 base with factor3 (NOT C# factor2); lab12; generic metal+crystal time basis0 => minimum1s before LF duration. Availability only fixed300000 check, not level-scaled energy."
+      ],
+      "findings": [
+        "M04: Go graviton cost factor3 not C# factor2; level2 energy900000 (lines11-12), executable characterization passed."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/gravitonTechnology_test.go",
+      "sha256": "92c87297df10223f2c39a670de9490fbcfcf1c7bc47c19e4d270fd296929cef9",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Graviton initial unlock tests",
+      "behavior_notes": [
+        "Lab12 energy299999 false vs300000 true, empty fields false; no level2 cost or duration test."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/heavyFighter.go",
+      "sha256": "398368255be15e4b9b5ad2d6ae8a54918823ddf6d56904ff8f073593786029f5",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Heavy fighter definition",
+      "behavior_notes": [
+        "SI10000 shield25 attack150 cargo100 speed10000 fuel75; cost6000/4000, yard3/impulse2/armour2. RF smallcargo3 and probe/satellite/crawler5; incoming BC4/DS100/pathfinder2."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/heavyLaser.go",
+      "sha256": "1f6009eb89b1ed2b11ccaeafcb6c95a1bbf3755f80a0d312e05dbfe55c88fdbd",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Heavy laser definition",
+      "behavior_notes": [
+        "Cost6000/2000, SI8000 shield100 attack250; RF from bomber10/Deathstar100; yard4/energy3/laser6 required, no outgoing RF map."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/highscore.go",
+      "sha256": "b09fc2120d87d41971a240c4c85561f24d6106d3cf7ef0b0f7e7acabdabb70d7",
+      "lines": 50,
+      "read_ranges": [
+        [
+          1,
+          50
+        ]
+      ],
+      "status": "read",
+      "role": "Highscore pagination/player DTOs",
+      "behavior_notes": [
+        "Category raw1 player/2 alliance; Type raw0total..7honor; Players nullable slice. Highscore.String prints count only; player includes Homeworld and Ships (military), no validation or automatic pagination."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/hyperspaceDrive.go",
+      "sha256": "024639d82cfd1add76ac97fbb7b6a1bad43af19f352d1579a83afa1dc8761b1a",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Hyperspace drive research",
+      "behavior_notes": [
+        "Base10000/20000/6000 factor2; direct hypTech3 requirement, lab and shielding/energy prerequisites discovered by Base recursive tech availability."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/hyperspaceTechnology.go",
+      "sha256": "a90aee4950187e35c38fe1c82c689fac75be38c1b87ded6793cf85800a018223",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Hyperspace technology research",
+      "behavior_notes": [
+        "Base4000 crystal/2000 deut doubling; lab7/shielding5/energy5 direct requirements; cargo effect is applied in BaseShip with explicit multiplier."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/id.go",
+      "sha256": "ec2c08c7010ffd318fd53c664c75e342becad48f915450b7ee32d67e0ab8ac6c",
+      "lines": 670,
+      "read_ranges": [
+        [
+          1,
+          670
+        ]
+      ],
+      "status": "read",
+      "role": "Game ID formatting/classification registry",
+      "behavior_notes": [
+        "ID int64, NoID0; IsSet is !=0 (negative considered set, unlike FleetID). String enumerates classic+LF names and unknown Invalid(n), not numeric; default JSON remains number. Int compatibility method still returns int64.",
+        "IsBuilding includes resource+facilities+LF buildings; IsTech EXCLUDES LF research; IsLfTech searches four mutable exported18-ID slices. IsFlyableShip excludes crawler/satellite; Pathfinder/Reaper are combat. IPM target0 is allowed default, domes allowed, missiles forbidden. Classification uses explicit members not numeric intervals."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/id_test.go",
+      "sha256": "66a7ba3a94ae93827073fff391e5f2f1e479aa1c0967e6462a4c2ccceded100e",
+      "lines": 93,
+      "read_ranges": [
+        [
+          1,
+          93
+        ]
+      ],
+      "status": "read",
+      "role": "Classic ID names and IPM classification fixtures",
+      "behavior_notes": [
+        "Checks unset0, ID34 conversion, invalid string and all classic ID labels. ValidIPMTarget0/rocket true, both missile IDs/metal false; no LF classification tests or negative IsSet test."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/impulseDrive.go",
+      "sha256": "95fea7d468820a02c702f2b5ef11025556f27971ea0deb0d5b6a230a3bc1dc9e",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Impulse research definition",
+      "behavior_notes": [
+        "2000/4000/600 doubling, lab2/energy1 required; speed influence supplied by BaseShip."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/impulseDrive_test.go",
+      "sha256": "39e3147d819ed692ea1cdb5d9801fe7734588732f87a94fc98517375c51fe9ff",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "Impulse cost fixture",
+      "behavior_notes": [
+        "Level3=>8000 metal/16000 crystal/2400 deut with nil bonus maps; no unlock/time tests."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/interfaces.go",
+      "sha256": "752e2e696c002bf1f2b03ded640933828b5bce5842f37ef4cb570163e0bee6dd",
+      "lines": 268,
+      "read_ranges": [
+        [
+          1,
+          268
+        ]
+      ],
+      "status": "read",
+      "role": "Offline model/calculation contracts",
+      "behavior_notes": [
+        "Celestial getters only; BaseOgameObj unifies explicit LF/class/technocrat inputs and time.Duration output; accelerators split lab vs robots/nanites vs yard/nanites. IResourcesBuildings/IFacilities/IResearches getters return int64; ILfBuildings48 getters int64; ILfResearches72 getters *int64 preserve selection/absence. Interfaces do not guarantee nil-safety, validation, network behavior, or dynamic dispatch into embedded concrete overrides."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/intergalacticResearchNetwork.go",
+      "sha256": "47654667f9a0e3718e22d614e7c9d9aa2ca11f597c14f65b23f0cde7f33e9d5a",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "IRN research definition",
+      "behavior_notes": [
+        "Base240000/400000/160000 doubling; lab10/computer8/hypTech8. No summation of interplanetary laboratories implemented in this file."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/interplanetaryMissiles.go",
+      "sha256": "43075e26aaaf12d2b556ea2ca91e07e0e24e21a6f3eab89d35590b72253491b1",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Offensive missile definition",
+      "behavior_notes": [
+        "12500/2500/10000 price SI15000 shield1 attack12000; silo4/impulse1. Pure metadata; no send or range validation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/ionCannon.go",
+      "sha256": "05b68cd72f1219bca602d1dbba41cb4d3fec2bc59d865f2a8f3ec4fadb265212",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Ion defence definition",
+      "behavior_notes": [
+        "Cost5000/3000 SI8000 shield500 weapon150; incoming bomber10/Deathstar100, outgoing RF reaper2; yard4/ion4 required."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/ionTechnology.go",
+      "sha256": "b4adc3748eb24618d1964146ef99bdd083d11caf0730504e89cc32499c461ffb",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Ion research definition",
+      "behavior_notes": [
+        "Base1000/300/100 doubling; lab4/energy4/laser5. Teardown discount consumed by BaseBuilding, not an effect applied here."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/item.go",
+      "sha256": "ec425edae04b5fd11315b9475f077133ea1d63f368d5d2f81e8c255910509f5d",
+      "lines": 46,
+      "read_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "status": "read",
+      "role": "Inventory and active item DTOs",
+      "behavior_notes": [
+        "Item has exported quantities Amount/AmountFree/AmountBought and strings; canBeActivated is unexported and omitted from JSON, dozens commented fields are NOT model members. ActiveItem ID/Ref/Name/TimeRemaining/TotalDuration/ImgSmall all untagged; raw integers do not implement expiry timing."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/jumpGate.go",
+      "sha256": "38f0aa53c875cad6d3b62010767bd7fb1e940938449dbe410f4bd716dfaa80f5",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Moon jump gate definition",
+      "behavior_notes": [
+        "Base2M/4M/2M factor2, lunarBase1/hypTech7; Base availability rejects planet use; no fleet jump execution/cooldown here."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/largeCargo.go",
+      "sha256": "54ef740e45b7a10440eb758d1bb5e2012fed3974f535b64eb885dd150c551475",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Large cargo definition",
+      "behavior_notes": [
+        "SI12000 shield25 weapon5 cargo25000 speed7500 fuel50, cost6000/6000; yard4/combustion6; incoming BC3/Deathstar250 and outgoing probe/satellite/crawler5."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/largeCargo_test.go",
+      "sha256": "9acb42793c680ac73ab8a25fe682117d85ea934a867afc05e907e9568648eb23",
+      "lines": 29,
+      "read_ranges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "status": "read",
+      "role": "Large cargo class/alliance/LF fixtures",
+      "behavior_notes": [
+        "Combustion6 speed12000, Collector19500, Trader12750; hyper8 cargo35000, hyper10 37500, Collector43750. Fuel with saving.5 and LF-.0019 truncates24, confirming LF negative fraction reduction. One Collector speed assertion duplicated."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/largeShieldDome.go",
+      "sha256": "b4819d732fc4ab0cde9148ee951c8a38f2e07bdb729a20c61bf73528602c544b",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Large dome definition",
+      "behavior_notes": [
+        "Price50000/50000, SI100000 shield10000 weapon1; shielding6/yard6, no outgoing/incoming RF map initialized; no max-one validation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/laserTechnology.go",
+      "sha256": "ad7abb02e698ef267f6a59e90d4cc1e6c60abb7b17eb98e8dbfa99540b677c4d",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Laser research definition",
+      "behavior_notes": [
+        "Base200/100 doubling; energy2 direct requirement; lab1 comes recursively via energy research."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lfBonuses.go",
+      "sha256": "01a9fcc67f16a91ec03a299979a5b21ebf12f01f753f51df641cd3f8ee7a155b",
+      "lines": 51,
+      "read_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "status": "read",
+      "role": "Lifeform bonus wire aggregate and map defaults",
+      "behavior_notes": [
+        "NewLfBonuses initializes only ship/cost-time maps; zero struct maps nil read safely but assignment panics. Map[ID] JSON keys numeric strings, values PascalCase. Cost/Duration are fractional deltas; FuelConsumption signed additive fraction; LF resources only ResourcesExpedition, class bonus only Characterclasses3, misc only PhalanxRange. No full production/resource bonus catalogue here; constructor returns mutable pointer/maps alias on struct copy."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lfBuildings.go",
+      "sha256": "a2d9c185a77a0401f713740deb866033b868d2044de2a06efce5dd72c1bab1ca",
+      "lines": 1131,
+      "read_ranges": [
+        [
+          1,
+          1131
+        ]
+      ],
+      "status": "read",
+      "role": "Lifeform building DTO, formula engine and48 definitions",
+      "behavior_notes": [
+        "Lines9-59 lazy callback adapter reevaluates each getter; LfBuildings.Lazy lines189-190 captures value snapshot of48 int64 levels plus LifeformType. ByID unknown0; LifeformType0/1/2/3/4 none/humans/rocktal/mechas/kaelesh; pointer String unknown returns none (nil pointer panics); no JSON string marshaler.",
+        "BaseLfBuilding lines305-336: floor(max(1,L*durationBase*durationFactor^L/((1+robots)*2^nanites*speed))) seconds then fractional LF duration reduction. Price ignores LfBonuses completely: truncate(base*L*factor^(L-1)) for M/C/D, same form with energy factor for E, population truncate(base*popFactor^(L-1)) with NO L multiplier. No energy^L convention from C#; inherited BaseBuilding teardown uses generic BaseCost/factor and Ion, not LF formula.",
+        "Humans definitions344-542: Residential7/2 factor1.2 time40/1.21; Biosphere5/2/E8 factor1.23 energy1.021 time40/1.25; ResearchCentre20000/25000/10000 factor1.3 time16000/1.25 requires residential21/biosphere22. Academy population20M factor1.10; Neuro100M factor1.10. FoodSilo factor1.09/time12000*1.17^L; Skyscraper1.09/time40000*1.2^L. Remaining definitions explicitly encode prerequisite ladders, not effects on production/population.",
+        "Rocktal550-737: Meditation9/3 factor1.2 time40/1.21; CrystalFarm7/2/E10 energy1.03; RuneTechnologium40000/10000/15000 factor1.3 time16000/1.25 requires21/22; RuneForge16M pop factor1.14, Oriktorium90M factor1.1. Megalith factor1.5/time40000*1.4^L but no cost-reduction behavior here. AdvancedRecyclingPlant.Name literal metal recycling plant; mutable fields need not match ID.String.",
+        "Mechas746-933: Assembly6/2 factor1.21 time40/1.22; FusionCell5/2/E8 factor1.18 energy1.02 time48/1.2. ResearchCentre30000/20000/10000 unlock17/20. UpdateNetwork40M/Quantum130M pop factor1.1. Microchip factor1.07 time12000/1.17; NanoRepairBots final prerequisites include ChipMassProduction11 (not inferred6).",
+        "Kaelesh942-1131: Sanctuary4/3 factor1.21 time40/1.22; Condenser6/3/E9 factor1.2 energy1.02; Vortex20000/20000/30000 unlock20/21. Halls30M/Forum100M pop1.1; Chrysalis factor1.05/time16000/1.18, Psionic time52000/1.8. Supra500000/250000/250000 factor1.4 time95000/1.3 with10 explicit prerequisites. No active-lifeform restriction or population-availability check in Base.IsAvailable; these data are not proof of complete unlock validity.",
+        "Inherited GetLevel does not inspect LfBuildings: BaseBuilding.GetLevel only handles classic resource/facility IDs, so an LF building returns0 even if its LF DTO level is nonzero (baseBuilding.go:50-56)."
+      ],
+      "findings": [
+        "M07: LF building GetPrice ignores supplied bonuses and uses energy factor^(L-1), not documented C# factor^L; population no L multiplier (lines323-336)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lfBuildings_test.go",
+      "sha256": "9f06a2db5ea54983a10c3e1e9751557ca608aac79cda9614a896e6a16f94e3f6",
+      "lines": 69,
+      "read_ranges": [
+        [
+          1,
+          69
+        ]
+      ],
+      "status": "read",
+      "role": "Selected LF cost/time regression fixtures",
+      "behavior_notes": [
+        "Tests Residential1/2/3/35, Biosphere1/22, ResearchCentre1/2 costs; Residential23 time1536s, ResearchCentre2 time1041s, Assembly42 time632s with explicit robots/nanites/speed. Condenser only levels1..4 active, higher-level expectations commented out; not48-building exhaustive coverage. No LF discount assertions."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lfResearches.go",
+      "sha256": "ba6f9f871e2e711889a1a3b33bc0eb7c57879a6d4ccf7a8ff17315b72ba3218b",
+      "lines": 1657,
+      "read_ranges": [
+        [
+          1,
+          1657
+        ]
+      ],
+      "status": "read",
+      "role": "Nullable LF research selections, slot DTO and72 definitions",
+      "behavior_notes": [
+        "Lines120-285 define72 *int64 levels; JSON null is distinct from selected level0. Getters/ByID return original pointers; value copy/Lazy snapshot retains pointee alias but not future field reassignment. Lazy callback reevaluates each getter, nil function panics. Unknown ByID nil. LfResearchDetails flattens embedded research fields and has fixed18 slots; AvailableSlot returns first Allowed1-based or0, ignoring Locked/TechID/Level.",
+        "BaseLfResearch473-499: duration floor(max(1,L*base*factor^L/speed)) seconds then ID CostTimeBonuses.Duration reduction; ignores lab/nanites/class/technocrat and PlanetLfResearchCostTimeBonus.Duration. Price truncates base*L*factor^(L-1)*(1-planetLFcost), only M/C/D; ignores per-ID cost reductions and E/Population. This is distinct from generic/classic research and C# LF rules.",
+        "All72 constructor Requirements maps are empty: metadata does not enforce researched-slot choice, population or active lifeform. Human18 lines507-788: Envoys5000/2500/500 factor1.3 duration1000/1.2; extractors7000/10000/5000 factor1.5; drives15000/10000/5000 factor1.3; LF/CR MkII320000/240000/100000; bomber/destroyer160000/120000/50000, BC320000/240000/100000. Supercomputer500000/300000/200000 factor1.3 time13000/1.3.",
+        "Rocktal18 lines796-1077: Volcanic10000/6000/1000 factor1.5 time1000/1.3; Acoustic7500/12500/5000; civilian cargo20000/15000/7500 cost1.3/time3500/1.4; IonCrystalModules200000/100000/100000 factor1.2; Obsidian250000 each factor1.4/time10000/1.4; collector enhancement300000/180000/120000 factor1.7/time11000/1.4. RuneShields500000/300000/200000 time13000/1.3.",
+        "Mechas18 lines1086-1367: Catalyser base10000/6000/1000 cost1.5; PlasmaDrive7500/12500/5000 cost1.3; overhaul LF/cruiser/battleship/BC160000/120000/50000, bomber/destroyer320000/240000/100000, time factors1.4. Slingshot85000/40000/35000 cost1.2/time7000/1.3; GeneralEnhancement300000/180000/120000 cost1.7/time11000/1.4.",
+        "Kaelesh18 lines1375-1657: HeatRecovery10000/6000/1000 factor1.5 time1000/1.4; Psionic15000/10000/5000 time2500/1.4; AnalysisNetwork80000/50000/20000 cost1.2 time6000/1.2; TelekineticDrive85000/40000/35000 cost1.2/time7000/1.2. OverclockHeavy and Battleship320000/240000/100000 vs OverclockLargeCargo160000/120000/50000. Discoverer enhancement cost1.7/time11000/1.4. Constructors implement prices/times only, not named effects.",
+        "Inherited GetLevel receives only classic IResearches and ByID for an LF ID returns0; use LfResearches.ByID for nullable LF levels. Classic Base moon-tech restriction also does not cover IsLfTech, so empty-requirement LF tech can pass on moon (baseTechnology.go:39-40; base.go:52-54; id.go:501-517,609-613)."
+      ],
+      "findings": [
+        "M08: Planet LF cost affects GetPrice only; planet Duration ignored by construction, per-ID Duration used; class/lab/officer ignored (lines473-499). AvailableSlot tests Allowed only, ignores Locked (lines456-462)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lfResearches_test.go",
+      "sha256": "9e18b5417360b269efec2c6d6e3e22f589f8cf0c5c7965f926e7785c1ff324b5",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "LF research time and planet discount fixtures",
+      "behavior_notes": [
+        "Envoys L2 speed8=>360s; Catalyser L18 base177347025/106408215/17734702 vs planet6.5% discount165819468/99491681/16581946, truncated after floating discount. No slot/nullable/research-duration discount coverage."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lightFighter.go",
+      "sha256": "9569fb4bed3849ff1c3131e4161a2ee3339ac40b910300e7f87dacb01b145e5f",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Light fighter definition",
+      "behavior_notes": [
+        "SI4000 shield10 weapon50 cargo50 speed12500 fuel20; cost3000/1000; yard1/combustion1; incoming cruiser6/DS200/pathfinder3, outgoing probe/satellite/crawler5."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lightLaser.go",
+      "sha256": "9c4a52bda02cbe1c668ea74fd2e85d3911ee4a09dcb17d66179e92574d755184",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Light laser definition",
+      "behavior_notes": [
+        "Cost1500/500 SI2000 shield25 weapon100; RF from destroyer10/bomber20/DS200; yard2/laser3 direct requirements."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lightLaser_test.go",
+      "sha256": "d9caf28fbc938fee6cafbd8ef3f740264be6e6c7c044608d1b20d0a10a62b005",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "Nonrecursive defence unlock fixture",
+      "behavior_notes": [
+        "True with lab0/yard2/laser3, confirming defence availability checks direct requirements rather than recursively requiring lab for already-owned laser research."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lunarBase.go",
+      "sha256": "8a7d71c96009ee4b8161a4e4e5e88bb8569a84862bcbb8ab2621f79451e8663a",
+      "lines": 20,
+      "read_ranges": [
+        [
+          1,
+          20
+        ]
+      ],
+      "status": "read",
+      "role": "Lunar base definition/teardown sentinel",
+      "behavior_notes": [
+        "Base20000/40000/20000 factor2 empty requirements; planet blocked by Base. DeconstructionPrice returns zero unconditionally to represent cannot deconstruct, not a free valid teardown operation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/lunarBase_test.go",
+      "sha256": "6ca6ce275bfa2cab9f3cb667a348e6cbefd599c076fc29cb7f8b68852be879ba",
+      "lines": 21,
+      "read_ranges": [
+        [
+          1,
+          21
+        ]
+      ],
+      "status": "read",
+      "role": "Lunar price and type restriction tests",
+      "behavior_notes": [
+        "Costs double levels1..3; planet/debris unavailable vs moon available without other prerequisites; teardown sentinel not asserted."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/metalMine.go",
+      "sha256": "e612a21f1eb9349eab464364504eb3925bd2442cc6e99ad303d57f5c250809b0",
+      "lines": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "status": "read",
+      "role": "Metal production and energy",
+      "behavior_notes": [
+        "Base60/15 factor1.5, energy ceil10*L*1.1^L. Production truncates 30*(1+plasma/100)*speed*L*1.1^L*ratios +30*speed; basic income not ratio-scaled; no position/class/LF/crawler input."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/metalMine_test.go",
+      "sha256": "79d4dc309dcf8dc1d91f9e3c4be7d3dc8f86849f63248a46408bf4af99b4253e",
+      "lines": 46,
+      "read_ranges": [
+        [
+          1,
+          46
+        ]
+      ],
+      "status": "read",
+      "role": "Metal construction/production/availability tests",
+      "behavior_notes": [
+        "Tests level0 base income and speed4 scaling; L29 plasma7/speed7; L20 robots3 speed7 time8550s, early L4 speed6 time30s. Lookup0/3, L29 energy4601, only planet available; teardown L31 Ion17 yields3681620/920404."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/metalStorage.go",
+      "sha256": "e8d5e93468d5b6bb1191dac86f2a270486fe4f8b047fed1a6bf631cb031f68ca",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Metal storage definition",
+      "behavior_notes": [
+        "Base1000 metal factor2, shared storageBuilding capacity formula; nil requirements."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/metalStorage_test.go",
+      "sha256": "8d19a8ca6ca09df73b821391d08ca57772bd5e25ddf567f34184a39d7bc3753a",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "Metal storage price/capacity fixtures",
+      "behavior_notes": [
+        "Costs1000..32000 for levels1..6; capacity10000..255000 at0..5. Same floor-factor steps as other storage types."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/missileSilo.go",
+      "sha256": "303ece294baf3d0311644ed0a541f3b79c040f7fd202765f04aa370590eaeed7",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Missile silo definition",
+      "behavior_notes": [
+        "20000/20000/1000 base doubles, yard1 required; does not itself implement missile-capacity limit."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/naniteFactory.go",
+      "sha256": "6de4183f37904eda9c156353b0cbb2d0ea6f7dd0dd893b5c3789076f5f94d2ce",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Nanite factory definition",
+      "behavior_notes": [
+        "1M/500000/100000 base doubles; robots10/computer10 required; BaseBuilding excludes it from early-level speedup."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/naniteFactory_test.go",
+      "sha256": "949d256b1ed7e7548a1e294a2e1578efa2e1df4d54a664524a673a7df0646da4",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Nanite duration exemption fixtures",
+      "behavior_notes": [
+        "Multiple level/current-nanite pairs hold time constant e.g.39272s at speed5/robots10; Technocrat true ignored for buildings; prevents applying low-level building bonus to nanites."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/objs.go",
+      "sha256": "16ab0292217541ffdf230de891dba4027b6a58c8dd5731907ebbfac3802a91ec",
+      "lines": 476,
+      "read_ranges": [
+        [
+          1,
+          476
+        ]
+      ],
+      "status": "read",
+      "role": "Global mutable object registry and category collections",
+      "behavior_notes": [
+        "Lines5-189 construct/register shared pointer instances; Objs.ByID returns interface alias or nil, GetShip safe assertion nil for unknown/nonship. register stores current ID once, later mutating public ID does not rekey. Global mutable slices Defenses10/Ships17/Technologies16, classic Buildings includes SolarSatellite despite its ship ID; LF separately4x12 buildings/4x18 researches. No network init; constructors only allocate metadata. Lists are not immutable or automatically synchronized with classifier logic."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/ogame.go",
+      "sha256": "d72ccf8978527fde176f6eebd99dd94f12de5f93b01484497d53f25262016dfa",
+      "lines": 299,
+      "read_ranges": [
+        [
+          1,
+          299
+        ]
+      ],
+      "status": "read",
+      "role": "Scalar IDs/speed and miscellaneous game wire DTOs",
+      "behavior_notes": [
+        "Speed is float64 in engine units (10=100%, .5=5%), Int64/Int truncate half steps; String handles half-steps and unknown formats one decimal. MoonID->Celestial preserves numeric value; no validation.",
+        "ResourcesResp is nested resourcebar object, Production float64 (not Resources aggregate), energy/darkmatter smaller shape; PlanetResources numeric-string celestial keys to private planetResource exported Input/Output etc; OtherPlanet explicitly commented because heterogeneous null/number. Multiplier Honor float unlike Auction.ResourceMultiplier int.",
+        "Combat summary Origin nullable; expedition embeds Resources/Ships; preferences many raw controls (PopopsCombatreport literal typo), ACSValues carries raw send string, relocation quotation flags. MinifleetResponse uses explicit camelCase nested response/newAjaxToken and int counters; Success defaults false. None of these DTOs perform network actions."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/pathfinder.go",
+      "sha256": "77ea30eed8ff179396cf4e51f63f5c7780a4bfa74993c3259cbd0b49cac1f199",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Pathfinder definition",
+      "behavior_notes": [
+        "SI23000 shield100 weapon200 cargo10000 speed12000 fuel300; price8000/15000/8000; yard5/hyper2 with Base Discoverer gate; RF cruiser/LF3/HF2, incoming BS5/DS30."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/pathfinder_test.go",
+      "sha256": "8fb7f63cc6b95d089574a900358439dcdfb997c74bbac976c3281815e22da6d6",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "Pathfinder base/hyperspace speed test",
+      "behavior_notes": [
+        "No research=>12000, hyper4=>26400; model speed callable even when unavailable due class/prerequisites."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/planet.go",
+      "sha256": "fe5a3fbc985d96fadad57c585249c2dde1fcf22b8960c30894044b6577b920fe",
+      "lines": 40,
+      "read_ranges": [
+        [
+          1,
+          40
+        ]
+      ],
+      "status": "read",
+      "role": "Owned planet and moon DTOs",
+      "behavior_notes": [
+        "Planet Moon pointer nil means absent; GetMoon returns aliased pointer; other getters value copies. Planet.GetType always PlanetType and Moon.GetType MoonType irrespective of Coordinate.Type inconsistency; no cross-field validation. Untagged JSON fields include Moon:null."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/planetInfos.go",
+      "sha256": "1b0b2eb715e3d2616d68232f0ead3b68ff7fcdf19889c74b3a7c5ec7b9ebee16",
+      "lines": 137,
+      "read_ranges": [
+        [
+          1,
+          137
+        ]
+      ],
+      "status": "read",
+      "role": "Galaxy-system snapshot and custom wire projection",
+      "behavior_notes": [
+        "SystemInfos private galaxy/system and15 nullable planet pointers; Position accepts1..15 else nil, SetPlanet uses unchecked ZERO-based index, Each invokes callback15 times including nils. Getter value copies still alias pointed PlanetInfos.",
+        "MarshalJSON lines68-87 exports ONLY Galaxy,System,Planets,ExpeditionDebris(M/C/D/PathfindersNeeded); deliberately drops otherwise exported Relocations,Events,OverlayToken. No UnmarshalJSON: roundtrip cannot restore private coordinates/planets. PlanetInfos includes nullable Moon/Alliance, activity0/15/16..59, debris deuterium and player flags."
+      ],
+      "findings": [
+        "M11: SystemInfos custom JSON omits Relocations, Events, OverlayToken and no private-field JSON roundtrip; SetPlanet0-based versus Position1-based (lines47-87)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/planetInfos_test.go",
+      "sha256": "c37f0a4a5f1d7c3d2e13e6420ca52722c54f10865eda878c6efa9ecf4d54ce34",
+      "lines": 52,
+      "read_ranges": [
+        [
+          1,
+          52
+        ]
+      ],
+      "status": "read",
+      "role": "System position/iteration/JSON golden tests",
+      "behavior_notes": [
+        "Positions0/16 nil; Each invoked15 times on empty system. SetPlanet(1) appears second array slot (zero-based). Exact JSON verifies15 entries, null absent Moon/Alliance, zero deuterium debris, only custom selected system fields."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/planetid.go",
+      "sha256": "8e01a187011ee7d444e853f853481f290b572f2e4c0aa73072ab13a5b142166e",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Planet ID numeric conversion",
+      "behavior_notes": [
+        "Alias of CelestialID, signed decimal String, Celestial conversion preserves value; no IsSet/range validator or JSON string conversion."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/planetid_test.go",
+      "sha256": "bdf4c16d031cce891fe9df7cb2e444aa39b8110a2afdfd56f63f1957a684a8be",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Planet ID conversion/display tests",
+      "behavior_notes": [
+        "PlanetID123->CelestialID123 and string123; function name TestPlantID_String typo preserved, tests pure."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/plasmaTechnology.go",
+      "sha256": "78d486d814383ef487a3f944218f481f2343a20899f693ddf83af3dba3f90213",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Plasma research definition",
+      "behavior_notes": [
+        "Base2000/4000/1000 doubling; ion5/energy8/laser10, lab4 derived from recursive prerequisite closure."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/plasmaTurret.go",
+      "sha256": "052f1ef178efd753bf63a99a2a36c2560f683bf096daf8dd327a82d6e75cde7d",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Plasma defence definition",
+      "behavior_notes": [
+        "Price50000/50000/30000 SI100000 shield300 weapon3000; yard8/plasma7; neither rapidfire map initialized, unlike simulator independent tables."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/quantifiable.go",
+      "sha256": "0b6722be9fdc20b0c521c7a2a75e119d79748b9fc869ce853fe3407665fda9a4",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Build/send quantity tuple",
+      "behavior_notes": [
+        "Two untagged fields ID numeric alias, Nbr int64; allows0/negative without validation and has no build/send side effect."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/reaper.go",
+      "sha256": "37da5860bbed60805bb0c9d96689910a2d696e0a4e5d13a523dc78632c12b9b5",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Reaper definition",
+      "behavior_notes": [
+        "SI140000 shield700 attack2800 cargo10000 speed7000 fuel1100; cost85000/55000/20000; yard10/hypTech6/hyper7/shielding6 and General class gate; incoming DS10/ion2, outgoing battleship/BC7,bomber4,destroyer3 plus stationary/probes5."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/reaper_test.go",
+      "sha256": "9b977b81a79d05a239902f42c58ba53745d36aac534a0d7a83aab6d921ebaa3a",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "Reaper LF speed fixture",
+      "behavior_notes": [
+        "Hyper15 LF speed.2478 Discoverer=>40235 even though Discoverer cannot build reaper; demonstrates speed calculation separate from availability."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/recycler.go",
+      "sha256": "a1515b9619ea131d6dc5822c6e0803fb0a4656f5792993c4228f7d8449d7e882",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Recycler definition",
+      "behavior_notes": [
+        "SI16000 shield10 weapon1 cargo20000 speed2000 fuel300; price10000/6000/2000, yard4/combustion6/shielding2; BaseShip threshold upgrades impulse17/hyper15 drive and fuel."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/recycler_test.go",
+      "sha256": "8c103fbf96997f17e706207ca64823f04643a0d0573aba03e1b87c9aba07cfcf",
+      "lines": 16,
+      "read_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "status": "read",
+      "role": "Recycler drive threshold fixtures",
+      "behavior_notes": [
+        "Combustion6=>3200; impulse17/hyper10=>17600; hyper15 takes priority=>33000; impulse18=>18400 and hyper16=>34800. Does not test whole-multiplier LF/class bonuses."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/researchLab.go",
+      "sha256": "29d259aff6b1715f5cd959d6738742cc9dddd57479d3f7bb91f9376eee4c0272",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Research lab definition",
+      "behavior_notes": [
+        "Base200/400/200 doubles; no requirements; Base moon restriction applies and explicit lab level fed to research-duration formulas."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/researchLab_test.go",
+      "sha256": "686bd6af1fc56a6541e6079027261d0d07d3a7d7394b483cbd1347468f6a557d",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "Research lab price fixtures",
+      "behavior_notes": [
+        "Level4=>1600/3200/1600; level6=>6400/12800/6400; nil LF map defaults0 discount."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/researches.go",
+      "sha256": "f2e3524f6f3c0fa0772de6d0e738f5e3640cd952d6b02cde113c8495f71dbf61",
+      "lines": 134,
+      "read_ranges": [
+        [
+          1,
+          134
+        ]
+      ],
+      "status": "read",
+      "role": "Classic research DTO with snapshot/lazy access",
+      "behavior_notes": [
+        "16 int64 untagged levels; ByID unknown0; ToPtr returns pointer to receiver COPY, not original; Lazy captures same value snapshot. Explicit LazyResearches callback can be dynamic and reevaluates once per getter; no caching/concurrency protection."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/researches_test.go",
+      "sha256": "0707c1c04ceb07d8edae1fd3fed1f4fbffa7466c2039784538505f3a214cdace",
+      "lines": 84,
+      "read_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "status": "read",
+      "role": "Classic research mapping/display tests",
+      "behavior_notes": [
+        "All16 fields mapped to unique1..16 values plus unknown0 and exact String labels; ToPtr/Lazy copy semantics not tested."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/resourceSettings.go",
+      "sha256": "b4e4604f3dffa60f1fc2bd4980e7a00f6e371c9b3202d3818001c77953d1aab5",
+      "lines": 25,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "status": "read",
+      "role": "Resource production settings DTO",
+      "behavior_notes": [
+        "Seven raw int64 controls including Crawler; no constructor/defaults/percentage conversion or range enforcement; String prints literal values and zero-value settings all0."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/resourceSettings_test.go",
+      "sha256": "827b1e31f27440f424c8d49c6732098d6a04b1c0fe645d52bae6f0cb816a3484",
+      "lines": 28,
+      "read_ranges": [
+        [
+          1,
+          28
+        ]
+      ],
+      "status": "read",
+      "role": "Resource settings display fixture",
+      "behavior_notes": [
+        "Distinct1..7 values establish field ordering and crawler label; not validation of permissible ratios or server effect."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/resources.go",
+      "sha256": "499ebfc75fe6cb5d0810ecf4e66bcbe305c2b037275264c366eed8a9130f4836",
+      "lines": 189,
+      "read_ranges": [
+        [
+          1,
+          189
+        ]
+      ],
+      "status": "read",
+      "role": "Resource amounts, partial arithmetic and affordability",
+      "behavior_notes": [
+        "Seven int64 fields M/C/D/E/DM/Population/Food. ResourcesDetails has richer food/population/energy/DM nested data and Available copies all7; Hungry/GrowthRate floating. Total M+C+D only; Value M+2C+3D, NOT C# converted deuterium weights.",
+        "Sub clamps each M/C/D diff to0; Add/Mul return NEW M/C/D-only values dropping E/DM/Population/Food. Div ignores nonpositive price components and returns architecture math.MaxInt for free price; Gte/Lte only M/C/D, Gte2 optionally population, never energy/food/DM. FitsIn zero cargo=>0 (not error/infinity), otherwise ceil Total/cargo.",
+        "SubPercent retains only M/C/D/E and computes amount-int64(amount*pct), so truncates reduction (positive output typically ceil net); drops population/food/DM. No pct bounds, overflow checks or nil ship protection; all value receivers."
+      ],
+      "findings": [
+        "M09: Go Resources math only preserves selected fields; CanAfford ignores energy, Div free price returns MaxInt, FitsIn zero cargo returns0; never treat Go Value M+2C+3D as C# ConvertedDeuterium (lines87-189)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/resourcesBuildings.go",
+      "sha256": "bfdcd72bc301e2d914f6495ba95d90894fae88cb7e48378fed792536755dd0da",
+      "lines": 85,
+      "read_ranges": [
+        [
+          1,
+          85
+        ]
+      ],
+      "status": "read",
+      "role": "Resource building DTO and lazy adapter",
+      "behavior_notes": [
+        "Nine int64 fields include SolarSatellite count though satellite is ship; dens IDs classified resource buildings but absent from DTO/ByID=>0. Lazy captures value snapshot while explicit LazyResourcesBuildings calls callback per getter; all untagged JSON includes zeros. No production/action logic."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/resourcesBuildings_test.go",
+      "sha256": "f081074ba252118830cd5a8c926a2ede7fe339d646ea984bff79d4e20b307145",
+      "lines": 56,
+      "read_ranges": [
+        [
+          1,
+          56
+        ]
+      ],
+      "status": "read",
+      "role": "Resource building mapping/display fixtures",
+      "behavior_notes": [
+        "All9 IDs map1..9 plus unknown12345=>0; String spacing tested; missing dens/Lazy behavior not tested."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/resources_test.go",
+      "sha256": "72d34ed4a7f70e2d74d401e122e1b4c6564ad0a551d224f73cab60c843fbc7ff",
+      "lines": 107,
+      "read_ranges": [
+        [
+          1,
+          107
+        ]
+      ],
+      "status": "read",
+      "role": "Resource arithmetic/affordability/transport tests",
+      "behavior_notes": [
+        "Tests M+2C+3D weights, M+C+D Total, componentwise clamped Sub, Add/Mul, Div free-price math.MaxInt; CanAfford ignores population unless CanAfford2(true). Available only tests M/C/D/E/DM, not food/pop; FitsIn zero resource/probe-disabled0, probe-enabled120. No SubPercent or non-MCD arithmetic retention tests."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/roboticsFactory.go",
+      "sha256": "d0e62c865369ac2d2b0e4eda09ecbedc85f0556e12b15a9916a8bdaea5dc4dfc",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Robotics factory definition",
+      "behavior_notes": [
+        "Base400/120/200 factor2, no prerequisites; construction accelerator consumed elsewhere, no bonus method on definition."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/rocketLauncher.go",
+      "sha256": "f0fbac9e68f3f87af0d5d9c0c0a6d99db53e314d59ff01f85fcbc6f448448086",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Rocket defence definition",
+      "behavior_notes": [
+        "Price2000 metal SI2000 shield20 weapon80, yard1 required; incoming bomber20/cruiser10/DS200, no outgoing map."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/rocketLauncher_test.go",
+      "sha256": "39a4fa0b0425771efa3ef9aeeab9241463483c2ad13996a03f4663a59a9cfb20",
+      "lines": 50,
+      "read_ranges": [
+        [
+          1,
+          50
+        ]
+      ],
+      "status": "read",
+      "role": "Rocket inherited behavior fixtures",
+      "behavior_notes": [
+        "Time82s per unit at speed7/yard4 and2=>164s proves per-unit floor; name, requirements, quantity price and RF map, base stats at tech0. No advanced tech/LF effects covered."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/seabedDeuteriumDen.go",
+      "sha256": "e7da9d89e14d1c3ccf23078240ebf8d795c57bc39cf9c7e5092dcc1f1c7c3c04",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Deuterium den definition",
+      "behavior_notes": [
+        "Base2645 metal/2645 crystal factor2.3; no requirements; only metadata/cost inherited, no protected-resource capacity helper."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/sensorPhalanx.go",
+      "sha256": "ad4419bfc031b6e745c043c792f5aca54d5affa411d2befdc8cfdbb4cc3ff2f3",
+      "lines": 43,
+      "read_ranges": [
+        [
+          1,
+          43
+        ]
+      ],
+      "status": "read",
+      "role": "Phalanx range and scan quotation",
+      "behavior_notes": [
+        "Price20000/40000/20000 doubling/lunarBase1, scan5000 deut fixed. GetRange0=>0,1=>1,else L\u00b2-1; Discoverer adds round20% first, then truncates rangeBonus*already-enhanced range. rangeBonus fraction1 means+100%, no min/negative validation; computation does not scan network."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/sensorPhalanx_test.go",
+      "sha256": "9259ce0f179025b153c4a1badd0c0bf0b34bf04503931be36b540fa83a95e422",
+      "lines": 41,
+      "read_ranges": [
+        [
+          1,
+          41
+        ]
+      ],
+      "status": "read",
+      "role": "Phalanx cost/unlock/range tests",
+      "behavior_notes": [
+        "Costs1..3, moon lunarBase0 false/1true, ranges0/1/3/8/15/120, Discoverer18/144 at4/11, rangeBonus1 doubles120=>240; scan5000."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/shieldedMetalDen.go",
+      "sha256": "3c7e853f6532b7b9ddc6e7402b3fdfa2e137afa2140a1ded760db75788f3037a",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Metal den definition",
+      "behavior_notes": [
+        "Base2645 metal factor2.3 nil requirements; no protection-capacity method or runtime behavior beyond inherited building math."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/shieldingTechnology.go",
+      "sha256": "33ba88a858fd1052d5a5c99ead6527177d4c982ffb6a5535fed4fd93a27a23af",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Shield research definition",
+      "behavior_notes": [
+        "Base200/600 factor2, lab6/energy3; 10% per-level effect comes from BaseDefender getter not research DTO."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/ships.go",
+      "sha256": "f5526caaf2930a007ffba0549464fbf879b50a6a60788dcacd52127f28603fd2",
+      "lines": 379,
+      "read_ranges": [
+        [
+          1,
+          379
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet count operations, iterators and aggregate calculations",
+      "behavior_notes": [
+        "Seventeen signed int64 counts including stationary satellites/crawlers. Iter/Each yields ONLY positive values but INCLUDES stationary; HasShips/CountShips include them, negative sentinel ignored. IterFlyable filters stationaries; SlowestShip empty returns NoID0/math.MaxInt64, not0. ToQuantifiables only flyable, FromQuantifiables ignores receiver and last duplicate ID wins.",
+        "Pointer Add/Sub/AddShips mutate; Add special-cases incoming -1 to set destination-1 (send-all sentinel), otherwise clamp sum0; Sub clamps every field and destroys -1 sentinel; Set stores arbitrary signed values, unknown no-op. ToPtr returns pointer to COPY. Get(any) accepts typed ID or Ship, plain integer falls through0. Has checks only positive needed counts, so -1 requirements impose no availability constraint.",
+        "Cargo/FleetValue/FleetCost/count use positive-only iterator; FleetValue raw discounted M+C+D price not normalized Value. Weapon/shield/SI iterate full Ships and include signed counts (unlike CountShips). Uses shared global registry/slices, no nil receiver protection. Equal loops registered ship IDs, not structural equality independent of registry."
+      ],
+      "findings": [
+        "M14: Pointer Add/Sub mutate; Add incoming-1 propagates send-all sentinel, iterations ignore negatives but include stationary, ToPtr copies, empty slowest speed MaxInt64 (lines30-229)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/ships_test.go",
+      "sha256": "e473dec194eee90c965e126893d2de17637ba19aa16e27a582e4158d418b8683",
+      "lines": 196,
+      "read_ranges": [
+        [
+          1,
+          196
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet DTO aggregate/iterator regression suite",
+      "behavior_notes": [
+        "Covers unknown0, registry index LightFighter, cargo60000/value32000, Add and Set/display17 fields, equality, FleetCost/Count/Has, satellite HasShips true, flyable filtering excludes crawler/sat, class predicates, speeds with satellite ignored. ToPtr assert.Equal compares contents not identity; no -1 sentinel/negative/empty-speed coverage."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/shipyard.go",
+      "sha256": "d1b0c03bc94602100f99525287c662066e54fb8d8e05dbe7a1d97b6ebb7e1d19",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Shipyard definition",
+      "behavior_notes": [
+        "Base400/200/100 factor2 requires robots2; construction uses robots/nanites whereas ship build uses yard/nanites."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/shipyard_test.go",
+      "sha256": "c598723a716aab86b272026bb5b7faefa8b88716470b2cd623be58f4e22ff756",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Shipyard cost and level lookup tests",
+      "behavior_notes": [
+        "Level4 price3200/1600/800; GetLevel0 on zero,3 from Facilities.Shipyard; no unlock test."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/slots.go",
+      "sha256": "b9e2a3ca740bcf9833c42b69a58595e923429d06f8f212ea14a0498e5cdf92e3",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Fleet slot saturation predicate",
+      "behavior_notes": [
+        "IsAllSlotsInUse uses equality not >=: InUse==Total OR expedition and ExpInUse==ExpTotal. Zero-value0/0 blocks every mission; overfull counters can return false. No validation or reservation side effect."
+      ],
+      "findings": [
+        "M16: Slot saturation uses equality, zero struct saturated and overfull counters may not be blocked (lines11-13)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/smallCargo.go",
+      "sha256": "d2ab7e3e5fc745470050bf6ec4c9b6f7bd11ba9ffe8d6f267086806c68e881a6",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Small cargo definition",
+      "behavior_notes": [
+        "SI4000 shield10 weapon5 cargo5000 speed5000 fuel10; cost2000/2000, yard2/combustion2; impulse5 switch inherited doubles base speed/fuel; incoming BC3/HF3/DS250."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/smallCargo_test.go",
+      "sha256": "e6fdefe14a0de5d0c2fc2efff7c295489910713c760654b2a407f826e07c23a6",
+      "lines": 32,
+      "read_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "status": "read",
+      "role": "Small cargo time/drive/LF/fuel fixtures",
+      "behavior_notes": [
+        "164s per unit at speed7/yard4, quantity2=>328s; combustion2 6000, combustion6 8000 even impulse4; impulse5 20000 and6 22000; LF.836775 impulse15=>48368. Fuel10/20 threshold asserted."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/smallShieldDome.go",
+      "sha256": "d947b6009a9af51798b5cb121e8fe4127d86a2886e6ba6414407b951ed8270aa",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Small dome definition",
+      "behavior_notes": [
+        "Price10000/10000 SI20000 shield2000 weapon1, yard1/shielding2; no dome quantity limit or RF maps, CountShipDefenses excludes it."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/solarPlant.go",
+      "sha256": "395366aeb9e6c182e1d386e4e61e602d18a57a6aa7f93ea41f8098294d06fb23",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "Solar plant energy formula",
+      "behavior_notes": [
+        "Base75/30 factor1.5; Production FLOOR(20*L*1.1^L), unlike C# round and ratio/officer/class variants. Only supplied level influences result."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/solarPlant_test.go",
+      "sha256": "1e959bcf795da06740ebf5a759283020f22df57bfe1cec846c9f16a5997d1476",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Solar energy/minimum time fixtures",
+      "behavior_notes": [
+        "Level29 produces9200; heavily accelerated L1 speed6 robots10/nanites7 remains1s due clamp before LF duration reduction."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/solarSatellite.go",
+      "sha256": "037c0a0c2e9615b03480f75aaadd147f31b92a368c9f51652179ea395af37351",
+      "lines": 51,
+      "read_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "status": "read",
+      "role": "Satellite as ship with partial Building compatibility",
+      "behavior_notes": [
+        "SI2000/shield1/weapon1 cargo/speed/fuel0 price2000 crystal/500 deut yard1. Production truncates (rounded Temperature.Mean+160)/6 PER satellite, multiplies nbr, then Collector adds round10% aggregate; no engineer/staff. GetLevel always0, teardown0; BuildingConstructionTime PANICS, general ConstructionTime inherited shipyard path works. Included Buildings list does not mean valid building-only methods."
+      ],
+      "findings": [
+        "M15: BuildingConstructionTime panics despite satellite in Buildings list; ordinary ConstructionTime uses defender path; energy truncates per-satellite before multiplication (lines31-50)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/solarSatellite_test.go",
+      "sha256": "57b81bbd5345c80d2be4346070959846e56da501a4264a009b4d86bcb4d96f5d",
+      "lines": 32,
+      "read_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "status": "read",
+      "role": "Satellite speed/energy/shipyard tests",
+      "behavior_notes": [
+        "Speed0 regardless drives, GetLevel0 even ResourcesBuildings.SolarSatellite10; temp-3 nbr51=>1326, temp74 nbr2=>78 or Collector86; normal ConstructionTime follows yard/nanites1/6/102s."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/spaceDock.go",
+      "sha256": "3b15522a1bbc46b54f2802b95d604321a33762b0286b42210d77f7255126699c",
+      "lines": 34,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ],
+      "status": "read",
+      "role": "Space dock dual-factor price",
+      "behavior_notes": [
+        "Base200 metal/50 deut/50 energy; factor5 resources, energy2.5^(L-1) truncated, LF SubPercent applies E too. Yard2 prerequisite; embedded construction time calls generic factor5 price but M/C unchanged, so energy exception irrelevant for SI time."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/spaceDock_test.go",
+      "sha256": "0def318ed636c836bddf6310655a04dd227eb079c31bd5a107057c5f223a13e2",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Space dock resource/energy growth fixtures",
+      "behavior_notes": [
+        "Levels1..5 and8 assert factor5 resources vs truncated energy50/125/312/781/1953/30517; no LF tests."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/storageBuilding.go",
+      "sha256": "2bea1284546702392451cf718cd295fb8924f51cd691c0108059a3e05e8dba52",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Storage-capacity step formula",
+      "behavior_notes": [
+        "Capacity=5000*int64(2.5*e^((20*float64(L))/33)); FLOAT division exponent, truncate factor before5000. Differs from C# integer exponent; no bounds/overflow checks."
+      ],
+      "findings": [
+        "M06: Go storage uses floating exponent20*float64(L)/33, unlike C# integer division described in calculations.md (line13); L1 capacity20000 confirmed."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/technologyDetails.go",
+      "sha256": "69191119827978311461124c380bd19b7009d51a79361af93acb3569e7ad24b7",
+      "lines": 11,
+      "read_ranges": [
+        [
+          1,
+          11
+        ]
+      ],
+      "status": "read",
+      "role": "Technology detail DTO",
+      "behavior_notes": [
+        "ID, ProductionDuration time.Duration, Price, Level, TearDownEnabled untagged; duration serializes nanoseconds as number. TearDownEnabled flag is distinct from zero teardown price sentinel."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/techs.go",
+      "sha256": "1c2e7f03faa73b6893cc3c66a093144b508f3ec69633537237ba96b765da2c9a",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "Flattened combined technology DTO",
+      "behavior_notes": [
+        "Anonymous embedding7 DTOs promotes exported fields/methods; ambiguous names matter: SolarSatellite exists in ResourcesBuildings AND ShipsInfos at same depth so default encoding/json omits both, rather than choosing a copy. No custom marshaler or merging policy here; also multiple ByID/Lazy methods ambiguous for direct invocation."
+      ],
+      "findings": [
+        "M12: Both embeddings expose SolarSatellite; default JSON omits ambiguous field altogether (lines5-11), executable check passed."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/temperature.go",
+      "sha256": "9cbd09410bf03d308b7cef85141e13b981a3dc0425eafef3059ce646de370d20",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Temperature bounds and rounded average",
+      "behavior_notes": [
+        "Mean rounds (Min+Max)/2 using math.Round (ties away from zero), not integer truncation/bankers. Addition performed int64 before float conversion; no inverted-range validation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/terraformer.go",
+      "sha256": "a1ecf637d4df4ba8dae4c1667b6103f87acbdcab1bf9dbe6a92ce80268e04977",
+      "lines": 20,
+      "read_ranges": [
+        [
+          1,
+          20
+        ]
+      ],
+      "status": "read",
+      "role": "Terraformer cost/prerequisite definition",
+      "behavior_notes": [
+        "Base0/50000/100000/E1000 factor2; nanite1/energy12; fixed availability ignores energy cost except graviton-specific Base check. DeconstructionPrice zero sentinel cannot deconstruct, not authorized free action."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/terraformer_test.go",
+      "sha256": "95e40ac06a9f174fdee1c55432b011667e1f77322eb2bfd0aa2991dbd1af404e",
+      "lines": 32,
+      "read_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "status": "read",
+      "role": "Terraformer unlock/price fixtures",
+      "behavior_notes": [
+        "Energy12 with nanite1 available vs energy11 false; energy input0 still available; price levels1..3 energy1000/2000/4000 and C/D doubling, confirming model availability not full affordability."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/undergroundCrystalDen.go",
+      "sha256": "5ac5836382e923ff57aae8a074a5bc09dde8377e452b2c56c79ca908c8f48ea4",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Crystal den definition",
+      "behavior_notes": [
+        "Base2645 metal/1322 crystal factor2.3; no requirement map/capacity/protection implementation."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/userInfos.go",
+      "sha256": "cc312da9e18a185724b4b580c7dfb1ebe7a58838f9be994128455e890f8cb349",
+      "lines": 11,
+      "read_ranges": [
+        [
+          1,
+          11
+        ]
+      ],
+      "status": "read",
+      "role": "Player ranking DTO",
+      "behavior_notes": [
+        "PlayerID/PlayerName/Points/Rank/Total/HonourPoints, all untagged values, zero default not nullable unknown. No methods/validation/account access."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/utils.go",
+      "sha256": "f5d546f60360e296616cb430b789646f4489c9c701377ad4ed3108b27afa67cf",
+      "lines": 747,
+      "read_ranges": [
+        [
+          1,
+          747
+        ]
+      ],
+      "status": "read",
+      "role": "Coordinate parsing and localized ship/defence lookup",
+      "behavior_notes": [
+        "ParseCoord lines16-31 regex allows independently optional opening/closing bracket, only uppercase optional P/M/D prefix and1..3 decimal digits per axis; no universe/position bounds (0/999/position16 accepted); defaults planet. DoParse returns zero on error; MustParse panics. Regex compiled on each call.",
+        "Resource-name predicates are exact case/accent-sensitive membership in exported mutable language slices. Ship/Defence name lookups DIFFER: NFD remove marks NFC, whitelist ASCII/Greek/specific Cyrillic/CJK/kana chars, strip nonletters, lowercase then map; errors from normalization ignored. Unknown returns NoID0 without error. Finite maps span many locales but do not promise complete translations; shared strings can resolve via other locale entries.",
+        "German \u00df/polish \u0142 or Scandinavian \u00f8/\u00e6 are removed by whitelist rather than transliterated; map keys intentionally reflect stripped forms e.g. gaukanone/groertransporter/ddsstjerne/lillejger. unique helper dedupes runes and lexicographically sorts, not stable first occurrence; it is not invoked by lookups. No networking or file writes."
+      ],
+      "findings": [
+        "M17: ParseCoord is syntax-only with independently optional brackets and no numeric range checks; DoParse error becomes zero (lines16-46)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/utils_test.go",
+      "sha256": "e819c0b069170d857db63b3d9ae341b02c7101d233e3af38a37645506096ab1d",
+      "lines": 730,
+      "read_ranges": [
+        [
+          1,
+          730
+        ]
+      ],
+      "status": "read",
+      "role": "Coordinate grammar and multilingual name lookup fixtures",
+      "behavior_notes": [
+        "Pure tests cover typed/bracket/default coordinates, unknown prefix and4digit axes rejection. Long explicit corpus verifies all10 defence names across many locales and ship17 labels across locales including cross-locale shared keys/new ships fallback to English; invalid names=>0. Does not test missing bracket asymmetry, numeric coordinate bounds or case-sensitive resource predicates. One coordinate success duplicated."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/ogame/weaponsTechnology.go",
+      "sha256": "9dafbe21ded7a45c2e320803bdb62dcc7d3cffc99f35ceb3aec5a686ff2052c5",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Weapons research definition",
+      "behavior_notes": [
+        "Base800 metal/200 crystal factor2 requires lab4; stats effect applied by BaseDefender. No deuterium or direct energy prerequisite."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/simulator/simulator.go",
+      "sha256": "059fd23d76ece4c336141d9398314de7cbd32dabe7a3abd82c4a27fa86fd30f4",
+      "lines": 1253,
+      "read_ranges": [
+        [
+          1,
+          1253
+        ]
+      ],
+      "status": "read",
+      "role": "Standalone stochastic combat approximator",
+      "behavior_notes": [
+        "Lines16-86 internal25 unit IDs DIFFER from game IDs, packed uint64 stores5bit ID,18bit shield,22bit hull; setters shift without masking input or validating bounds. Constants maxArmour36/maxShield42 unused. Separate hardcoded prices/shields/weapons/RF instead of ogame registry; probes shield/weapon1 (model0), reaper RF against battlecruiser7 missing although reaper.go specifies7.",
+        "Public Simulate1081-1197 copies selected classic attacker/defender counts; silently does NOT copy Reaper/Pathfinder/Crawler for EITHER side despite embedded ShipsInfos and internal support. Attacker satellite/defences forced0; missiles absent entirely; Defender resource amounts not used for loot. No LF bonuses/classes/server settings or ACS fleets. Config.Workers/IsLogging are not parameters to exported Simulate; actual execution serial, IsLogging forced false.",
+        "Each side allocates one CombatUnit per summed count+1, int64 counts narrowed to int; negatives/huge counts unvalidated can cause allocation/index panic or resource exhaustion. Six rounds max, attacker fires then defender (destroyed defenders still fire until round-end removal); dead targets may be selected and consume a shot/RF check. Damage bounce uses1% of CURRENT shield, not initial; shield resets each round, hull does not. Explosion if hull<=70%, probability1-hullFraction; rapidfire probability(rf-1)/rf with <= comparison.",
+        "Uses process-global math/rand and calls rand.Seed(time.Now.UnixNano()) per side salvo; no exported reproducibility seed, current Go may treat rand.Seed as no-op. Result is stochastic approximation, not exact server combat. Unit losses full base M/C/D; debris only ship M/C times FleetToDebris truncated per destroyed unit (no defence/deut debris or repair/reaper harvest). Moonchance min(debris/100000,20), integer each simulation then average.",
+        "Aggregates percentages round independently (may not sum100), mean rounds round, losses/debris/moonchance truncate; Recycler=ceil(mean M+C debris/20000), fixed base capacity. Simulations0/negative not rejected, divide by simulation count yields nonfinite/invalid conversions; no useful default simulation count. Logs always empty through exported API. Core never logs in/sends/opens files; printResult private writes stdout only. No package tests supplied."
+      ],
+      "findings": [
+        "M19: Public Simulate silently drops reaper/pathfinder/crawler counts on both sides; no logging/workers input, six serial rounds, not complete current-game simulation (lines1081-1196). RF table also omits reaper->BC7 (lines469-483)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/utils/utils.go",
+      "sha256": "6090da884f524597c97372e8d3d4d964ab9277df32ff6a83eae756176cba41f7",
+      "lines": 251,
+      "read_ranges": [
+        [
+          1,
+          251
+        ]
+      ],
+      "status": "read",
+      "role": "Parsing, DOM, random and generic utility primitives",
+      "behavior_notes": [
+        "ParseInt removes every dot/comma as thousands separators, TrimSpace then DoParseI64 suppresses error (invalid=>0; overflow preserves strconv saturated value). ToInt assumes raw ASCII digits and no sign/validation. DoCastF64/Str accept exact dynamic types only, others zero. FI64 constraint only ~int/~int64.",
+        "GetNbr mutates supplied goquery DOM: removes children of span.level then parses its text. GetNbrShips reads div.title then a.title fallback, greedy regex .+\\(([\\d.,]+)\\), missing match=>0; no fetch. Clamp min/max in that order, inverted bounds end at lower bound; no bounds error.",
+        "InArray uses Equal vs InArr comparable ==. RandChoice empty panics; Random inclusive integer range swaps bounds; RandDuration nanoseconds and RandMs scales endpoints before sampling, not whole-ms-only. RandFloat swaps bounds and half-open upper endpoint. No overflow guards for integer span/endpoints and uses global RNG.",
+        "Count2 counts yielded pairs, not quantities; Any2 emptyfalse/All emptytrue. Ternary normal Go eager argument evaluation, not lazy branches. RoundThousandth is FLOOR(n*1000)/1000, not nearest rounding, so negative numbers move down too.",
+        "Find/FindIdx return pointer to range VARIABLE copy, not slice element (mutation of pointed result does not modify original value slot); first match index or nil/-1. Ptr/I64Ptr allocate copy; Deref nil=>zero, Default nil=>provided default but nonnil explicit zero retained. No network/storage side effects in utilities themselves."
+      ],
+      "findings": [
+        "M18: RoundThousandth floors not nearest; Find returns pointer to range copy; GetNbr mutates passed DOM (lines77-81,209-210,227-230)."
+      ],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    },
+    {
+      "path": "ogame/pkg/utils/utils_test.go",
+      "sha256": "59eb7415e0fbc20384cb76adb478a8abb15d2b78f03f9c23476c887e679e00b1",
+      "lines": 49,
+      "read_ranges": [
+        [
+          1,
+          49
+        ]
+      ],
+      "status": "read",
+      "role": "Generic parsing and local HTML fixture tests",
+      "behavior_notes": [
+        "Reads only tracked ../../samples/unversioned/deathstar_price.html and mrd_price.html; asserts prices5M/1555733200. Other tests ParseInt dotted/empty, ASCII ToInt, I64Ptr value equality, Default nil vs explicit false/true/int. No HTTP, credentials, services or action paths; safe offline with fixtures present."
+      ],
+      "findings": [],
+      "test_safety": "Source reviewed in full; package tests and standalone 50-assertion model/simulator characterization executed offline with GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off. Only two local HTML fixtures read by utils tests. No account/client/action entrypoints or network services invoked."
+    }
+  ]
+}

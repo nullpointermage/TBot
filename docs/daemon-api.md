@@ -10,8 +10,7 @@ Derived line-by-line from `cmd/ogamed-tbot/main.go` (route table), `pkg/wrapper/
 ## 0. Conventions
 
 - Envelope (handlers.go `APIResp`): success `{"Status":"ok","Code":200,"Result":<payload>}`,
-  error `{"Status":"error","Code":<int>,"Message":"…"}`. HTTP status mirrors `Code` for 400/500
-  paths; some handlers emit 200 with error envelopes inside HTML endpoints.
+  error `{"Status":"error","Code":<int>,"Message":"…"}`. HTTP status does **not** universally mirror `Code`: the deprecated user-agent handler returns HTTP200 with Code400, and cancel-fleet can wrap an error inside an `ok` envelope. Check transport, envelope and domain outcome separately.
 - Auth: none by default; optional HTTP Basic when `--basic-auth-username` **and**
   `--basic-auth-password` are both set (constant-time compare). The C# client sends Basic
   whenever both credential fields are non-empty.
@@ -19,8 +18,7 @@ Derived line-by-line from `cmd/ogamed-tbot/main.go` (route table), `pkg/wrapper/
   `GET /bot/captcha` (HTML).
 - Params: path params parsed with `utils.ParseI64` → `400 invalid …` on failure; body params are
   `application/x-www-form-urlencoded` (`PostFormValue`/`ParseForm`). Booleans/ids are strings.
-- All state-changing routes serialize through the single-slot task runner (see daemon.md §4);
-  `Result` payloads are the structs listed in infrastructure-models.md §Go-source counterparts.
+- Prioritized wrapper calls use the task runner, but this is not unconditional serialization or cancellation safety for all daemon paths (see daemon.md §4 and [direct Go review](reference/audit-go-integration.md)). Manual-mode shared maps and transport swaps have separate boundaries. `Result` payloads are described in infrastructure-models.md; some specialized endpoints return a bare boolean or HTML instead.
 
 ## 1. Route table
 
@@ -43,8 +41,8 @@ Derived line-by-line from `cmd/ogamed-tbot/main.go` (route table), `pkg/wrapper/
 | GET `/bot/server/version` | – | → string | game version, drives extractor dispatch | `GetServerVersion()` |
 | GET `/bot/server/time` | – | → RFC3339 time | server tz; errors swallowed (zero time on failure) | `GetServerTime()` |
 | GET `/bot/ip` | `GetPublicIPHandler` | → string | `https://jsonip.com` via login-proxy transport; 500 on fail | `GetOgamedIP()` |
-| POST `/bot/set-user-agent` | `SetUserAgentHandler` | – | **stub: always `400 {"deprecated"}`** | `SetUserAgent()` (fails) |
-| POST `/bot/page-content` | `PageContentHandler` | form: any `page=…` vals → `Result`: HTML string | raw page fetch through bot (retry+cache) | – |
+| POST `/bot/set-user-agent` | `SetUserAgentHandler` | – | **stub: HTTP200 with Status=error, Code400, Message=deprecated** | `SetUserAgent()` (fails) |
+| POST `/bot/page-content` | `PageContentHandler` | form: any `page=…` vals → `Result`: base64-encoded raw page bytes | raw page fetch through bot (retry+cache) | – |
 | GET `/bot/is-under-attack` | – | → bool | attack eventlist scan | `IsUnderAttack()` |
 | GET `/bot/is-vacation-mode` | – | → bool | cached flag | `IsVacationMode()` |
 | GET `/bot/user-infos` | – | → `UserInfos` | errors ignored → zero-value on parse fail | `GetUserInfo()` |
@@ -106,10 +104,10 @@ All build errors surface as `500` with the upstream message (`failed to build : 
 | GET `/bot/fleets/slots` | – | `Slots{InUse,Total,ExpInUse,ExpTotal,…}` | `GetSlots` |
 | POST `/bot/fleets/:fleetID/cancel` | – | null; version≥13 does tokenized recall first | `CancelFleet` |
 | POST `/bot/planets/:id/send-fleet` | repeatable `ships=<id>,<n>` (must be `ID.IsShip()`), `speed` 0–10 (default 10), `galaxy,system,position,type,mission,metal,crystal,deuterium`, optional `duration,union` | `Fleet` on success; enumerated 400s: `ErrInvalidPlanetID,ErrNoShipSelected,ErrUninhabitedPlanet,ErrNoDebrisField,ErrPlayerInVacationMode,ErrAdminOrGM,ErrNoAstrophysics,ErrNoobProtection,ErrPlayerTooStrong,ErrNoMoonAvailable,ErrNoRecyclerAvailable,ErrNoEventsRunning,ErrPlanetAlreadyReservedForRelocation`; other → 500 | `SendFleet` |
-| POST `/bot/planets/:id/check-fleet` *(stock only)* | same as send-fleet | `{origin,destination,flightTime,fuel,resources,cargo,cargoUsed,ships,mission,speed}` — pure FleetBuilder computation, no send | – |
+| POST `/bot/planets/:id/check-fleet` *(stock only)* | same as send-fleet | `{origin,destination,flightTime,fuel,resources,cargo,cargoUsed,ships,mission,speed}` — FleetBuilder estimate, no send; cache misses can fetch upstream state | – |
 | POST `/bot/planets/:id/send-discovery` | `galaxy,system,position` | `true`; 400 with reason | `SendDiscovery` |
 | POST `/bot/planets/:id/get-system-available-discovery` *(tbot)* | `galaxy,system[,position]` | `[]Coordinate` (only `canSend==true` positions) | `GetPositionsAvailableForDiscoveryFleet` |
-| GET `/bot/planets/:id/get-available-discoveries` *(tbot)* | – | int count | `GetAvailableDiscoveries` |
+| GET `/bot/planets/:id/get-available-discoveries` *(tbot)* | – | int count; handler makes and discards an extra call before planet validation, then calls with options | `GetAvailableDiscoveries` |
 | GET `/bot/attacks` | – | `[]AttackEvent` | `GetAttacks` |
 | POST `/bot/planets/:id/send-ipm` | form `galaxy,system,position,priority` | **broken**: handler wants path `:ipmAmount`,`:type` not in route → always `400 invalid ipmAmount` | – |
 | GET `/bot/galaxy-infos/:galaxy/:system` | – | `SystemInfos`; `ErrNotEnoughDeuterium` when empty | `GetGalaxyInfo` |
@@ -147,8 +145,8 @@ All build errors surface as `500` with the upstream message (`failed to build : 
 | GET `/game/index.php` *(tbot)* | proxy GET; manual-mode aware; injects manual-mode button; strips cookie banner; rewrites gameforge host → request host |
 | POST `/game/index.php` *(tbot)* | same for POST w/ form passthrough |
 | GET `/game/allianceInfo.php` | alliance page HTML, cookie-banner stripped |
-| GET `/cdn/*`, `/assets/css/*`, `/headerCache/*`, `/favicon.ico`, `/game/sw.js`, `/api/*` | stream from game server; `*.xml` host-rewritten; content-type sniffed |
-| HEAD `/api/*` | mirror headers; `424` when no cached headers |
+| GET `/cdn/*`, `/assets/css/*`, `/headerCache/*`, `/favicon.ico`, `/game/sw.js`, `/api/*` | buffer content from game server; `*.xml` host-rewritten; content-type sniffed/overridden; fork replies HTTP200 rather than preserving upstream status |
+| HEAD `/api/*` | fresh upstream HEAD and mirror returned headers; `424` when returned headers are empty |
 | *(stock only)* GET/POST `/game/index.php` | same proxy minus manual-mode/UI injection |
 
 ### buildqueue *(tbot — blocked, see daemon.md §2)*
@@ -163,15 +161,19 @@ template path. Documented for completeness; **not reachable** in the pinned buil
 1. `ConstructionsBeingBuiltHandler` returns countdown **seconds** as int64 (0 when idle).
 2. `GetEmpireHandler` rejects `typeID>1`; `Celestials` enum in C# is 1-based — the client passes
    the route constant, not the enum.
-3. `CancelFleetHandler` returns `SuccessResp(bot.CancelFleet(...))` — a nil `Result` on success.
+3. `CancelFleetHandler` returns HTTP200 with `SuccessResp(bot.CancelFleet(...))`: nil Result on success, but an error object can also appear inside the `ok` Result. This is not a reliable failure envelope or cancellation confirmation.
 4. `CelestialAbandonHandler` 400s with `"Celestial could not be deleted"` when the celestial still
-   resolves after abandon — treat 400 as retryable-ish.
+   resolves after abandon. This can be an ambiguous action outcome: inspect/reconcile actual state before any retry; an HTTP status alone does not make abandonment safe to repeat.
 5. `GetMoonHandler` answers 400 `invalid moon id` for both parse failure *and* unknown id.
 6. `GetAttacks` ≥13.0.0 path parses `content.eventlist` HTML embedded in JSON; fleet-time fields
    are epoch seconds; the C# `AttackerFleet` maps by field name (no json tags on the Go side).
 7. `DoAuctionHandler` requires strict `m:c:d` (`Sscanf %d:%d:%d`, n==3).
-8. `PageContentHandler` ignores fetch errors → 200 with empty string on upstream failure.
+8. `PageContentHandler` ignores fetch errors and JSON-encodes raw bytes as base64 (or null for nil bytes), not plain HTML. HTTP200 does not establish fetch success.
 9. `ServerTimeHandler` swallows errors → zero time.
+
+### C# adapter edge cases verified offline
+
+The harness in [tools/adapter-smoke](../tools/adapter-smoke/Program.cs) intercepts every HTTP call in memory and never initializes a daemon. It confirms malformed HTTP200 responses can raise `NullReferenceException`, an `ok` envelope can mask HTTP400, already-accepted offer error envelopes become Unknown, and an officer lookup failure discards earlier flags. The adapter applies the same transient-error retry policy to POSTs as GETs, without idempotency keys; do not infer safe action retries from this table. These are characterization tests of the existing implementation, not fixes.
 
 ## 3. Fork vs stock capability matrix
 

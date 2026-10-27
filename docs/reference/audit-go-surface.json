@@ -1,0 +1,3209 @@
+{
+  "baseline": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+  "submodule": "fbd0fda6ba9019c128926614f9865ba38a67b627",
+  "entries": [
+    {
+      "path": "ogame/pkg/extractor/extractor.go",
+      "sha256": "545f0db356876f5c651d91be442e756be440c199617849bb2fe228bcd72f23a3",
+      "lines": 593,
+      "read_ranges": [
+        [
+          1,
+          593
+        ]
+      ],
+      "status": "read",
+      "role": "Extractor capability interfaces and version conformance",
+      "behavior_notes": [
+        "Composes byte and goquery interfaces for full pages, fleets, messages, resources, lifeforms, actions and chapters; every version from6 to12 has compile-time conformance assertions. Interface conformance is not implemented-feature or schema-validity proof; no-error return types intentionally permit defaults."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v10/extractor.go",
+      "sha256": "e9ed03a892d964a3bae4499c39246dd50cc55d8653620784ba4328b0ff15e291",
+      "lines": 21,
+      "read_ranges": [
+        [
+          1,
+          21
+        ]
+      ],
+      "status": "read",
+      "role": "JSON galaxy version adapter",
+      "behavior_notes": [
+        "Embeds v9 and overrides galaxy JSON schema only."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v10/extracts.go",
+      "sha256": "6b9ea2fe65623475f54a05798ab498afc41d4c938da9e1ff4870cd199a58522a",
+      "lines": 312,
+      "read_ranges": [
+        [
+          1,
+          312
+        ]
+      ],
+      "status": "read",
+      "role": "Typed JSON galaxy decoding",
+      "behavior_notes": [
+        "Integer decoder accepts integer JSON or string float, ignores invalid string conversion; planets accepts object or list; activity false=0 otherwise default15, explicit60+showMinutes yields idle. Initial invalid JSON returns ErrNotLogged, success false explicit error.",
+        "Relocation unchecked type assertions, P16 first planet indexing, and using content iteration index for fixed system slots can panic/misplace malformed data; P17 skipped, array length/domain unvalidated. Player/bandit/alliance/moon/debris maps populate while unused bot identity args do not affect output."
+      ],
+      "findings": [
+        {
+          "id": "GS14",
+          "severity": "high",
+          "title": "Malformed extractor schemas can panic or silently zero",
+          "detail": "Unchecked construction ID/level regexes, relocation type assertions, P16 first-planet indexing, fixed LF slot indexing and percent regex indexing have no malformed-input guard. String galaxy numeric conversion ignores ParseFloat errors.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                20,
+                44
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                863,
+                876
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                99,
+                111
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                208,
+                241
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_13_0/extracts.go",
+              "lines": [
+                29,
+                37
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                123,
+                129
+              ]
+            }
+          ],
+          "documentation_implication": "Document schema brittleness and silent fallback separately from explicit error paths; fixture success does not establish hostile-input resilience.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v104/extractor.go",
+      "sha256": "972c444b5472360cc0452813199541537cd76dcf3a542409e3e17c4ecdd80705",
+      "lines": 30,
+      "read_ranges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "status": "read",
+      "role": "v10.4 token adapters",
+      "behavior_notes": [
+        "Overrides upgrade, teardown and general token to shared v10.4 extractor; all other behavior inherited."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v104/extracts.go",
+      "sha256": "fa3d3c069bab1d625e856ba5c28402da7a736a222a52be7a175ba4218d08e074",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "Double-quoted token schema",
+      "behavior_notes": [
+        "Requires exact var token = double-quoted nonempty regex; both upgrade and teardown call it and missing token explicitly errors."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11/extractor.go",
+      "sha256": "4b0d4558d451fa86eb0085e660fd4fa8ce03072d99f8b88c49932bf206ed720c",
+      "lines": 53,
+      "read_ranges": [
+        [
+          1,
+          53
+        ]
+      ],
+      "status": "read",
+      "role": "v11 resource/cancel/lifeform/preferences overrides",
+      "behavior_notes": [
+        "Embeds v104; provides byte settings/cancel and doc lifeform/preferences, jump-gate adapters. Preferences overrides doc method only, so inherited v6 byte method does not dynamically dispatch."
+      ],
+      "findings": [
+        {
+          "id": "GS12",
+          "severity": "medium",
+          "title": "Embedding is not virtual method dispatch",
+          "detail": "v6 byte ExtractPreferences calls v6 doc receiver; v11 overrides only doc method. Similar inherited byte adapters keep ancestor implementation unless redefined. v6 interface satisfaction includes explicit panic stubs.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v6/extractor.go",
+              "lines": [
+                432,
+                437
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v6/extractor.go",
+              "lines": [
+                682,
+                685
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11/extractor.go",
+              "lines": [
+                50,
+                53
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v6/extractor.go",
+              "lines": [
+                980,
+                1116
+              ]
+            }
+          ],
+          "documentation_implication": "Describe per-method byte/doc overrides, not all versions magically inheriting latest schema behavior; unsupported newer methods may panic.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11/extractor_test.go",
+      "sha256": "ab1e22707232df6ace56148f8cf0eff0d5638d7b62385483c457f12680d2148d",
+      "lines": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "status": "read",
+      "role": "Offline galaxy/cancel fixtures",
+      "behavior_notes": [
+        "Two inherited JSON galaxy fixtures include relocation cost and string-float debris; one building cancel asserts token/ID/list. No init/TestMain/network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11/extracts.go",
+      "sha256": "f78ffe15b0fd556187742485983ff0495d8de74bf1796de69935fcac96040ed6",
+      "lines": 146,
+      "read_ranges": [
+        [
+          1,
+          146
+        ]
+      ],
+      "status": "read",
+      "role": "v11 cancellation tokens and preferences language",
+      "behavior_notes": [
+        "Settings require7 selected options but ignore token extraction error and return empty token nil. Cancels require window.token single quotes and fixed tables0/2/1. Jumpgate cooldown short-circuits; empty token/ships otherwise successful. Lifeform icon selector changes; preference language appended to v6 result; character helper not wired into adapter here."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_13_0/extractor.go",
+      "sha256": "a659efd103441c5aa536d02e33f8faaf42b155ae4896d4d9f1289f556b554562",
+      "lines": 63,
+      "read_ranges": [
+        [
+          1,
+          63
+        ]
+      ],
+      "status": "read",
+      "role": "v11.13 timers and fleets overrides",
+      "behavior_notes": [
+        "Overrides constructions, production byte adapter with new shipyard countdown, fleets byte/doc methods including location and lifeform flag; inherited overview production still calls its original receiver countdown."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_13_0/extractor_test.go",
+      "sha256": "7dfe18d598ffa86de3ca3b350648ab4ba43693890f125f38b3f5159b5e5a23cb",
+      "lines": 75,
+      "read_ranges": [
+        [
+          1,
+          75
+        ]
+      ],
+      "status": "read",
+      "role": "Offline timer and fleet fixtures",
+      "behavior_notes": [
+        "Fake-clock4 queue construction levels/countdowns, shipyard production and two movement fleets; no init/TestMain/network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_13_0/extracts.go",
+      "sha256": "e84ec2046328a1042a099b2b2a9b2902f234e690a06dfa528484100f2fffe6e1",
+      "lines": 166,
+      "read_ranges": [
+        [
+          1,
+          166
+        ]
+      ],
+      "status": "read",
+      "role": "HTML time attributes and movement counters",
+      "behavior_notes": [
+        "Construction time[data-end] with levels replaces JS times; cancel-ID/level regexes remain unchecked. Ship countdown uses CountdownTimer. Fleets use timer regex and data-time attributes, resource table offsets, fed-attack query, localized start date with ignored errors; missing values become zero and return-flight ArriveIn=-1."
+      ],
+      "findings": [
+        {
+          "id": "GS14",
+          "severity": "high",
+          "title": "Malformed extractor schemas can panic or silently zero",
+          "detail": "Unchecked construction ID/level regexes, relocation type assertions, P16 first-planet indexing, fixed LF slot indexing and percent regex indexing have no malformed-input guard. String galaxy numeric conversion ignores ParseFloat errors.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                20,
+                44
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                863,
+                876
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                99,
+                111
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                208,
+                241
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_13_0/extracts.go",
+              "lines": [
+                29,
+                37
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                123,
+                129
+              ]
+            }
+          ],
+          "documentation_implication": "Document schema brittleness and silent fallback separately from explicit error paths; fixture success does not establish hostile-input resilience.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_15_0/extractor.go",
+      "sha256": "1e931ec2d3e53d5ae1871fdccf8a819df89a04543653ae260dce5e3c50f06ca0",
+      "lines": 107,
+      "read_ranges": [
+        [
+          1,
+          107
+        ]
+      ],
+      "status": "read",
+      "role": "v11.15 message/report/bonus/class adapters",
+      "behavior_notes": [
+        "Overrides espionage detail and summary, combat and expedition summaries, lifeform bonuses, alliance class and phalanx new token; embeds v11.13 for remaining selectors."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_15_0/extractor_test.go",
+      "sha256": "989062950a3c95e620d6f77002d5862a5aba91c0227357b998d30a2af53825e9",
+      "lines": 83,
+      "read_ranges": [
+        [
+          1,
+          83
+        ]
+      ],
+      "status": "read",
+      "role": "Offline modern message/bonus fixtures",
+      "behavior_notes": [
+        "Tests spy date using hardcoded time.Local expectation (timezone-sensitive), bonuses fractional signs, JSON-wrapped alliance, inherited20-fleet phalanx and combat fleet ID in v12 JSON message fragments. No init/TestMain/network."
+      ],
+      "findings": [
+        {
+          "id": "GS16",
+          "severity": "medium",
+          "title": "Timezone-sensitive fixture fails in host timezone",
+          "detail": "TestExtractEspionageReport v11.15 expects14:20:42 in time.Local. On host CDT actual is16:20:42; TZ=America/Los_Angeles makes the full reviewed parser/extractor suite pass. This is environment dependence, not a source fix.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extractor_test.go",
+              "lines": [
+                13,
+                19
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                158,
+                160
+              ]
+            }
+          ],
+          "documentation_implication": "Publish both failed native-zone run and passing explicit-Pacific run; never report unqualified full-suite success.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+      "sha256": "2ee36cb68e512a53c4fcdc4f480720923c55d3db69e3d78f8ef2d3a2252d9f2b",
+      "lines": 602,
+      "read_ranges": [
+        [
+          1,
+          602
+        ]
+      ],
+      "status": "read",
+      "role": "Raw-message attributes and lifeform bonuses",
+      "behavior_notes": [
+        "Combat JSON result/fleet attributes ignore decoding errors, choose first available fleetID and require attack button else drop row; all modern summary helpers return nbPage1. Espionage summary ignores coord errors and can panic on percent text not matching colon-space regex.",
+        "Spy detail requires nonzero ID then reads raw attrs, hidden flags empty-string convention and optional pointers; invalid nested JSON is ignored even when HasInformation true. Date uses configured zone then time.Local. Expedition resources/ships parse raw JSON ignoring errors; missing/malformed values zero.",
+        "Bonuses support ships/cost/time/expedition/discoverer-class/phalanx categories; unknown category ignored, percentages comma-normalized/rounded before division. Alliance class explicit error missing selector; phalanx missing refresh token returns empty string nil."
+      ],
+      "findings": [
+        {
+          "id": "GS05",
+          "severity": "high",
+          "title": "Message helper ignores limits and failures",
+          "detail": "getMessages always asks page1, ignores maxPage/fetch/unmarshal/extractor errors, asserts each message as string, and returns nil error. Wrong JSON message element types panic; failed/missing content can appear empty.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                3750,
+                3767
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                18,
+                135
+              ]
+            }
+          ],
+          "documentation_implication": "Do not describe full message pagination or a complete empty mailbox; modern summaries return page count1.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS14",
+          "severity": "high",
+          "title": "Malformed extractor schemas can panic or silently zero",
+          "detail": "Unchecked construction ID/level regexes, relocation type assertions, P16 first-planet indexing, fixed LF slot indexing and percent regex indexing have no malformed-input guard. String galaxy numeric conversion ignores ParseFloat errors.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                20,
+                44
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                863,
+                876
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                99,
+                111
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                208,
+                241
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_13_0/extracts.go",
+              "lines": [
+                29,
+                37
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                123,
+                129
+              ]
+            }
+          ],
+          "documentation_implication": "Document schema brittleness and silent fallback separately from explicit error paths; fixture success does not establish hostile-input resilience.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS15",
+          "severity": "medium",
+          "title": "Modern nested message JSON errors are swallowed",
+          "detail": "Spy detail accepts nonzero ID then ignores nested buildings/research/fleet/defense JSON errors despite HasInformation flags, and expedition/combat parse errors also become defaults. Missing phalanx refresh token is empty string nil.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                138,
+                390
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                393,
+                456
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                595,
+                601
+              ]
+            }
+          ],
+          "documentation_implication": "Unknown/missing/invalid fields are not always distinguishable from numeric zero or absent units.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS16",
+          "severity": "medium",
+          "title": "Timezone-sensitive fixture fails in host timezone",
+          "detail": "TestExtractEspionageReport v11.15 expects14:20:42 in time.Local. On host CDT actual is16:20:42; TZ=America/Los_Angeles makes the full reviewed parser/extractor suite pass. This is environment dependence, not a source fix.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extractor_test.go",
+              "lines": [
+                13,
+                19
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                158,
+                160
+              ]
+            }
+          ],
+          "documentation_implication": "Publish both failed native-zone run and passing explicit-Pacific run; never report unqualified full-suite success.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_9_0/extractor.go",
+      "sha256": "2d3020941cf45d98bb833d97b524991d2fa763509c9b039ae35528d413905535",
+      "lines": 58,
+      "read_ranges": [
+        [
+          1,
+          58
+        ]
+      ],
+      "status": "read",
+      "role": "v11.9 production/combat/auction adapters",
+      "behavior_notes": [
+        "Overrides byte and doc production/combat summaries and byte auction; remaining methods inherited."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_9_0/extractor_test.go",
+      "sha256": "dc29253123c25fbacda0a25685a9930cfc2fde26aac06060e7d2a658d113205c",
+      "lines": 37,
+      "read_ranges": [
+        [
+          1,
+          37
+        ]
+      ],
+      "status": "read",
+      "role": "Offline v11.9 fixture suite",
+      "behavior_notes": [
+        "Checks mixed ship/defense production/countdown,16 combat summaries and auction ref/name/count; no init/TestMain/network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v11_9_0/extracts.go",
+      "sha256": "19923c8926925a8348b79fbfc31561eecad6edbe46ac9ad563465df1c53d9639",
+      "lines": 182,
+      "read_ranges": [
+        [
+          1,
+          182
+        ]
+      ],
+      "status": "read",
+      "role": "v11.9 message footer, production and auction markup",
+      "behavior_notes": [
+        "Production uses all construction/queue tables and skips unrecognized names; no active openTech yields empty success. Combat origin requires message-footer button regex otherwise skips entry, dates parsed UTC ignoring error. Auction time span selector and item ref added, required JSON/token checks retained."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v12_0_0/extractor.go",
+      "sha256": "28d246756669e3cbb2abc46a09958340c5d6d85a7057dba9ab311e43d2b36570",
+      "lines": 68,
+      "read_ranges": [
+        [
+          1,
+          68
+        ]
+      ],
+      "status": "read",
+      "role": "v12 clock/highscore/chapter overrides",
+      "behavior_notes": [
+        "Overrides server time byte/doc with injected internal fake-clock path, highscore byte/doc, chapter byte/doc; rest including messages inherited."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v12_0_0/extractor_test.go",
+      "sha256": "48d7290f4dfbf8e9f192b7413db59f91f19ae9b66953624d14693a9d86d9750b",
+      "lines": 55,
+      "read_ranges": [
+        [
+          1,
+          55
+        ]
+      ],
+      "status": "read",
+      "role": "Offline v12 fixtures",
+      "behavior_notes": [
+        "Fake-clock timezone, highscore including ignored players, inherited alliance galaxy JSON, chapter completion/claim pointer/task13. All fixture files local, no init/TestMain/network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v12_0_0/extracts.go",
+      "sha256": "6917835c7b6128aa56297c433631c8753f4fba54633ad08a9b72e66c2dd0a46b",
+      "lines": 123,
+      "read_ranges": [
+        [
+          1,
+          123
+        ]
+      ],
+      "status": "read",
+      "role": "v12 markup and onboarding chapter extraction",
+      "behavior_notes": [
+        "Clock uses div.OGameClock and infers nearest15minute fixed timezone relative to current clock, not named timezone. Highscore requires3 JS ints, removes ally tag from shared DOM, skips coordinate-less rows, rank player ID from position row attribute. Chapter requires claimRewards target nonzero, claimability uses disabled class, tasks completed includes collected."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v6/extractor.go",
+      "sha256": "1655157e68fa7637bea2bbf73355e723284ef08b65f70164c0f2cdc7518f7633",
+      "lines": 1116,
+      "read_ranges": [
+        [
+          1,
+          1116
+        ]
+      ],
+      "status": "read",
+      "role": "Base extractor state, adapters and unsupported-method stubs",
+      "behavior_notes": [
+        "GetLanguage/GetLocation default en/UTC; some legacy calls pass raw e.loc rather than GetLocation. Byte adapters parse goquery then call concrete receiver methods, so embedded version inheritance is static dispatch, not virtual dispatch.",
+        "Numerous interface methods panic implement me/not implemented, including token, lifeforms, newer details/messages/chapters and attack block; character/alliance class return unsupported errors. Full file including delegation and panic tails was reviewed."
+      ],
+      "findings": [
+        {
+          "id": "GS12",
+          "severity": "medium",
+          "title": "Embedding is not virtual method dispatch",
+          "detail": "v6 byte ExtractPreferences calls v6 doc receiver; v11 overrides only doc method. Similar inherited byte adapters keep ancestor implementation unless redefined. v6 interface satisfaction includes explicit panic stubs.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v6/extractor.go",
+              "lines": [
+                432,
+                437
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v6/extractor.go",
+              "lines": [
+                682,
+                685
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11/extractor.go",
+              "lines": [
+                50,
+                53
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v6/extractor.go",
+              "lines": [
+                980,
+                1116
+              ]
+            }
+          ],
+          "documentation_implication": "Describe per-method byte/doc overrides, not all versions magically inheriting latest schema behavior; unsupported newer methods may panic.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v6/extractor_test.go",
+      "sha256": "cd7a88b210a2390a41d66f4cf5b9d6418e3a59204ffe986ac22d5bdfb30dc31c",
+      "lines": 2548,
+      "read_ranges": [
+        [
+          1,
+          2548
+        ]
+      ],
+      "status": "read",
+      "role": "Full legacy extractor fixture suite",
+      "behavior_notes": [
+        "All2548 lines reviewed: fake-clock hostile/ACS/unknown-ship/phone attacks; phalanx/deuterium/no-fleet; full-page resources; multilingual planet/rank parsing; research/buildings/defense; queues/cancel tokens; galaxy flags/debris; reports/pointer unknowns; fleet times, locations, slots, empire, auction and session.",
+        "Tests use local os.ReadFile, goquery and pure extractors; no init/TestMain, HTTP client, login or live account calls. Many ReadFile/extraction errors ignored before indexing; fixture regressions can panic rather than fail cleanly. Notification and calcResources assertions are commented out, not coverage."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v6/extracts.go",
+      "sha256": "dd994b29f151d740a9733f56dc720587934c879648734dfd5dd40430cdd07534",
+      "lines": 2523,
+      "read_ranges": [
+        [
+          1,
+          2523
+        ]
+      ],
+      "status": "read",
+      "role": "Legacy full-page, fleet, report, empire and action extraction",
+      "behavior_notes": [
+        "Selectors and regexes parse session/time/celestial/staff/preferences/resources/queues, attack union aggregation and tooltip ship names. Resource/building parsers often return zero-valued success; celestial-list parsing silently drops invalid entries. Some document functions mutate selectors by removing text labels.",
+        "Explicit errors exist for missing coordinate/token/selected settings count, events box missing vs logged out, mobile/vacation galaxy, report hidden pictures and malformed JSON. Other regex indexing is unchecked (moon cp, report image classes/loot, galaxy player/debris/alliance, constructions, empire diameter), so malformed markup can panic.",
+        "Legacy fleet resources use positional rows with lifeform offset; event-list fleet parser computes resources but does not assign them to fleet and selects coordinates from whole doc. Server timezone inferred from local current time versus displayed clock rounded15minutes, not IANA timezone.",
+        "Empire maps numeric keys including all four species buildings/research pointers, making absent research values nonnil zero. Auction and import/export require JS token/resource/multiplier matches, while unknown coordinates return zero Coord without error."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v7/extractor.go",
+      "sha256": "c9e41e3d0d79d5f737f4aef357f1f8334f6d5ffd99da83ee7b2ee16a61e67b25",
+      "lines": 263,
+      "read_ranges": [
+        [
+          1,
+          263
+        ]
+      ],
+      "status": "read",
+      "role": "v7 overrides embedding v6",
+      "behavior_notes": [
+        "Overrides modern technology lists/resources/constructions, class, premium, IPM, reports and expedition/marketplace parsing. Location-aware report/message adapters use GetLocation. Other methods remain promoted v6 behavior/stubs; overriding a doc method alone does not redirect an inherited byte adapter."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v7/extractor_test.go",
+      "sha256": "5722676a9738c64c1a0a6d7e2f5e7cd9b356796b7ef89adc56f034cc45b3f956",
+      "lines": 321,
+      "read_ranges": [
+        [
+          1,
+          321
+        ]
+      ],
+      "status": "read",
+      "role": "Offline v7 extractor fixture suite",
+      "behavior_notes": [
+        "Covers cancel tokens, overview production, reports/debris, ships/crawler, resources/settings/research/facilities/defense, marketplace/expedition time and pagination, inherited galaxy events/mobile rejection, ES rank and fake-clock construction timers. Only local file I/O; no init/TestMain/network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v7/extracts.go",
+      "sha256": "8a6f5f513649b8b8699ded79c4150fec90b600bb0dfffc9bf5eb340458ab81b4",
+      "lines": 756,
+      "read_ranges": [
+        [
+          1,
+          756
+        ]
+      ],
+      "status": "read",
+      "role": "v7 technology lists, JSON resources and message/construction parsing",
+      "behavior_notes": [
+        "Uses span class data-value levels/amounts including crawler/reaper/pathfinder, flattened resource JSON and div resource tooltips. Missing numbers become zero. Resource settings require exactly7 selected options and a token; character class requires recognized miner/warrior/explorer.",
+        "Construction countdowns use injected clock but unchecked cancel-ID regex; report image regexes remain unchecked and hidden pictures produce explicit error. Combat summaries require fleetdispatch attack-link shape or are skipped. Expedition/market messages expose pagination counts but invalid dates are ignored."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v71/extractor.go",
+      "sha256": "6e5b17a0d43a6695d7e5aca137d5d562a9982a78004379126acf14a042c6709a",
+      "lines": 213,
+      "read_ranges": [
+        [
+          1,
+          213
+        ]
+      ],
+      "status": "read",
+      "role": "v7.1 overrides embedding v7",
+      "behavior_notes": [
+        "Adds byte/doc overrides for facilities, IPM, reports, attacks, production, highscore, DM costs, active items and buffs/mobile plus tech/resources JSON and fleet recall token. Uses clockwork injection internally for deterministic attack tests; unoverridden methods retain ancestors."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v71/extractor_test.go",
+      "sha256": "b316d96803ab83d615ce916a97bad56503135a84c657ce0bc91a68b2f7a81d3c",
+      "lines": 351,
+      "read_ranges": [
+        [
+          1,
+          351
+        ]
+      ],
+      "status": "read",
+      "role": "Offline v7.1 regression fixtures",
+      "behavior_notes": [
+        "Covers ACS self-target/unknown ships, mobile flag, active items/buffs/DM costs/all resources, highscore (self ID explicitly0), production/IPM/rocket tokens, report character/alliance/honor classes/resources, recall and inherited planet/loot. Researcher report test is commented; all active calls are local files/pure extraction, no init/TestMain."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v71/extracts.go",
+      "sha256": "d0ed26cabc94728a18f03fa557eda17d2dba051785bcd14e4e393a5dd7d5e041",
+      "lines": 1362,
+      "read_ranges": [
+        [
+          1,
+          1362
+        ]
+      ],
+      "status": "read",
+      "role": "v7.1 resources/tech schema, report, attack and item extraction",
+      "behavior_notes": [
+        "Nested resources JSON is parsed as floats then truncated and several fields overwritten from tooltip rows. Missing tooltip can overwrite numeric storage/population/food with zero. Techs decodes all groups including lifeforms; PlasmaTerraformer incorrectly points to Num11112 (PlanetaryShield building), with11212 declaration commented out.",
+        "Reports use localized character labels and alliance classes, ignore later resource lists, preserve optional unit pointers and retain unchecked image regex indexing. Attack parsing adds IDs and treats friendly ACS targeting own coordinates as hostile; aggregates partner ships and skips nonhostile rows.",
+        "Production/recall/IPM/highscore/DM/buffs/mobile implementations depend on exact selectors/JS variables. Missing highscore variables or buff token/inventory return errors; absent DM rows return partial/zero success; active item enumeration skips zero IDs."
+      ],
+      "findings": [
+        {
+          "id": "GS13",
+          "severity": "medium",
+          "title": "Tech JSON misassigns PlasmaTerraformer",
+          "detail": "v7.1 tech JSON maps PlasmaTerraformer to Num11112 (the PlanetaryShield building field) rather than a11212 research field.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v71/extracts.go",
+              "lines": [
+                294,
+                294
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v71/extracts.go",
+              "lines": [
+                500,
+                500
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v71/extracts.go",
+              "lines": [
+                551,
+                551
+              ]
+            }
+          ],
+          "documentation_implication": "Do not assert every lifeform numeric-ID mapping is correct; later HTML LF research parser separately uses11212.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v8/extractor.go",
+      "sha256": "52c5902bb33c70d1247eae2f80d8ef3e1d201f4c82d01ca2cac6b9a58cc84326",
+      "lines": 62,
+      "read_ranges": [
+        [
+          1,
+          62
+        ]
+      ],
+      "status": "read",
+      "role": "v8 overrides embedding v7.1",
+      "behavior_notes": [
+        "Overrides byte/doc vacation and attack-block advice parsing and espionage report location-aware adapter; other paths remain inherited."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v8/extractor_test.go",
+      "sha256": "e7c6927d48125a932080d31573b795f09138f5e7d418d139ebae085b8ecd7597",
+      "lines": 32,
+      "read_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "status": "read",
+      "role": "Offline v8 regression fixtures",
+      "behavior_notes": [
+        "Checks v8.5 spy last activity and v9 planet metadata with inherited planet parser. No init/TestMain, login or network dependencies."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v8/extracts.go",
+      "sha256": "65a4b4fb897124d129e00ccfb043bbeadad70ec698b13694bc58189c3087cc68",
+      "lines": 351,
+      "read_ranges": [
+        [
+          1,
+          351
+        ]
+      ],
+      "status": "read",
+      "role": "v8 advice and espionage report selectors",
+      "behavior_notes": [
+        "Vacation checks component=preferences; attack-block detects javascript:void advice with timestamp parsed UTC, ignores malformed dates. Report shifts activity to detail_txt index3, keeps alliance/class/honor and optional units, explicit hidden-picture error and unchecked class regex indexing."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v874/extractor.go",
+      "sha256": "a9771287d8003d50c6947bb18a3cfb3e541388bf16ea7cf33c05d87125d20511",
+      "lines": 55,
+      "read_ranges": [
+        [
+          1,
+          55
+        ]
+      ],
+      "status": "read",
+      "role": "v8.7.4 adapters",
+      "behavior_notes": [
+        "Overrides import/export offer, auction and buff byte/doc dispatch; embeds v8 for all other behavior."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v874/extractor_test.go",
+      "sha256": "25453e659cf1af7889a915af856b409b78bbdf74905adba4f932790b2f5be450",
+      "lines": 20,
+      "read_ranges": [
+        [
+          1,
+          20
+        ]
+      ],
+      "status": "read",
+      "role": "Offline trader fixtures",
+      "behavior_notes": [
+        "Two local fixtures assert price/token and auction token; no init/TestMain or network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v874/extracts.go",
+      "sha256": "6c1fd39bee7c3e7daea8f5d8392de768b05759c843b863618d7ac42b7cdcbb19",
+      "lines": 152,
+      "read_ranges": [
+        [
+          1,
+          152
+        ]
+      ],
+      "status": "read",
+      "role": "Trader and item JS schema update",
+      "behavior_notes": [
+        "Accepts double quoted tokens; imports JSON planet resources/multipliers and item inventory. Missing markers explicitly error; inventory iteration unsorted and malformed inventory prints error. Auction handles finished state and bidder ID data attribute, requires playerBid JSON-ish variable; min/deficit may be zero due client-side JavaScript."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v9/extractor.go",
+      "sha256": "faab25fbf5b055cae16dc14292a3eca65c4f36940636ffd06f2d8327cbbd4563",
+      "lines": 210,
+      "read_ranges": [
+        [
+          1,
+          210
+        ]
+      ],
+      "status": "read",
+      "role": "Lifeform-era extraction adapters",
+      "behavior_notes": [
+        "Embeds v874, decodes technologyDetails JSON envelope then inner HTML, changes queues/research cancellation with lifeform flag, resources and LF building/research/slots/artefacts/discovery. Constructions returns nil error unconditionally from helper."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/extractor/v9/extractor_test.go",
+      "sha256": "da637332290e51c681b004e6ed3a36ba4a3ec94d36bc5bdbf97a015b38376a35",
+      "lines": 282,
+      "read_ranges": [
+        [
+          1,
+          282
+        ]
+      ],
+      "status": "read",
+      "role": "Offline v9 lifeform fixtures",
+      "behavior_notes": [
+        "Tests full page/resource population, spy report, LF queue offsets/cancel tokens/construction fake clock, inherited user/fleet data, human/rocktal buildings, technology prices/teardown, ships, artefacts and slot allowed/locked flags. Pure local I/O/extractors; no init/TestMain/network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/extractor/v9/extracts.go",
+      "sha256": "1730d5e9e9596d4764369bf5dec667b23627d1d1f1e23240746829e1b6d67fa9",
+      "lines": 938,
+      "read_ranges": [
+        [
+          1,
+          938
+        ]
+      ],
+      "status": "read",
+      "role": "Lifeform structures, queues and resource/tooltips",
+      "behavior_notes": [
+        "Expands empire all four species and research pointers; absent empire research becomes pointer0 but HTML LF research absent remains nil. LF building selection by current species. Production queue uses table2 or4 and silently skips unknown unit names.",
+        "Technology duration requires seconds in PT H/M/S regex, level subtracts1, missing prices default0. Resource tooltip offsets/population float errors become0; discovery count missing yields0 and total-used can be negative. LF slots fixed18 array lacks bounds checking per tier. Empire diameter and construction cancel-ID regexes can panic; report handles first buildings list only."
+      ],
+      "findings": [
+        {
+          "id": "GS11",
+          "severity": "medium",
+          "title": "Typed pages do not universally validate schema",
+          "detail": "Only a subset of full page constructors validates markers. Many adapters pass raw bytes/empty DOM to extractors; resource and level selectors often return zero or empty success on missing fields.",
+          "sources": [
+            {
+              "path": "ogame/pkg/parser/parser.go",
+              "lines": [
+                123,
+                217
+              ]
+            },
+            {
+              "path": "ogame/pkg/parser/fullPage.go",
+              "lines": [
+                1,
+                99
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                361,
+                398
+              ]
+            }
+          ],
+          "documentation_implication": "Typed page construction and nil extraction error are not proof that expected schema/game state exists.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS14",
+          "severity": "high",
+          "title": "Malformed extractor schemas can panic or silently zero",
+          "detail": "Unchecked construction ID/level regexes, relocation type assertions, P16 first-planet indexing, fixed LF slot indexing and percent regex indexing have no malformed-input guard. String galaxy numeric conversion ignores ParseFloat errors.",
+          "sources": [
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                20,
+                44
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                863,
+                876
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                99,
+                111
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v10/extracts.go",
+              "lines": [
+                208,
+                241
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_13_0/extracts.go",
+              "lines": [
+                29,
+                37
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                123,
+                129
+              ]
+            }
+          ],
+          "documentation_implication": "Document schema brittleness and silent fallback separately from explicit error paths; fixture success does not establish hostile-input resilience.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/allianceOverviewTabAjaxPage.go",
+      "sha256": "68154aca357b526181628bcf99ff6029aaf7611bc2ed2c1c3bf2fbc777019e68",
+      "lines": 25,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "status": "read",
+      "role": "Alliance component JSON shape",
+      "behavior_notes": [
+        "Declares nested content key alliance/alliance_overview and newAjaxToken; ExtractAllianceClass delegates raw bytes rather than enforcing schema in this adapter."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/defensesPage.go",
+      "sha256": "84ddcb35af2375804b42c790d80e3cdc84516622ac6da7ca3de89079fcb2b8ae",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/eventListAjaxPage.go",
+      "sha256": "7de96fcbdad79cd003dbc9ac93682a63413a3a1a4778b5a7d0caa6f54be00c6f",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/facilitiesPage.go",
+      "sha256": "7b4328d4c66c7c28a8a92c5a05f5d7c112420ccece5cafc8965379002ac1d714",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/fetchTechsAjaxPage.go",
+      "sha256": "5536ec1ef9abfc35790a431f7e163c9c2ca92653235c0b573ae392ac3e35229d",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/fleetDispatchPage.go",
+      "sha256": "4a95b51d506c7a1ad3c16f8c36d6f1da47b18de95ce05ff04a8397e6f8a1af7f",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/fullPage.go",
+      "sha256": "5dba112a5a13e689a6dcf7924b1432257fed659bcdcfda88fafca7f21f117552",
+      "lines": 99,
+      "read_ranges": [
+        [
+          1,
+          99
+        ]
+      ],
+      "status": "read",
+      "role": "Shared full-page extraction facade",
+      "behavior_notes": [
+        "Session, staff, class, lifeforms, resources, planets/moons and server-time use the same configured extractor; token and coordinate/ID methods inspect raw bytes. Several results have no error channel and may return empty/zero values."
+      ],
+      "findings": [
+        {
+          "id": "GS11",
+          "severity": "medium",
+          "title": "Typed pages do not universally validate schema",
+          "detail": "Only a subset of full page constructors validates markers. Many adapters pass raw bytes/empty DOM to extractors; resource and level selectors often return zero or empty success on missing fields.",
+          "sources": [
+            {
+              "path": "ogame/pkg/parser/parser.go",
+              "lines": [
+                123,
+                217
+              ]
+            },
+            {
+              "path": "ogame/pkg/parser/fullPage.go",
+              "lines": [
+                1,
+                99
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                361,
+                398
+              ]
+            }
+          ],
+          "documentation_implication": "Typed page construction and nil extraction error are not proof that expected schema/game state exists.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/fullPage_test.go",
+      "sha256": "213d4a0f2d66aabe9948bc4dc6e88e51f9e6ebe20d69d3056f0904060a316e7c",
+      "lines": 34,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ],
+      "status": "read",
+      "role": "Offline celestial selector fixture test",
+      "behavior_notes": [
+        "Uses v9 planet and v7.1 moon samples to check ID and object selectors; unsupported Page selector must return v6.ErrUnsupportedType. ReadFile errors are discarded; no network."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/parser/jumpGateAjaxPage.go",
+      "sha256": "748a31b33e438ccd9125dc4e8ff36c9cab927e7b58ebda0b25b0d38bc8ffa7c2",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/lfBonusesPage.go",
+      "sha256": "f308e8c4e8e46810473aa0cc5fedd72a54c95475738bc9bc2d872dc8724f4f39",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/lfbuildingsPage.go",
+      "sha256": "d7fc29f90a632cb5b30bf1d6db1940de595cce5e967c601d6a9490454bf0735a",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/lftechsPage.go",
+      "sha256": "443e1bd8d3c1634de429258106c1aa27fcc0e5cc693f830b04544a81c42be3b9",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/missileAttackLayerAjaxPage.go",
+      "sha256": "29f2222308c7cbb4ebdb0acabde1d90e100c068d1ee6ee7bafbd096d0f24e5de",
+      "lines": 5,
+      "read_ranges": [
+        [
+          1,
+          5
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/movementPage.go",
+      "sha256": "d40d0a0d2ff1a19a209389224718bfb457758e0a88f9146f922d8d8ca2d2df55",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/overviewPage.go",
+      "sha256": "3eaed8e2de4752a64cea32222c3392494642b4f764ed5114b1897328cbd4665a",
+      "lines": 33,
+      "read_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/parser.go",
+      "sha256": "4698115f551ef5770dce06f65292f57e1c884d9adbd086be1058be34cc378d53",
+      "lines": 217,
+      "read_ranges": [
+        [
+          1,
+          217
+        ]
+      ],
+      "status": "read",
+      "role": "Generic typed page dispatch and lazy HTML document",
+      "behavior_notes": [
+        "ParsePage validates markers only for overview/intro, defenses, shipyard and fleetdispatch; other supported full-page types accept arbitrary bytes. Ajax constructors do not validate response shape. GetDoc falls back to empty HTML on parse error.",
+        "AutoParseFullPage recognizes only overview/intro, preferences, research and lfbonuses; fallback is FullPage. Defense marker special-cases the concrete v6 extractor. A typed page is not proof of complete or valid game data."
+      ],
+      "findings": [
+        {
+          "id": "GS11",
+          "severity": "medium",
+          "title": "Typed pages do not universally validate schema",
+          "detail": "Only a subset of full page constructors validates markers. Many adapters pass raw bytes/empty DOM to extractors; resource and level selectors often return zero or empty success on missing fields.",
+          "sources": [
+            {
+              "path": "ogame/pkg/parser/parser.go",
+              "lines": [
+                123,
+                217
+              ]
+            },
+            {
+              "path": "ogame/pkg/parser/fullPage.go",
+              "lines": [
+                1,
+                99
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v9/extracts.go",
+              "lines": [
+                361,
+                398
+              ]
+            }
+          ],
+          "documentation_implication": "Typed page construction and nil extraction error are not proof that expected schema/game state exists.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/parser_test.go",
+      "sha256": "a93c7b8e59568c736433a9aee1570f0964a4aa9d670b821b7be08aadfb09a4f4",
+      "lines": 34,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ],
+      "status": "read",
+      "role": "Offline parser fixture tests",
+      "behavior_notes": [
+        "Only local sample file reads; checks v6/v7 defenses detection, mismatched overview rejection, and lazy document creation. No init/TestMain or network clients."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/parser/phalanxAjaxPage.go",
+      "sha256": "78035da7a85ec24e8369eff8cc0fddcb3274f23c9a4a4e9fdccfdf9ac98c21eb",
+      "lines": 11,
+      "read_ranges": [
+        [
+          1,
+          11
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/preferencesPage.go",
+      "sha256": "1333c49923d341456c27961e856dd23368e1ef339255b0fb09c9df5514a57a02",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/researchPage.go",
+      "sha256": "8b31f1a561fe0b7f153d68cd41d2a8383b935c7ee34bdc16416fe613b723c32e",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/resourcesSettingsPage.go",
+      "sha256": "93d1d8e60150ecf44095cbfe569bbc8ae4e247989d175041ce2c44ce6d4439f3",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/rocketlayerAjaxPage.go",
+      "sha256": "2c19aec9fb8b81464abf2a93f9e03f15e4458b6c55280922d0fb2d0795d67fb6",
+      "lines": 5,
+      "read_ranges": [
+        [
+          1,
+          5
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/shipyardPage.go",
+      "sha256": "c5c8211e5d4dbf2d184496faff4af26557b3324cb1f814bc355e24e831a50ea0",
+      "lines": 11,
+      "read_ranges": [
+        [
+          1,
+          11
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/parser/suppliesPage.go",
+      "sha256": "876a12158454f9d7f3c4bfed83d27791e33f9eb53f04a781de46353a8d698b10",
+      "lines": 7,
+      "read_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "status": "read",
+      "role": "Typed page/extractor adapter",
+      "behavior_notes": [
+        "Delegates its named extraction to the configured version extractor; HTML methods share lazy Page.GetDoc and byte methods pass unchanged content."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/fetcher.go",
+      "sha256": "5a264e27f015dd7c3eae03a93e5010d91115838fb2535647003de2cd84704b25",
+      "lines": 137,
+      "read_ranges": [
+        [
+          1,
+          137
+        ]
+      ],
+      "status": "read",
+      "role": "Typed game page request mapping",
+      "behavior_notes": [
+        "Maps full pages to ingame/component, except fetchResources/fetchTechs/logout use page directly. getAjaxPage accepts a caller-provided URL value set and then constructs a parser; transport success does not imply schema validation."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/fleetBuilder.go",
+      "sha256": "f6282c4b90ff9048a4743e80a42fcc2cfea34d0d85ea3b87776ef4648938a033",
+      "lines": 322,
+      "read_ranges": [
+        [
+          1,
+          322
+        ]
+      ],
+      "status": "read",
+      "role": "Fluent fleet sending and estimate builder",
+      "behavior_notes": [
+        "Defaults transport/full speed; origin/destination setter conversion errors are discarded. All-resource sentinels allocate deuterium before crystal before metal; minimum deuterium reserves subtract estimated fuel+10. Several resource/ship lookup errors are ignored.",
+        "SendNow uses a supplied transaction or TxNamed and EnsureFleet; delayed recall is a goroutine sleeping then CancelFleet with ignored error. Callbacks run after outcome. Cargo may fetch caches via the wrapper if no explicit tx was stored."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/handlers.go",
+      "sha256": "d1ecfcf5eaf7cd96fca350f97797ed452251dffa05ade380e075fb3b39bb6519",
+      "lines": 1704,
+      "read_ranges": [
+        [
+          1,
+          1704
+        ]
+      ],
+      "status": "read",
+      "role": "Echo HTTP envelope, parameter validation and proxy adapters",
+      "behavior_notes": [
+        "APIResp uses exported Status/Code/Message/Result fields. Many read handlers discard wrapper errors and return ok with empty/zero data; CancelFleet embeds its error object in an ok Result, Logout ignores errors, and SetUserAgent returns HTTP200 with error Code400 deprecated.",
+        "SendFleet/CheckFleet/JumpGate split each ships value then index a[1] without length check; malformed valid-ID-only value can panic before any account action. Speed allows0..10; mission/type generally accept numeric values without domain validation. Food is not parsed.",
+        "CelestialAbandon interprets any later GetCelestial error as successful deletion, conflating lookup/network/parser failure with absence. SendIPM expects ipmAmount/type in route params rather than form. Teardown validates planetID twice instead of validating ogameID sign.",
+        "Static proxy buffers bodies/copies headers minus content encoding/length but returns200 independent of upstream. HEAD makes a new upstream request rather than reading cached headers; CAPTCHA GET handlers perform credential login, solve errors are only logged, and solve redirects307 regardless. No handlers invoked with real bots."
+      ],
+      "findings": [
+        {
+          "id": "GS06",
+          "severity": "high",
+          "title": "Malformed ship form fields can panic",
+          "detail": "SendFleet/CheckFleet/JumpGate split ships strings and index second element without length check after accepting a valid ship ID.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                924,
+                955
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                1049,
+                1085
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                1540,
+                1580
+              ]
+            }
+          ],
+          "documentation_implication": "Valid-ID-only ships values are unsafe malformed input, not reliably HTTP400; handler/network execution was not needed for this static finding.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS07",
+          "severity": "medium",
+          "title": "API status/envelope and payload ambiguities",
+          "detail": "CancelFleetHandler wraps error as SuccessResp Result; SetUserAgent returns HTTP200 with Code400 error envelope. PageContentHandler puts raw []byte into JSON Result, whose standard encoding is base64, not a plain HTML string.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                20,
+                36
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                68,
+                93
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                309,
+                315
+              ]
+            }
+          ],
+          "documentation_implication": "Reconcile daemon-api set-user-agent, cancel failure and page-content payload descriptions; inspect envelope and domain state as well as HTTP status.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS08",
+          "severity": "medium",
+          "title": "HEAD proxy is not a cached-header read",
+          "detail": "GetStaticHEADHandler delegates HeadersForPage, which issues an upstream HEAD. Empty response headers cause424; errors400. Static GET buffers upstream bytes and always emits200.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                1255,
+                1299
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                1329,
+                1350
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                1938,
+                1972
+              ]
+            }
+          ],
+          "documentation_implication": "Replace cached-header wording with upstream request semantics and avoid upstream status-preservation claims.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/interfaces.go",
+      "sha256": "dd13120a3947a036f9e66bfec2f38291fb459f2d602d7b7d774bdc93c1992dd4",
+      "lines": 256,
+      "read_ranges": [
+        [
+          1,
+          256
+        ]
+      ],
+      "status": "read",
+      "role": "Wrapper, Prioritizable and Celestial API contracts",
+      "behavior_notes": [
+        "Compile-time assertions bind OGame/Prioritize to Prioritizable and OGame to Wrapper. Prioritizable includes network reads, mutations, transactions and login; Wrapper adds cache/config/client/state access, not an account-isolation boundary."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/log.go",
+      "sha256": "6912b78892796a598ebc1cb9b7c9cf3d82022f197f3b5c1f934e83792a373a35",
+      "lines": 66,
+      "read_ranges": [
+        [
+          1,
+          66
+        ]
+      ],
+      "status": "read",
+      "role": "Wrapper logger and quiet switch",
+      "behavior_notes": [
+        "All trace/info/error/debug methods funnel through quiet-gated logger.Println with caller filename and line plus ANSI prefix; debug is not separately gated."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/moon.go",
+      "sha256": "6eb650744ea1273a0a4bd0931743c74d5b188773744aca8aff3aa33f2a2ea6b6",
+      "lines": 154,
+      "read_ranges": [
+        [
+          1,
+          154
+        ]
+      ],
+      "status": "read",
+      "role": "Moon-bound wrapper conveniences",
+      "behavior_notes": [
+        "Most methods forward ID to public serialized wrapper operations. BuildTechnology always errors cannot build technology on a moon; phalanx delegates the resource-consuming safe path. Lifeform methods still exist and forward to public wrapper."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/moon_test.go",
+      "sha256": "5b3a63136ba55383b5f1d64a89c8b126c381bbd1c3a4f587ee18829277342ff2",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "Pure moon ID conversion test",
+      "behavior_notes": [
+        "Checks MoonID.Celestial conversion only; no wrapper construction or I/O."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/wrapper/ogame.go",
+      "sha256": "17dd8c05ab46d6382c6eae8c545accb0f014f95cf834fcb18087a1d6d2ed5c0c",
+      "lines": 4763,
+      "read_ranges": [
+        [
+          1,
+          4763
+        ]
+      ],
+      "status": "read",
+      "role": "Wrapper core state, transport, retry, cache and account actions",
+      "behavior_notes": [
+        "Constructor requires Device, defaults context/logger/v12 UTC, enables bot and creates task runner even with AutoLogin false. New sets AutoLogin true; no constructor invoked in this review.",
+        "CacheFullPage overwrites tokens/class/planetID despite ignored extraction errors; caches research/lifeform/alliance without TTL. Cache misses can perform network I/O. preRequestChecks rejects manual logout/inactive/empty serverURL before retry.",
+        "pageContent constructs URL and alters payload before retry, retries up to10 callback failures with exponential backoff and cookie re-login on ErrNotLogged; postprocessing/cache/interceptor errors are outside retry. POSTs can be replayed without idempotency and preconstructed tokens are not generally refreshed. HTTP>=500 returns empty bytes with nil error; only some logout heuristics then make it retryable.",
+        "getTransport unconditionally assigns caller TLSConfig even when nil, overriding insecure intermediate constructors; nil restores normal verification for that proxy transport. Chat polling/websocket explicitly skip TLS verification and bypass configured device/proxy client. saveNotLoggedHTML trims existing files to20 before adding one, so21 can remain; diagnostics are written0644.",
+        "v13 paths are not exclusive in cancelFleet/getGalaxyPage: recall POST continues to legacy token/GET and new galaxy request is discarded before legacy request. getAttacks ignores JSON unmarshal error; discovery availability loops do not filter MissionType. getMessages ignores maxPage, page argument, fetch/unmarshal/extractor errors and asserts message strings, allowing silent empty success or panic.",
+        "sendFleet validates slots/body/vacation/own targets/availability/target response, clamps cargo deuterium-first, then sends and locates a newer matching fleet ID. ensure only checks requested counts before send; other payload counts remain requested. Success boolean is not checked independently of Errors, and post-send lookup failure is an ambiguous outcome, not proof no fleet launched.",
+        "Build caps ship/defense amount at99999 but no lower bound; several mutation responses treat anything other than explicit failure as success. Cancel building/research ignore token extraction errors; resource production ignores all fetch errors and returns nil. SetResourceSettings bypasses common context/retry/cache pipeline with PostForm.",
+        "Tail includes lifeform slot1..18 and tier1..3 validation, chapter GET mutations, cache/config getters, callback registration and raw OGame.SetInitiator returning nil/Done no-op. Thread-safe comment is broader than direct field/callback access guarantees; only planets and WS maps have explicit map locks here."
+      ],
+      "findings": [
+        {
+          "id": "GS01",
+          "severity": "high",
+          "title": "Mutation retries and ambiguous action outcomes",
+          "detail": "pageContent replays its callback for both GET and POST; payload alteration and URL construction happen before retry. Postprocessing is outside retry. A fleet action can succeed before subsequent lookup fails; a returned error is not proof that no action occurred.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                1024,
+                1085
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                1226,
+                1263
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                3422,
+                3675
+              ]
+            }
+          ],
+          "documentation_implication": "Describe up to10 callback attempts, not10 guaranteed HTTP retries or idempotency; reconcile state before repeating mutations.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS02",
+          "severity": "high",
+          "title": "HTTP5xx can be empty success",
+          "detail": "execRequest returns empty bytes and nil error for HTTP>=500. Only page-specific logout heuristics can turn that into retryable ErrNotLogged; generic Ajax/mutation paths can propagate empty success.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                943,
+                999
+              ]
+            }
+          ],
+          "documentation_implication": "Transport status, parser success and domain success are distinct; do not promise retry on every5xx.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS03",
+          "severity": "high",
+          "title": "Chat TLS bypass differs from proxy TLS handling",
+          "detail": "Chat polling and websocket skip certificate verification using their own clients. getTransport overwrites helper TLS config with caller config even nil, so proxy helper InsecureSkipVerify initializers alone do not prove actual insecure TLS on the final proxy transport.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                480,
+                545
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                565,
+                607
+              ]
+            }
+          ],
+          "documentation_implication": "Qualify TLS/proxy warnings by transport; chat does not use the configured device/proxy client.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS04",
+          "severity": "high",
+          "title": "v13 branches fall through to legacy requests",
+          "detail": "cancelFleet sends v13 recall POST then extracts legacy recall token and GETs. getGalaxyPage parses v13 fetchSolarSystemData into a local value that is discarded before legacy fetchGalaxyContent.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                1655,
+                1682
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                2711,
+                2757
+              ]
+            }
+          ],
+          "documentation_implication": "Document implementation branches, not exclusive version-specific protocol compatibility; live v13 interoperability is unverified.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS05",
+          "severity": "high",
+          "title": "Message helper ignores limits and failures",
+          "detail": "getMessages always asks page1, ignores maxPage/fetch/unmarshal/extractor errors, asserts each message as string, and returns nil error. Wrong JSON message element types panic; failed/missing content can appear empty.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                3750,
+                3767
+              ]
+            },
+            {
+              "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+              "lines": [
+                18,
+                135
+              ]
+            }
+          ],
+          "documentation_implication": "Do not describe full message pagination or a complete empty mailbox; modern summaries return page count1.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS08",
+          "severity": "medium",
+          "title": "HEAD proxy is not a cached-header read",
+          "detail": "GetStaticHEADHandler delegates HeadersForPage, which issues an upstream HEAD. Empty response headers cause424; errors400. Static GET buffers upstream bytes and always emits200.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                1255,
+                1299
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/handlers.go",
+              "lines": [
+                1329,
+                1350
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                1938,
+                1972
+              ]
+            }
+          ],
+          "documentation_implication": "Replace cached-header wording with upstream request semantics and avoid upstream status-preservation claims.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        },
+        {
+          "id": "GS09",
+          "severity": "medium",
+          "title": "Cache and transaction boundaries are narrower than thread-safe labels",
+          "detail": "Cached research/lifeform/alliance values can trigger requests on misses and have no TTL. Planet LF methods bypass prioritized public methods. Prioritize nesting requires balanced Done on same handle; raw OGame.Done is no-op and SetInitiator returns nil.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                423,
+                470
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                2808,
+                2855
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/planet.go",
+              "lines": [
+                156,
+                165
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/prioritize.go",
+              "lines": [
+                33,
+                75
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame_public_interface.go",
+              "lines": [
+                109,
+                116
+              ]
+            }
+          ],
+          "documentation_implication": "No blanket serialization, freshness, cancellation safety or pure cache-get guarantee. Task runner has zero active tests per parent; selected tests here are not concurrency validation.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/ogame_login.go",
+      "sha256": "836b142914573990a2e3899eb73952db35546c10d4c601a86bb8d236996c30f9",
+      "lines": 327,
+      "read_ranges": [
+        [
+          1,
+          327
+        ]
+      ],
+      "status": "read",
+      "role": "Login token/cookie fallback, extractor dispatch and chat startup",
+      "behavior_notes": [
+        "Existing cookie login prefers in-memory bearer/session then scans persistent jar cookies by name (not host); tries part1/2 and overview then falls back to login link or full credentials. loginPart2 sets logged-in/connected before serverData succeeds; cookie Save errors can fail login after part3.",
+        "getExtractorFor picks descending 12/11.15/11.13/11.9/11/10.4/10/9/8.7.4/8/7.1/7 thresholds; below7 returns nil, not v7. Invalid versions retain v12 fallback. Version sanitizer removes patch suffix; language yu becomes ba.",
+        "Part3 extracts session/time using the previous page extractor, installs version/location/language, refreshes preferences/cache, and starts/reconnects chat then intro bypass. Chat host/port regex indexes unchecked matches and can panic on missing markup."
+      ],
+      "findings": [
+        {
+          "id": "GS10",
+          "severity": "medium",
+          "title": "Login is stateful, fallible and version-selected",
+          "detail": "Cookie reuse searches persistent cookies by name. Part2 sets login state before serverData completes; part3 cache/chat setup precedes final completion. Version thresholds end at v7, below7 yields nil; invalid-version callers keep v12 fallback.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame_login.go",
+              "lines": [
+                48,
+                158
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame_login.go",
+              "lines": [
+                189,
+                318
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame_login.go",
+              "lines": [
+                320,
+                327
+              ]
+            }
+          ],
+          "documentation_implication": "Distinguish cookie reuse, credentials fallback, state transition and completed login; version selection is not compatibility certification.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/ogame_public_interface.go",
+      "sha256": "2d117695d5ce9982fb020d1ac36ad190732fa99cf9eea84f98406be565a5f9a9",
+      "lines": 976,
+      "read_ranges": [
+        [
+          1,
+          976
+        ]
+      ],
+      "status": "read",
+      "role": "Public wrapper routing and direct cache/config methods",
+      "behavior_notes": [
+        "Most game operations select Normal priority and delegate to Prioritize; cache getters/config/lifecycle/callback/public-IP/account methods often call directly. Cached research/lifeform/alliance getters go through prioritization and can fetch on misses.",
+        "Begin/BeginNamed return a Prioritizable requiring Done on that returned handle; OGame.Done itself is a no-op and OGame.SetInitiator returns nil. SetAllianceClass/Researches/LfBonuses and WS registration take OGame mutex; most plain getters and credential/proxy setters do not."
+      ],
+      "findings": [
+        {
+          "id": "GS09",
+          "severity": "medium",
+          "title": "Cache and transaction boundaries are narrower than thread-safe labels",
+          "detail": "Cached research/lifeform/alliance values can trigger requests on misses and have no TTL. Planet LF methods bypass prioritized public methods. Prioritize nesting requires balanced Done on same handle; raw OGame.Done is no-op and SetInitiator returns nil.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                423,
+                470
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                2808,
+                2855
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/planet.go",
+              "lines": [
+                156,
+                165
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/prioritize.go",
+              "lines": [
+                33,
+                75
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame_public_interface.go",
+              "lines": [
+                109,
+                116
+              ]
+            }
+          ],
+          "documentation_implication": "No blanket serialization, freshness, cancellation safety or pure cache-get guarantee. Task runner has zero active tests per parent; selected tests here are not concurrency validation.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/ogame_test.go",
+      "sha256": "5e6a7c6c074f79cae10b3694234c336f596af87040e8dd55ac19271b2d703dbf",
+      "lines": 350,
+      "read_ranges": [
+        [
+          1,
+          350
+        ]
+      ],
+      "status": "read",
+      "role": "Wrapper offline calculations, sample parsing and constructor tests",
+      "behavior_notes": [
+        "Contains pure distance/energy/flight/fuel/version/attack-type tests and fixture cargo parsing. Some flight fuel assertions explicitly differ by one from game comments; one TestExtractFleetsFromEventList is an empty commented-out test.",
+        "TestWrapper and cached-celestial tests call NewNoLogin with an empty device and start constructor background machinery; exclude these from a strictly pure test run. No init or TestMain appears."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/wrapper/planet.go",
+      "sha256": "4cb840aa46848e1012877c504d83c882bd643ac100243b9c4faa667e47fb7ec3",
+      "lines": 169,
+      "read_ranges": [
+        [
+          1,
+          169
+        ]
+      ],
+      "status": "read",
+      "role": "Planet-bound wrapper conveniences",
+      "behavior_notes": [
+        "Most methods forward ID to public operations; SendIPM unusually accepts a caller planetID rather than using receiver. GetLfBuildings/GetLfResearch call private unprioritized methods directly unlike Moon equivalents, so blanket serialization claims need qualification."
+      ],
+      "findings": [
+        {
+          "id": "GS09",
+          "severity": "medium",
+          "title": "Cache and transaction boundaries are narrower than thread-safe labels",
+          "detail": "Cached research/lifeform/alliance values can trigger requests on misses and have no TTL. Planet LF methods bypass prioritized public methods. Prioritize nesting requires balanced Done on same handle; raw OGame.Done is no-op and SetInitiator returns nil.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                423,
+                470
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                2808,
+                2855
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/planet.go",
+              "lines": [
+                156,
+                165
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/prioritize.go",
+              "lines": [
+                33,
+                75
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame_public_interface.go",
+              "lines": [
+                109,
+                116
+              ]
+            }
+          ],
+          "documentation_implication": "No blanket serialization, freshness, cancellation safety or pure cache-get guarantee. Task runner has zero active tests per parent; selected tests here are not concurrency validation.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/planet_test.go",
+      "sha256": "844a31a0c93b07309c180b0eddcff3859d78bf2a3c2764be03360c6cd62f081e",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "Pure planet/model helper tests",
+      "behavior_notes": [
+        "Checks available fields, mean temperature and formatted Planet.String without clients."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/wrapper/prioritize.go",
+      "sha256": "f7a7a48926c9b15aa1edeea1bdd17ddd67fc26a6c95e3fd54d9327cf637e776c",
+      "lines": 928,
+      "read_ranges": [
+        [
+          1,
+          928
+        ]
+      ],
+      "status": "read",
+      "role": "Serialized action handle and nested transaction counter",
+      "behavior_notes": [
+        "Each public operation calls begin/defer done then private bot operation; atomic nesting counter acquires bot mutex only at depth1 and closes task done channel at depth0. Begin/Done must balance on the same handle; reuse/double Done is not guarded.",
+        "FlightTime always calls checkTarget when checkTarget=true even when ignore-empty/inactive flags are false; FastFlightTime skips that call, but both can fetch missing research/lifeform/alliance caches. Several task labels are reused (e.g. chapter claims labeled GetChapter); no network operations executed."
+      ],
+      "findings": [
+        {
+          "id": "GS09",
+          "severity": "medium",
+          "title": "Cache and transaction boundaries are narrower than thread-safe labels",
+          "detail": "Cached research/lifeform/alliance values can trigger requests on misses and have no TTL. Planet LF methods bypass prioritized public methods. Prioritize nesting requires balanced Done on same handle; raw OGame.Done is no-op and SetInitiator returns nil.",
+          "sources": [
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                423,
+                470
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame.go",
+              "lines": [
+                2808,
+                2855
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/planet.go",
+              "lines": [
+                156,
+                165
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/prioritize.go",
+              "lines": [
+                33,
+                75
+              ]
+            },
+            {
+              "path": "ogame/pkg/wrapper/ogame_public_interface.go",
+              "lines": [
+                109,
+                116
+              ]
+            }
+          ],
+          "documentation_implication": "No blanket serialization, freshness, cancellation safety or pure cache-get guarantee. Task runner has zero active tests per parent; selected tests here are not concurrency validation.",
+          "verification": "Static complete-source review unless test record explicitly says executed."
+        }
+      ],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/shipsInfos.go",
+      "sha256": "1a9918d5b876dbd734828d4e5e7aa7e3d852b76af5eab35880f20ff4c37eda61",
+      "lines": 56,
+      "read_ranges": [
+        [
+          1,
+          56
+        ]
+      ],
+      "status": "read",
+      "role": "Wrapper-aware ship calculations",
+      "behavior_notes": [
+        "Basic methods delegate to ogame.ShipsInfos. GetCargo and Speed acquire Begin/Done and fetch cached research/lifeform/alliance; lifeform/alliance errors are ignored, so zero/default bonuses can influence estimates."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/utils.go",
+      "sha256": "421f2a2d1bbb925f8675d9378ff5692d282b4b371910b8a74470fea3824fc9ba",
+      "lines": 71,
+      "read_ranges": [
+        [
+          1,
+          71
+        ]
+      ],
+      "status": "read",
+      "role": "Coordinate/celestial conversion and mission speed selection",
+      "behavior_notes": [
+        "Attack/group attack/destroy/IPM/recycle/spy use war speed; everything else uses peaceful. Typed celestial IDs resolve through wrapper cache; unsupported types return errors, and planet/moon converters replace underlying lookup errors with generic not-found."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    },
+    {
+      "path": "ogame/pkg/wrapper/utils_test.go",
+      "sha256": "9ed3b60332f3410cf4cd54ad1bede1f82cdd8908ad5d23c26a865e50c004b979",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "Pure coordinate conversion tests",
+      "behavior_notes": [
+        "Converts string, Coordinate and HasCoordinate values with nil wrapper. Does not exercise typed IDs, which need cached celestial access."
+      ],
+      "findings": [],
+      "test_safety": "Offline fixture/pure test source read completely; no init/TestMain or live-account calls. Execution and exclusions are recorded at ledger.tests."
+    },
+    {
+      "path": "ogame/pkg/wrapper/wrapper.go",
+      "sha256": "5562099a10bebf2a562ae10fb5fed61fa67a5bee7e928ca5b8e42aa8f4e6b54d",
+      "lines": 65,
+      "read_ranges": [
+        [
+          1,
+          65
+        ]
+      ],
+      "status": "read",
+      "role": "Per-request wrapper options",
+      "behavior_notes": [
+        "Options allow bypassing interceptor, retry or full-page cache, adding cp, debugging galaxy payloads and delaying page load. Into* aliases are any, so validation happens at runtime."
+      ],
+      "findings": [],
+      "test_safety": "Static source review; no wrapper constructor/login, real HTTP client or account action invoked. Only explicit offline test commands in ledger.tests were executed."
+    }
+  ],
+  "tests": [
+    {
+      "command": "GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off /home/kelsier/Projects/TBot/documentation-work/toolchains/go/bin/go test -json -count=1 -timeout=90s ./pkg/parser ./pkg/extractor/...",
+      "cwd": "/home/kelsier/Projects/TBot/source/ogame",
+      "exit_code": 1,
+      "log": "/home/kelsier/Projects/TBot/documentation-work/resume-audit/surface-tests-local.log",
+      "test_results": {
+        "pass": 314,
+        "fail": 1,
+        "skip": 0
+      },
+      "packages": [
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor",
+          "Action": "skip"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v10",
+          "Action": "skip"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v104",
+          "Action": "skip"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/parser",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v874",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v8",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_9_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_15_0",
+          "Action": "fail"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_13_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v12_0_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v9",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v7",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v71",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v6",
+          "Action": "pass"
+        }
+      ],
+      "failures": [
+        {
+          "Time": "2026-10-26T20:39:39.903263554-05:00",
+          "Action": "fail",
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_15_0",
+          "Test": "TestExtractEspionageReport",
+          "Elapsed": 0
+        }
+      ],
+      "top_level_results": {
+        "pass": 314,
+        "fail": 1,
+        "skip": 0
+      }
+    },
+    {
+      "command": "TZ=America/Los_Angeles GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off /home/kelsier/Projects/TBot/documentation-work/toolchains/go/bin/go test -json -count=1 -timeout=90s ./pkg/parser ./pkg/extractor/...",
+      "cwd": "/home/kelsier/Projects/TBot/source/ogame",
+      "exit_code": 0,
+      "log": "/home/kelsier/Projects/TBot/documentation-work/resume-audit/surface-tests-pacific.log",
+      "test_results": {
+        "pass": 315,
+        "fail": 0,
+        "skip": 0
+      },
+      "packages": [
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor",
+          "Action": "skip"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v10",
+          "Action": "skip"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v104",
+          "Action": "skip"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/parser",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v8",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v874",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_9_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_13_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v11_15_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v12_0_0",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v9",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v7",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v71",
+          "Action": "pass"
+        },
+        {
+          "Package": "github.com/alaingilbert/ogame/pkg/extractor/v6",
+          "Action": "pass"
+        }
+      ],
+      "failures": [],
+      "top_level_results": {
+        "pass": 315,
+        "fail": 0,
+        "skip": 0
+      }
+    },
+    {
+      "command": "GOTOOLCHAIN=local GOPROXY=off GOSUMDB=off /home/kelsier/Projects/TBot/documentation-work/toolchains/go/bin/go test -json -count=1 -timeout=90s ./pkg/wrapper -run '^Test(MoonID_Celestial|Fields_HasFieldAvailable|Temperature_Mean|Planet_String|ConvertIntoCoordinate|ProductionRatio|EnergyNeeded|EnergyProduced|ExtractCargoCapacity|GalaxyDistance|FlightSystemDistance|SystemDistance|PlanetDistance|Distance|CalcFlightTime|FixAttackEvents|Version|SanitizeServerVersion)$'",
+      "cwd": "/home/kelsier/Projects/TBot/source/ogame",
+      "exit_code": 0,
+      "log": "/home/kelsier/Projects/TBot/documentation-work/resume-audit/surface-wrapper-pure.log",
+      "test_results": {
+        "pass": 18,
+        "fail": 0,
+        "skip": 0
+      },
+      "failures": [],
+      "top_level_results": {
+        "pass": 18,
+        "fail": 0,
+        "skip": 0
+      }
+    }
+  ],
+  "coverage": {
+    "assigned_files": 80,
+    "read_files": 80,
+    "assigned_lines": 25374,
+    "read_lines": 25374,
+    "strict_source_review_complete": true,
+    "missing_paths": []
+  },
+  "findings": [
+    {
+      "id": "GS01",
+      "severity": "high",
+      "title": "Mutation retries and ambiguous action outcomes",
+      "detail": "pageContent replays its callback for both GET and POST; payload alteration and URL construction happen before retry. Postprocessing is outside retry. A fleet action can succeed before subsequent lookup fails; a returned error is not proof that no action occurred.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            1024,
+            1085
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            1226,
+            1263
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            3422,
+            3675
+          ]
+        }
+      ],
+      "documentation_implication": "Describe up to10 callback attempts, not10 guaranteed HTTP retries or idempotency; reconcile state before repeating mutations.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS02",
+      "severity": "high",
+      "title": "HTTP5xx can be empty success",
+      "detail": "execRequest returns empty bytes and nil error for HTTP>=500. Only page-specific logout heuristics can turn that into retryable ErrNotLogged; generic Ajax/mutation paths can propagate empty success.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            943,
+            999
+          ]
+        }
+      ],
+      "documentation_implication": "Transport status, parser success and domain success are distinct; do not promise retry on every5xx.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS03",
+      "severity": "high",
+      "title": "Chat TLS bypass differs from proxy TLS handling",
+      "detail": "Chat polling and websocket skip certificate verification using their own clients. getTransport overwrites helper TLS config with caller config even nil, so proxy helper InsecureSkipVerify initializers alone do not prove actual insecure TLS on the final proxy transport.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            480,
+            545
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            565,
+            607
+          ]
+        }
+      ],
+      "documentation_implication": "Qualify TLS/proxy warnings by transport; chat does not use the configured device/proxy client.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS04",
+      "severity": "high",
+      "title": "v13 branches fall through to legacy requests",
+      "detail": "cancelFleet sends v13 recall POST then extracts legacy recall token and GETs. getGalaxyPage parses v13 fetchSolarSystemData into a local value that is discarded before legacy fetchGalaxyContent.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            1655,
+            1682
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            2711,
+            2757
+          ]
+        }
+      ],
+      "documentation_implication": "Document implementation branches, not exclusive version-specific protocol compatibility; live v13 interoperability is unverified.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS05",
+      "severity": "high",
+      "title": "Message helper ignores limits and failures",
+      "detail": "getMessages always asks page1, ignores maxPage/fetch/unmarshal/extractor errors, asserts each message as string, and returns nil error. Wrong JSON message element types panic; failed/missing content can appear empty.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            3750,
+            3767
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+          "lines": [
+            18,
+            135
+          ]
+        }
+      ],
+      "documentation_implication": "Do not describe full message pagination or a complete empty mailbox; modern summaries return page count1.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS06",
+      "severity": "high",
+      "title": "Malformed ship form fields can panic",
+      "detail": "SendFleet/CheckFleet/JumpGate split ships strings and index second element without length check after accepting a valid ship ID.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            924,
+            955
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            1049,
+            1085
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            1540,
+            1580
+          ]
+        }
+      ],
+      "documentation_implication": "Valid-ID-only ships values are unsafe malformed input, not reliably HTTP400; handler/network execution was not needed for this static finding.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS07",
+      "severity": "medium",
+      "title": "API status/envelope and payload ambiguities",
+      "detail": "CancelFleetHandler wraps error as SuccessResp Result; SetUserAgent returns HTTP200 with Code400 error envelope. PageContentHandler puts raw []byte into JSON Result, whose standard encoding is base64, not a plain HTML string.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            20,
+            36
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            68,
+            93
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            309,
+            315
+          ]
+        }
+      ],
+      "documentation_implication": "Reconcile daemon-api set-user-agent, cancel failure and page-content payload descriptions; inspect envelope and domain state as well as HTTP status.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS08",
+      "severity": "medium",
+      "title": "HEAD proxy is not a cached-header read",
+      "detail": "GetStaticHEADHandler delegates HeadersForPage, which issues an upstream HEAD. Empty response headers cause424; errors400. Static GET buffers upstream bytes and always emits200.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            1255,
+            1299
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/handlers.go",
+          "lines": [
+            1329,
+            1350
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            1938,
+            1972
+          ]
+        }
+      ],
+      "documentation_implication": "Replace cached-header wording with upstream request semantics and avoid upstream status-preservation claims.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS09",
+      "severity": "medium",
+      "title": "Cache and transaction boundaries are narrower than thread-safe labels",
+      "detail": "Cached research/lifeform/alliance values can trigger requests on misses and have no TTL. Planet LF methods bypass prioritized public methods. Prioritize nesting requires balanced Done on same handle; raw OGame.Done is no-op and SetInitiator returns nil.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            423,
+            470
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame.go",
+          "lines": [
+            2808,
+            2855
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/planet.go",
+          "lines": [
+            156,
+            165
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/prioritize.go",
+          "lines": [
+            33,
+            75
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame_public_interface.go",
+          "lines": [
+            109,
+            116
+          ]
+        }
+      ],
+      "documentation_implication": "No blanket serialization, freshness, cancellation safety or pure cache-get guarantee. Task runner has zero active tests per parent; selected tests here are not concurrency validation.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS10",
+      "severity": "medium",
+      "title": "Login is stateful, fallible and version-selected",
+      "detail": "Cookie reuse searches persistent cookies by name. Part2 sets login state before serverData completes; part3 cache/chat setup precedes final completion. Version thresholds end at v7, below7 yields nil; invalid-version callers keep v12 fallback.",
+      "sources": [
+        {
+          "path": "ogame/pkg/wrapper/ogame_login.go",
+          "lines": [
+            48,
+            158
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame_login.go",
+          "lines": [
+            189,
+            318
+          ]
+        },
+        {
+          "path": "ogame/pkg/wrapper/ogame_login.go",
+          "lines": [
+            320,
+            327
+          ]
+        }
+      ],
+      "documentation_implication": "Distinguish cookie reuse, credentials fallback, state transition and completed login; version selection is not compatibility certification.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS11",
+      "severity": "medium",
+      "title": "Typed pages do not universally validate schema",
+      "detail": "Only a subset of full page constructors validates markers. Many adapters pass raw bytes/empty DOM to extractors; resource and level selectors often return zero or empty success on missing fields.",
+      "sources": [
+        {
+          "path": "ogame/pkg/parser/parser.go",
+          "lines": [
+            123,
+            217
+          ]
+        },
+        {
+          "path": "ogame/pkg/parser/fullPage.go",
+          "lines": [
+            1,
+            99
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v9/extracts.go",
+          "lines": [
+            361,
+            398
+          ]
+        }
+      ],
+      "documentation_implication": "Typed page construction and nil extraction error are not proof that expected schema/game state exists.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS12",
+      "severity": "medium",
+      "title": "Embedding is not virtual method dispatch",
+      "detail": "v6 byte ExtractPreferences calls v6 doc receiver; v11 overrides only doc method. Similar inherited byte adapters keep ancestor implementation unless redefined. v6 interface satisfaction includes explicit panic stubs.",
+      "sources": [
+        {
+          "path": "ogame/pkg/extractor/v6/extractor.go",
+          "lines": [
+            432,
+            437
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v6/extractor.go",
+          "lines": [
+            682,
+            685
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11/extractor.go",
+          "lines": [
+            50,
+            53
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v6/extractor.go",
+          "lines": [
+            980,
+            1116
+          ]
+        }
+      ],
+      "documentation_implication": "Describe per-method byte/doc overrides, not all versions magically inheriting latest schema behavior; unsupported newer methods may panic.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS13",
+      "severity": "medium",
+      "title": "Tech JSON misassigns PlasmaTerraformer",
+      "detail": "v7.1 tech JSON maps PlasmaTerraformer to Num11112 (the PlanetaryShield building field) rather than a11212 research field.",
+      "sources": [
+        {
+          "path": "ogame/pkg/extractor/v71/extracts.go",
+          "lines": [
+            294,
+            294
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v71/extracts.go",
+          "lines": [
+            500,
+            500
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v71/extracts.go",
+          "lines": [
+            551,
+            551
+          ]
+        }
+      ],
+      "documentation_implication": "Do not assert every lifeform numeric-ID mapping is correct; later HTML LF research parser separately uses11212.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS14",
+      "severity": "high",
+      "title": "Malformed extractor schemas can panic or silently zero",
+      "detail": "Unchecked construction ID/level regexes, relocation type assertions, P16 first-planet indexing, fixed LF slot indexing and percent regex indexing have no malformed-input guard. String galaxy numeric conversion ignores ParseFloat errors.",
+      "sources": [
+        {
+          "path": "ogame/pkg/extractor/v9/extracts.go",
+          "lines": [
+            20,
+            44
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v9/extracts.go",
+          "lines": [
+            863,
+            876
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v10/extracts.go",
+          "lines": [
+            99,
+            111
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v10/extracts.go",
+          "lines": [
+            208,
+            241
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11_13_0/extracts.go",
+          "lines": [
+            29,
+            37
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+          "lines": [
+            123,
+            129
+          ]
+        }
+      ],
+      "documentation_implication": "Document schema brittleness and silent fallback separately from explicit error paths; fixture success does not establish hostile-input resilience.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS15",
+      "severity": "medium",
+      "title": "Modern nested message JSON errors are swallowed",
+      "detail": "Spy detail accepts nonzero ID then ignores nested buildings/research/fleet/defense JSON errors despite HasInformation flags, and expedition/combat parse errors also become defaults. Missing phalanx refresh token is empty string nil.",
+      "sources": [
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+          "lines": [
+            138,
+            390
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+          "lines": [
+            393,
+            456
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+          "lines": [
+            595,
+            601
+          ]
+        }
+      ],
+      "documentation_implication": "Unknown/missing/invalid fields are not always distinguishable from numeric zero or absent units.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    },
+    {
+      "id": "GS16",
+      "severity": "medium",
+      "title": "Timezone-sensitive fixture fails in host timezone",
+      "detail": "TestExtractEspionageReport v11.15 expects14:20:42 in time.Local. On host CDT actual is16:20:42; TZ=America/Los_Angeles makes the full reviewed parser/extractor suite pass. This is environment dependence, not a source fix.",
+      "sources": [
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extractor_test.go",
+          "lines": [
+            13,
+            19
+          ]
+        },
+        {
+          "path": "ogame/pkg/extractor/v11_15_0/extracts.go",
+          "lines": [
+            158,
+            160
+          ]
+        }
+      ],
+      "documentation_implication": "Publish both failed native-zone run and passing explicit-Pacific run; never report unqualified full-suite success.",
+      "verification": "Static complete-source review unless test record explicitly says executed."
+    }
+  ],
+  "scope_notes": [
+    "All80 assigned source/test files were read completely in bounded numbered chunks; hashes and symbol searches only validated/located evidence and did not substitute for semantic reading.",
+    "25374 lines include wrapper/ogame.go4763, v6/extracts.go2523 and v6/extractor_test.go2548. Raw samples outside the80-path assignment were consumed by offline tests, not separately claimed as complete manual fixture-file review.",
+    "No production/runtime/test-source edits, shared inventory/doc reconciliation, commits, service starts, dependency installs or live login/game/network actions. No local model or additional worker used.",
+    "Parent integration audit separately owns daemon command/buildqueue/CLI/concurrency integration findings and11 in-memory characterizations; these are not claimed as this worker test results.",
+    "Current root HEAD moved during concurrent documentation work; baseline remains35b4ce08b57bf2900d5b3d3b449a3f26f168270b and pinned ogame submodule matchesfbd0fda6ba9019c128926614f9865ba38a67b627. All80 assigned exact hashes/line counts match.",
+    "No complete daemon build, live protocol compatibility, race/concurrency correctness, hostile-input fuzzing, login/token renewal or action idempotency has been certified."
+  ],
+  "documentation_reconciliation": [
+    {
+      "document": "docs/daemon-api.md",
+      "subject": "set-user-agent",
+      "observed": "HTTP200, Status error/Code400 deprecated; not HTTP400.",
+      "finding": "GS07"
+    },
+    {
+      "document": "docs/daemon-api.md",
+      "subject": "page-content payload",
+      "observed": "Raw []byte in SuccessResp Result encodes as base64 JSON string; not plain HTML string.",
+      "finding": "GS07"
+    },
+    {
+      "document": "docs/daemon-api.md",
+      "subject": "cancel-fleet failure",
+      "observed": "error object is Result in HTTP200 ok envelope; success Result nil does not explain failure handling.",
+      "finding": "GS07"
+    },
+    {
+      "document": "docs/daemon-api.md",
+      "subject": "check-fleet purity",
+      "observed": "No fleet send, but builder/cache lookups can fetch network state; not universally pure computation.",
+      "finding": "GS09"
+    },
+    {
+      "document": "docs/daemon-api.md",
+      "subject": "static HEAD",
+      "observed": "Fresh upstream HEAD request;424 indicates empty returned headers, not missing cached headers.",
+      "finding": "GS08"
+    },
+    {
+      "document": "docs/daemon.md",
+      "subject": "transport TLS and retry",
+      "observed": "Final proxy TLS config overrides insecure helper initializer, whereas chat independently skips verification. Retries do not make mutations idempotent or every5xx retryable.",
+      "finding": "GS01/GS02/GS03"
+    },
+    {
+      "document": "docs/daemon.md",
+      "subject": "version and cache",
+      "observed": "Highest extractor is v12; v13 action branches can fall through. Cache misses may fetch; inherited byte adapters may bypass later doc overrides.",
+      "finding": "GS04/GS09/GS12"
+    }
+  ],
+  "verification": {
+    "coverage_verified": true,
+    "validation": "Compared80 unique assigned paths, exact sha256, splitlines count and read_ranges=[[1,lines]], nonempty role/behavior_notes; no missing or extra files.",
+    "go_version": "go1.27.2 linux/amd64",
+    "observed_root_head": "c82835e8ade1493062ed792817842d9402c7ac43",
+    "live_interoperability_verified": false,
+    "complete_daemon_build_verified": false,
+    "unqualified_suite_pass": false
+  }
+}

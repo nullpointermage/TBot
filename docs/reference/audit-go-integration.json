@@ -1,0 +1,410 @@
+{
+  "baseline": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+  "submodule": "fbd0fda6ba9019c128926614f9865ba38a67b627",
+  "entries": [
+    {
+      "path": "ogame/cmd/c/main.go",
+      "sha256": "5a39ed0ac2cab73edccff3ebc4bd3c8a0b63f5dd7c67fe16e8de73b15d797c34",
+      "lines": 425,
+      "read_ranges": [
+        [
+          1,
+          425
+        ]
+      ],
+      "status": "read",
+      "role": "Optional C export bridge, not the HTTP daemon",
+      "behavior_notes": [
+        "A process-global wrapper pointer backs cgo exports; initialization overwrites it without a multi-account/session boundary. Exports allocate C strings, narrow values to C.int, and expose only the older ship subset.",
+        "GetFleets/GetAttacks/GalaxyInfos are empty TODO functions; espionage export is commented out. Several getters discard errors; planet getters continue dereferencing p after an error. No bridge entrypoint was executed."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/cli/main.go",
+      "sha256": "cecb5b9630ffc20e8d9cd95b5746f43be2e17e2b7631bba764531926842844ec",
+      "lines": 90,
+      "read_ranges": [
+        [
+          1,
+          90
+        ]
+      ],
+      "status": "read",
+      "role": "Interactive library demonstration",
+      "behavior_notes": [
+        "Reads UNIVERSE/USERNAME/PASSWORD/LANGUAGE, constructs wrapper.New, and registers Planet/Planets/Player/IsUnderAttack/GetResources ishell commands. It is not TBot WebUI or ogamed.",
+        "Planet and GetResources ignore fetch errors and index planets[0], so empty results can panic. Not launched because construction can log in."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/ogamed-tbot/LfBonuses.go",
+      "sha256": "6b65bf16b17e3080abd88f0304655db85f498a312dcf6615e4582a612f6382a6",
+      "lines": 42,
+      "read_ranges": [
+        [
+          1,
+          42
+        ]
+      ],
+      "status": "read",
+      "role": "Fork-local legacy lifeform bonus declarations",
+      "behavior_notes": [
+        "Declares a separate LfBonuses aggregate with initialized ship/cost-time maps, empty embedded LfResourceBonuses and a planet research cost/time field.",
+        "The active parser in extracts.go returns pkg/ogame.LfBonuses instead; this local type declaration is not evidence that all lifeform/resource categories are extracted."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/ogamed-tbot/extracts.go",
+      "sha256": "7ea28079643bae45e33facd6804a2b165eb2a7176b5da751c1de4a9d55146952",
+      "lines": 126,
+      "read_ranges": [
+        [
+          1,
+          126
+        ]
+      ],
+      "status": "read",
+      "role": "Fork-specific HTML lifeform bonus parser",
+      "behavior_notes": [
+        "Only categoryShips and categoryCostAndTime custom elements are handled. Ship fields are positional text children; cost/time fields are indices0/1. Unknown ship IDs are skipped.",
+        "Numeric text is trimmed, its first comma replaced with a period, parse errors ignored, and values rounded to thousandths before division by100. Missing selectors quietly yield empty/zero bonuses rather than an explicit completeness error."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/ogamed-tbot/handlers.go",
+      "sha256": "26b351fc2542512379151f90b074e903cb454fd95b43b2e1cf103e9c6214e845",
+      "lines": 435,
+      "read_ranges": [
+        [
+          1,
+          435
+        ]
+      ],
+      "status": "read",
+      "role": "Fork HTTP handlers and browser manual mode",
+      "behavior_notes": [
+        "Manual mode stores one tx and timer in shared maps, creates its timer before acquiring BeginNamed, and resets it on browser page requests. Stopping a timer does not cancel the goroutine waiting on its channel. Maps have no local synchronization.",
+        "Browser page handlers discard fetch/form errors and respond HTML200; static proxy buffers bodies, handles gzip via the client but advertises deflate/br too, and returns200 rather than upstream status. XML rewriting uses request Host/TLS.",
+        "GetAvailableDiscoveries calls bot.GetAvailableDiscoveries once before validating planetID and again with selected options; the first result/error is discarded. System discovery parses optional position but passes only galaxy/system."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/ogamed-tbot/main.go",
+      "sha256": "e333f69080a5795578e7d9b2c62ecf5964a334150fe5ec4e347d73a655f6b114",
+      "lines": 545,
+      "read_ranges": [
+        [
+          1,
+          545
+        ]
+      ],
+      "status": "read",
+      "role": "TBot daemon startup, flags and route registration",
+      "behavior_notes": [
+        "Creates a single bot and Echo context maps, optional Basic auth only when both values are set, default CORS, loopback host flag and auto-login true. C# overrides several defaults, including host.",
+        "Exact source blockers are missing buildqueue import and a hardcoded Windows template filename before serving. TLS flag is declared StringFlag but read with Bool; key/certificate environment suffixes are swapped and device height environment name is OGAMED_DEVICHEIGHT.",
+        "AddNewAccount is an unregistered helper; no matching server leaves serverID zero. Routes include dangerous state-changing GETs, not a read-only GET contract. Startup was not invoked."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/ogamed-tbot/tbot-solver.go",
+      "sha256": "b5dd504c83b9ff5ddba2d0aea4eb98f9cb40ae6436cd52f242fbbb08d3be4ef2",
+      "lines": 69,
+      "read_ranges": [
+        [
+          1,
+          69
+        ]
+      ],
+      "status": "read",
+      "role": "Fork hosted CAPTCHA solver adapter",
+      "behavior_notes": [
+        "Posts question/icons multipart to solver.obot.de with OBOT_API_KEY using http.DefaultClient and caller context; non200 response bodies become error text.",
+        "JSON answer is returned without checking its presence or the0..3 domain. No client-specific timeout is installed here. This external service was not contacted."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/cmd/ogamed/main.go",
+      "sha256": "d79b7f6a302d9020b3930a3238474c02daaf791c8f94f8200f62261629339190",
+      "lines": 388,
+      "read_ranges": [
+        [
+          1,
+          388
+        ]
+      ],
+      "status": "read",
+      "role": "Stock alternative daemon startup",
+      "behavior_notes": [
+        "Stock entrypoint has distinct route/flag/device choices and references missing defenderFlags/wireDefender, so it is not a working drop-in daemon at this pin.",
+        "Fixed Windows/Chrome/Los_Angeles fingerprint settings differ from the TBot fork. Optional auth still needs both fields and TLS env names retain swapped suffixes. No stock daemon was started."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/ogame.go",
+      "sha256": "cecc1615f5268174e7b6683117290c997fe2daa5e9efe26538be6a4a578083e6",
+      "lines": 1,
+      "read_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "status": "read",
+      "role": "Module-root package declaration",
+      "behavior_notes": [
+        "Contains only package ogame. It is not a daemon entrypoint or implementation of the game models, which live under pkg/ogame."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/device/device.go",
+      "sha256": "23ea90405681ae73459188519b045a6251d3307ac1cde8298aa4cfd111d90f4c",
+      "lines": 1684,
+      "read_ranges": [
+        [
+          1,
+          1684
+        ]
+      ],
+      "status": "read",
+      "role": "Persistent virtual browser fingerprint and cookie client",
+      "behavior_notes": [
+        "Build always creates ~/.ogame/storage/<name> before loading its persistor; successful existing loads override new fingerprint settings/UA, while any load error triggers new fingerprint creation. File fingerprint is a positional JSON array, saved0644 within directories created0755.",
+        "GetBlackbox performs a real game1.js request, updates date/elapsed timing, rotates XVec, saves, then obfuscates the serialized array; it is not a pure formatter. WithClient swaps a shared client without local locking.",
+        "ParseBlackbox and version parsers index arrays without checking length; empty/short arrays panic. Empty EncryptBlackbox/DecryptBlackbox panic, and V8 marshaling does not match V8 parsing. Offline harness reproduces these cases without disk or network.",
+        "Random defaults are incomplete for selectable OS/browser combinations: memory auto-population exists only for Android, concurrency/color/screen omit Linux, and vendor auto-population is mainly Chrome or iOS Safari. Available CLI choices are not guarantees that fresh fingerprints can be built for every combination."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/device/device_test.go",
+      "sha256": "28e01f8ba54c7b3435b8cf012fdccee4cc359f330250b1945f4d5845d55e83af",
+      "lines": 53,
+      "read_ranges": [
+        [
+          1,
+          53
+        ]
+      ],
+      "status": "read",
+      "role": "Pure blackbox fixture regression",
+      "behavior_notes": [
+        "One active Test_DecryptBlackbox checks an embedded legacy V8 string, roundtrip through encrypt/decrypt and short known encodings. It does not Build a device or call GetBlackbox.",
+        "Executed offline successfully; the existing test exercises obfuscation, not V8 struct marshaling/parsing or login acceptance."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/exponentialBackoff/exponentialBackoff.go",
+      "sha256": "6b97f869523e6aaf6a7de70e1515b8bd26caa4e65659208b2fcc836f3c364909",
+      "lines": 76,
+      "read_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "status": "read",
+      "role": "Context-aware whole-second exponential wait helper",
+      "behavior_notes": [
+        "Wait starts1second then doubles and optionally caps positive max; Reset stores0. Nonpositive max means no cap. Atomic load/store does not make the combined progression a CAS operation.",
+        "LoopForever invokes its callback before checking cancellation after Wait. Iterator is a callback adapter; no fixed retry budget is imposed here."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/exponentialBackoff/exponentialBackoff_test.go",
+      "sha256": "71cc716a8c77d9a2824e498dc4e9371145a3b78e073b679173ea75a41b675a91",
+      "lines": 57,
+      "read_ranges": [
+        [
+          1,
+          57
+        ]
+      ],
+      "status": "read",
+      "role": "Deterministic fake-clock backoff test",
+      "behavior_notes": [
+        "The sole active test advances a fake clock through1/2/4/8seconds with an atomic completion flag. A second real-time test is commented out.",
+        "Executed successfully with no real sleep/network/account dependency. The test does not cover cap/reset/cancellation or overflow."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/gameforge/gameforge.go",
+      "sha256": "757c1110595edfdc9422c423fe7b1fd3547289557460488e5fe3c373222744a0",
+      "lines": 1264,
+      "read_ranges": [
+        [
+          1,
+          1264
+        ]
+      ],
+      "status": "read",
+      "role": "Lobby authentication, challenge and account-management client",
+      "behavior_notes": [
+        "Config validates device/platform and defaults context/CAPTCHA retries. Login mutates LoginParams challenge state and stores bearer result; config scraping and mauth session creation precede account/server selection and login-link retrieval.",
+        "CAPTCHA budget permits initial attempt plus up to3 solve-and-retry cycles by default. Account registration/addition, gifting/revocation and sitting-code generation are library actions, not safe audit probes. RevokeGiftingCode hardcodes en and omits response-body close.",
+        "FindAccount maps ba to yu, matches exact name/language plus optional player ID, but does not itself reject a blocked account. A higher wrapper check must supply that policy. Several read methods parse JSON without checking HTTP status.",
+        "Offline fixtures prove HTTP500 with [] is accepted by GetUserAccounts and HTTP201 null login causes a nil dereference. No lobby/authentication endpoint was contacted."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/gameforge/solvers/discord.go",
+      "sha256": "8e6f31cecc4a8c1094ff2fcba910f8e5d7e3908294265a62edeee7f5466a3091",
+      "lines": 163,
+      "read_ranges": [
+        [
+          1,
+          163
+        ]
+      ],
+      "status": "read",
+      "role": "Library-only human Discord CAPTCHA adapter",
+      "behavior_notes": [
+        "Creates a DM to owner, opens a Discord session, sends combined PNG and buttons mapped1..4 to answer0..3, waits for reply or context, removes handler/closes session, and schedules message deletion.",
+        "Interaction handler does not match a specific message/channel/user before accepting its custom button ID, and an unknown ID maps to-1. It is not wired by daemon flags. No Discord client/session/message was created."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/gameforge/solvers/solvers.go",
+      "sha256": "ff31fb8583d599415aeb7e8a023d1a11f13969e2f74af5f957f0d8caa158ce72",
+      "lines": 167,
+      "read_ranges": [
+        [
+          1,
+          167
+        ]
+      ],
+      "status": "read",
+      "role": "Telegram, hosted Ninja and stdin CAPTCHA adapters",
+      "behavior_notes": [
+        "Telegram sends images and keyboard then matches response by MessageID, ignoring several send errors and without an explicit chat/user match. Ninja posts multipart with NJA_API_KEY through http.DefaultClient and caller context.",
+        "ManualSolver writes question.png/icons.png and blocks on stdin without using context cancellation. Ninja returns decoded answer without range/presence validation; offline in-memory HTTP fixture returned99 successfully. No solver service, Telegram bot, file-writing manual solver or real CAPTCHA was used."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/httpclient/client.go",
+      "sha256": "72750268fcc0694480669abae108d3b941f8bf931b568df908ab06b136470ca3",
+      "lines": 183,
+      "read_ranges": [
+        [
+          1,
+          183
+        ]
+      ],
+      "status": "read",
+      "role": "Buffered HTTP client, stats and optional RPS pacing",
+      "behavior_notes": [
+        "Default client timeout30seconds with TLS certificate verification disabled, maxRPS0 and an unstopped per-client stats goroutine. do adds UA, buffers/closes/resets the entire response body, counts compressed download bytes and ContentLength upload bytes, and only explicitly decompresses gzip.",
+        "WithTransport/SetTransport lock writers but ordinary requests do not acquire that mutex; they are not a general concurrency isolation guarantee. The temporary transport restoration path was characterized with in-memory requests."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/httpclient/client_test.go",
+      "sha256": "7d29645775406b3cc90f65c337af4e4bb6721d69bdd4b1ccd3de760dfeb38e61",
+      "lines": 52,
+      "read_ranges": [
+        [
+          1,
+          52
+        ]
+      ],
+      "status": "read",
+      "role": "Fake RoundTripper HTTP regressions",
+      "behavior_notes": [
+        "Two active tests inject an in-memory RoundTripFunc and verify successful Do plus User-Agent. The SetUserAgent-named test does not set an agent; it repeats constructor-field behavior.",
+        "Both tests passed without sockets; neither tests real TLS, gzip, RPS or concurrent transport changes."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/taskRunner/priorityQueue.go",
+      "sha256": "d74dcd86d4ccf0183aa00e521c15a6b6ed84d06e65a8da8b5b11f262cee15668",
+      "lines": 59,
+      "read_ranges": [
+        [
+          1,
+          59
+        ]
+      ],
+      "status": "read",
+      "role": "Generic maximum-priority task heap",
+      "behavior_notes": [
+        "Less uses greater-than priority and Swap maintains indices; heap Pop resets the item index to-1. Items exposes the underlying heap slice rather than a sorted detached copy.",
+        "Equal priorities have no explicit FIFO tiebreaker. Pop requires nonempty queue and the queue itself has no synchronization; TaskRunner supplies a lock."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/taskRunner/taskRunner.go",
+      "sha256": "4a0fe5c502caefeb841f59d2fc0a15effcccb0b987478ad1e8586df57f3e2b7c",
+      "lines": 152,
+      "read_ranges": [
+        [
+          1,
+          152
+        ]
+      ],
+      "status": "read",
+      "role": "Priority admission with caller-owned task completion",
+      "behavior_notes": [
+        "Two goroutines enqueue/pop heap items using buffered channels of100 and wait for each admitted task completion. It schedules callers, not a dedicated goroutine executing arbitrary work. GetTasks snapshots only the heap, excluding running/channel-buffered work.",
+        "WithPriority sends to tasksPushCh without a cancellation select; after cancellation it can still call factory and return a task. Offline harness proves the returned task after pre-canceled context, so unconditional serialization/cancellation safety is not established."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    },
+    {
+      "path": "ogame/pkg/taskRunner/taskRunner_test.go",
+      "sha256": "83e4a1b4a257837162707ccd1d21e54e0fb9012db453234ab08625225ede1ba2",
+      "lines": 41,
+      "read_ranges": [
+        [
+          1,
+          41
+        ]
+      ],
+      "status": "read",
+      "role": "Commented runner demonstration, not an active test suite",
+      "behavior_notes": [
+        "Defines a task helper closing its done channel after a short sleep. Its sole TestA function is entirely commented out.",
+        "go test compiled this package but ran zero taskRunner tests; it must not count as a passing serialization/concurrency regression suite."
+      ],
+      "findings": [],
+      "test_safety": "Only inspected source and explicitly selected pure fixture tests/characterizations; never invoke production entrypoints, external services or real account actions."
+    }
+  ]
+}

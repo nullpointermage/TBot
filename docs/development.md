@@ -114,6 +114,34 @@ Safe checks include:
 
 There is no C# test project in the audited solution. `dotnet test` returning without tests is not a passing feature suite. The Go submodule contains tests; inspect their network/account requirements before running them. Pure settings/helper probes can verify overlay semantics, missing-value casts and duration parsing without login.
 
+## Offline adapter/model characterization
+
+The resumed audit includes an in-memory HTTP adapter/model harness, separate from the deployed bot and the solution's lack of a C# test project:
+
+```sh
+dotnet run --project tools/adapter-smoke/AdapterSmoke.csproj --configuration Release
+python3 -m unittest discover -s tools -p 'test_*.py' -v
+```
+
+The adapter harness never calls Initialize or opens an HTTP connection; its handler returns synthetic fixtures. It characterizes existing defects as well as normal contracts, and is not a passing live-game workflow test. Restore/build may use package sources unless already cached. See [direct review](reference/audit-parent-direct.md).
+
+## Offline Go integration characterization
+
+```sh
+(cd tools/go-smoke && go run -mod=readonly .)
+(cd ogame && go test -timeout 20s ./pkg/device ./pkg/httpclient ./pkg/exponentialBackoff ./pkg/taskRunner)
+```
+
+The Go harness references the real pinned submodule through a local module replacement, intercepts every request in memory and never builds a persistent device, starts a daemon or touches an account. Its 11 assertions characterize existing defects, including the TLS flag type mismatch. Four existing fixture tests also passed; taskRunner has no active tests. See [Go review](reference/audit-go-integration.md) for exact scope and offline-cache environment options. These checks do not remove the daemon build blockers.
+
+The checked-in model harness adds 50 account-free characterizations:
+
+```sh
+(cd tools/go-smoke && go run -mod=readonly ./models)
+```
+
+Reviewed model/helper tests produced 181 passing test/subtest events. Parser/extractor tests produced 314 passes and one timezone-sensitive failure on the host; explicitly setting `TZ=America/Los_Angeles` produced 315 passes. A constructor-free wrapper allowlist produced 18 passes. These were independently rerun by the parent. See [model evidence](reference/audit-models.md) and [surface evidence](reference/audit-go-surface.md) for exact package commands, allowlist and excluded constructors; do not run an unreviewed full `go test ./...` against real accounts. These are conditional offline results, not a clean whole-suite or live-game certification.
+
 ## Contribution rules
 
 Read [CONTRIBUTING](../CONTRIBUTING.md). Keep code changes, dependency upgrades, safety fixes and documentation refreshes reviewable as separate contributions. Never commit live settings, cookies, tokens, passwords, account fixtures or private logs. A generated publish directory is ignored by the existing `.gitignore`, but the tracked example JSON files are not secret storage.

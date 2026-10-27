@@ -115,6 +115,18 @@ dotnet build TBot.sln --configuration Release
 - Saving a global instance entry can initiate login; saving a feature flag can start actions. Review changes first.
 - Manual gameplay can race automated workers; the iframe is not exclusive control.
 
+## Audit results and implementation limits
+
+The resumed audit records complete semantic review of all **497 first-party files** in the **568-file baseline inventory**, including all **271 Go files**. Full-read evidence and independent offline checks are linked from the [source-audit record](docs/source-audit.md). This is a pinned-source review, not live-account or complete-build certification.
+
+- [Go model/formula audit](docs/reference/audit-models.md): cost/time rounding, lifeform bonuses, ship fuel/cargo, JSON/nullability and simulator limitations. C# and Go calculation helpers are **not interchangeable**.
+- [Go wrapper/parser audit](docs/reference/audit-go-surface.md): retry ambiguity, version dispatch, cache boundaries, malformed input, API envelopes and extraction schemas.
+- [Direct integration audit](docs/reference/audit-go-integration.md): a `--enable-tls=true` type mismatch that reads false, manual-mode concurrency risks and fingerprint/response failures. These are documented defects, not repairs.
+- The public combat simulator silently omits Reaper/Pathfinder/Crawler input; do not treat it as an authoritative current-game simulator.
+- A reviewed espionage fixture fails in the host timezone and passes with explicit `TZ=America/Los_Angeles`. Test reports preserve both outcomes; there is no unqualified whole-suite pass.
+
+No production behavior or account configuration was changed by this documentation contribution. The missing daemon build package and stale CI/Docker recipes remain separate blockers.
+
 ## Contributions and attribution
 
 This code descends from [ogame-tbot/TBot](https://github.com/ogame-tbot/TBot), with development in [0xE232FE/TBot](https://github.com/0xE232FE/TBot), and uses Alain Gilbert's tooling through [ogame.mod](https://github.com/0xE232FE/ogame.mod). Existing contributor attribution and dependency notices remain applicable. Project metadata references MIT, while dependencies carry separate notices; this documentation does not introduce a new license or resolve missing root-license paperwork.

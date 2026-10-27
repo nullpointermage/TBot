@@ -3,6 +3,22 @@
 Source: `TBot/Includes/CalculationService.cs` @ `35b4ce08b57bf2900d5b3d3b449a3f26f168270b` (5 068 lines, read in full; sha256 in
 `docs/reference/brain-read.json`). Interface: `TBot/Includes/ICalculationService.cs`. Companion feature doc: [features/brain.md](features/brain.md).
 
+## C# versus pinned Go implementation
+
+This page describes **C# CalculationService**. The daemon library has separate implementations; see the [complete Go model/formula audit](reference/audit-models.md) for source-cited formulas and 50 independently rerun characterizations. Do not silently substitute one language's results for the other:
+
+| Boundary | Pinned Go behavior |
+|---|---|
+| Graviton | Energy grows by factor3, unlike the C# factor2 below |
+| Storage | Uses floating division in the exponent, unlike C# integer division |
+| Lifeform prices/time | LF building price ignores bonuses; LF research time ignores the planet-duration bonus and reads the per-ID duration map |
+| Fuel | Signed LF term is additive and calculated before General halving; C# uses a separate reduction formula |
+| Cargo | No General pathfinder bonus in the Go getter; hyperspace multiplier input is a fraction, not a percentage integer |
+| Time/rounding | Go applies some reductions after floor/minimum, allowing subsecond results; raw time.Duration JSON is nanoseconds, not the handler's projected seconds |
+| Combat simulation | Public simulator drops Reaper/Pathfinder/Crawler counts; its output is not a complete current-game model |
+
+The rest of this page retains the independently reviewed C# behavior, including its defects. Neither calculator is a live game-rule oracle.
+
 Conventions used throughout:
 
 - **Levels are 1-based** in cost/time formulas (`level − 1` exponents); production formulas use the plain level.

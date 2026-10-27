@@ -31,6 +31,6 @@ Key semantics (apply to every settings row):
 - `CheckIntervalMin/Max` are minutes unless a row says otherwise
   (`RandomizeHelper.CalcRandomInterval(int,int)` = `rand.Next(min*60_000, max*60_000)`).
 
-These tables are a baseline snapshot. Keep the tables and published catalog synchronized when making a documentation correction, then run `python3 tools/check_docs.py --allow-incomplete-audit` from the repository root. The original local generation scripts are not a public regeneration interface.
+These tables are a baseline snapshot. Keep the tables and published catalog synchronized when making a documentation correction, then run `python3 tools/check_docs.py` from the repository root. The original local generation scripts are not a public regeneration interface.
 
 Known gaps and caveats: [configuration findings](../reference/config-lifecycle-findings.md) and [audit status](../source-audit.md). Catalog consumer entries can describe inherited-container or write-site evidence; they are not all method names or proof that a template key influences runtime behavior.

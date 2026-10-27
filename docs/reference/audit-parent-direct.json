@@ -1,0 +1,1854 @@
+{
+  "baseline": "35b4ce08b57bf2900d5b3d3b449a3f26f168270b",
+  "submodule": "fbd0fda6ba9019c128926614f9865ba38a67b627",
+  "entries": [
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/AllianceClass.cs",
+      "sha256": "59d2228e3d74bf871760c92340d6486dc1847df39310e25ae92191212291b145",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum AllianceClass",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: NoClass = 0, Warrior = 1, Trader = 2, Researcher = 3"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/Buildables.cs",
+      "sha256": "5ddae57e4d78235731031b1b18e3bc904e70d1914d4f3782917b8e8de315197f",
+      "lines": 77,
+      "read_ranges": [
+        [
+          1,
+          77
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum Buildables",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Null = 0, MetalMine = 1, CrystalMine = 2, DeuteriumSynthesizer = 3, SolarPlant = 4, FusionReactor = 12, MetalStorage = 22, CrystalStorage = 23, DeuteriumTank = 24, ShieldedMetalDen = 25, UndergroundCrystalDen = 26, SeabedDeuteriumDen = 27, AllianceDepot = 34, RoboticsFactory = 14, Shipyard = 21, ResearchLab = 31, MissileSilo = 44, NaniteFactory = 15, Terraformer = 33, SpaceDock = 36, LunarBase = 41, SensorPhalanx = 42, JumpGate = 43, RocketLauncher = 401, LightLaser = 402, HeavyLaser = 403, GaussCannon = 404, IonCannon = 405, PlasmaTurret = 406, SmallShieldDome = 407, LargeShieldDome = 408, AntiBallisticMissiles = 502, InterplanetaryMissiles = 503, SmallCargo = 202, LargeCargo = 203, LightFighter = 204, HeavyFighter = 205, Cruiser = 206, Battleship = 207, ColonyShip = 208, Recycler = 209, EspionageProbe = 210, Bomber = 211, SolarSatellite = 212, Destroyer = 213, Deathstar = 214, Battlecruiser = 215, Crawler = 217, Reaper = 218, Pathfinder = 219, EspionageTechnology = 106, ComputerTechnology = 108, WeaponsTechnology = 109, ShieldingTechnology = 110, ArmourTechnology = 111, EnergyTechnology = 113, HyperspaceTechnology = 114, CombustionDrive = 115, ImpulseDrive = 117, HyperspaceDrive = 118, LaserTechnology = 120, IonTechnology = 121, PlasmaTechnology = 122, IntergalacticResearchNetwork = 123, Astrophysics = 124, GravitonTechnology = 199"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/Celestials.cs",
+      "sha256": "96e67f87a3aa4f22c55fb08cc2e122e910a485796caed0b4e724b1aa6630d924",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum Celestials",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Planet = 1, Debris = 2, Moon = 3, DeepSpace = 4",
+        "Planet1, Debris2, Moon3, DeepSpace4 are literal enum values; naming a coordinate deep space is not equivalent to position16 or a daemon wire-type mapping."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/CharacterClass.cs",
+      "sha256": "370730bc10a1917e4be7cee1146631e590ae4e8f3914c4bcf3755651785e520e",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum CharacterClass",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: NoClass = 0, Collector = 1, General = 2, Discoverer = 3"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/EspionageReportType.cs",
+      "sha256": "87e05949d4673c5ff202eabef8275866545554d8b7f5547d617dcc2bb0e80d88",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum EspionageReportType",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Action = 0, Report = 1"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/FarmState.cs",
+      "sha256": "287307d52d9c5129aad792982e60e2cb76ad948bf5a081579e26c16867d65f2f",
+      "lines": 26,
+      "read_ranges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum FarmState",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Idle, ProbesPending, ProbesSent, ProbesRequired, FailedProbesRequired, AttackPending, AttackSent, NotSuitable",
+        "State order describes idle, pending/sent probes, escalating probes, pending/sent attacks and unsuitable targets; declaration alone performs no transitions."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/Feature.cs",
+      "sha256": "25a1f793ef3673986ac952f4d3be200d9041416144a26f668cd9a74a980509a5",
+      "lines": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum Feature",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Null = 0, Defender = 1, BrainAutobuildCargo = 2, BrainAutoRepatriate = 3, BrainAutoMine = 4, BrainOfferOfTheDay = 5, Expeditions = 6, Harvest = 7, SleepMode = 8, BrainAutoResearch = 9, Colonize = 10, AutoFarm = 11, BrainLifeformAutoMine = 12, BrainLifeformAutoResearch = 13, AutoDiscovery = 14, BrainAutobuildDefence = 15, BrainAutoFleepJumpGate = 16, BrainCelestialAutoMine = 101, BrainCelestialLifeformAutoMine = 102, BrainCelestialLifeformAutoResearch = 103",
+        "Numeric identity separates account features1..16 and celestial child features101..103; preserve AutoFleepJumpGate spelling."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/Features.cs",
+      "sha256": "31ec767bde83f79b7f604276217745bd08cee161c991a28d66b143fa2ab0b330",
+      "lines": 28,
+      "read_ranges": [
+        [
+          1,
+          28
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Features",
+      "behavior_notes": [
+        "Declared serialized/state fields: none; behavior is implemented by methods/static members.",
+        "AllFeatures contains account-level features but not the three celestial child features; readonly protects the list reference, not its contents."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/HumansBuildables.cs",
+      "sha256": "f50f9bdd690766acf7d45f1098b4c79bf0e4e1d8c8415f409d1db645ce30f322",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum HumansBuildables",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: ResearchCentre = 11103, HighEnergySmelting = 11106, FoodSilo = 11107, FusionPoweredProduction = 11108, Skyscraper = 11109, BiotechLab = 11110, Metropolis = 11111, PlanetaryShield = 11112",
+        "Subset intentionally omits base population/food/T2/T3 buildings and is used for least-expensive LF candidate selection."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/KaeleshBuildables.cs",
+      "sha256": "1491c58711aa0b4fbd1dfb65204c4e2bf89ce638eaec0ef3124e434af55fac2a",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum KaeleshBuildables",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: VortexChamber = 14103, AntimatterConvector = 14106, CloningLaboratory = 14107, ChrysalisAccelerator = 14108, BioModifier = 14109, PsionicModulator = 14110, ShipManufacturingHall = 14111, SupraRefractor = 14112",
+        "Subset includes technology building and non-base buildings, not all Kaelesh building slots."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/LFBuildables.cs",
+      "sha256": "0ebb0844f451a97f85c0c24e4110bbc5eabf4c23cb8c93f36c554756d9e8eecc",
+      "lines": 68,
+      "read_ranges": [
+        [
+          1,
+          68
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum LFBuildables",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: None = 0, ResidentialSector = 11101, BiosphereFarm = 11102, ResearchCentre = 11103, AcademyOfSciences = 11104, NeuroCalibrationCentre = 11105, HighEnergySmelting = 11106, FoodSilo = 11107, FusionPoweredProduction = 11108, Skyscraper = 11109, BiotechLab = 11110, Metropolis = 11111, PlanetaryShield = 11112, MeditationEnclave = 12101, CrystalFarm = 12102, RuneTechnologium = 12103, RuneForge = 12104, Oriktorium = 12105, MagmaForge = 12106, DisruptionChamber = 12107, Megalith = 12108, CrystalRefinery = 12109, DeuteriumSynthesiser = 12110, MineralResearchCentre = 12111, AdvancedRecyclingPlant = 12112, AssemblyLine = 13101, FusionCellFactory = 13102, RoboticsResearchCentre = 13103, UpdateNetwork = 13104, QuantumComputerCentre = 13105, AutomatisedAssemblyCentre = 13106, HighPerformanceTransformer = 13107, MicrochipAssemblyLine = 13108, ProductionAssemblyHall = 13109, HighPerformanceSynthesiser = 13110, ChipMassProduction = 13111, NanoRepairBots = 13112, Sanctuary = 14101, AntimatterCondenser = 14102, VortexChamber = 14103, HallsOfRealisation = 14104, ForumOfTranscendence = 14105, AntimatterConvector = 14106, CloningLaboratory = 14107, ChrysalisAccelerator = 14108, BioModifier = 14109, PsionicModulator = 14110, ShipManufacturingHall = 14111, SupraRefractor = 14112"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/LFTechno.cs",
+      "sha256": "7d202a6004766fef5f54fc9f92c176225e356fc09c6ba9aa63466d8095095339",
+      "lines": 91,
+      "read_ranges": [
+        [
+          1,
+          91
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum LFTechno",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: None = 0, IntergalacticEnvoys = 11201, HighPerformanceExtractors = 11202, FusionDrives = 11203, StealthFieldGenerator = 11204, OrbitalDen = 11205, ResearchAI = 11206, HighPerformanceTerraformer = 11207, EnhancedProductionTechnologies = 11208, LightFighterMkII = 11209, CruiserMkII = 11210, ImprovedLabTechnology = 11211, PlasmaTerraformer = 11212, LowTemperatureDrives = 11213, BomberMkII = 11214, DestroyerMkII = 11215, BattlecruiserMkII = 11216, RobotAssistants = 11217, Supercomputer = 11218, VolcanicBatteries = 12201, AcousticScanning = 12202, HighEnergyPumpSystems = 12203, CargoHoldExpansionCivilianShips = 12204, MagmaPoweredProduction = 12205, GeothermalPowerPlants = 12206, DepthSounding = 12207, IonCrystalEnhancementHeavyFighter = 12208, ImprovedStellarator = 12209, HardenedDiamondDrillHeads = 12210, SeismicMiningTechnology = 12211, MagmaPoweredPumpSystems = 12212, IonCrystalModules = 12213, OptimisedSiloConstructionMethod = 12214, DiamondEnergyTransmitter = 12215, ObsidianShieldReinforcement = 12216, RuneShields = 12217, RocktalCollectorEnhancement = 12218, CatalyserTechnology = 13201, PlasmaDrive = 13202, EfficiencyModule = 13203, DepotAI = 13204, GeneralOverhaulLightFighter = 13205, AutomatedTransportLines = 13206, ImprovedDroneAI = 13207, ExperimentalRecyclingTechnology = 13208, GeneralOverhaulCruiser = 13209, SlingshotAutopilot = 13210, HighTemperatureSuperconductors = 13211, GeneralOverhaulBattleship = 13212, ArtificialSwarmIntelligence = 13213, GeneralOverhaulBattlecruiser = 13214, GeneralOverhaulBomber = 13215, GeneralOverhaulDestroyer = 13216, ExperimentalWeaponsTechnology = 13217, MechanGeneralEnhancement = 13218, HeatRecovery = 14201, SulphideProcess = 14202, PsionicNetwork = 14203, TelekineticTractorBeam = 14204, EnhancedSensorTechnology = 14205, NeuromodalCompressor = 14206, NeuroInterface = 14207, InterplanetaryAnalysisNetwork = 14208, OverclockingHeavyFighter = 14209, TelekineticDrive = 14210, SixthSense = 14211, Psychoharmoniser = 14212, EfficientSwarmIntelligence = 14213, OverclockingLargeCargo = 14214, GravitationSensors = 14215, OverclockingBattleship = 14216, PsionicShieldMatrix = 14217, KaeleshDiscovererEnhancement = 14218"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/LFTypes.cs",
+      "sha256": "3fe65bdcfca2dd1fa146703736422cf25552aa70e147f1ccbce67b56c9ee6423",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum LFTypes",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: None = 0, Humans = 1, Rocktal = 2, Mechas = 3, Kaelesh = 4"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/MechasBuildables.cs",
+      "sha256": "30d55e8962be25d3a51e417de307b7c2bcf53bc33837328759be3c251596bd6c",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum MechasBuildables",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: RoboticsResearchCentre = 13103, AutomatisedAssemblyCentre = 13106, HighPerformanceTransformer = 13107, MicrochipAssemblyLine = 13108, ProductionAssemblyHall = 13109, HighPerformanceSynthesiser = 13110, ChipMassProduction = 13111, NanoRepairBots = 13112",
+        "Subset includes technology building and non-base buildings, not all Mechas building slots."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/Missions.cs",
+      "sha256": "861c129b0d3df87901b03a1e372bfdf10b8aa98e3930545d989aa16c6328a17f",
+      "lines": 24,
+      "read_ranges": [
+        [
+          1,
+          24
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum Missions",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: None = 0, Attack = 1, FederalAttack = 2, Transport = 3, Deploy = 4, FederalDefense = 5, Spy = 6, Colonize = 7, Harvest = 8, Destroy = 9, MissileAttack = 10, Expedition = 15, Trade = 16, Discovery = 18"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/OfferOfTheDayStatus.cs",
+      "sha256": "608e8d2d401dd829f511460683daa7cf4ab91c768ce95dab9bd76e7deecea6cf",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum OfferOfTheDayStatus",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: OfferOfTheDayBougth, OfferOfTheDayAlreadyBought, OfferOfTheDayUnknown",
+        "Bougth/AlreadyBought/Unknown are distinct enum states; adapter error-envelope handling can classify already-accepted as Unknown."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/RepatriateCode.cs",
+      "sha256": "029fd6b62e1ddc4c750f7ee8e926bba998b9537ffe44a04ce6bbaff238642239",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum RepatriateCode",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Success = 1, Stop = 0, Failure = -1, Delay = -2"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/RocktalBuildables.cs",
+      "sha256": "3c58fba2f9f1ab9e9c0fb085d985ae4924b8d38e3c2183d3f2255d73e8e09f18",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum RocktalBuildables",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: RuneTechnologium = 12103, MagmaForge = 12106, DisruptionChamber = 12107, Megalith = 12108, CrystalRefinery = 12109, DeuteriumSynthesiser = 12110, MineralResearchCentre = 12111, AdvancedRecyclingPlant = 12112",
+        "Subset includes technology building and non-base buildings, not all Rocktal building slots."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/SendFleetCode.cs",
+      "sha256": "8e95eeee05b932dd4d95f269e906da0fb9e33208cb1c05eddfd6168ccb433667",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum SendFleetCode",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: GenericError = 0, AfterSleepTime = -1, NotEnoughSlots = -2, QuickerToWaitForProduction = -3, NotEnoughRessources = -4"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/SettingsVersion.cs",
+      "sha256": "cee6511232376c634ed6a841099564b4f7aa91d3b5985af358b8aef584092fea",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum SettingsVersion",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: AllInOne = 0, MultipleInstances = 1, Invalid = -1"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/Speeds.cs",
+      "sha256": "9d2012284b796332ac92fd15ea15f8bf7ab0370a359c59a8dc9a7c6086d3ab5a",
+      "lines": 88,
+      "read_ranges": [
+        [
+          1,
+          88
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Speeds",
+      "behavior_notes": [
+        "Declared serialized/state fields: none; behavior is implemented by methods/static members.",
+        "HundredPercent is the decimal wire value10. Both General and non-General methods currently return the same integer-step list; finer constants exist but the General branch is commented out."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Enums/UpdateTypes.cs",
+      "sha256": "0ce61399ae96fc2412ca0139e88b4695875db04325b28a6f5084d0935e8624b6",
+      "lines": 26,
+      "read_ranges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "status": "read",
+      "role": "Literal game/runtime enum UpdateTypes",
+      "behavior_notes": [
+        "Enum declaration preserves literal names and numeric/default ordering: Fast, Techs, Full, Resources, Buildings, LFBuildings, LFTechs, LFBonuses, Ships, Facilities, Defences, Productions, Constructions, ResourceSettings, ResourcesProduction, Debris"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Exceptions/OgamedException.cs",
+      "sha256": "1e636ea0d9e38a9f064ca2a9cd0cdc0b4f7cc55f58e7b2e09524a0766dd8a4ca",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure OgamedException",
+      "behavior_notes": [
+        "Declared serialized/state fields: none; behavior is implemented by methods/static members.",
+        "Exception wrapper preserves message and inner exception but does not carry HTTP status as a typed property."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/IOgameService.cs",
+      "sha256": "371b1c2c0b36909188285e7efb4be062f908962063bc969c8cb9e8c36cb6e484",
+      "lines": 104,
+      "read_ranges": [
+        [
+          1,
+          104
+        ]
+      ],
+      "status": "read",
+      "role": "C# daemon adapter public interface",
+      "behavior_notes": [
+        "Public adapter contract lists process prerequisite/lifecycle controls and asynchronous account/game API operations.",
+        "BuildCancelable and GetPrice overloads cover classic, LF building and LF research enums; no cancellation token on HTTP operations.",
+        "Account-changing operations include builds, fleet dispatch/cancel, messages, daily offer purchase, discovery and abandonment, so interface availability is not safe read-only behavior."
+      ],
+      "findings": [],
+      "test_safety": "Static read only; do not initialize a real daemon or call live account endpoints. In-memory HttpMessageHandler probes are safe."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Abandon.cs",
+      "sha256": "7dcb78315b8fe897405f85e174e1d2ce231ae35054d97709ff4b571a4c2b8726",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Abandon",
+      "behavior_notes": [
+        "Declared serialized/state fields: CelestialID, Result"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Alliance.cs",
+      "sha256": "eb93999ae0373a5c833702984f29dd35716e74708cdb7e71db5daf073603ccb7",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Alliance",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, Name, Rank, Member"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/AttackerFleet.cs",
+      "sha256": "9a007a3fb3a416443844714a5c48b450cbd1cb8759afaae6cd39e493aaf4094b",
+      "lines": 45,
+      "read_ranges": [
+        [
+          1,
+          45
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure AttackerFleet",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, MissionType, Origin, Destination, DestinationName, ArrivalTime, ArriveIn, AttackerName, AttackerID, UnionID, Missiles, Ships",
+        "IsOnlyProbes requires nonzero probes and zero listed other ships, but unlike Ships.IsOnlyProbes it does not check Crawler; null Ships is not guarded here."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Auction.cs",
+      "sha256": "ce2ae8f9f85f3cbdbb669d3879c461c0394c7978cf863241e0f48992f7a99612",
+      "lines": 61,
+      "read_ranges": [
+        [
+          1,
+          61
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Auction",
+      "behavior_notes": [
+        "Declared serialized/state fields: HasFinished, Endtime, NumBids, CurrentBid, AlreadyBid, MinimumBid, DeficitBid, HighestBidder, HighestBidderUserID, CurrentItem, CurrentItemLong, Inventory, Token, ResourceMultiplier, Resources",
+        "TotalResourcesOffered sums each dictionary output.TotalResources, not bids or raw inputs; formatting dereferences multiplier/resources without null guards. Endtime formatting uses integer minutes/remainder seconds."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/AuctionInputOutput.cs",
+      "sha256": "9e364b586227c81f6418d7f1deb97e0b950e6da070c498e7c9932512cf677459",
+      "lines": 30,
+      "read_ranges": [
+        [
+          1,
+          30
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure AuctionInputOutput",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium",
+        "All three resource properties initialize to10, so partially populated JSON can retain nonzero placeholder resources. TotalResources sums metal/crystal/deuterium."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/AuctionResourceMultiplier.cs",
+      "sha256": "830c521f1880a7650e0967b700bc11b73c268aa10f4d799e23864e124d0bef40",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure AuctionResourceMultiplier",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium, Honor",
+        "Constructor-free property defaults: metal1, crystal1.5, deuterium3 and honor100."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/AuctionResourcesValue.cs",
+      "sha256": "c2bc615503af2cec3bdf1d409fd60b675c012521f9965fb06e3adb1c892209ba",
+      "lines": 34,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure AuctionResourcesValue",
+      "behavior_notes": [
+        "Declared serialized/state fields: imageFileName, input, output, isMoon, Name, otherPlanetId",
+        "Input/output are nullable-by-default mutable references; ToString dereferences both, and otherPlanetId defaults to nullable zero."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/AutoMinerSettings.cs",
+      "sha256": "59bc7ce7dafcc5c5e149ddc76c3180d7d686fcc9270736f13667a866f9feb7dd",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure AutoMinerSettings",
+      "behavior_notes": [
+        "Declared serialized/state fields: OptimizeForStart, PrioritizeRobotsAndNanites, MaxDaysOfInvestmentReturn, DepositHours, BuildDepositIfFull, DeutToLeaveOnMoons, BuildSolarSatellites",
+        "Constructor supplies optimization/max-DOIR/deposit/deuterium/satellite defaults; callers using object initializers can overwrite them with missing-setting casts."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/BuildTask.cs",
+      "sha256": "cf3f9ada5d993abdc8ac0a524e6bbcfc4caa8b7909c79386990943fffe79eceb",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure BuildTask",
+      "behavior_notes": [
+        "Declared serialized/state fields: Celestial, Buildable, Level, Price"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Buildings.cs",
+      "sha256": "3ad0d04bbd0c930caf839f2605b90eb1e19b4241c2262ba4f8d148fe52dd6bed",
+      "lines": 45,
+      "read_ranges": [
+        [
+          1,
+          45
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Buildings",
+      "behavior_notes": [
+        "Declared serialized/state fields: MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor, SolarSatellite, MetalStorage, CrystalStorage, DeuteriumTank",
+        "GetLevel/SetLevel use reflection on exact enum name; absent names return zero or no-op, SetLevel mutates and returns this."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/CaptchaChallenge.cs",
+      "sha256": "a4f24e4baf84d234a61048e823507b9ba8a8cd9d10128a1da9855e4bd055a470",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure CaptchaChallenge",
+      "behavior_notes": [
+        "Declared serialized/state fields: Id, Icons, Question"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Celestial.cs",
+      "sha256": "5e7d402903a690d2dffa67f5d1db504abeeab46f6de0084f91f0d5d141ef41d4",
+      "lines": 127,
+      "read_ranges": [
+        [
+          1,
+          127
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Celestial",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, Img, Name, Diameter, Activity, Coordinate, Fields, Resources, Ships, Defences, Buildings, LFtype, LFBuildings, LFTechs, LFBonuses, Facilities, Productions, Constructions, ResourceSettings, ResourcesProduction, Debris, Researches",
+        "HasProduction/HasConstruction catch errors and return false. Coordinate equality includes Type; GetLevel/SetLevel reflect over loaded nested objects without null guards. SetLFType returns a local value and does not update the LFtype property."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Constructions.cs",
+      "sha256": "e14a924a8afbaceb4e75f9c553059c8c87a351d7e8fc5af302ef016ec5efd28f",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Constructions",
+      "behavior_notes": [
+        "Declared serialized/state fields: BuildingID, BuildingCountdown, ResearchID, ResearchCountdown, LFBuildingID, LFBuildingCountdown, LFResearchID, LFResearchCountdown"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Coordinate.cs",
+      "sha256": "8903622aa99ec9279d3619e7222b8df49de2ffd60d94e33032d389958323d82c",
+      "lines": 65,
+      "read_ranges": [
+        [
+          1,
+          65
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Coordinate",
+      "behavior_notes": [
+        "Declared serialized/state fields: Galaxy, System, Position, Type",
+        "FromString uses an unanchored one-digit-galaxy regex with planet/moon suffix, not general coordinate validation; IsSame includes Type but the class does not override object equality/hash semantics."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Credentials.cs",
+      "sha256": "594fa2436dfedc0f13e1cf226787950eba67e426ff878e0f9932cbd9e20eee1d",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Credentials",
+      "behavior_notes": [
+        "Declared serialized/state fields: Universe, Username, Password, Language, IsLobbyPioneers, BasicAuthUsername, BasicAuthPassword"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Darkmatter.cs",
+      "sha256": "96650cd3585169f0adccb05f6a83ff5b2d76eab7f0aefced71381b5e53e98578",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Darkmatter",
+      "behavior_notes": [
+        "Declared serialized/state fields: Available, Purchased, Found"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Debris.cs",
+      "sha256": "440575ef45e1ea2632ea202f9abe20e94b96de89b30cb9921c99b562b4376a7d",
+      "lines": 26,
+      "read_ranges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Debris",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium, RecyclersNeeded",
+        "Resources getter allocates a fresh Resources with metal/crystal/deuterium and zero energy/darkmatter; not an alias of the debris object."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Defences.cs",
+      "sha256": "b8bbcba97795270ed74dcf73f4084b1c2a4619186c20c4b5a46d1828421575b5",
+      "lines": 197,
+      "read_ranges": [
+        [
+          1,
+          197
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Defences",
+      "behavior_notes": [
+        "Declared serialized/state fields: RocketLauncher, LightLaser, HeavyLaser, GaussCannon, IonCannon, PlasmaTurret, SmallShieldDome, LargeShieldDome, AntiBallisticMissiles, InterplanetaryMissiles",
+        "Remove leaves an adequate existing quantity unchanged rather than subtracting; GetAmount/SetAmount take Defences instead of a Buildables identifier. HasAtLeast multiplies the receiver by times, not the requested quantities.",
+        "GetDefenceCost uses hardcoded coefficients that differ from CalculationService, including crystal on rocket launchers and several large-weapon costs; no runtime fix made."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Defenses.cs",
+      "sha256": "3fea655ddd44095e8cf42d3a944b4ce2e76a26ccee2e7d6f659d60565922b0a8",
+      "lines": 10,
+      "read_ranges": [
+        [
+          1,
+          10
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Defenses",
+      "behavior_notes": [
+        "Declared serialized/state fields: none; behavior is implemented by methods/static members.",
+        "Compatibility spelling alias inherits Defences unchanged."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Device.cs",
+      "sha256": "7240b3cb103158e27e4ea6b5af67a2d31933d58ff45fca4f2561dcecb1ce050c",
+      "lines": 21,
+      "read_ranges": [
+        [
+          1,
+          21
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Device",
+      "behavior_notes": [
+        "Declared serialized/state fields: Name, System, Browser, UserAgent, Memory, Concurrency, Color, Width, Height, Timezone, Lang"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Energy.cs",
+      "sha256": "deef1bee0994664599966b0b6ef288c58965bb31ecd3e79d59c3ffab5c31d22e",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Energy",
+      "behavior_notes": [
+        "Declared serialized/state fields: Available, CurrentProduction, Consumption"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/EspionageReport.cs",
+      "sha256": "06be8de5050046b43c187e77ea5ea15186ce21c1e2fefbee22eb8bdc62c190d5",
+      "lines": 197,
+      "read_ranges": [
+        [
+          1,
+          197
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure EspionageReport",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium, Energy, Darkmatter, ID, Username, CharacterClass, AllianceClass, LastActivity, CounterEspionage, APIKey, HasFleetInformation, HasDefensesInformation, HasBuildingsInformation, HasResearchesInformation, HonorableTarget, IsBandit, IsStarlord, IsInactive, IsLongInactive, MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor, SolarSatellite, MetalStorage, CrystalStorage, DeuteriumTank, RoboticsFactory, Shipyard, ResearchLab, AllianceDepot, MissileSilo, NaniteFactory, Terraformer, SpaceDock, LunarBase, SensorPhalanx, JumpGate, EnergyTechnology, LaserTechnology, IonTechnology, HyperspaceTechnology, PlasmaTechnology, CombustionDrive, ImpulseDrive, HyperspaceDrive, EspionageTechnology, ComputerTechnology, Astrophysics, IntergalacticResearchNetwork, GravitonTechnology, WeaponsTechnology, ShieldingTechnology, ArmourTechnology, RocketLauncher, LightLaser, HeavyLaser, GaussCannon, IonCannon, PlasmaTurret, SmallShieldDome, LargeShieldDome, AntiBallisticMissiles, InterplanetaryMissiles, LightFighter, HeavyFighter, Cruiser, Battleship, Battlecruiser, Bomber, Destroyer, Deathstar, SmallCargo, LargeCargo, ColonyShip, Recycler, EspionageProbe, Crawler, Reaper, Pathfinder, Coordinate, Type, Date",
+        "IsDefenceless requires both information flags and null combat/defence fields, not numeric zero; probe mode also requires null SolarSatellite.",
+        "PlunderRatio evaluates inactive Discoverer first, then bandit, then active honorable target. Loot multiplies each resource using float ratio then truncates to long."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/EspionageReportSummary.cs",
+      "sha256": "24292be61a2a9605495067719b68cc9694a823118f795d354de86c19249ff3e6",
+      "lines": 16,
+      "read_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure EspionageReportSummary",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, Type, From, Target, LootPercentage"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/ExpeditionDebris.cs",
+      "sha256": "e031f4706487e036ae2d17d4eb396e23afe26bcada16165300e3cd5349c843d1",
+      "lines": 25,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure ExpeditionDebris",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium, PathfindersNeeded",
+        "Resources getter allocates a fresh Resources; pathfinder requirement differs from ordinary debris recycler requirement."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Facilities.cs",
+      "sha256": "12f60e8063c5c7b78738da1dbb1487c9e7bcb9ab4dce2e33b00d9deb4c95211b",
+      "lines": 26,
+      "read_ranges": [
+        [
+          1,
+          26
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Facilities",
+      "behavior_notes": [
+        "Declared serialized/state fields: RoboticsFactory, Shipyard, ResearchLab, AllianceDepot, MissileSilo, NaniteFactory, Terraformer, SpaceDock, LunarBase, SensorPhalanx, JumpGate"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/FarmTarget.cs",
+      "sha256": "13548c91b83f4fbd3fac7fbff71dfee9c6d0442d4d55706c8e0da960cbd84d1c",
+      "lines": 41,
+      "read_ranges": [
+        [
+          1,
+          41
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure FarmTarget",
+      "behavior_notes": [
+        "Declared serialized/state fields: Celestial, State, Report"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Fields.cs",
+      "sha256": "be226bae92658ce5fbc1cc7d55aa9cacfae1982d9f04b6c07bb6504f0427a9fb",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Fields",
+      "behavior_notes": [
+        "Declared serialized/state fields: Built, Total",
+        "Free is Total-Built without clamping; negative values are possible."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Fleet.cs",
+      "sha256": "f1fca3acf99cb1e8a3a5cf537118051a62459e4ab41be656634d1e1c6abc12f0",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Fleet",
+      "behavior_notes": [
+        "Declared serialized/state fields: Mission, ReturnFlight, InDeepSpace, ID, Resources, Origin, Destination, Ships, StartTime, ArrivalTime, BackTime, ArriveIn, BackIn, UnionID, TargetPlanetID"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/FleetHypotesis.cs",
+      "sha256": "b59a70b5de89d410e387458c0f8df58a6173ffc73411e26241e8fd234558b335",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure FleetHypotesis",
+      "behavior_notes": [
+        "Declared serialized/state fields: Origin, Destination, Ships, Mission, Speed, Duration, Fuel"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/FleetPrediction.cs",
+      "sha256": "fba84c08626388e0fd1d3cd7e12f78d7f550f649ac4903c93f8e0075d36bf322",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure FleetPrediction",
+      "behavior_notes": [
+        "Declared serialized/state fields: Time, Fuel"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/FleetSchedule.cs",
+      "sha256": "e8166cc47a1edf23e3d5b094fad4977ff62da697749426ecca6ef8c682312f11",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure FleetSchedule",
+      "behavior_notes": [
+        "Declared serialized/state fields: Payload, Departure, Arrival, Comeback, SendAt, RecallAt, ReturnAt"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Food.cs",
+      "sha256": "d21cbf56f8074a3714c8fb1b086373f1ce6b7f3d1140d1890d7de9a2fcac17a4",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Food",
+      "behavior_notes": [
+        "Declared serialized/state fields: Available, StorageCapacity, Overproduction, ConsumedIn, TimeTillFoodRunsOut"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/GalaxyInfo.cs",
+      "sha256": "15e14369791e49544e3a217592c69fe47f7212780f51db6d7e6f953daba66bb7",
+      "lines": 16,
+      "read_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure GalaxyInfo",
+      "behavior_notes": [
+        "Declared serialized/state fields: Galaxy, System, Planets, AvailableMissions, ExpeditionDebris"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/JumpGateResult.cs",
+      "sha256": "79f208db6fa3f268d85e39b780fd3553f8c80ee6a61a0d9c536fbbf67e53241e",
+      "lines": 16,
+      "read_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure JumpGateResult",
+      "behavior_notes": [
+        "Declared serialized/state fields: Success, RechargeCountdown, Error",
+        "JSON maps success and rechargeCountdown; Error is explicitly JsonIgnore and only local diagnostic state."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonuses.cs",
+      "sha256": "09364bb59b8dab313d7cacff91ef6c1302644b28e9f577c99c3838cc9e942279",
+      "lines": 101,
+      "read_ranges": [
+        [
+          1,
+          101
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonuses",
+      "behavior_notes": [
+        "Declared serialized/state fields: LfResourceBonuses, CharacterClassesBonuses, LfShipBonuses, CostTimeBonuses, MiscBonuses, Production, Expeditions, Dens, Moons, Crawlers, Ships, Defenses, Buildings, Researches, LfBuildings, LfResearches, PhalanxRange, RecallRefund, FleetSlots, Explorations, SpaceDock, PlanetSize, InactivesLoot",
+        "Legacy string-key dictionaries and newer typed dictionaries coexist. GetShipCargo/Speed/ConsumptionBonus read only LfShipBonusesInt, not Ships.",
+        "Each Int getter allocates a filtered dictionary anew; malformed integer keys are dropped while distinct keys that parse to the same int can throw duplicate-key errors. Constructors initialize nested bonus objects/dictionaries."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesBase.cs",
+      "sha256": "70d360c1c4c4ca71c7429dedb47d3c873a1b0887bc773245382fcb3691739428",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesBase",
+      "behavior_notes": [
+        "Declared serialized/state fields: Cost, Duration"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesCharacterClasses.cs",
+      "sha256": "a7b8e8ae6e4f13c50a2ffb9d859067e948b4142e92ab67779d5ce2f26bf97edf",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesCharacterClasses",
+      "behavior_notes": [
+        "Declared serialized/state fields: Characterclasses3"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesCrawlers.cs",
+      "sha256": "6e9c0fc9c4ab67e686f41f15e9eced34b8dee1c354b35c40afaf423fbb674dd3",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesCrawlers",
+      "behavior_notes": [
+        "Declared serialized/state fields: EnergyReduction, Production, Number"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesDens.cs",
+      "sha256": "adfa436fb50bc32119bb5ca5edc567c53e101255f50383f9dc6f27e9acb3ba21",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesDens",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesExpeditions.cs",
+      "sha256": "5bdaa8febfbc366be0b90bdf61359666398b111970b048dbefd38743797f3d5e",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesExpeditions",
+      "behavior_notes": [
+        "Declared serialized/state fields: Ships, Resources, Speed, DarkMatter, FleetLoss, Slots, LessEnemies"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesMisc.cs",
+      "sha256": "2d00257d71eb5a7358c40255426189a50de01edc782c2c5dfb875b7f0cddb73d",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesMisc",
+      "behavior_notes": [
+        "Declared serialized/state fields: PhalanxRange"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesMoons.cs",
+      "sha256": "38dabc35f692ce33686ac6865255a898e3e1eea2b33942abcbb9cbb9a0b8e7f8",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesMoons",
+      "behavior_notes": [
+        "Declared serialized/state fields: Fields, Size, Chance"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesProduction.cs",
+      "sha256": "4dc151e7e4f0fd59a568a1475b845099d701baa85b82c4d0ad9d6ccf3c3de5e2",
+      "lines": 25,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesProduction",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium, Energy, Food, Population"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesResources.cs",
+      "sha256": "c588cf8c4c29c1f0c22d06875e738e812865b691246e95b31f5d3b2eb57ef8c7",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesResources",
+      "behavior_notes": [
+        "Declared serialized/state fields: ResourcesExpedition"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBonusesShip.cs",
+      "sha256": "947021b1503bc29b5d9fa3e368ee34ecac1cffb5448503e610ff6e7b42b7ccfe",
+      "lines": 27,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBonusesShip",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, StructuralIntegrity, ShieldPower, WeaponPower, Speed, CargoCapacity, FuelConsumption"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFBuildings.cs",
+      "sha256": "a098a56ab44ac3cf90dce99e420df7e40113447e0e0c902c4a5bb7d6e1b02b1c",
+      "lines": 142,
+      "read_ranges": [
+        [
+          1,
+          142
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFBuildings",
+      "behavior_notes": [
+        "Declared serialized/state fields: LifeformType, ResidentialSector, BiosphereFarm, ResearchCentre, AcademyOfSciences, NeuroCalibrationCentre, HighEnergySmelting, FoodSilo, FusionPoweredProduction, Skyscraper, BiotechLab, Metropolis, PlanetaryShield, MeditationEnclave, CrystalFarm, RuneTechnologium, RuneForge, Oriktorium, MagmaForge, DisruptionChamber, Megalith, CrystalRefinery, DeuteriumSynthesiser, MineralResearchCentre, AdvancedRecyclingPlant, AssemblyLine, FusionCellFactory, RoboticsResearchCentre, UpdateNetwork, QuantumComputerCentre, AutomatisedAssemblyCentre, HighPerformanceTransformer, MicrochipAssemblyLine, ProductionAssemblyHall, HighPerformanceSynthesiser, ChipMassProduction, NanoRepairBots, Sanctuary, AntimatterCondenser, VortexChamber, HallsOfRealisation, ForumOfTranscendence, AntimatterConvector, CloningLaboratory, ChrysalisAccelerator, BioModifier, PsionicModulator, ShipManufacturingHall, SupraRefractor",
+        "LifeformType and all48 building levels default to zero; constructor copies each value; GetLevel/SetLevel reflect by exact LF enum name and mutate in place."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LFTechs.cs",
+      "sha256": "ae49ee08d8229985a036359ff4da2960c717152d96b58410feb95e117cad6532",
+      "lines": 191,
+      "read_ranges": [
+        [
+          1,
+          191
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LFTechs",
+      "behavior_notes": [
+        "Declared serialized/state fields: IntergalacticEnvoys, HighPerformanceExtractors, FusionDrives, StealthFieldGenerator, OrbitalDen, ResearchAI, HighPerformanceTerraformer, EnhancedProductionTechnologies, LightFighterMkII, CruiserMkII, ImprovedLabTechnology, PlasmaTerraformer, LowTemperatureDrives, BomberMkII, DestroyerMkII, BattlecruiserMkII, RobotAssistants, Supercomputer, VolcanicBatteries, AcousticScanning, HighEnergyPumpSystems, CargoHoldExpansionCivilianShips, MagmaPoweredProduction, GeothermalPowerPlants, DepthSounding, IonCrystalEnhancementHeavyFighter, ImprovedStellarator, HardenedDiamondDrillHeads, SeismicMiningTechnology, MagmaPoweredPumpSystems, IonCrystalModules, OptimisedSiloConstructionMethod, DiamondEnergyTransmitter, ObsidianShieldReinforcement, RuneShields, RocktalCollectorEnhancement, CatalyserTechnology, PlasmaDrive, EfficiencyModule, DepotAI, GeneralOverhaulLightFighter, AutomatedTransportLines, ImprovedDroneAI, ExperimentalRecyclingTechnology, GeneralOverhaulCruiser, SlingshotAutopilot, HighTemperatureSuperconductors, GeneralOverhaulBattleship, ArtificialSwarmIntelligence, GeneralOverhaulBattlecruiser, GeneralOverhaulBomber, GeneralOverhaulDestroyer, ExperimentalWeaponsTechnology, MechanGeneralEnhancement, HeatRecovery, SulphideProcess, PsionicNetwork, TelekineticTractorBeam, EnhancedSensorTechnology, NeuromodalCompressor, NeuroInterface, InterplanetaryAnalysisNetwork, OverclockingHeavyFighter, TelekineticDrive, SixthSense, Psychoharmoniser, EfficientSwarmIntelligence, OverclockingLargeCargo, GravitationSensors, OverclockingBattleship, PsionicShieldMatrix, KaeleshDiscovererEnhancement",
+        "Nullable level properties are initialized to zero by null-coalescing constructor arguments, but SetLevel can later assign null; its GetLevel handles null while Celestial.GetLevel(LFTechno) directly casts."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/LoginResult.cs",
+      "sha256": "7d04be6a35fae344974d68e6e709b78f4b8d95a2d924b4a6bc5a1e15ac7a28b6",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure LoginResult",
+      "behavior_notes": [
+        "Declared serialized/state fields: Success, Error"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Moon.cs",
+      "sha256": "3a0d992e8faec55eff18d1cd5a29237df27ac9935cf86b1d77a95d41c35a3369",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Moon",
+      "behavior_notes": [
+        "Declared serialized/state fields: none; behavior is implemented by methods/static members.",
+        "HasLunarFacilities compares lunar base/phalanx/jump gate/shipyard/robotics levels only."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/OgamedResponse.cs",
+      "sha256": "e8e927637c9deffae28a85bf599c35d9c8e3727fd83cc23d07d8d344f73cd156",
+      "lines": 14,
+      "read_ranges": [
+        [
+          1,
+          14
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure OgamedResponse",
+      "behavior_notes": [
+        "Declared serialized/state fields: Status, Code, Message, Result",
+        "Result is dynamic; object/array results are subsequently converted by the adapter, while primitive results are dynamically cast."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Planet.cs",
+      "sha256": "d201286114b28cfb155d61e37de81546f18a3a52f460178d13601d508b0b68bc",
+      "lines": 37,
+      "read_ranges": [
+        [
+          1,
+          37
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Planet",
+      "behavior_notes": [
+        "Declared serialized/state fields: Administrator, Inactive, Vacation, StrongPlayer, Newbie, HonorableTarget, Banned, Player, Alliance, Temperature, Moon",
+        "HasMines checks the three mines; HasFacilities omits several facilities and ignores SpaceDock by default, so it is not an all-facilities completeness predicate."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Player.cs",
+      "sha256": "dc1d139fec2d25bd81829bc30203721228854be0fde1616adfcd9bfcf8c0c3a3",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Player",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, Name, Rank, IsBandit, IsStarlord"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Population.cs",
+      "sha256": "2013e70b55fa5862ad3e36b7e99ab9072434bc2fc780a7c4d5e06ba8d31e9d46",
+      "lines": 40,
+      "read_ranges": [
+        [
+          1,
+          40
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Population",
+      "behavior_notes": [
+        "Declared serialized/state fields: Available, T2Lifeforms, T3Lifeforms, LivingSpace, Satisfied, Hungry, GrowthRate, BunkerSpace",
+        "IsFull/starvation/food-growth helpers compare the stored population snapshot; NeedsMoreT2/T3 use hardcoded caps reduced by a percentage bonus without bounds clamping."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Production.cs",
+      "sha256": "235a23601a77ab07c80206ecb0985a344b160fc250d4c18be63c15eeb96e9cd0",
+      "lines": 12,
+      "read_ranges": [
+        [
+          1,
+          12
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Production",
+      "behavior_notes": [
+        "Declared serialized/state fields: ID, Nbr"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/ProxySettings.cs",
+      "sha256": "7d04e8d491e6f9b9c76c8eaacb5698f91c91f4c7894a5d20f6a24d0b0d1737f4",
+      "lines": 19,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure ProxySettings",
+      "behavior_notes": [
+        "Declared serialized/state fields: Enabled, Address, Type, Username, Password, LoginOnly",
+        "Only Enabled has an explicit constructor default; LoginOnly exists here but whether configuration sets it must be traced in the caller."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/RankSlotsPriority.cs",
+      "sha256": "50e85bcd89b459f70e59a9d88ddbf6a76de981208f896f5cd762056fa9ea305f",
+      "lines": 31,
+      "read_ranges": [
+        [
+          1,
+          31
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure RankSlotsPriority",
+      "behavior_notes": [
+        "Declared serialized/state fields: Rank, Active, MaxSlots, SlotsUsed, Feature",
+        "Constructor maps every rank below1 to int.MinValue; HasPriorityOn is a strict lower-rank comparison, independent of Active."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Researches.cs",
+      "sha256": "a7ee1c1a5be598cedc8223f88df6cbd2f1d61db19c4a178e17309d3ef5a44292",
+      "lines": 39,
+      "read_ranges": [
+        [
+          1,
+          39
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Researches",
+      "behavior_notes": [
+        "Declared serialized/state fields: EnergyTechnology, LaserTechnology, IonTechnology, HyperspaceTechnology, PlasmaTechnology, CombustionDrive, ImpulseDrive, HyperspaceDrive, EspionageTechnology, ComputerTechnology, Astrophysics, IntergalacticResearchNetwork, GravitonTechnology, WeaponsTechnology, ShieldingTechnology, ArmourTechnology",
+        "GetLevel uses reflected exact Buildables names and returns zero when absent."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Resource.cs",
+      "sha256": "cbb1c6864efc3f5488850b0d7328ac9916bd02c348c1234502372d3338aea9c6",
+      "lines": 13,
+      "read_ranges": [
+        [
+          1,
+          13
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Resource",
+      "behavior_notes": [
+        "Declared serialized/state fields: Available, StorageCapacity, CurrentProduction"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/ResourceSettings.cs",
+      "sha256": "fdbfd8c6b3a6a399e33976614ec84c5692fb6c9cda65d1741a1aa9a6676f5875",
+      "lines": 29,
+      "read_ranges": [
+        [
+          1,
+          29
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure ResourceSettings",
+      "behavior_notes": [
+        "Declared serialized/state fields: MetalMine, CrystalMine, DeuteriumSynthesizer, SolarPlant, FusionReactor, SolarSatellite, Crawler",
+        "Ratio averages three mine percentages divided by100; CrawlerRatio separately divides crawler setting by100. No range validation."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Resources.cs",
+      "sha256": "477c52b952d1d204adf81ec3178405769ae69d00b46436664d25e600bef4cd37",
+      "lines": 139,
+      "read_ranges": [
+        [
+          1,
+          139
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Resources",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Deuterium, Population, Food, Energy, Darkmatter",
+        "ConvertedDeuterium uses ceiling-style directed rounding of metal/2.5+crystal/1.5+deuterium; StructuralIntegrity is metal+crystal.",
+        "Sum/Difference/Round preserve only M/C/D and discard other resource fields; Difference clamps negatives. Round divides by the supplied argument but always multiplies by1000.",
+        "FromString uses a permissive regex and Int32.Parse despite long storage fields. IsEnoughFor checks M/C/D only, while IsBuildable also checks population."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/ResourcesProduction.cs",
+      "sha256": "a3ac323871c2be8ebc322344925f91bab56d79bb2e746b24e5c7bfddb9cc9fc3",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure ResourcesProduction",
+      "behavior_notes": [
+        "Declared serialized/state fields: Metal, Crystal, Food, Population, Deuterium, Energy, Darkmatter"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Server.cs",
+      "sha256": "6c60a445d218c80751a53982a21191c0e8755bf2a17d912c6609841ebf43ef78",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Server",
+      "behavior_notes": [
+        "Declared serialized/state fields: Language, Number, Name, PlayerCount, PlayersOnline, Opened, StartDate, EndDate, ServerClosed, Prefered, SignupClosed, Settings"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/ServerData.cs",
+      "sha256": "fa5dabcbc855c951e9ef6b94487cb348ea51ba4c32fa82c0435935ef1e732e8b",
+      "lines": 52,
+      "read_ranges": [
+        [
+          1,
+          52
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure ServerData",
+      "behavior_notes": [
+        "Declared serialized/state fields: Name, Number, Language, Timezone, TimezoneOffset, Domain, Version, Speed, SpeedFleet, SpeedFleetPeaceful, SpeedFleetWar, SpeedFleetHolding, Galaxies, Systems, ACS, RapidFire, DefToTF, DebrisFactor, DebrisFactorDef, RepairFactor, NewbieProtectionLimit, NewbieProtectionHigh, TopScore, BonusFields, DonutGalaxy, DonutSystem, WfEnabled, WfMinimumRessLost, WfMinimumLossPercentage, WfBasicPercentageRepairable, GlobalDeuteriumSaveFactor, Bashlimit, ProbeCargo, ResearchDurationDivisor, DarkMatterNewAcount, CargoHyperspaceTechMultiplier",
+        "SpeedResearch is Speed multiplied by ResearchDurationDivisor, not an independently deserialized setter; distinct peaceful/war/holding speed fields exist."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Settings.cs",
+      "sha256": "88f46bc476ce381d91deb87aa0fcd0f18fcd08749e076566ba33f4289a661d1f",
+      "lines": 23,
+      "read_ranges": [
+        [
+          1,
+          23
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Settings",
+      "behavior_notes": [
+        "Declared serialized/state fields: AKS, FleetSpeed, WreckField, ServerLabel, EconomySpeed, PlanetFields, UniverseSize, ServerCategory, EspionageProbeRaids, PremiumValidationGift, DebrisFieldFactorShips, DebrisFieldFactorDefence",
+        "EconomySpeed is an int; this DTO contains no converter accepting a prefixed string such as x8."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Ships.cs",
+      "sha256": "391cca86072ecb740eb08921327a2f324483c80f0b794edf1524e498ee415b71",
+      "lines": 198,
+      "read_ranges": [
+        [
+          1,
+          198
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Ships",
+      "behavior_notes": [
+        "Declared serialized/state fields: LightFighter, HeavyFighter, Cruiser, Battleship, Battlecruiser, Bomber, Destroyer, Deathstar, SmallCargo, LargeCargo, ColonyShip, Recycler, EspionageProbe, SolarSatellite, Crawler, Reaper, Pathfinder",
+        "GetMovableShips aliases this and zeroes satellites/crawlers in the original object. HasMovableFleet merely negates IsEmpty, so stationary-only inventory also returns true.",
+        "Remove does not subtract adequate counts. HasAtLeast multiplies owned quantity by times rather than scaling the requested fleet. Fleet points omit satellites/crawlers."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Slots.cs",
+      "sha256": "ee3eecdc154977fe99050697f40de4c6796990d26509b4908fc4a90f97fd1e00",
+      "lines": 25,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Slots",
+      "behavior_notes": [
+        "Declared serialized/state fields: InUse, Total, ExpInUse, ExpTotal",
+        "Free and ExpFree are raw differences without clamping or reservation logic."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Staff.cs",
+      "sha256": "841006ecfa59932279d9f010d284e5f277eb3c96e71cb15bbdbc18cfb567fa7f",
+      "lines": 28,
+      "read_ranges": [
+        [
+          1,
+          28
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Staff",
+      "behavior_notes": [
+        "Declared serialized/state fields: Commander, Admiral, Engineer, Geologist, Technocrat",
+        "Constructor clears all five officers; IsFull requires all five flags. GetStaff adapter can replace partially obtained flags with a new empty instance on error."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Supplies.cs",
+      "sha256": "742d857bcc31dd443cc48eac594ab2621cbf91cf945fbb870f9e2fa441efb68c",
+      "lines": 10,
+      "read_ranges": [
+        [
+          1,
+          10
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Supplies",
+      "behavior_notes": [
+        "Declared serialized/state fields: none; behavior is implemented by methods/static members.",
+        "Compatibility subclass inherits Buildings without changes."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Techs.cs",
+      "sha256": "a14a0d8cc9ef669e359a5b49d69d76da909d2a89b23b5ea97e030ff0f6da8d22",
+      "lines": 15,
+      "read_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Techs",
+      "behavior_notes": [
+        "Declared serialized/state fields: defenses, facilities, researches, ships, supplies",
+        "Envelope property names are literal lower-case defenses/facilities/researches/ships/supplies; no LF fields here."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Temperature.cs",
+      "sha256": "ec873f3a46fbb82e898e557a0e4b20f6388f7dfe61df302675b29bd294c92112",
+      "lines": 17,
+      "read_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Temperature",
+      "behavior_notes": [
+        "Declared serialized/state fields: Min, Max",
+        "Average casts the sum to float before dividing, preserving fractional averages but not guarding int sum overflow."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/Transport.cs",
+      "sha256": "e74ef800da9a6c3460709a6093d232a86d3a375e63c4b3808d38239f511282d6",
+      "lines": 52,
+      "read_ranges": [
+        [
+          1,
+          52
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure Transport",
+      "behavior_notes": [
+        "Declared serialized/state fields: Active, CargoType, DeutToLeave, RoundResources, SendToTheMoonIfPossible, Origin, MaxSlots, CheckMoonOrPlanetFirst, DoMultipleTransportIsNotEnoughShipButSamePosition, MultipleOrigin, Active, OnlyFromMoons, MinimumResourcesToSend, PriorityToProximityOverQuantity, Exclude",
+        "TransportSettings supplies constructor defaults and new empty Origin/MultipleOrigin objects, not fully populated celestials. MultipleOrigins defaults onlyFromMoons and proximity preference to true; callers can override."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/Models/UserInfo.cs",
+      "sha256": "41385faf16589ac684d68b07192e3e5f6745430ff9c98b8d831d419a7225b58e",
+      "lines": 18,
+      "read_ranges": [
+        [
+          1,
+          18
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure UserInfo",
+      "behavior_notes": [
+        "Declared serialized/state fields: PlayerID, PlayerName, Points, Rank, Total, HonourPoints, Class"
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/OgameService.cs",
+      "sha256": "f0328570bed6644b5ed74f88598a0168d2f0faf66d11af53868314e9caad804a",
+      "lines": 1083,
+      "read_ranges": [
+        [
+          1,
+          1083
+        ]
+      ],
+      "status": "read",
+      "role": "C# daemon HTTP/process adapter",
+      "behavior_notes": [
+        "Initialize starts the daemon then constructs HttpClient; listener arguments hardcode 0.0.0.0 while client URI honors the host argument.",
+        "RerunOgamed discards the returned Process instead of updating _ogamedProcess; automatic restart is implemented but process tracking is unreliable.",
+        "Transient HTTP retry policy is shared by GET and POST, with no idempotency key or reconciliation for action retries.",
+        "ManageResponse unwraps JObject/JArray but directly casts primitive results; malformed 200 bodies can reach a null result dereference.",
+        "Empire parser fills numeric-key ship/building/research/LF maps with zeros when absent, narrows ship counts to int and shares one LFBonuses reference across returned entries.",
+        "GetTbotIP feeds an absolute URL into a helper forcing UriKind.Relative. SendFleet serializes speed using current culture and leaves duration absent.",
+        "BuyOfferOfTheDay recognizes only HttpRequestException 400 as already-bought, while normal error envelopes produce OgamedException; source and docs require correction."
+      ],
+      "findings": [],
+      "test_safety": "Static read only; do not initialize a real daemon or call live account endpoints. In-memory HttpMessageHandler probes are safe."
+    },
+    {
+      "path": "TBot.Ogame.Infrastructure/TBot.Ogame.Infrastructure.csproj",
+      "sha256": "db6a5535f38738222a39481a7a3e5e3a87ee7d1a64615318012cf295cf5d02c6",
+      "lines": 22,
+      "read_ranges": [
+        [
+          1,
+          22
+        ]
+      ],
+      "status": "read",
+      "role": "C# infrastructure project definition",
+      "behavior_notes": [
+        "net10.0 with nullable/implicit usings enabled; references pinned Newtonsoft/Polly/HTTP/RestSharp and TBot.Common, no test project declared."
+      ],
+      "findings": [],
+      "test_safety": "No test entrypoint; static source/DTO review. Do not invoke live adapter/process operations."
+    },
+    {
+      "path": "ogame/pkg/ogame/constants.go",
+      "sha256": "1c0d572cdad94290bffeaf54bc5b9e5230b43212affe8c78b94f6953c60b98ec",
+      "lines": 370,
+      "read_ranges": [
+        [
+          1,
+          370
+        ]
+      ],
+      "status": "read",
+      "role": "Go game ID/mission/class/celestial/speed constant definitions",
+      "behavior_notes": [
+        "PlanetType1, DebrisType2 and MoonType3 are the only declared CelestialType constants; no DeepSpaceType exists.",
+        "Mission String methods map supported IDs to names and unknown values to decimal strings; DMType validation accepts only buildings/research/shipyard.",
+        "Numeric building/ship/research/LF IDs mirror the C# tables, while mission names differ and Go supplies half-step speed constants."
+      ],
+      "findings": [
+        "Corrected invented Go DeepSpaceType=3 claim in infrastructure-models.md."
+      ],
+      "test_safety": "Pure constant and string-conversion definitions, no network or test entrypoint."
+    }
+  ]
+}

@@ -68,7 +68,7 @@ dotnet build TBot.sln --configuration Release
 python3 tools/check_docs.py
 ```
 
-The strict command currently fails on explicitly recorded incomplete semantic review. For this bounded documentation closeout, `python3 tools/check_docs.py --allow-incomplete-audit` validates the published links, snippets, settings coverage and source hashes while still reporting `exhaustive_source_audit_complete: false`. This is not permission to claim unreviewed files were read; see the audit record.
+The strict checker now passes for the completed pinned baseline: all 497 first-party files have read coverage and zero remain incomplete. `--allow-incomplete-audit` remains an explicit option for a future bounded partial review; it must still fail on broken links, stale source hashes or invalid read evidence, and must retain an incomplete flag when gaps exist. See the audit record for evidence and runtime/test limitations.
 
 The documentation checker covers reference/links/snippets/source inventory; it is not a game-safety test or a substitute for semantic review. Source hashes/reference coverage must be intentionally refreshed when audited implementation files change.
 

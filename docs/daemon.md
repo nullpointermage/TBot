@@ -2,7 +2,7 @@
 
 Scope: the Go daemon submodule pinned at `ogame fbd0fda6ba9019c128926614f9865ba38a67b627`
 (upstream `github.com/alaingilbert/ogame`, branch `develop-ogamed-tbot`; the pin **is** that branch's
-tip, verified via `git ls-remote`), how TBot launches and talks to it, and every operational
+tip at the original audit, verified via `git ls-remote`), how TBot launches and talks to it, and the source-supported operational
 property that can be asserted from source. The complete HTTP surface is in
 [`daemon-api.md`](daemon-api.md); the C# models are in [`infrastructure-models.md`](infrastructure-models.md).
 
@@ -70,23 +70,22 @@ Version stamping: `version="0.0.0"`, `commit=""`, `date=""` are plain vars — r
   `--basic-auth-username/-password`, and every `--device-*` knob present on the `Device` record.
   Note `--host=0.0.0.0` is hardcoded in the args while the C# client talks to `http://127.0.0.1:port`.
 - Basic auth header is pre-set on the `HttpClient` when both `Credentials.BasicAuthUsername/Password` are non-empty (matches the daemon's optional `middleware.BasicAuth`).
-- `Timeout = 60 s`; all calls go through `GetAsync/PostAsync` → Polly `HandleTransientHttpError().WaitAndRetryAsync(3, 2^n s)` (≈1 s, 2 s, 4 s backoff) → `ManageResponse<T>` which deserializes the envelope `OgamedResponse {Status,Code,Message,Result}` and unwraps `Result` (JObject/JArray → `T`), throwing `OgamedException` when `Status != "ok"`.
+- `Timeout = 60 s`; all calls go through `GetAsync/PostAsync` → Polly `HandleTransientHttpError().WaitAndRetryAsync(3, 2^n s)` (2 s, 4 s, 8 s backoff) → `ManageResponse<T>` which deserializes the envelope `OgamedResponse {Status,Code,Message,Result}` and unwraps `Result` (JObject/JArray → `T`), throwing `OgamedException` when `Status != "ok"`.
 - Process lifecycle: stdout/stderr piped into `ILoggerService` tagged `LogSender.OGameD`; on exit,
-  if runtime > 500 ms and not a deliberate kill, `RerunOgamed()` restarts the daemon after 1 s
-  (auto-respawn loop); a <500 ms life or `_mustKill` surfaces `OnError`. `KillOgamedExecutable`
+  if runtime > 500 ms and not a deliberate kill, it attempts `RerunOgamed()` after 1 s. An unexpected lifetime of at most500 ms raises `OnError` when subscribed; a deliberate `_mustKill` only disposes/clears the process. `KillOgamedExecutable`
   kills + disposes. Credentials (incl. password) ride **in the process command line** — visible in
   `ps`/proc; that is the designed transport, not a secret store.
 - `_cookiesPath` field exists but is never assigned/used in this class.
+- **Process tracking defect:** `RerunOgamed` (`OgameService.cs:222–224`) discards the `Process` returned by `ExecuteOgamedExecutable` instead of assigning `_ogamedProcess`. The exit callback/kill path therefore cannot be assumed to track the replacement process correctly. The respawn code above describes intent, not verified reliable recovery.
+- **Retry safety:** the same transient-error policy retries action POSTs as reads. No idempotency key or reconciliation step is added by this adapter; an ambiguous outcome is not permission to repeat a fleet, build, purchase or abandonment action manually.
+- **Response edge cases verified offline:** a malformed HTTP200 body raises `NullReferenceException`; an `ok` envelope can be accepted with HTTP400; an already-accepted daily-offer error envelope is classified Unknown instead of AlreadyBought. `GetStaff` discards earlier successful flags if a later officer lookup fails. See [direct review](reference/audit-parent-direct.md) and the account-free characterization harness.
 
 ## 4. Daemon runtime behaviour (from `cmd/ogamed-tbot/main.go` + `pkg/wrapper`)
 
 - Single global `*wrapper.OGame` bot stored in echo context (`ctx.Set("bot", …)`); `botMap` and
   `manualModeTimeout` maps exist but hold only the `"tx"`/`"timeout"` keys — this is a **single-account
   daemon** despite the map plumbing. `AddNewAccount()` exists but is not wired to any route.
-- All state mutations are serialized through `wrapper`'s task runner (`pkg/taskRunner`): one worker,
-  priority heap (`Low<Normal<Important<Critical`); every public `Prioritize` method is
-  `begin(name)/defer done()` around the real call — the HTTP handlers therefore queue behind each
-  other, and `GET /tasks` (`TasksHandler`) reports the heap (`TasksOverview` counts per priority).
+- Normal prioritized wrapper operations use `pkg/taskRunner`: admission through a priority heap (`Low<Normal<Important<Critical`), with callers signaling completion. It has two admission goroutines, not a dedicated worker executing all daemon code. This is not a blanket serialization guarantee: manual-mode maps and temporary HTTP transport changes have separate unsynchronized paths, and canceled `WithPriority` can still return a task. `GET /tasks` reports only heap counts, not running or channel-buffered work. See [direct Go review](reference/audit-go-integration.md).
 - "Manual mode": `POST /bot/toggle-manual-mode` flips a 30 s named lock (`BeginNamed("manual mode")`);
   while held, `GET/POST /game/index.php` proxy the browser's own requests through the same lock
   (timer reset per request) and the HTML gets a fixed-position "Manual mode (on/off)" button +
@@ -94,13 +93,13 @@ Version stamping: `version="0.0.0"`, `commit=""`, `date=""` are plain vars — r
 - TLS: `--enable-tls` → `e.StartTLS(host:port, tlsCertFile, tlsKeyFile)`; defaults `~/.ogame/key.pem`,
   `~/.ogame/cert.pem`. **Naming trap:** flag `--tls-key-file` reads env `OGAMED_TLS_CERTFILE` and
   `--tls-cert-file` reads `OGAMED_TLS_KEYFILE` (swapped suffixes in source). `--enable-tls` is
-  declared `StringFlag` but parsed with `c.Bool` (works for "true"/"false"/"").
+  declared `StringFlag` but parsed with `c.Bool`. **An offline probe with the pinned CLI dependency shows `--enable-tls=true` is stored as string `true` but read as boolean false. Do not rely on this flag to provide TLS.**
 - CORS on by default (`cors-enabled`, env `CORS_ENABLED`).
 - Device typo: `--device-height` persists via env **`OGAMED_DEVICHEIGHT`** (sic, missing E).
 - `GET /cdn/*`, `/assets/css/*`, `/headerCache/*`, `/favicon.ico`, `/game/sw.js`, `GET /api/*`,
   `HEAD /api/*` proxy static/game content from the game server through the daemon (AntiGame support);
   `*.xml` responses get the hostname rewrite, `HEAD /api/*` mirrors upstream headers and answers
-  `424 Failed Dependency` when the bot has no cached headers.
+  `424 Failed Dependency` when the fresh upstream HEAD returns empty headers; this is not a cached-header-only lookup.
 - Chat/auctioneer: on login the daemon dials the game's socket.io (`wss://<host>:<port>/socket.io/`,
   EIO=4) with TLS verification disabled, joins `chat` and `auctioneer namespaces, authorizes chat
   with the cached `ogameSession`, and dispatches `ChatMsg`/auctioneer events to registered callbacks
@@ -140,7 +139,7 @@ Version stamping: `version="0.0.0"`, `commit=""`, `date=""` are plain vars — r
   → `execRequest` (gzip Accept-Encoding; `X-Requested-With` for ajax; POST =
   `application/x-www-form-urlencoded`) → `detectLoggedOut` heuristics per page →
   `processResponseHTML` cache/token update.
-- Retry: **10 attempts**, exponential backoff 1→2→4… capped **60 s** (`pkg/exponentialBackoff`);
+- Retry: **up to 10 callback attempts**, not 10 guaranteed HTTP transmissions, with exponential backoff 1→2→4… capped **60 s** (`pkg/exponentialBackoff`);
   on `ErrNotLogged` re-login via cookies; terminal on parent-ctx done, bot disabled, logged-out-manually,
   or login errors (`ErrAccountNotFound`, `AccountBlockedError`, `ErrBadCredentials`,
   `ErrOTPRequired`, `ErrOTPInvalid`); other errors keep retrying until the 10 budget is spent
@@ -148,7 +147,7 @@ Version stamping: `version="0.0.0"`, `commit=""`, `date=""` are plain vars — r
 - `execRequest` returns `[]byte{}` (no error) for HTTP ≥500 after logging "bad status".
 - Not-logged HTML snapshots: last 20 kept under `~/.ogame/not_logged/not_logged_<page>_<ts>.html`.
 - C# side adds its **own** 3× transient retry (Polly) on top — worst case a single user call can
-  hit the game server ~30× after backoffs.
+  multiply upstream requests after backoffs. Neither layer establishes at-most-once action delivery.
 
 ### 5.3 Storage layout (all under `$HOME`)
 
@@ -184,9 +183,11 @@ except UA is re-synced from it.
 
 `--proxy <host:port>` `--proxy-username --proxy-password --proxy-type socks5|http (default socks5)
 --proxy-login-only`. Implementation: socks5 via `golang.org/x/net/proxy` dialer; http via
-`http.Transport{Proxy: ProxyURL}` + `Proxy-Authorization` basic when creds given. All transports
-set `TLSClientConfig` — default `InsecureSkipVerify:true`, replaced by the `TLSConfig` param when
-provided (not reachable from CLI flags). `loginOnly=true` ⇒ proxy used only for lobby auth chain
+`http.Transport{Proxy: ProxyURL}` + `Proxy-Authorization` basic when creds given. Proxy helpers initially set `InsecureSkipVerify:true`, but `getTransport` then assigns the caller
+`TLSConfig` **even when nil**; do not infer the final transport policy from helper initializers alone.
+`setProxy` installs the standard default transport when no proxy is configured. Separately, the
+standalone device HTTP-client constructor and the chat polling/websocket paths explicitly skip
+certificate verification. Chat uses its own clients rather than the device/proxy transport. `loginOnly=true` ⇒ proxy used only for lobby auth chain
 (`loginProxyTransport`: sessions, loginLink, support page, `GET /bot/ip`); otherwise the transport
 is installed on the shared client for **all** game traffic. `GET /bot/ip` calls
 `https://jsonip.com/` through the login-proxy transport (same egress as login).
@@ -195,7 +196,7 @@ is installed on the shared client for **all** game traffic. `GET /bot/ip` calls
 
 Gameforge image-drop challenge (`challenge.gameforge.com`, `image-drop-challenge.gameforge.com`;
 `GET .../challenge/<id>`, `.../<id>/en-GB`, `/text`, `/drag-icons`, answer `POST {"answer":0..3}`).
-Three solvers exist:
+The built-in challenge endpoints and several solver adapters have different integration boundaries:
 
 | Solver | Trigger | Transport |
 |---|---|---|
@@ -203,7 +204,8 @@ Three solvers exist:
 | `TbotSolver` (ogamed-tbot) | `--nja-api-key` / env `NJA_API_KEY` set | `POST https://solver.obot.de/api/v1/captcha/solve` multipart `question`/`icons`, header `OBOT_API_KEY`, resp `{"answer":int}` |
 | `NinjaSolver` (stock, `pkg/gameforge/solvers`) | same flag on ogamed | `POST https://www.ogame.ninja/api/v1/captcha/solve`, header `NJA_API_KEY` |
 | `TelegramSolver` | library only | photos + inline keyboard to a chat |
-| `ManualSolver` | library only | writes `question.png`/`icons.png` cwd, stdin answer |
+| `ManualSolver` | library only | writes `question.png`/`icons.png` cwd, stdin answer; does not observe context while waiting |
+| `DiscordSolver` | library only | sends a combined image and answer buttons to a DM; not wired by daemon flags |
 
 Auto-solve budget: `maxCaptchaRetries` default 3 per `Gameforge.Login` invocation; without a solver
 the `CaptchaRequiredError` propagates (login fails). TBot's `GetCaptchaChallenge`/`SolveCaptcha`
@@ -214,16 +216,16 @@ use the JSON endpoints — i.e. TBot can act as the solver when no API key is co
 `loginPart3` → `getExtractorFor(version)` picks the HTML parser:
 
 `≥12.0.0 → v12_0_0; ≥11.15.0 → v11_15_0; ≥11.13.0; ≥11.9.0; ≥11.0.0; ≥10.4.0; ≥10.0.0; ≥9.0.0;
-≥8.7.4; ≥8.0.0; ≥7.1.0; else v7` (packages `pkg/extractor/v*`; default pre-parse extractor is
+≥8.7.4; ≥8.0.0; ≥7.1.0; ≥7.0.0 → v7` (packages `pkg/extractor/v*`; default pre-parse extractor is
 v12_0_0). Version sanitized to `X.Y.Z`. `<13.0.0` vs `≥13.0.0` also switches *behaviour* in
 `getAttacks` (eventlist JSON vs component ajax), `galaxyInfos`/`getGalaxyPage`
-(`fetchGalaxyContent` vs `fetchSolarSystemData`), `cancelFleet` (extra tokenized recall path),
+(`fetchGalaxyContent` and `fetchSolarSystemData`), `cancelFleet` (extra tokenized recall path),
 `fetchResources` (resourcesbar POST vs fetchResources page). The extractor also receives
-`SetLanguage`, `SetLocation(server tz)`, `SetLifeformEnabled`.
+`SetLanguage`, `SetLocation(server tz)`, `SetLifeformEnabled`. A valid version below7 returns nil, while invalid-version handling retains the preselected v12 fallback. v13 galaxy and recall branches can fall through to legacy requests rather than replace them. Embedded byte adapters can still call ancestor doc implementations; version labels do not certify universal parser support. See [full Go surface review](reference/audit-go-surface.md).
 
 ## 6. What TBot actually exercises (cross-reference)
 
-Every `IOgameService` member maps to exactly one daemon route (full table in daemon-api.md §Routes;
+`IOgameService` includes direct route adapters and composite/local helpers, not a one-member/one-route contract (full table in daemon-api.md §Routes;
 mapping list in `OgameService.cs` — e.g. `GetLFBonuses → GET /bot/lfbonuses`,
 `AbandonCelestial → GET /bot/celestials/:id/abandon`,
 `GetPositionsAvailableForDiscoveryFleet → POST /bot/planets/:id/get-system-available-discovery`).
@@ -233,14 +235,11 @@ Notable mismatches found while auditing:
   `Ships` properties parsed as `Buildables` — any Ships property not in the enum is silently dropped;
   `speed` is `decimal` → string (daemon validates 0–10).
 - `SetUserAgent` hits `POST /bot/set-user-agent`, whose handler is a **stub returning
-  `400 deprecated`** → `OgamedException` on every call.
+  HTTP200 with an error envelope (Code400, Message=deprecated)** → `OgamedException` on every call.
 - `POST /bot/planets/:id/send-ipm`: handler reads `:ipmAmount` and `:type` path params that the
   registered route does not contain ⇒ the endpoint always answers `400 invalid ipmAmount`. TBot
   has no IPM wrapper, so this is latent, not user-visible.
-- `GetTbotIP()` calls `GET https://jsonip.com` **through the daemon client with a relative-URI
-  helper**, i.e. `new Uri("https://jsonip.com", UriKind.Relative)` against base
-  `http://127.0.0.1:port/` — resolves to `http://127.0.0.1:<port>/jsonip.com`, which the daemon
-  does not serve. Latent bug in `OgameService.GetTbotIP`.
+- `GetTbotIP()` passes `https://jsonip.com` to a helper constructing `new Uri(..., UriKind.Relative)`. The offline C# harness reproduces **UriFormatException before transport**, not a request to a malformed localhost URL. `GetOgamedIP()` is the separate daemon `/bot/ip` route.
 - `Phalanx`/`SendDiscovery`/`Abandon`/`BuyOfferOfTheDay` treat HTTP 400/OgamedException as
   domain outcomes (already-bought, no fleet, …) — the daemon's error envelope is part of the contract.
 
@@ -253,13 +252,10 @@ Notable mismatches found while auditing:
   `0.0.0.0` — the API (incl. basic-auth-optional state-changing routes) is exposed on all
   interfaces; without basic auth anyone on the LAN can drive the account.
 - **Credentials**: account password in argv; bearer token + session cookies plaintext under
-  `~/.ogame`; TLS verification disabled by default for all upstream HTTPS (`InsecureSkipVerify`)
-  — MitM-visible credentials/cookies on hostile networks; proxy mode also skips verify unless a
-  `TLSConfig` is injected programmatically (not possible via flags).
+  `~/.ogame`; TLS verification is explicitly disabled by the standalone device-client constructor and chat clients, but final wrapper/proxy transports can replace that configuration (§5.5). Do not make an all-transports claim from a helper initializer. The CLI TLS-enable flag is independently defective (§4); keep the daemon behind a deliberate authenticated local/TLS boundary.
 - **Rate limiting**: client has `SetMaxRPS` support but nothing calls it ⇒ unthrottled; the only
   pacing is retry backoff and per-bot serialization.
-- **Auto-respawn**: `OgameService` restarts the daemon indefinitely on crash (>500 ms uptime);
-  a misconfigured daemon → tight restart loop with 1 s delay, each restart re-runs login.
+- **Auto-respawn**: `OgameService` attempts restart after an unexpected exit (>500 ms uptime), with a 1 s delay. Its replacement-process tracking defect (§3) prevents treating this as verified reliable recovery. C# startup sets `--auto-login=false`; do not claim each respawn automatically logs in.
 - **Fingerprint stability**: `~/.ogame/storage/<name>` persists per device-name; reusing a name
   after flag changes keeps the old fingerprint (only UA re-synced) — gameforge blackbox deltas
   (`CalcDeltaMs`, rotated XVec) are recomputed per login.
